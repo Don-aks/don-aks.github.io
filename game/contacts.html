@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gaming platform - About us</title>
+	<title>Gaming platform</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li class="active"><a href="about.html">About us</a></li>
+				<li><a href="about.html">About us</a></li>
 				<li><a href="#">Portfolio</a></li>
 				<li><a href="#">News</a></li>
 				<li class="btn"><a href="contacts.html">Contact us</a></li>
@@ -22,45 +22,47 @@
 		</nav>
 	</header>
 
-	<div class="hero-about">
-		<img src="img/about-banner.png" alt="">
-		<div class="container">
-			<div class="info">
-				<h1>Lorem Ipsum is simply dummy text of the printing and.</h1>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				<button class="btn">Get in touch</button>
-			</div>
-		</div>
+	<div class="container hero-contacts">
+		<h1>Lorem Ipsum is simply dummy text of the printing and.</h1>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+		<img src="img/map.png" alt="">
 	</div>
+</div>
 
-	<div class="container work">
-		<h2>Why work with us</h2>
-		<div class="blocks">
-			<div class="block">
-				<span class="badge purple">Lorem ipsum</span>
-				<h3>Lorem Ipsum</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+<div class="feedback">
+	<div class="container">
+		<h2>Say hello</h2>
+		<p>Lorem Ipsum is simply dummy text of the printing.</p>
+		<form>
+			<div class="form__inline">
+				<div>
+					<label for="fname">First name</label>
+					<input id="fname" type="fname" name="fname">
+				</div>
+				<div>
+					<label for="lname">Last name</label>
+					<input id="lname" type="lname" name="lname">
+				</div>
 			</div>
-			<div class="block">
-				<span class="badge brown">Lorem ipsum</span>
-				<h3>Lorem Ipsum</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			</div>
-			<div class="block">
-				<span class="badge green">Lorem ipsum</span>
-				<h3>Lorem Ipsum</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-			</div>
-		</div>
+			<label for="email">Email address</label>
+			<input id="email" class="one-line" type="email">
+
+			<label for="message">Message</label>
+			<textarea id="message" class="one-line" placeholder=""></textarea>
+
+			<button class="btn" type="button">Get in touch</button>
+		</form>
 	</div>
+</div>
 
+<div class="wrapper">
 	<div class="container email">
 		<h3>Lorem Ipsum</h3>
 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 		<div class="block">
 			<div>
-			   <h4>Stay in the loop</h4>
-			   <p>Subscribe to receive the latest news and updates about TDA.<br>We promise not to spam you!</p>
+				<h4>Stay in the loop</h4>
+				<p>Subscribe to receive the latest news and updates about TDA.<br>We promise not to spam you!</p>
 			</div>
 			<div>
 				<input id="emailField" type="email" placeholder="Enter email address">

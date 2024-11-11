@@ -24,6 +24,8 @@ img {
 
 .wrapper {
 	background: linear-gradient(180deg, #000 0%, rgba(26,14,1,1) 100%);
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .container {
@@ -84,15 +86,19 @@ header nav ul li:not(.active):not(.btn) a:hover {
 }
 
 header nav ul li.btn a,
-.email .block button {
+.email .block button,
+.feedback form .btn {
 	background: #FA9021;
 	padding: 9px 17px;
+	border: 0;
 	border-radius: 5px;
+	cursor: pointer;
 	transition: all 500ms ease;
 }
 
 header nav ul li.btn a:hover,
-.email .block button:hover {
+.email .block button:hover,
+.feedback form .btn:hover {
 	background: #ff8200;
 }
 
@@ -126,7 +132,8 @@ header nav ul li.btn a:hover,
 	margin: 30px 0;
 }
 
-.hero__info .btn {
+.hero__info .btn,
+.hero-about .info .btn {
 	background: #FA8305;
 	color: #fff;
 	border-radius: 50px;
@@ -136,7 +143,8 @@ header nav ul li.btn a:hover,
 	font-size: 17px;
 }
 
-.hero__info .btn:hover {
+.hero__info .btn:hover,
+.hero-about .info .btn:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 }
@@ -228,6 +236,7 @@ header nav ul li.btn a:hover,
 }
 
 /* Features */
+
 .features {
 	background: url("../img/BG.png") no-repeat center center fixed;
 	background-size: cover;
@@ -264,6 +273,7 @@ header nav ul li.btn a:hover,
 }
 
 /* Projects */
+
 .projects {
 	padding: 100px 0;
 }
@@ -296,7 +306,8 @@ header nav ul li.btn a:hover,
 	font-weight: 600;
 }
 
-/* Нижняя часть */
+/* Email */
+
 .email {
 	padding-bottom: 120px;
 }
@@ -355,7 +366,162 @@ header nav ul li.btn a:hover,
 	border-radius: 8px;
 }
 
+/* Страница "о нас" */
+
+.hero-about .info {
+	width: 500px;
+	padding: 250px 0;
+}
+
+.hero-about .info h1 {
+	margin-bottom: 15px;
+	font-size: 30px;
+}
+
+.hero-about .info .btn {
+	margin-top: 20px;
+}
+
+.hero-about img {
+	float: right;
+}
+
+/* Work */
+
+.work {
+	padding: 80px 0;
+}
+
+.work h2 {
+	font-size: 25px;
+	margin-bottom: 40px;
+}
+
+.work .blocks {
+	display: flex;
+	justify-content: space-between;
+}
+
+.work .blocks .block {
+	width: 25%;
+	border-radius: 10px;
+	padding: 50px 35px;
+	background: #1c140f;
+}
+
+.work .blocks .block h3 {
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+.work .blocks .block .badge {
+	border-radius: 7px;
+	padding: 10px 20px;
+}
+
+.work .blocks .block .badge.purple {
+	background: #560f67;
+}
+
+.work .blocks .block .badge.brown {
+	background: #31190d;
+}
+
+.work .blocks .block .badge.green {
+	background: #192a1d;
+}
+
+/* Страница с контактами */
+
+.hero-contacts h1 {
+	text-align: center;
+	margin-top: 70px;
+	margin-bottom: 30px;
+	font-size: 30px;
+}
+
+.hero-contacts p {
+	text-align: center;
+}
+
+.hero-contacts img {
+	display: block;
+	width: 70%;
+	margin: 80px auto;
+}
+
+/* Форма */
+
+.feedback {
+	padding: 70px 0;
+	background: url("../img/form-bg.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+.feedback h2 {
+	text-align: center;
+	font-weight: 500;
+	font-size: 30px;
+}
+
+.feedback p {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.feedback form {
+	margin: 80px auto;
+	width: 600px;
+}
+
+.form__inline {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form__inline > div {
+	width: 50%;
+}
+
+
+.feedback label {
+	text-transform: capitalize;
+	color: #4f4f4f;
+	font-size: 14px;
+}
+
+.feedback form input,
+.feedback form textarea {
+	background: #2c2420;
+	border-radius: 10px;
+	border: 0.6px solid #cecece;
+	display: block;
+	width: 90%;
+	padding: 15px 10px;
+	outline: none;
+	color: #fff;
+	margin-top: 6px;
+	margin-bottom: 20px;
+}
+
+.feedback form .one-line {
+	width: 96%;
+}
+
+.feedback form textarea {
+	resize: none;
+	height: 232px;
+}
+
+.feedback form .btn {
+	border-radius: 10px;
+	color: #fff;
+	padding: 15px 35px;
+	float: right;
+}
+
 /* Футер */
+
 footer {
 	padding: 50px 0;
 	background: #000;
