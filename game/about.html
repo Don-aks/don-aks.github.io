@@ -10,90 +10,125 @@
 <body>
 
 <div class="wrapper">
-	<header class="container">
+	<header class="header container">
 		<span class="logo">logo</span>
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li class="active"><a href="about.html">About us</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">News</a></li>
-				<li class="btn"><a href="contacts.html">Contact us</a></li>
+		<nav class="menu">
+			<ul class="menu__list">
+				<li class="menu__item menu__item_active">
+					<a class="menu__link menu__link_active" href="index.html">Home</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link" href="about.html">About us</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link" href="#">Portfolio</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link" href="#">News</a>
+				</li>
+				<li class="menu__item">
+					<a class="btn menu__btn" href="contacts.html">Contact us</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
 
 	<div class="hero-about">
-		<img src="img/about-banner.png" alt="">
-		<div class="container">
-			<div class="info">
-				<h1>Lorem Ipsum is simply dummy text of the printing and.</h1>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				<button class="btn">Get in touch</button>
+		<div class="container hero-about__container">
+			<div class="hero-about__info">
+				<h1 class="hero-about__title">
+					Lorem Ipsum is simply dummy text of the printing and.
+				</h1>
+				<p class="hero-about__text">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+				</p>
+				<button class="btn hero-about__btn">Get in touch</button>
 			</div>
 		</div>
+		<img src="img/about-banner.png" alt="">
 	</div>
 
-	<div class="container work">
-		<h2>Why work with us</h2>
-		<div class="blocks">
-			<div class="block">
-				<span class="badge purple">Lorem ipsum</span>
-				<h3>Lorem Ipsum</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+	<div class="work container">
+		<h2 class="work__title">Why work with us</h2>
+		<div class="work__blocks">
+			<div class="work__block">
+				<span class="badge badge--purple">Lorem ipsum</span>
+				<h3 class="work__block-title">Lorem Ipsum</h3>
+				<p class="work__block-text">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+				</p>
 			</div>
-			<div class="block">
-				<span class="badge brown">Lorem ipsum</span>
-				<h3>Lorem Ipsum</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			<div class="work__block">
+				<span class="badge badge--brown">Lorem ipsum</span>
+				<h3 class="work__block-title">Lorem Ipsum</h3>
+				<p class="work__block-text">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+				</p>
 			</div>
-			<div class="block">
-				<span class="badge green">Lorem ipsum</span>
-				<h3>Lorem Ipsum</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			<div class="work__block">
+				<span class="badge badge--green">Lorem ipsum</span>
+				<h3 class="work__block-title">Lorem Ipsum</h3>
+				<p class="work__block-text">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+				</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="container email">
-		<h3>Lorem Ipsum</h3>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-		<div class="block">
+		<h3 class="email__title">Lorem Ipsum</h3>
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+		</p>
+		<div class="email__block">
 			<div>
-			   <h4>Stay in the loop</h4>
-			   <p>Subscribe to receive the latest news and updates about TDA.<br>We promise not to spam you!</p>
+				<h4 class="email__block-title">Stay in the loop</h4>
+				<p class="email__text">Subscribe to receive the latest news and updates about TDA.<br>We promise not to spam you!</p>
 			</div>
 			<div>
-				<input id="emailField" type="email" placeholder="Enter email address">
-				<button class="btn" onclick="checkEmail()">Continue</button>
+				<input class="email__input" id="emailField" type="email" placeholder="Enter email address">
+				<button class="btn email__btn" onclick="checkEmail()">Continue</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<footer>
-	<div class="blocks container">
-		<div>
-			<span class="logo">Logo</span>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-		</div>
-		<div>
-			<h4>About us</h4>
-			<ul>
-				<li><a href="#">Zeux</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">Careers</a></li>
-				<li><a href="contacts.html">Contact us</a></li>
-			</ul>
-		</div>
-		<div>
-			<h4>Contact us</h4>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-			<a href="tel:+90889097890">+908 89097 890</a>
+<footer class="footer">
+	<div class="container footer__container">
+		<div class="footer__inner">
+			<div>
+				<span class="logo">Logo</span>
+				<p class="footer__text">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+				</p>
+			</div>
+			<div>
+				<h4 class="footer__title">About us</h4>
+				<ul>
+					<li class="footer__item">
+						<a class="footer__link" href="#">Zeux</a>
+					</li>
+					<li class="footer__item">
+						<a class="footer__link" href="#">Portfolio</a>
+					</li>
+					<li class="footer__item">
+						<a class="footer__link" href="#">Careers</a>
+					</li>
+					<li class="footer__item">
+						<a class="footer__link" href="contacts.html">Contact us</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h4 class="footer__title">Contact us</h4>
+				<p class="footer__text">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+				</p>
+				<a class="footer__link" href="tel:+90889097890">+908 89097 890</a>
+			</div>
 		</div>
 	</div>
-	<hr>
-	<p>Copyright ® 2021 Lorem All rights Reserved</p>
+	<p class="footer__copy">Copyright ® 2021 Lorem All rights Reserved</p>
 </footer>
 
 <script type="text/javascript">
