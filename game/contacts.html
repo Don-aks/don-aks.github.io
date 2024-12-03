@@ -1,140 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gaming platform</title>
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
 
 <div class="wrapper">
-	<header class="header container">
-		<span class="logo">logo</span>
-		<nav class="menu">
-			<ul class="menu__list">
-				<li class="menu__item menu__item_active">
-					<a class="menu__link menu__link_active" href="index.html">Home</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="about.html">About us</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="#">Portfolio</a>
-				</li>
-				<li class="menu__item">
-					<a class="menu__link" href="#">News</a>
-				</li>
-				<li class="menu__item">
-					<a class="btn menu__btn" href="contacts.html">Contact us</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__inner">
+        <a class="logo" href="index.html">logo</a>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="index.html">Home</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="about.html">About us</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Portfolio</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__item menu__item-btn">
+              <a class="btn menu__btn" href="contacts.html">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-	<div class="container hero-contacts">
-		<h1 class="hero-contacts__title">
-			Lorem Ipsum is simply dummy text of the printing and.
-		</h1>
-		<p class="hero-contacts__text">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-		</p>
-		<img class="hero-contacts__img" src="img/map.png" alt="">
-	</div>
+  <section class="hero-contacts">
+    <div class="container">
+      <h1 class="hero-contacts__title">
+        Lorem Ipsum is simply dummy text of the printing and.
+      </h1>
+      <p class="hero-contacts__text">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+      <img class="hero-contacts__img" src="img/map.png" alt="">
+    </div>
+  </section>
 </div>
 
-<div class="feedback">
-	<div class="container">
-		<h2 class="feedback__title">Say hello</h2>
-		<p>Lorem Ipsum is simply dummy text of the printing.</p>
-		<form>
-			<div class="form__inline">
-				<label class="feedback__label" for="fname">
-					First name
-					<input class="feedback__input" id="fname" type="fname" name="fname">
-				</label>
-				<label class="feedback__label">
-					Last name
-					<input class="feedback__input" id="lname" type="lname" name="lname">
-				</label>
-			</div>
-			<label for="email">Email address</label>
-			<input class="feedback__input" id="email" class="one-line" type="email">
+<section class="feedback">
+  <div class="container">
+    <h2 class="feedback__title">Say hello</h2>
+    <p class="feedback__text">Lorem Ipsum is simply dummy text of the printing.</p>
+    <form class="feedback__form" action="#">
+      <div class="form__inline">
+        <label class="feedback__label">
+          First name
+          <input class="feedback__input" id="fname" type="fname" name="fname">
+        </label>
+        <label class="feedback__label feedback__inline-label">
+          Last name
+          <input class="feedback__input" id="lname" type="lname" name="lname">
+        </label>
+      </div>
+      <label class="feedback__label" for="email">
+        Email address
+        <input class="feedback__input feedback__one-line" id="email" type="email">
+      </label>
 
-			<label for="message">Message</label>
-			<textarea class="feedback__textarea" id="message" class="feedback__one-line" placeholder=""></textarea>
-
-			<button class="btn feedback__btn" type="button">Get in touch</button>
-		</form>
-	</div>
-</div>
+      <label class="feedback__label">
+        Message
+        <textarea class="feedback__textarea feedback__one-line" id="message" placeholder=""></textarea>
+      </label>
+      <div class="feedback__btn-wrap">
+        <button class="btn feedback__btn" type="submit">Get in touch</button>
+      </div>
+    </form>
+  </div>
+</section>
 
 <div class="wrapper">
-	<div class="container email">
-		<h3 class="email__title">Lorem Ipsum</h3>
-		<p>
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-		</p>
-		<div class="email__block">
-			<div>
-				<h4 class="email__block-title">Stay in the loop</h4>
-				<p class="email__text">
-					Subscribe to receive the latest news and updates about TDA.<br>We promise not to spam you!
-				</p>
-			</div>
-			<div>
-				<input class="email__input" id="emailField" type="email" placeholder="Enter email address">
-				<button class="btn email__btn" onclick="checkEmail()">Continue</button>
-			</div>
-		</div>
-	</div>
+  <section class="email">
+    <div class="container">
+      <div class="email__inner">
+        <h2 class="email__title">Lorem Ipsum</h3>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <div class="email__block">
+          <div>
+            <h3 class="email__block-title">Stay in the loop</h4>
+            <p class="email__text">Subscribe to receive the latest news and updates about TDA.<br>We promise not to spam you!</p>
+          </div>
+          <form class="email__form" action="#">
+            <input class="email__input" id="emailField" type="email" placeholder="Enter email address">
+            <button class="btn email__btn" onclick="checkEmail()">Continue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <footer class="footer">
-	<div class="container footer__container">
-		<div class="footer__inner">
-			<div>
-				<span class="logo">Logo</span>
-				<p class="footer__text">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				</p>
-			</div>
-			<div>
-				<h4 class="footer__title">About us</h4>
-				<ul>
-					<li class="footer__item">
-						<a class="footer__link" href="#">Zeux</a>
-					</li>
-					<li class="footer__item">
-						<a class="footer__link" href="#">Portfolio</a>
-					</li>
-					<li class="footer__item">
-						<a class="footer__link" href="#">Careers</a>
-					</li>
-					<li class="footer__item">
-						<a class="footer__link" href="contacts.html">Contact us</a>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<h4 class="footer__title">Contact us</h4>
-				<p class="footer__text">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				</p>
-				<a class="footer__link" href="tel:+90889097890">+908 89097 890</a>
-			</div>
-		</div>
-	</div>
-	<p class="footer__copy">Copyright ® 2021 Lorem All rights Reserved</p>
+  <div class="container footer__container">
+    <div class="footer__inner">
+      <div>
+        <span class="logo">Logo</span>
+        <p class="footer__text">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+      </div>
+      <div>
+        <h4 class="footer__title">About us</h4>
+        <ul>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Zeux</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Portfolio</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Careers</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="contacts.html">Contact us</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">Contact us</h4>
+        <p class="footer__text">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <a class="footer__link" href="tel:+90889097890">+908 89097 890</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer__copy">Copyright ® 2021 Lorem All rights Reserved</p>
 </footer>
 
-<script type="text/javascript">
-	function checkEmail() {
-		let email = document.querySelector('#emailField').value;
-		if(!email.includes('@') || !email.includes(".")) alert("Неккоректный Email.");
-		else alert("Ваши данные успешно записаны.");
-	}
+<script>
+  function checkEmail() {
+    let email = document.querySelector('#emailField').value;
+    if(!email.includes('@') || !email.includes(".")) alert("Некорректный Email.");
+    else alert("Ваши данные успешно записаны.");
+  }
 </script>
 </body>
 </html>
