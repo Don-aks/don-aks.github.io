@@ -1,0 +1,97 @@
+@font-face {
+  font-family: Gilroy;
+  font-weight: 400;
+}
+
+/* ======= GLOBAL STYLES ======= */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font: 400 16px/24px Manrope, Arial, Helvetica, sans-serif;
+  
+  background-color: #ffffff;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1315px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+
+/* ======= HEADER ======= */
+
+.header__inner {
+  display: flex;
+}
+
+.header__cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 30px;
+
+  border-right: 2px solid #c4c4c4;
+}
+
+.header__cell:first-child {
+  border-left: 2px solid #c4c4c4;
+}
+
+.header__social {}

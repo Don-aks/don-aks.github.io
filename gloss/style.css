@@ -1,0 +1,727 @@
+/* ======= GLOBAL STYLES ======= */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font: 400 16px/24px Manrope, Arial, Helvetica, sans-serif;
+  
+  background-color: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1340px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.section {
+  margin: 120px 0;
+}
+
+.section__title {
+  margin-bottom: 12px;
+
+  font: 600 64px/80px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+.section__text {
+  margin-bottom: 80px;
+
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input {
+  padding: 16px 32px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input::placeholder {
+  font: inherit;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.select {
+  position: relative;
+
+  padding: 24px 32px;
+
+  border-radius: 12px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+.select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  z-index: 2;
+
+  width: 24px;
+  height: 24px;
+
+  background: url("img/arrow.svg") center/contain no-repeat;
+  transform: translateY(-50%);
+}
+
+.select__option {
+  background-color: #000000;
+}
+
+.button {
+  padding: 17px 32px;
+
+  border: 0;
+  border-radius: 12px;
+  color: #151515;
+  background-color: #cea561;
+  transition: background-color 0.3s, color 0.3s;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f1b85b;
+}
+
+.button--transparent {
+  background-color: transparent;
+  border: 1px solid #cea561;
+  color: #ffffff;
+}
+
+.button--transparent:hover {
+  background-color: #cea561;
+  color: #000000;
+}
+
+
+/* ======= HEADER ======= */
+
+.header {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.header__inner {
+  padding-top: 40px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font: 600 28.4px/39.1px Spartan, Helvetica, Arial, sans-serif;
+}
+
+.logo__text--transparent {
+  color: #1b1b1b;
+  text-shadow: 0.85px 0.85px #ffffff, -0.85px -0.85px #ffffff,
+               0.85px -0.85px #ffffff, -0.85px 0.85px #ffffff;
+}
+
+.logo__text--brown {
+  font-weight: 400;
+  color: #cea561;
+}
+
+.header__list {
+  display: flex;
+}
+
+.header__item:not(.header__item--selected):hover {
+  border-bottom: 1px solid #ffffff;
+}
+
+.header__item:not(:last-child) {
+  margin-right: 32px;
+}
+
+.header__item--selected {
+  color: #cea561;
+  border-bottom: 1px solid #cea561;
+}
+
+.banner {
+  padding: 96px 0 192px;
+  text-align: center;
+}
+
+.banner__title {
+  margin-bottom: 8px;
+
+  font: 600 80px/96px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+.banner__text {
+  font-size: 20px;
+  line-height: 28px;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.main {
+  overflow: hidden;
+}
+
+
+/* ======= SERVICES ======= */
+
+.services__grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+}
+
+.services__item {
+  max-width: 312px;
+  width: 100%;
+  padding: 110px 41px;
+
+  text-align: center;
+
+  border-radius: 12px;
+  border: solid 1px #cea561;
+}
+
+.services__icon {
+  width: 110px;
+  height: 90px;
+  margin: 0 auto 32px;
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.services__icon--haircut {
+  background-image: url("img/haircut.png");
+}
+
+.services__icon--shaving {
+  background-image: url("img/shaving.png");
+}
+
+.services__icon--hairdye {
+  background-image: url("img/hairdye.png");
+}
+
+.services__icon--facial {
+  background-image: url("img/facial.png");
+}
+
+.services__icon--treatment {
+  background-image: url("img/treatment.png");
+}
+
+.services__icon--removal {
+  background-image: url("img/removal.png");
+}
+
+.services__icon--wedding {
+  background-image: url("img/wedding.png");
+}
+
+.services__name {
+  font: 500 48px/64px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+
+/* ======= PACKAGES ======= */
+
+.packages__list {
+  display: flex;
+  justify-content: center;
+}
+
+.package {
+  max-width: 424px;
+  padding: 48px 67px;
+
+  text-align: center;
+
+  background-color: #2b2b2b;
+  border: 1px solid #cea561;
+  border-radius: 12px;
+  color: #ececec;
+}
+
+.package:not(:last-child) {
+  margin-right: 24px;
+}
+
+.package__title {
+  width: 100%;
+  margin-bottom: 12px;
+
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 500;
+}
+
+.package__price {
+  margin-bottom: 32px;
+
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: 600;
+}
+
+.package__price-dollar {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.package__ul {
+  margin-bottom: 56px;
+  text-align: left;
+  color: rbga(255, 255, 255, 0.7);
+}
+
+.package__li {
+  position: relative;
+  padding-left: 32px;
+}
+
+.package__li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 24px;
+  height: 24px;
+
+  background: url("img/checkmark.svg") center/contain no-repeat;
+}
+
+.package__li:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+
+/* ======= CALENDAR ======= */
+
+.calendar {
+  margin-bottom: 72px;
+}
+
+.calendar .air-datepicker {
+  display: block;
+  max-width: 648px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #ffffff;
+  border-radius: 13px;
+  border: 1px solid #cea561;
+  background-color: #2b2b2b;
+}
+
+.calendar .air-datepicker-nav {
+  position: relative;
+
+  height: 44px;
+  padding: 0;
+  margin: 16px 16px 0;
+
+  border: 0;
+}
+
+.calendar .air-datepicker-nav--title {
+  padding: 0;
+
+  font-size: 17px;
+  line-height: 22px;
+
+  color: #ffffff;
+}
+
+.calendar .air-datepicker-nav--title:hover {
+  background-color: transparent;
+}
+
+.calendar [data-action=prev],
+.calendar [data-action=next] {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.calendar [data-action=prev]:hover,
+.calendar [data-action=next]:hover {
+  background-color: transparent;
+}
+
+.calendar [data-action=prev] path,
+.calendar [data-action=next] path {
+  stroke: #cea561;
+}
+
+.calendar [data-action=prev]:hover path,
+.calendar [data-action=next]:hover path {
+  stroke: #f1b85b;
+}
+
+.calendar [data-action=prev] {
+  right: 31px;
+}
+
+.calendar .air-datepicker-body--cells {
+  grid-auto-rows: 46px;
+}
+
+.calendar .air-datepicker-body--day-name {
+  font-size: 13px;
+  line-height: 18px;
+
+  color: rgba(235, 235, 245, 0.3);
+}
+
+.calendar .air-datepicker-cell {
+  width: 40px;
+  height: 40px;
+  place-self: center;
+
+  border-radius: 50%;
+}
+
+.calendar .air-datepicker-cell.-other-month- {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.calendar .air-datepicker-cell.-current- {
+  color: #cea561;
+}
+
+.calendar .air-datepicker-cell.-focus- {
+  color: #000000 !important;
+}
+
+.calendar .air-datepicker-cell.-selected-,
+.calendar .air-datepicker-cell.-other-month-.-selected- {
+  color: #151515;
+  background-color: #cea561;
+}
+
+
+/* ======= APPOINTMENT ======= */
+
+.appointment__form-title {
+  margin-bottom: 48px;
+
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.appointment__buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 72px;
+}
+
+.appointment__button {
+  padding: 20px 34px;
+}
+
+.appointment__button:not(:last-child) {
+  margin-right: 24px;
+}
+
+.appointment__inputs {
+  margin: 0 -24px 8px 0;
+}
+
+.appointment__input,
+.appointment__select {
+  width: 635px;
+  margin: 0 24px 40px 0;
+}
+
+.appointment__input {
+  padding: 24px 32px;
+}
+
+.appointment__button-submit {
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* ======= MAILING-LIST ======= */
+
+.mailing-list {
+  padding: 120px 0;
+  background-color: #1b1b1b;
+}
+
+.mailing-list__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.mailing-list__text {
+  margin-bottom: 32px;
+}
+
+.mailing-list__form {
+  position: relative;
+
+  max-width: 532px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.mailing-list__input {
+  width: 100%;
+  padding-right: 135px;
+}
+
+.mailing-list__button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+/* ======= FOOTER ======= */
+
+.footer {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__inner {
+  padding-bottom: 88px;
+}
+
+.footer__inner,
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  margin-bottom: 32px;
+}
+
+.footer__social-media {
+  max-width: 339px;
+}
+
+.footer__nav-block {
+  max-width: 144px;
+}
+
+.footer__title {
+  margin-bottom: 32px;
+
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+
+  color: #ffffff;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.footer__nav-block:not(:last-child) {
+  margin-right: 106px;
+}
+
+.footer__contact {
+  max-width: 195px;
+}
+
+.footer__contact-item {
+  position: relative;
+
+  padding-left: 28px;
+}
+
+.footer__contact-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.footer__location::before {
+  background-image: url("img/location.svg");
+}
+
+.footer__mobile::before {
+  background-image: url("img/phone.svg");
+}
+
+.footer__email::before {
+  background-image: url("img/mail.svg");
+}
+
+.footer__contact-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.footer__contact-title {
+  font: 500 18px/24px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  color: #ffffff;
+}
+
+.footer__copyright {
+  padding: 32px 0;
+  text-align: center;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* ======= MEDIA ======= */
+
+@media (max-width: 1360px) {
+  .services__grid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    margin: 50px 0;
+  }
+}
+
+@media (max-width: 460px) {
+  body {
+    line-height: 22px;
+    font-size: 14px;
+  }
+
+  .section__title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .section__text {
+    margin-bottom: 35px;
+  }
+
+  .services__item {
+    padding: 50px 20px;
+  }
+
+  .mailing-list__input {
+    margin-bottom: 24px;
+    padding-right: 32px;
+  }
+
+  .mailing-list__button {
+    position: static;
+
+    display: block;
+    margin-left: auto;
+
+    transform: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .services__name {
+    font-size: 30px;
+    line-height: 50px;
+  }
+}
