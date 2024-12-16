@@ -17,7 +17,11 @@ let dp = new AirDatepicker('.calendar', {
       const now = new Date(Date.now());
       let currentDate = new Date(Date.now());
       currentDate.setHours(0, 0, 0, 0);
-      if ((date - currentDate == 0 && now.getHours() > 12 && now.getMinutes() > 30) || date < currentDate) {
+      if (
+        (date - currentDate == 0 && (
+          now.getHours() > 12 || now.getMinutes() > 30)
+        ) || date < currentDate
+      ) {
         return {
           disabled: true
         }
