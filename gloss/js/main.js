@@ -12,6 +12,8 @@ let dp = new AirDatepicker('.calendar', {
     timeFormat: 'hh:mm aa',
     firstDay: 0
   },
+  prevHtml: "",
+  nextHtml: "",
   onRenderCell({date, cellType}) {
     if (cellType === 'day') {
       const now = new Date(Date.now());

@@ -401,7 +401,7 @@ a {
   
   font-family: Manrope, Arial, Helvetica, sans-serif;;
   font-size: 20px;
-  line-height: 25px;
+  line-height: 1.25;
 
   color: #ffffff;
   border-radius: 13px;
@@ -428,10 +428,6 @@ a {
   font-weight: 600;
 
   color: #ffffff;
-}
-
-.red {
-  color: red;
 }
 
 .calendar .air-datepicker-nav--title:hover {
@@ -461,28 +457,22 @@ a {
   top: 50%;
   right: 0;
 
+  width: 10px;
+  height: 17px;
+
+  background: transparent url("../img/arrow.svg") center no-repeat;
   border-radius: 50%;
   transform: translateY(-50%);
+}
+
+.calendar [data-action=prev] {
+  right: 31px;
+  background-image: url("../img/arrow-backward.svg");
 }
 
 .calendar [data-action=prev]:hover,
 .calendar [data-action=next]:hover {
   background-color: transparent;
-}
-
-.calendar [data-action=prev] path,
-.calendar [data-action=next] path {
-  stroke: #cea561;
-  transition: stroke 0.3s;
-}
-
-.calendar [data-action=prev]:hover path,
-.calendar [data-action=next]:hover path {
-  stroke: #eeac42;
-}
-
-.calendar [data-action=prev] {
-  right: 31px;
 }
 
 .calendar .air-datepicker-body--cells {
