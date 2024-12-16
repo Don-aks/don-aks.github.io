@@ -51,6 +51,8 @@ select {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   font: 400 16px/1.5 Manrope, Arial, Helvetica, sans-serif;
   
@@ -173,9 +175,8 @@ a {
 /* ======= HEADER ======= */
 
 .header {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: center/cover no-repeat;
+  overflow: hidden;
 }
 
 .header__inner {
@@ -221,6 +222,9 @@ a {
   border-bottom: 1px solid #cea561;
 }
 
+
+/* ======= BANNER ======= */
+
 .banner {
   padding: 96px 0 192px;
   text-align: center;
@@ -239,7 +243,11 @@ a {
   color: rgba(255, 255, 255, 0.5);
 }
 
+
+/* ======= MAIN ======= */
+
 .main {
+  flex: 1 0 auto;
   overflow: hidden;
 }
 
@@ -248,15 +256,16 @@ a {
 
 .services__grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 48px 24px;
+  margin: 0 -24px -48px 0;
 }
 
 .services__item {
   max-width: 312px;
   width: 100%;
   padding: 110px 41px;
+  margin: 0 24px 48px 0;
 
   text-align: center;
 
@@ -312,11 +321,14 @@ a {
 .packages__list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 -24px -48px 0;
 }
 
 .package {
   max-width: 424px;
   padding: 48px 67px;
+  margin: 0 24px 48px 0;
 
   text-align: center;
 
@@ -324,10 +336,6 @@ a {
   border: 1px solid #cea561;
   border-radius: 12px;
   color: #ececec;
-}
-
-.package:not(:last-child) {
-  margin-right: 24px;
 }
 
 .package__title {
@@ -584,6 +592,8 @@ a {
 
 .mailing-list {
   padding: 120px 0;
+  margin-bottom: 0;
+
   background-color: #1b1b1b;
 }
 
@@ -625,13 +635,10 @@ a {
 }
 
 .footer__inner {
-  padding-bottom: 88px;
-}
-
-.footer__inner,
-.footer__nav {
   display: flex;
   justify-content: space-between;
+  padding: 120px 0 88px;
+  flex-wrap: wrap;
 }
 
 .footer__logo {
@@ -679,8 +686,17 @@ a {
 }
 
 /* ======= FOOTER__NAV ======= */
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: -48px;
+}
+
 .footer__nav-block {
   max-width: 144px;
+  margin-bottom: 48px;
 }
 
 .footer__title {
@@ -754,6 +770,8 @@ a {
 
 .footer__copyright {
   padding: 32px 0;
+
+  font-size: 12px;
   text-align: center;
   border-top: 2px solid rgba(255, 255, 255, 0.3);
 }
