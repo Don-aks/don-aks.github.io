@@ -129,7 +129,7 @@ a {
   width: 24px;
   height: 24px;
 
-  background: url("img/arrow.svg") center/contain no-repeat;
+  background: url("img/select-arrow.svg") center/contain no-repeat;
   transform: translateY(-50%);
 }
 
@@ -417,6 +417,23 @@ a {
 
 .calendar .air-datepicker-nav--title:hover {
   background-color: transparent;
+}
+
+.calendar .air-datepicker-nav--title i {
+  color: #ffffff;
+}
+
+.calendar .air-datepicker-nav--title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  width: 7px;
+  height: 11px;
+
+  background: url("img/arrow.svg") center/contain no-repeat;
+  transform: translateY(-50%);
 }
 
 .calendar [data-action=prev],
