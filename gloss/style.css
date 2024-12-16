@@ -102,15 +102,20 @@ a {
   color: rgba(255, 255, 255, 0.4);
 }
 
-.select {
+.select-wrapper {
   position: relative;
+  display: inline-block;
+}
 
+.select {
   padding: 24px 32px;
+  width: 100%;
 
   border-radius: 12px;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -119,7 +124,7 @@ a {
   display: none;
 }
 
-.select::after {
+.select-wrapper::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -533,7 +538,7 @@ a {
 }
 
 .appointment__input,
-.appointment__select {
+.appointment__select-wrapper {
   width: 635px;
   margin: 0 24px 40px 0;
 }

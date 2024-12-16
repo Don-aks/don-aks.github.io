@@ -164,35 +164,37 @@
         <input class="input appointment__input" type="name" name="name" placeholder="Enter Your Name *" required>
         <input class="input appointment__input" type="email" name="email" placeholder="Enter Your Email *" required>
         <input class="input appointment__input" type="phone" name="phone" placeholder="Enter Phone Number *" required>
-        <select class="select appointment__select" name="service">
-          <option class="select__option appointment__option" value="" disabled selected hidden>
-            Select service
-          </option>
-          <option class="select__option appointment__option" value="hair-cut">
-            Hair cut
-          </option>
-          <option class="select__option appointment__option" value="shaving">
-            Shaving
-          </option>
-          <option class="select__option appointment__option" value="hair-dye">
-            Hair dye
-          </option>
-          <option class="select__option appointment__option" value="facial">
-            Facial
-          </option>
-          <option class="select__option appointment__option" value="keratin-treatment">
-            Keratin treatment
-          </option>
-          <option class="select__option appointment__option" value="hair-removal">
-            Hair removal
-          </option>
-          <option class="select__option appointment__option" value="hair-treatment">
-            Hair treatment
-          </option>
-          <option class="select__option appointment__option" value="wedding-package">
-            Wedding package
-          </option>
-        </select>
+        <div class="select-wrapper appointment__select-wrapper">
+          <select class="select appointment__select" name="service" required>
+            <option class="select__option appointment__option" value="" disabled selected hidden>
+              Select service
+            </option>
+            <option class="select__option appointment__option" value="hair-cut">
+              Hair cut
+            </option>
+            <option class="select__option appointment__option" value="shaving">
+              Shaving
+            </option>
+            <option class="select__option appointment__option" value="hair-dye">
+              Hair dye
+            </option>
+            <option class="select__option appointment__option" value="facial">
+              Facial
+            </option>
+            <option class="select__option appointment__option" value="keratin-treatment">
+              Keratin treatment
+            </option>
+            <option class="select__option appointment__option" value="hair-removal">
+              Hair removal
+            </option>
+            <option class="select__option appointment__option" value="hair-treatment">
+              Hair treatment
+            </option>
+            <option class="select__option appointment__option" value="wedding-package">
+              Wedding package
+            </option>
+          </select>
+        </div>
       </div>
       <button class="button appointment__button-submit" type="submit">Book appointment</button>
     </form>
