@@ -28,3 +28,18 @@ let dp = new AirDatepicker('.calendar', {
 
 // Выбранная дата - dp.selectedDates[0]
 
+
+const buttonContainer = document.querySelector(".appointment__buttons")
+buttonContainer.addEventListener('click', function(event) {
+  if (event.target.classList.contains('appointment__button')) {
+      // Убираем класс 'active' у всех кнопок
+      document.querySelectorAll('.appointment__buttons .appointment__button').forEach(button => {
+          button.classList.remove('appointment__button--active');
+      });
+
+      // Добавляем класс 'active' на кликнутую кнопку
+      event.target.classList.add('appointment__button--active');
+  }
+});
+
+// Активная кнопка - класс appointment__button--active

@@ -554,6 +554,11 @@ a {
   margin-right: 24px;
 }
 
+.appointment__button--active {
+  background-color: #cea561;
+  color: #000000;
+}
+
 .appointment__inputs {
   margin: 0 -24px 8px 0;
 }
