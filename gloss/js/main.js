@@ -1,4 +1,4 @@
-let dp = new AirDatepicker('.calendar', {
+let dp = new AirDatepicker('#input-date', {
   inline: true,
   locale: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -31,8 +31,9 @@ let dp = new AirDatepicker('.calendar', {
 
 // Выбранная дата - dp.selectedDates[0]
 
+const input = document.getElementById('input-time');
+const buttonContainer = document.querySelector('.appointment__buttons');
 
-const buttonContainer = document.querySelector(".appointment__buttons")
 buttonContainer.addEventListener('click', function(event) {
   if (event.target.classList.contains('appointment__button')) {
       // Убираем класс 'active' у всех кнопок
@@ -40,6 +41,7 @@ buttonContainer.addEventListener('click', function(event) {
           button.classList.remove('appointment__button--active');
       });
 
+      input.value = event.target.innerText;
       // Добавляем класс 'active' на кликнутую кнопку
       event.target.classList.add('appointment__button--active');
   }

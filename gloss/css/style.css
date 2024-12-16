@@ -388,11 +388,7 @@ a {
 
 /* ======= CALENDAR ======= */
 
-.calendar {
-  margin-bottom: 72px;
-}
-
-.calendar .air-datepicker {
+.air-datepicker.-inline- {
   display: block;
   max-width: 648px;
   width: 100%;
@@ -409,17 +405,21 @@ a {
   background-color: #2b2b2b;
 }
 
-.calendar .air-datepicker-nav {
+.appointment .air-datepicker.-inline- {
+  margin-bottom: 72px;
+}
+
+.-inline- .air-datepicker-nav {
   position: relative;
 
   height: 44px;
   padding: 0;
-  margin: 16px 16px 0;
+  margin: 16px 26px 0 16px;
 
   border: 0;
 }
 
-.calendar .air-datepicker-nav--title {
+.-inline- .air-datepicker-nav--title {
   position: relative;
   padding: 0 15px 0 0;
 
@@ -430,15 +430,15 @@ a {
   color: #ffffff;
 }
 
-.calendar .air-datepicker-nav--title:hover {
+.-inline- .air-datepicker-nav--title:hover {
   background-color: transparent;
 }
 
-.calendar .air-datepicker-nav--title i {
+.-inline- .air-datepicker-nav--title i {
   color: #ffffff;
 }
 
-.calendar .air-datepicker-nav--title::after {
+.-inline- .air-datepicker-nav--title::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -475,18 +475,18 @@ a {
   background-color: transparent;
 }
 
-.calendar .air-datepicker-body--cells {
+.-inline- .air-datepicker-body--cells {
   grid-auto-rows: 46px;
 }
 
-.calendar .air-datepicker-body--day-name {
+.-inline- .air-datepicker-body--day-name {
   font-size: 13px;
   line-height: 1.38;
 
   color: rgba(235, 235, 245, 0.3);
 }
 
-.calendar .air-datepicker-cell {
+.-inline- .air-datepicker-cell {
   width: 40px;
   height: 40px;
   place-self: center;
@@ -495,35 +495,35 @@ a {
   transition: color 0.3s, background-color 0.3s;
 }
 
-.calendar .air-datepicker-cell.-year-,
-.calendar .air-datepicker-cell.-month- {
+.-inline- .air-datepicker-cell.-year-,
+.-inline- .air-datepicker-cell.-month- {
   padding: 0 5px;
   box-sizing: content-box;
 }
 
-.calendar .air-datepicker-cell.-other-month- {
+.-inline- .air-datepicker-cell.-other-month- {
   visibility: hidden;
 }
 
-.calendar .air-datepicker-cell.-current- {
+.-inline- .air-datepicker-cell.-current- {
   color: #ffffff;
 }
 
-.calendar .air-datepicker-cell.-focus- {
+.-inline- .air-datepicker-cell.-focus- {
   color: #000000;
 }
 
-.calendar .air-datepicker-cell.-disabled- {
+.-inline- .air-datepicker-cell.-disabled- {
   color: rgba(255, 255, 255, 0.3);
   cursor: default;
 }
 
-.calendar .air-datepicker-cell.-disabled-.-focus- {
+.-inline- .air-datepicker-cell.-disabled-.-focus- {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.3);
 }
 
-.calendar .air-datepicker-cell.-selected- {
+.-inline- .air-datepicker-cell.-selected- {
   color: #151515;
   background-color: #cea561;
 }
