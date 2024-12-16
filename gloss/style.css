@@ -392,7 +392,8 @@ a {
   width: 100%;
   margin: 0 auto;
   padding-bottom: 25px;
-
+  
+  font-family: Manrope, Arial, Helvetica, sans-serif;;
   font-size: 20px;
   line-height: 25px;
 
@@ -413,10 +414,12 @@ a {
 }
 
 .calendar .air-datepicker-nav--title {
-  padding: 0;
+  position: relative;
+  padding: 0 15px 0 0;
 
   font-size: 17px;
   line-height: 22px;
+  font-weight: 600;
 
   color: #ffffff;
 }
@@ -460,11 +463,12 @@ a {
 .calendar [data-action=prev] path,
 .calendar [data-action=next] path {
   stroke: #cea561;
+  transition: stroke 0.3s;
 }
 
 .calendar [data-action=prev]:hover path,
 .calendar [data-action=next]:hover path {
-  stroke: #f1b85b;
+  stroke: #eeac42;
 }
 
 .calendar [data-action=prev] {
@@ -488,22 +492,38 @@ a {
   place-self: center;
 
   border-radius: 50%;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.calendar .air-datepicker-cell.-year-,
+.calendar .air-datepicker-cell.-month- {
+  padding: 0 5px;
+  box-sizing: content-box;
 }
 
 .calendar .air-datepicker-cell.-other-month- {
-  color: rgba(255, 255, 255, 0.3);
+  visibility: hidden;
 }
 
 .calendar .air-datepicker-cell.-current- {
-  color: #cea561;
+  color: #ffffff;
 }
 
 .calendar .air-datepicker-cell.-focus- {
-  color: #000000 !important;
+  color: #000000;
 }
 
-.calendar .air-datepicker-cell.-selected-,
-.calendar .air-datepicker-cell.-other-month-.-selected- {
+.calendar .air-datepicker-cell.-disabled- {
+  color: rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
+.calendar .air-datepicker-cell.-disabled-.-focus- {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.calendar .air-datepicker-cell.-selected- {
   color: #151515;
   background-color: #cea561;
 }
