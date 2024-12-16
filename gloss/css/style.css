@@ -134,7 +134,7 @@ a {
   width: 24px;
   height: 24px;
 
-  background: url("img/select-arrow.svg") center/contain no-repeat;
+  background: url("../img/select-arrow.svg") center/contain no-repeat;
   transform: translateY(-50%);
 }
 
@@ -275,31 +275,31 @@ a {
 }
 
 .services__icon--haircut {
-  background-image: url("img/haircut.png");
+  background-image: url("../img/haircut.png");
 }
 
 .services__icon--shaving {
-  background-image: url("img/shaving.png");
+  background-image: url("../img/shaving.png");
 }
 
 .services__icon--hairdye {
-  background-image: url("img/hairdye.png");
+  background-image: url("../img/hairdye.png");
 }
 
 .services__icon--facial {
-  background-image: url("img/facial.png");
+  background-image: url("../img/facial.png");
 }
 
 .services__icon--treatment {
-  background-image: url("img/treatment.png");
+  background-image: url("../img/treatment.png");
 }
 
 .services__icon--removal {
-  background-image: url("img/removal.png");
+  background-image: url("../img/removal.png");
 }
 
 .services__icon--wedding {
-  background-image: url("img/wedding.png");
+  background-image: url("../img/wedding.png");
 }
 
 .services__name {
@@ -372,7 +372,7 @@ a {
   width: 24px;
   height: 24px;
 
-  background: url("img/checkmark.svg") center/contain no-repeat;
+  background: url("../img/checkmark.svg") center/contain no-repeat;
 }
 
 .package__li:not(:last-child) {
@@ -424,6 +424,10 @@ a {
   color: #ffffff;
 }
 
+.red {
+  color: red;
+}
+
 .calendar .air-datepicker-nav--title:hover {
   background-color: transparent;
 }
@@ -441,7 +445,7 @@ a {
   width: 7px;
   height: 11px;
 
-  background: url("img/arrow.svg") center/contain no-repeat;
+  background: url("../img/arrow.svg") center/contain no-repeat;
   transform: translateY(-50%);
 }
 
@@ -692,15 +696,15 @@ a {
 }
 
 .footer__location::before {
-  background-image: url("img/location.svg");
+  background-image: url("../img/location.svg");
 }
 
 .footer__mobile::before {
-  background-image: url("img/phone.svg");
+  background-image: url("../img/phone.svg");
 }
 
 .footer__email::before {
-  background-image: url("img/mail.svg");
+  background-image: url("../img/mail.svg");
 }
 
 .footer__contact-item:not(:last-child) {
