@@ -17,13 +17,10 @@ let dp = new AirDatepicker('.calendar', {
   onRenderCell({date, cellType}) {
     if (cellType === 'day') {
       const now = new Date(Date.now());
-      let currentDate = new Date(Date.now());
-      currentDate.setHours(0, 0, 0, 0);
-      if (
-        (date - currentDate == 0 && (
-          now.getHours() > 12 || now.getMinutes() > 30)
-        ) || date < currentDate
-      ) {
+      const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
+      const currentDate = new Date(Date.now()).setHours(0, 0, 0, 0);
+
+      if ((date - currentDate == 0 && now > today12_30am) || date < currentDate) {
         return {
           disabled: true
         }
