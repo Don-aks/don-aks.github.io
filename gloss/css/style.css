@@ -276,7 +276,9 @@ a {
   border: solid 1px #cea561;
 }
 
-.services__icon {
+.services__item::before {
+  content: '';
+  display: block;
   width: 110px;
   height: 90px;
   margin: 0 auto 32px;
@@ -286,31 +288,31 @@ a {
   background-repeat: no-repeat;
 }
 
-.services__icon--haircut {
+.services__item--haircut::before {
   background-image: url("../img/haircut.png");
 }
 
-.services__icon--shaving {
+.services__item--shaving::before {
   background-image: url("../img/shaving.png");
 }
 
-.services__icon--hairdye {
+.services__item--hairdye::before {
   background-image: url("../img/hairdye.png");
 }
 
-.services__icon--facial {
+.services__item--facial::before {
   background-image: url("../img/facial.png");
 }
 
-.services__icon--treatment {
+.services__item--treatment::before {
   background-image: url("../img/treatment.png");
 }
 
-.services__icon--removal {
+.services__item--removal::before {
   background-image: url("../img/removal.png");
 }
 
-.services__icon--wedding {
+.services__item--wedding::before {
   background-image: url("../img/wedding.png");
 }
 
