@@ -78,7 +78,7 @@ a {
 .section__title {
   margin-bottom: 12px;
 
-  font: 600 64px/80px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font: 600 64px/1.25 "Cormorant Garamond", Georgia, "Times New Roman", serif;
   text-align: center;
   text-transform: capitalize;
 }
@@ -193,7 +193,7 @@ a {
 }
 
 .logo {
-  font: 600 28.4px/39.1px Spartan, Helvetica, Arial, sans-serif;
+  font: 600 28.44px/1.38 Spartan, Helvetica, Arial, sans-serif;
   color: #ffffff;
 }
 
@@ -236,7 +236,7 @@ a {
 .banner__title {
   margin-bottom: 8px;
 
-  font: 600 80px/96px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font: 600 80px/1.2 "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
 
 .banner__text {
@@ -758,7 +758,7 @@ a {
 }
 
 .footer__contact-title {
-  font: 500 18px/24px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font: 500 18px/1.33 "Cormorant Garamond", Georgia, "Times New Roman", serif;
   color: #ffffff;
 }
 
