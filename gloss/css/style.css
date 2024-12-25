@@ -80,6 +80,7 @@ a {
 
   font: 600 64px/80px "Cormorant Garamond", Georgia, "Times New Roman", serif;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .section__text {
@@ -146,6 +147,8 @@ a {
 
 .button {
   padding: 17px 32px;
+
+  text-transform: capitalize;
 
   border: 0;
   border-radius: 12px;
@@ -537,6 +540,7 @@ a {
   font-size: 32px;
   font-weight: 400;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .appointment__buttons {
