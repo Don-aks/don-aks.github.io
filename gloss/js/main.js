@@ -12,9 +12,9 @@ let dp = new AirDatepicker('#input-date', {
     timeFormat: 'hh:mm aa',
     firstDay: 0
   },
-  prevHtml: "",
-  nextHtml: "",
-  onRenderCell({date, cellType}) {
+  prevHtml: '',
+  nextHtml: '',
+  onRenderCell: function({date, cellType}) {
     if (cellType === 'day') {
       const now = new Date(Date.now());
       const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
@@ -35,14 +35,13 @@ const buttonContainer = document.querySelector('.appointment__buttons');
 buttonContainer.addEventListener('click', function(event) {
   if (event.target.classList.contains('appointment__button')) {
       // Убираем класс 'active' у всех кнопок
-      document.querySelectorAll('.appointment__buttons .appointment__button').forEach(button => {
-          button.classList.remove('appointment__button--active');
-      });
+      const buttons = document.querySelectorAll('.appointment__buttons .appointment__button');
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('appointment__button--active');
+      }
 
       input.value = event.target.innerText;
       // Добавляем класс 'active' на кликнутую кнопку
       event.target.classList.add('appointment__button--active');
   }
 });
-
-// Активная кнопка - класс appointment__button--active
