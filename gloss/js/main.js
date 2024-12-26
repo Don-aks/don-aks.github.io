@@ -29,8 +29,6 @@ let dp = new AirDatepicker('#input-date', {
   }
 });
 
-// Выбранная дата - dp.selectedDates[0]
-
 const input = document.getElementById('input-time');
 const buttonContainer = document.querySelector('.appointment__buttons');
 

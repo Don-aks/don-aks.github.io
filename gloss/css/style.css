@@ -506,8 +506,8 @@ body {
   transform: translateY(-50%);
 }
 
-.calendar [data-action=prev],
-.calendar [data-action=next] {
+.-inline- [data-action=prev],
+.-inline- [data-action=next] {
   position: absolute;
   top: 50%;
   right: 0;
@@ -520,13 +520,13 @@ body {
   transform: translateY(-50%);
 }
 
-.calendar [data-action=prev] {
+.-inline- [data-action=prev] {
   right: 31px;
   background-image: url("../img/arrow-backward.svg");
 }
 
-.calendar [data-action=prev]:hover,
-.calendar [data-action=next]:hover {
+.-inline- [data-action=prev]:hover,
+.-inline- [data-action=next]:hover {
   background-color: transparent;
 }
 
