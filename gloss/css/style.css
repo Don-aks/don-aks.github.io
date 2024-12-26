@@ -1004,10 +1004,38 @@ body.locked {
     margin-right: 24px;
   }
 }
+
+@media (max-width: 992px) {
+  .appointment__inputs {
+    margin-right: 0;
+  }
+
+  .appointment__input,
+  .appointment__select-wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .appointment__buttons {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: -24px;
+  }
+
+  .appointment__button {
+    margin: 0 24px 20px 0;
+  }
+}
+
 @media (max-width: 768px) {
   .section {
     margin: 50px 0;
   }
+
+  .appointment__buttons {
+    margin-bottom: 30px;
+  }
+
   .footer__nav {
     margin-right: 0;
   }
@@ -1032,6 +1060,11 @@ body.locked {
 
   .header__buttons > *:not(:last-child) {
     margin-right: 15px;
+  }
+
+  .appointment__input,
+  .appointment__select-wrapper {
+    margin-bottom: 30px;
   }
 }
 
@@ -1082,6 +1115,10 @@ body.locked {
     padding: 50px 20px;
   }
 
+  .package {
+    padding: 25px 15px;
+  }
+
   .mailing-list__input {
     margin-bottom: 24px;
     padding-right: 32px;
@@ -1094,6 +1131,12 @@ body.locked {
     margin-left: auto;
 
     transform: none;
+  }
+}
+
+@media (max-width: 385px) {
+  .appointment__buttons {
+    flex-direction: column;
   }
 }
 
