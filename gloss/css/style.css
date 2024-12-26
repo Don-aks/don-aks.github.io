@@ -84,7 +84,8 @@ a {
 }
 
 .section__text {
-  margin-bottom: 80px;
+  max-width: 754px;
+  margin: 0 auto 80px;
 
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
@@ -262,6 +263,10 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 -24px -48px 0;
+}
+
+.services__text {
+  max-width: 620px;
 }
 
 .services__item {
