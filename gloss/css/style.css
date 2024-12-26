@@ -763,6 +763,11 @@ body {
   color: #ffffff;
 }
 
+.footer__link {
+  text-decoration: underline transparent;
+  transition: text-decoration 0.3s;
+}
+
 .footer__link:hover {
   text-decoration: underline;
 }
