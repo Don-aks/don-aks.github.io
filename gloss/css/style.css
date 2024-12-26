@@ -181,8 +181,8 @@ body {
   border-radius: 12px;
   color: #151515;
   background-color: #cea561;
+  
   transition: background-color 0.3s, color 0.3s;
-
   cursor: pointer;
 }
 
@@ -317,7 +317,7 @@ body {
 .services__item {
   max-width: 312px;
   width: 100%;
-  padding: 110px 41px;
+  padding: 110px 50px;
   margin: 0 24px 48px 0;
 
   text-align: center;
@@ -438,6 +438,10 @@ body {
 
 .package__li:not(:last-child) {
   margin-bottom: 16px;
+}
+
+.package__button {
+  padding: 16px 48px;
 }
 
 
@@ -620,7 +624,7 @@ body {
 
 .appointment__input,
 .appointment__select-wrapper {
-  width: 635px;
+  width: 47%;
   margin: 0 24px 40px 0;
 }
 
@@ -638,7 +642,7 @@ body {
 
 .mailing-list {
   padding: 120px 0;
-  margin-bottom: 0;
+  margin-top: 120px;
 
   background-color: #1b1b1b;
 }
@@ -737,7 +741,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: -48px;
+  margin: 12px 0 -48px;
 }
 
 .footer__nav-block {
