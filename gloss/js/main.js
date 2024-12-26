@@ -1,3 +1,13 @@
+const body = document.getElementsByTagName("body")[0];
+const menu = document.querySelector('.header__list');
+const menuButton = document.querySelector('.menu-button');
+
+menuButton.addEventListener('click', function() {
+  menu.classList.toggle('header__list--active');
+  menuButton.classList.toggle('menu-button--active');
+  body.classList.toggle('locked');
+});
+
 let dp = new AirDatepicker('#input-date', {
   inline: true,
   locale: {
