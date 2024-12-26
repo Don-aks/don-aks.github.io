@@ -1088,6 +1088,15 @@ body.locked {
     margin-right: 0;
   }
 }
+
+@media (max-height: 477px) {
+  .banner__title {
+    font-size: 64px;
+  }
+
+  .banner__text {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 460px) {
