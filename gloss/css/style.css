@@ -241,6 +241,10 @@ body {
   display: flex;
 }
 
+.header__item {
+  border-bottom: 1px solid transparent;
+}
+
 .header__item:not(.header__item--selected):hover {
   border-bottom: 1px solid #ffffff;
 }
