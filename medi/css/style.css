@@ -240,7 +240,7 @@ body {
 .header__phone {
   max-width: 189px;
   width: 100%;
-  padding: 35px 25px;
+  padding: 35px 22px;
 }
 
 .header__salons {
@@ -700,19 +700,19 @@ body {
 
 .footer__links {
   margin-right: 134px;
-  max-width: 856px;
 }
 
 .footer__links-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -191px -30px 0;
+  max-width: 856px;
+  margin-bottom: -30px;
 }
 
 .footer__column {
   max-width: 158px;
   width: 100%;
-  margin: 0 191px 30px 0;
+  margin: 0 127px 30px 0;
 }
 
 .footer__title {
@@ -725,7 +725,7 @@ body {
 }
 
 .footer__contact {
-  margin-top: 11px;
+  margin: 11px 0 0 0;
 }
 
 .footer__contact-title {
@@ -751,10 +751,11 @@ body {
 }
 
 .footer__btn {
-  display: block;
+  display: inline-block;
   max-width: 172px;
   margin-bottom: 30px;
   padding: 13px 29px;
+
   transform: translateY(3px);
 }
 
