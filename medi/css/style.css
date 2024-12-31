@@ -134,10 +134,6 @@ body.locked {
           flex: 1 0 auto;
 }
 
-.section {
-  margin-bottom: 80px;
-}
-
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -201,7 +197,7 @@ body.locked {
 
 .label-title {
   display: inline-block;
-  padding: 8px 15px 9px;
+  padding: 7px 16px 5px;
   margin-bottom: 30px;
 
   font-size: 18px;
@@ -279,7 +275,7 @@ body.locked {
 .header__phone {
   max-width: 189px;
   width: 100%;
-  padding: 35px 22px;
+  padding: 35px 26px;
 }
 
 .header__salons,
@@ -296,7 +292,7 @@ body.locked {
   content: '';
   position: absolute;
   top: 50%;
-  right: 35px;
+  right: 30px;
 
   display: block;
   width: 20px;
@@ -420,7 +416,7 @@ body.locked {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 0;
+  padding: 20px 0;
 
   font-size: 18px;
   color: #ffffff;
@@ -431,11 +427,11 @@ body.locked {
 }
 
 .header__item:not(:last-child) {
-  margin-right: 65px;
+  margin-right: 66px;
 }
 
 .header__item-btn {
-  margin: 0 10px 0 auto;
+  margin: 0 8px 0 auto;
 }
 
 .header__item-mobile,
@@ -445,7 +441,7 @@ body.locked {
 
 .header__btn-booking {
   display: block;
-  padding: 10px 15px;
+  padding: 8px 15px;
 
   background-color: #ffffff;
   color: #000000;
@@ -455,6 +451,8 @@ body.locked {
 /* ======= HERO ======= */
 
 .hero {
+  margin-bottom: 77px;
+
   background-color: #4fbfa5;
   color: #ffffff;
 }
@@ -494,10 +492,14 @@ body.locked {
   max-height: 533px;
 }
 
+.hero__slider {
+  right: -1px;
+}
+
 .hero__slider .slick-prev,
 .hero__slider .slick-next {
   position: absolute;
-  bottom: 60px;
+  bottom: 63px;
   left: -120px;
 
   width: 60px;
@@ -574,7 +576,7 @@ body.locked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 70px;
+  margin-bottom: 82px;
 }
 
 .innovations {
@@ -585,8 +587,6 @@ body.locked {
 
   background: #00868a bottom center no-repeat;
   color: #ffffff;
-  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .innovations__title {
@@ -659,7 +659,7 @@ body.locked {
 }
 
 .numbers__item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .numbers__item--selected {
@@ -691,7 +691,7 @@ body.locked {
 .numbers__img-wrap {
   position: absolute;
   bottom: 38px;
-  right: -28px;
+  right: -113px;
   z-index: 1;
 
   -webkit-box-shadow: 0 0 20px 0 rgba(138, 138, 138, 0.25);
@@ -706,6 +706,10 @@ body.locked {
 
 /* ======= NEWS ======= */
 
+.news {
+  margin-bottom: 97px;
+}
+
 .news__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -716,14 +720,14 @@ body.locked {
 }
 
 .news__label-title {
-  margin: 32px 0 29px 40px;
+  margin: 36px 0 33px 38px;
+  padding: 7px 14px 5px;
 
   background-color: #00868a;
 }
 
 .news__menu {
-  width: 41%;
-  max-width: 526px;
+  max-width: 525px;
 
   background-color: #4fbfa5;
   color: #ffffff;
@@ -763,13 +767,13 @@ body.locked {
 }
 
 .article {
-  padding: 35px 60px 82px;
+  padding: 35px 60px 76px;
 
   background-color: rgba(0, 134, 138, 0.1);
 }
 
 .article__title {
-  margin-bottom: 25px;
+  margin-bottom: 27px;
 
   font-size: 24px;
   font-weight: 700;
@@ -781,7 +785,7 @@ body.locked {
 }
 
 .article__item:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .article__item::before {
@@ -861,8 +865,8 @@ body.locked {
 .offer__title::after {
   content: '';
   position: absolute;
-  bottom: 12px;
-  right: 1px;
+  bottom: 9px;
+  right: -1px;
   
   width: 50px;
   height: 40px;
@@ -888,7 +892,7 @@ body.locked {
 }
 
 .footer__links {
-  margin-right: 134px;
+  margin: 4px 127px 0 0;
 }
 
 .footer__links-list {
@@ -907,7 +911,7 @@ body.locked {
 .footer__column {
   max-width: 158px;
   width: 100%;
-  margin: 0 191px 30px 0;
+  margin: 0 192px 30px 0;
 }
 
 .footer__title {
@@ -920,7 +924,7 @@ body.locked {
 }
 
 .footer__contact {
-  margin-top: 11px;
+  margin-top: 15px;
 }
 
 .footer__contact-title {
@@ -948,8 +952,8 @@ body.locked {
 .footer__btn {
   display: inline-block;
   max-width: 172px;
-  margin-bottom: 30px;
-  padding: 11px 23px;
+  margin-bottom: 33px;
+  padding: 11px 25px;
 
   letter-spacing: 0.05em;
 
