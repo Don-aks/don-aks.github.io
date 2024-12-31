@@ -39,6 +39,18 @@ let dp = new AirDatepicker('#input-date', {
   }
 });
 
+let isAllDatesDisabled = true;
+const dates = document.querySelectorAll('.-inline- .air-datepicker-cell:not(.-other-month-)');
+for (let i = 0; i < dates.length; i++) {
+  if (!dates[i].classList.contains('-disabled-')) {
+    isAllDatesDisabled = false;
+  }
+}
+
+if (isAllDatesDisabled) {
+  dp.next();
+}
+
 const input = document.getElementById('input-time');
 const buttonContainer = document.querySelector('.appointment__buttons');
 
