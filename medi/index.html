@@ -9,32 +9,94 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header class="header">
   <div class="container">
-    <div class="header__top">
-      <a class="header__cell logo header__logo" href="index.html">
-        <img class="logo__img header__logo-img" src="img/logo.svg" alt="MEDI логотип">
-      </a>
-      <a class="header__cell header__phone" href="tel:+71234567890">
-        +380 (123) 456 789
-      </a>
-      <a class="header__cell header__salons" href="#">
-        Наши салоны
-      </a>
-      <div class="header__cell header__btn-cell">
+    <ul class="header__top">
+      <li class="header__cell-item">
+        <a class="header__cell logo header__logo" href="index.html">
+          <img class="logo__img header__logo-img" src="img/logo.svg" alt="MEDI логотип">
+        </a>
+      </li>
+      <li class="header__cell-item">
+        <a class="header__cell header__phone" href="tel:+380123456789">
+          +380 (123) 456 789
+        </a>
+      </li>
+      <li class="header__cell-item">
+        <a class="header__cell header__salons" href="#">
+          Наши салоны
+        </a>
+      </li>
+      <li class="header__cell-item header__cell header__btn-cell">
         <button class="btn btn--visually-impaired header__btn">
           Версия для слабовидящих
         </button>
-      </div>
-      <a class="header__cell header__social" style="background-image: url('img/vk.svg');" href="#" target="_blank" aria-label="ВКонтакте"></a>
-      <a class="header__cell header__social" style="background-image: url('img/yt.svg');" href="#" target="_blank" aria-label="YouTube"></a>
-      <a class="header__cell header__social" style="background-image: url('img/fb.svg');" href="#" target="_blank" aria-label="Facebook"></a>
-      <a class="header__cell header__social" style="background-image: url('img/inst.svg');" href="#" target="_blank" aria-label="Instagram"></a>
-    </div>
+      </li>
+      <li class="header__cell-item">
+        <a class="header__cell header__social" style="background-image: url('img/vk.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
+      </li>
+      <li class="header__cell-item">
+        <a class="header__cell header__social" style="background-image: url('img/yt.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"></a>
+      </li>
+      <li class="header__cell-item">
+        <a class="header__cell header__social" style="background-image: url('img/fb.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"></a>
+      </li>
+      <li class="header__cell-item">
+        <a class="header__cell header__social" style="background-image: url('img/inst.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a>
+      </li>
+      <li class="header__btn-menu-cell">
+        <button class="btn-menu header__btn-menu" type="button">
+          <span class="btn-menu__line"></span>
+          <span class="sr-only">Открыть меню</span>
+        </button>
+      </li>
+    </ul>
   </div>
   <nav class="header__menu">
     <div class="container">
       <ul class="header__list">
+        <li class="header__item-mobile">
+          <ul class="header__mobile-list">
+            
+            <li class="header__mobile-item">
+              <a class="header__phone-mobile" href="tel:+71234567890">
+                +380 (123) 456 789
+              </a>
+            </li>
+          
+            <li class="header__mobile-item">
+              <a class="header__salons-mobile" href="#">
+                Наши салоны
+              </a>
+            </li>
+            <li class="header__mobile-item header__social-medias">
+              <ul class="social-list">
+                <li class="social-list__item">
+                  <a class="header__social-mobile" style="background-image: url('img/vk.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте"></a>
+                </li>
+
+                <li class="social-list__item">
+                  <a class="header__social-mobile" style="background-image: url('img/yt.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"></a>
+                </li>
+
+                <li class="social-list__item">
+                  <a class="header__social-mobile" style="background-image: url('img/fb.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"></a>
+                </li>
+
+                <li class="social-list__item">
+                  <a class="header__social-mobile" style="background-image: url('img/inst.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a>
+                </li>
+              </ul>
+            </li>
+            
+            <li class="header__mobile-item header__item-visually-impaired">
+              <button class="btn btn--visually-impaired header__btn-mobile" type="button">
+                Версия для слабовидящих
+              </button>
+            </li>
+          </ul>
+        </li>
         <li class="header__item"><a class="header__link animation-link" href="#">Косметология</a></li>
         <li class="header__item"><a class="header__link animation-link" href="#">Пластическая хирургия</a></li>
         <li class="header__item"><a class="header__link animation-link" href="#">Стоматология</a></li>
@@ -49,7 +111,7 @@
     </div>
   </nav>
 </header>
-
+ 
 <main class="page">
   <section class="hero section">
     <div class="container">
@@ -72,19 +134,19 @@
           </div>
         </div>
       </div>
-      <div class="hero__nav">
-        <ul class="row hero__list">
-          <li class="row__column row__column--long hero__item">
-            <a class="hero__link" href="#">Комплексные процедуры</a>
-          </li>
-          <li class="row__column hero__item hero__item--selected">
-            <a class="hero__link" href="#">Центр обучения</a>
-          </li>
-          <li class="row__column hero__item">
-            <a class="hero__link" href="#">VIP клиентам</a>
-          </li>
-        </ul>
-      </div>
+    </div>
+    <div class="hero__nav">
+      <ul class="row hero__list">
+        <li class="row__column row__column--long hero__item">
+          <a class="hero__link" href="#">Комплексные процедуры</a>
+        </li>
+        <li class="row__column hero__item hero__item--selected">
+          <a class="hero__link" href="#">Центр обучения</a>
+        </li>
+        <li class="row__column hero__item">
+          <a class="hero__link" href="#">VIP клиентам</a>
+        </li>
+      </ul>
     </div>
   </section>
   <div class="container">
@@ -245,7 +307,7 @@
       </ul>
     </div>
   </section>
-</main> 
+</main>
 
 <footer class="footer">
   <div class="container">
