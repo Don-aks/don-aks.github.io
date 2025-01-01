@@ -248,7 +248,7 @@ body.locked {
   font-size: 16px;
 }
 
-.header__cell {
+.cell {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,14 +307,12 @@ body.locked {
           transform: translateY(-50%);
 }
 
-.header__btn-cell,
-.header__item-visually-impaired {
+.btn-cell {
   min-width: 326.9px;
   padding: 25px 30px;
 }
 
-.header__social,
-.header__social-mobile {
+.social {
   display: block;
   min-width: 80px;
   min-height: 90px;
@@ -888,7 +886,7 @@ body.locked {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 306px 0 79px;
+  padding: 306px 0 74px;
 }
 
 .footer__links {
@@ -962,6 +960,41 @@ body.locked {
       -ms-transform: translateY(3px);
 
           transform: translateY(3px);
+}
+
+.footer__bottom {
+  border-top: 1px solid #c4c4c4;
+}
+
+.footer__cell-item:first-child {
+  border-left: 1px solid #c4c4c4;
+}
+
+.footer__copy-wrap {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 20px 66px 16px 26px;
+  font-size: 12px;
+}
+
+.footer__copy {
+  max-width: 302px;
+  margin-right: 70px;
+}
+
+.footer__politic-link {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+}
+
+.footer__visually-impaired {
+  padding-right: 0;
+}
+
+.footer__social {
+  min-width: 81px;
 }
 
 
@@ -1159,6 +1192,20 @@ body.locked {
   .footer__links {
     margin: 0 -127px 50px 0;
   }
+
+  .footer__bottom {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .footer__copy-wrap {
+    max-width: 100%;
+  }
+
+  .footer__social {
+    display: none;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -1235,6 +1282,14 @@ body.locked {
 
   .numbers__img-wrap {
     right: 53px;
+  }
+
+  .footer__copy {
+    max-width: 100%;
+  }
+
+  .footer__btn-cell {
+    display: none;
   }
 }
 
@@ -1384,6 +1439,21 @@ body.locked {
   .numbers__img-wrap {
     display: inline-block;
     position: static;
+  }
+
+  .footer__copy-wrap {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .footer__copy {
+    margin-bottom: 20px;
+    margin-right: 0;
   }
 }
 
