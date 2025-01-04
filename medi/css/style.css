@@ -1284,6 +1284,7 @@ body.locked {
   }
 
   .innovations {
+    max-width: 690px;
     padding: 25px 35px 288px;
     margin-right: 50px;
   }
