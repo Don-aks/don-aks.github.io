@@ -217,10 +217,6 @@ body.locked {
   transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
 }
 
-.animation-link:hover {
-  text-decoration: underline;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -540,14 +536,6 @@ body.locked {
 
 .hero__item:first-child {
   max-width: 648px;
-}
-
-.hero__item:hover {
-  background-color: #00a3a8;
-}
-
-.hero__item--selected:hover {
-  background-color: #5ad8bb;
 }
 
 .hero__link {
@@ -1032,6 +1020,20 @@ body.locked {
 
 
 /* ======= MEDIA ======= */
+
+@media (any-hover: hover) {
+  .animation-link:hover {
+    text-decoration: underline;
+  }
+  
+  .hero__item:hover {
+    background-color: #00a3a8;
+  }
+
+  .hero__item--selected:hover {
+    background-color: #5ad8bb;
+  }
+}
 
 @media (max-width: 1330px) {
   .header__cell-item:first-child,
