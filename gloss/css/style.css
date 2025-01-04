@@ -948,7 +948,7 @@ body.locked {
 
     display: block;
     padding-top: 20px;
-    height: calc(100vh - 98px);
+    min-height: calc(100vh - 98px);
 
     font-size: 24px;
     text-align: center;
@@ -956,6 +956,8 @@ body.locked {
     background-color: #1b1b1b;
     transform: translateY(-200%);
     transition: transform 0.5s;
+
+    overflow-y: auto;
   }
 
   .header__list--active {
