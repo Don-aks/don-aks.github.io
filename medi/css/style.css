@@ -1383,6 +1383,7 @@ body.locked {
 
   .offer {
     margin: 0;
+    width: 100%;
   }
 
   .offer:not(:last-child) {
@@ -1564,7 +1565,7 @@ body.locked {
   }
 
   .offer {
-    padding-top: 74%;
+    padding: 74% 20px 25px;
   }
 
   .offer__title {
