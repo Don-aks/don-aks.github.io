@@ -329,11 +329,18 @@ body.locked {
           align-items: center;
 }
 
+.header__btn-menu-cell {
+  display: none;
+  width: 189px;
+}
+
 .btn-menu {
   position: relative;
   z-index: 2;
 
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1059,18 +1066,22 @@ body.locked {
   .header__btn-cell {
     padding-right: 0;
     padding-left: 0;
+    width: 100%;
   }
 
-  .header__phone,
-  .header__salons,
-  .header__social {
+  .header__cell-phone,
+  .header__cell-salons,
+  .header__cell-social {
     display: none;
   }
 
-  .btn-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
+  .header__btn-menu-cell {
     display: flex;
+    justify-content: end;
+  }
+
+  .header__menu {
+    overflow-y: auto;
   }
 
   .header__list {
