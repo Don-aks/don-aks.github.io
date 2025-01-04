@@ -1043,9 +1043,7 @@ body.locked {
   .footer__nav-block {
     margin-bottom: 45px;
   }
-}
 
-@media (max-width: 604px) {
   .button {
     padding: 12px 22px;
   }
@@ -1068,7 +1066,7 @@ body.locked {
   }
 }
 
-@media (max-width: 594px) {
+@media (max-width: 576px) {
   .footer__inner {
     flex-direction: column;
     align-items: center;
@@ -1086,16 +1084,6 @@ body.locked {
 
   .footer__nav-block:not(:last-child) {
     margin-right: 0;
-  }
-}
-
-@media (max-height: 477px) {
-  .banner__title {
-    font-size: 64px;
-  }
-
-  .banner__text {
-    font-size: 14px;
   }
 }
 
@@ -1147,9 +1135,7 @@ body.locked {
   .appointment__buttons {
     flex-direction: column;
   }
-}
 
-@media (max-width: 360px) {
   .header__inner {
     padding-top: 15px;
   }
@@ -1160,5 +1146,15 @@ body.locked {
 
   .services__name {
     font-size: 30px;
+  }
+}
+
+@media (max-height: 477px) {
+  .banner__title {
+    font-size: 64px;
+  }
+
+  .banner__text {
+    font-size: 14px;
   }
 }
