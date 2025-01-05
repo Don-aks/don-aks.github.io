@@ -488,6 +488,8 @@ body.locked {
 
 .hero__slider-wrap {
   position: relative;
+  top: 6px;
+
   width: 58%;
   max-width: 746px;
 }
@@ -1247,12 +1249,7 @@ body.locked {
 
   .hero__slider-wrap {
     margin: 0 auto;
-    top: 6px;
     width: 100%;
-  }
-
-  .hero__slider {
-    padding-bottom: 110px;
   }
 
   .hero__slider .slick-next,
