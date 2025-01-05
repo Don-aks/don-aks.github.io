@@ -1039,11 +1039,19 @@ body.locked {
   }
   
   .hero__item:hover {
-    background-color: #00a3a8;
+    background-color: #00969b;
   }
 
   .hero__item--selected:hover {
-    background-color: #5ad8bb;
+    background-color: #57cfb3;
+  }
+
+  .tabs__tab:hover {
+    background-color: #57cfb3;
+  }
+
+  .tabs__tab--active:hover {
+    background-color: #00969b;
   }
 }
 
