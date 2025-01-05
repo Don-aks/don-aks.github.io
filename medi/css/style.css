@@ -1566,7 +1566,6 @@ body.locked {
   .offer {
     padding: 74% 20px 25px;
     width: 100%;
-    max-width: 100%;
   }
 
   .offer__title {
