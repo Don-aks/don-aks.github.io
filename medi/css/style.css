@@ -711,7 +711,9 @@ body.locked {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .news__label-title {
@@ -1079,8 +1081,12 @@ body.locked {
   }
 
   .header__btn-menu-cell {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
   }
 
   .header__list {
