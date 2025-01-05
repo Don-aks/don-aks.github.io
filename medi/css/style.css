@@ -1373,7 +1373,6 @@ body.locked {
 
   .offer {
     margin: 0;
-    width: 100%;
   }
 
   .offer:not(:last-child) {
