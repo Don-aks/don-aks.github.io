@@ -1105,7 +1105,7 @@ body.locked {
     z-index: 3;
 
     display: block;
-    max-height: calc(100vh - 89px);
+    height: 100vh;
     padding-bottom: 20px;
   
     background-color: #ffffff;
@@ -1567,5 +1567,12 @@ body.locked {
 
   .offer__title {
     line-height: 1.2;
+  }
+}
+
+@media (max-height: 623px) {
+  .header__list {
+    height: auto;
+    max-height: calc(100vh - 89px);
   }
 }
