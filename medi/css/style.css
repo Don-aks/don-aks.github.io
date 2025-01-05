@@ -709,6 +709,7 @@ body.locked {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  align-items: stretch;
 }
 
 .news__label-title {
@@ -720,6 +721,7 @@ body.locked {
 
 .news__menu {
   max-width: 525px;
+  width: 40%;
 
   background-color: #4fbfa5;
   color: #ffffff;
@@ -748,6 +750,8 @@ body.locked {
 .news__content {
   width: 59%;
   max-width: 770px;
+
+  background-color: rgba(0, 134, 138, 0.1);
 }
 
 .news__item {
@@ -760,8 +764,6 @@ body.locked {
 
 .article {
   padding: 35px 60px 76px;
-
-  background-color: rgba(0, 134, 138, 0.1);
 }
 
 .article__title {
