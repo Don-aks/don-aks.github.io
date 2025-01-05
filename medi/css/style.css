@@ -1555,13 +1555,14 @@ body.locked {
   }
 
   .offers__title {
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 37px;
   }
 
   .offer {
     padding: 74% 20px 25px;
     width: 100%;
+    max-width: 100%;
   }
 
   .offer__title {
