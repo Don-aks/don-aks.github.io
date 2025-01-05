@@ -1542,6 +1542,10 @@ body.locked {
     font-size: 20px;
   }
 
+  .numbers__item--selected {
+    font-size: 22px;
+  }
+
   .article {
     padding: 35px 20px 40px;
   }
@@ -1567,6 +1571,14 @@ body.locked {
 
   .offer__title {
     line-height: 1.2;
+    font-size: 16px;
+  }
+
+  .offer__title::after {
+    right: 0;
+
+    width: 40px;
+    height: 30px;
   }
 }
 
