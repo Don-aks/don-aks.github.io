@@ -1545,6 +1545,10 @@ body.locked {
     font-size: 22px;
   }
 
+  .numbers__item--selected .numbers__num {
+    font-size: 64px;
+  }
+
   .article {
     padding: 35px 20px 40px;
   }
@@ -1555,6 +1559,13 @@ body.locked {
 
   .offers {
     padding-top: 35px;
+  }
+
+  .offer__label {
+    top: 15px;
+    left: 17px;
+    
+    font-size: 14px;
   }
 
   .offers__title {
@@ -1577,6 +1588,42 @@ body.locked {
 
     width: 40px;
     height: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header__top {
+    min-height: 65px;
+  }
+
+  .header__list {
+    top: 65px;
+  }
+
+  .logo__img {
+    max-width: 130px;
+  }
+
+  .header__btn-mobile {
+    min-width: 235px;
+    font-size: 12px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .numbers__item--selected {
+    font-size: 14px;
+  }
+
+  .numbers__item--selected .numbers__num {
+    font-size: 48px;
+    margin-right: 20px;
+  }
+
+  .offer__title {
+    font-size: 16px;
   }
 }
 
