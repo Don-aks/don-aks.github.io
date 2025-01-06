@@ -1580,7 +1580,7 @@ body.locked {
 
   .offer__title {
     line-height: 1.2;
-    font-size: 16px;
+    font-size: 24px;
   }
 
   .offer__title::after {
