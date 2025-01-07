@@ -74,7 +74,7 @@ function build() {
 
 function watching() {
   watch(['sass/**/*.sass'], styles);
-  watch(['js/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['js/**/*.js', '!js/main.min.js'], scripts);
   watch(['**/*.html']).on('change', browserSync.reload)
 }
 
