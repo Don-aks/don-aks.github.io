@@ -15,6 +15,10 @@ $(function(){
     $("body").toggleClass("locked");
   });
 
+  $(".salons").on("click", function() {
+    $(".salons__submenu").toggleClass("salons__submenu--hidden");
+  });
+
   $(".tabs__tab").on("click", function(){
     $(".tabs__tab").removeClass("tabs__tab--active");
     $(this).addClass("tabs__tab--active");
