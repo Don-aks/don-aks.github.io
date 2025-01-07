@@ -1,0 +1,97 @@
+body
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  font: 400 16px/1.5 $main-font
+  letter-spacing: normal
+  
+  background-color: $primary-color
+  color: $black
+
+.page
+  flex: 1 0 auto
+
+.container
+  max-width: 1110px + 20px
+  margin: 0 auto
+  padding: 0 10px
+
+.logo
+  margin: 0 auto
+
+.images-rotate
+  &__img
+    position: absolute
+
+    &:first-child
+      z-index: 1
+      transform: rotate(15deg)
+
+    &:nth-child(2)
+      z-index: 2
+      transform: rotate(-15deg)
+
+    &:last-child
+      z-index: 3
+
+.round-icon
+  position: relative
+
+  &::before
+    content: ''
+    position: absolute
+    left: 181px
+    z-index: 4
+
+    width: $round-icon-size
+    height: $round-icon-size
+
+    @extend %bg-contain
+
+.notify
+  position: relative
+  padding: 11px 0
+  text-align: center
+
+  background-color: $black
+  color: $white
+
+  &__close
+    position: absolute
+    top: 15px
+    right: 9px
+    font-size: 0
+
+    display: block
+    width: 15px
+    height: 15px
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 7px
+      right: 0
+
+      width: 15px
+      height: 2px
+      transform: rotate(45deg)
+      background-color: $white
+
+    &::after
+      transform: rotate(-45deg)
+
+.title
+  font-size: 85px
+  line-height: $title-lh-2
+  font-weight: 700
+
+.link
+  padding: 10px 77px
+  font-size: 13px
+  line-height: 1.85
+
+  color: $white
+  background-color: $black
+  border-radius: 32px

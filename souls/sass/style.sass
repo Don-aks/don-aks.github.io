@@ -1,0 +1,321 @@
+@use 'reset'
+@import 'vars'
+@import 'global'
+
+
+// ======= HEADER ======= //
+
+.header
+  @extend %bg-cover
+
+
+// ======= HERO ======= //
+
+.hero
+  position: relative
+  padding: 16px 0 406px
+
+  &__title
+    max-width: 590px
+    margin: 0 auto
+
+    font-size: 85px
+    line-height: $title-lh-2
+    font-weight: 400
+
+    &-span
+      margin-right: 14px
+
+      &--no-margin
+        margin-right: 0
+
+.cookies
+  position: absolute
+  bottom: 66px
+  right: 30px
+
+  @extend %align-items-center
+  padding: 11px 10px 11px 24px
+  min-width: 392px
+
+  font-size: 12px
+  line-height: 1.5
+
+  background-color: rgba($black, 0.7)
+  color: $white
+  border-radius: 78px
+
+  &__span
+    margin-right: 23px
+
+  &__btn
+    margin-left: 143px
+    padding: 0 22px 
+  
+    font-size: 13px
+    line-height: 2.69
+
+    border-radius: 17.5px
+    background-color: $third-color
+    color: $black
+
+.scroll-down-btn
+  position: absolute
+  bottom: 7px
+  left: 50%
+  
+  width: 79px
+  height: 79px
+
+  background-color: $black
+  background-image: url("../img/arrow-down.svg")
+  border-radius: 50%
+  @extend %bg
+
+  transform: translateX(-50%)
+
+
+// ======= PHOTOS ======= //
+
+.photos
+  position: relative
+  padding: 422px 0 491px
+
+  &__inner
+    display: flex
+    
+  &__info
+    max-width: 370px
+
+  &__title
+    font-size: 85px
+    line-height: $title-lh-2
+
+  &__text
+    max-width: 354px
+    margin-bottom: 47px
+
+  &__img
+    top: 272px
+    right: 260px
+    max-width: 540px
+    
+    &:first-child
+      right: 336px
+      transform: rotate(-15deg)
+
+    &:nth-child(2)
+      right: 184px   
+      transform: rotate(15deg)   
+
+
+// ======= SLIDER ======= //
+
+.slider
+  position: relative
+  padding: 154px 0 96px
+
+  background-color: $slider-color
+
+  &__title
+    position: absolute
+    top: 128px
+    left: 50%
+  
+    max-width: 103px
+
+    font-size: 21px
+    font-weight: 400
+    text-align: center
+    text-transform: uppercase
+
+    transform: translateX(-50%)
+
+  &__item
+    position: relative
+    padding-top: 136px
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+
+      display: block
+      width: 93px
+      height: 111px
+
+      background-image: url("../img/slider-img.svg")
+      @extend %bg-contain
+    
+      transform: translateX(-50%)
+
+
+// ======= STORE ======= //
+
+.store
+  position: relative
+  padding: 421px 0 490px
+  background-color: $third-color
+
+  &__info
+    &::before
+      top: -39px - $round-icon-size
+      background-image: url("../img/zero-plastic-shop.svg")
+
+  &__info
+    max-width: 336px
+
+  &__title
+    margin-bottom: 19px
+  
+  &__text
+    margin-bottom: 47px
+
+  &__img
+    top: 292px
+    right: 199px
+    max-width: 486px
+
+    &:first-child
+      top: 260px
+      right: 72px
+
+    &:nth-child(2)
+      top: 265px
+      right: 331px
+
+
+// ======= TREASURES ======= //
+
+.treasures
+  position: relative
+  padding: 510px 0 401px
+
+  background-color: $third-color
+
+  &__info
+    max-width: 385px
+
+    &::before
+      top: -44px - $round-icon-size
+      background-image: url("../img/love-first-bite.svg")
+
+  &__title
+    margin-bottom: 12px
+
+  &__text
+    margin-bottom: 57px
+
+  &__img
+    top: 394px
+    right: 199px
+
+    &:first-child
+      top: 363px
+      right: 84px
+
+    &:nth-child(2)
+      top: 365px
+      right: 312px
+
+
+// ======= FOOTER ======= //
+
+.footer
+  background-color: $second-color
+  padding: 135px 0 38px
+  text-align: center
+
+  &__logo
+    display: inline-block
+    margin: 0 auto 116px
+
+  &__inner
+    @extend %space-between
+    padding-bottom: 151px
+    text-align: left
+
+  &__info
+    &-title
+      margin-bottom: 38px
+
+  &__input
+    margin-bottom: 113px
+    padding: 6px 0
+    min-width: 445px
+
+    background-color: transparent
+    color: $black
+    border-bottom: 1px solid $black
+
+    &::placeholder
+      color: $black
+
+  &__follow
+    margin-bottom: 74px
+
+    &-title
+      margin-bottom: 21px
+  
+      font-size: 32px
+      font-weight: 400
+
+  &__payment-methods
+    display: flex
+    margin-bottom: 20px
+
+  &__payment
+    display: block
+    width: 36px
+    height: 25px
+
+    @extend %bg-contain
+
+  &__payment:not(:last-child)
+    margin-right: 14px
+
+  &__website
+    margin-right: 16px
+
+  &__horror
+    margin-right: 17px
+
+  &__plus
+    margin-right: 13px
+
+  &__nav
+    display: flex
+    flex-wrap: wrap
+    max-width: 570px
+    margin: 0 -61px -81px 0
+
+  &__column
+    margin: 0 61px 81px 0
+
+  &__contact
+    margin-right: 120px
+
+    &-link
+      display: block
+
+  &__title
+    margin-bottom: 21px
+
+    font-size: 32px
+    line-height: $title-lh
+
+  &__item:not(:last-child)
+    margin-bottom: 21px
+
+  &__link
+    text-transform: uppercase
+
+  &__bottom
+    width: 100%
+    height: 120px
+
+    @extend %bg-cover
+
+
+@import 'media'
