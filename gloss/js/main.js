@@ -8,6 +8,12 @@ menuButton.addEventListener('click', function() {
   body.classList.toggle('locked');
 });
 
+const dropDownLink = document.querySelector('.header__link--drop-down');
+const dropDownMenu = document.querySelector('.submenu');
+dropDownLink.addEventListener('click', function() {
+  dropDownMenu.classList.toggle('submenu--hidden');
+});
+
 let dp = new AirDatepicker('#input-date', {
   inline: true,
   locale: {

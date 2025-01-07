@@ -249,15 +249,24 @@ body.locked {
 }
 
 .header__item {
+  position: relative;
   border-bottom: 1px solid transparent;
-}
-
-.header__item:not(.header__item--selected):hover {
-  border-bottom: 1px solid #ffffff;
 }
 
 .header__item:not(:last-child) {
   margin-right: 32px;
+}
+
+.header__link {
+  border-bottom: 1px solid transparent;
+}
+
+.header__link:not(.header__link--selected):hover {
+  border-bottom: 1px solid #ffffff;
+}
+
+.header__link--selected {
+  cursor: default;
 }
 
 .header__link--drop-down {
@@ -275,6 +284,46 @@ body.locked {
   height: 12px;
 
   background: url("../img/arrow-down.svg") center/contain no-repeat;
+}
+
+.submenu {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  z-index: 5;
+
+  min-width: 200px;
+  padding: 0 5px;
+  
+  background-color: #222222;
+  color: #ffffff;
+  transform: translate(-50%);
+  transition: transform 0.5s;
+}
+
+.submenu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 60px;
+  z-index: 5;
+
+  display: block;
+  
+  border-style: solid;
+  border-width: 0 5px 10px 5px;
+  border-color: transparent transparent #222222 transparent;
+}
+
+.submenu--hidden {
+  transform: translateX(100vw);
+}
+
+.submenu__link {
+  display: block;
+  padding: 11px 0;
+
+  text-align: center;
 }
 
 .header__item--selected {

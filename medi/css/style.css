@@ -274,8 +274,12 @@ body.locked {
   padding: 35px 26px;
 }
 
-.header__salons,
-.header__salons-mobile {
+.header__cell-salons,
+.header__salons-item {
+  position: relative;
+}
+
+.salons {
   position: relative;
 
   max-width: 200px;
@@ -283,8 +287,7 @@ body.locked {
   padding-right: 65px;
 }
 
-.header__salons::after,
-.header__salons-mobile::after {
+.salons::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -301,6 +304,54 @@ body.locked {
       -ms-transform: translateY(-50%);
 
           transform: translateY(-50%);
+}
+
+.salons__submenu {
+  position: absolute;
+  top: 66px;
+  left: 50%;
+  z-index: 5;
+
+  min-width: 145px;
+  
+  background-color: #4fbfa5;
+  color: #ffffff;
+  transform: translate(-50%, 0);
+  transition: transform 0.5s;
+}
+
+.salons__submenu--mobile {
+  top: 35px;
+  min-width: 100px;
+}
+
+.salons__submenu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 9px;
+  z-index: 5;
+
+  display: block;
+  
+  border-style: solid;
+  border-width: 0 4px 8px 4px;
+  border-color: transparent transparent #4fbfa5 transparent;
+}
+
+.salons__submenu--hidden,
+.salons__submenu--hidden::before {
+  transform: translate(-50%, -500%);
+}
+
+.salons__submenu--mobile::before {
+  right: auto;
+  left: 10px;
+}
+
+.salons__link {
+  display: block;
+  text-align: center;
 }
 
 .btn-cell {
