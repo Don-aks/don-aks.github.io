@@ -400,6 +400,8 @@ body.locked {
           align-items: center;
   width: 44px;
   height: 44px;
+
+  transform: translateX(7px);
 }
 
 .btn-menu__line {
@@ -1450,6 +1452,14 @@ body.locked {
     margin-bottom: 40px;
   }
 
+  .header__top {
+    min-height: 65px;
+  }
+
+  .header__list {
+    top: 64px;
+  }
+
   .header__btn-cell {
     display: none;
   }
@@ -1544,6 +1554,13 @@ body.locked {
   .footer__copy {
     margin-bottom: 20px;
     margin-right: 0;
+  }
+}
+
+@media (max-height: 623px) {
+  .header__list {
+    height: auto;
+    max-height: calc(100vh - 89px);
   }
 }
 
@@ -1643,14 +1660,6 @@ body.locked {
 }
 
 @media (max-width: 320px) {
-  .header__top {
-    min-height: 65px;
-  }
-
-  .header__list {
-    top: 65px;
-  }
-
   .logo__img {
     max-width: 130px;
   }
