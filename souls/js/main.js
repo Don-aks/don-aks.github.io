@@ -1,6 +1,10 @@
 const closeBtn = document.querySelector('.notify__close');
+const header = document.querySelector('.header');
+const hero = document.querySelector('.hero');
 closeBtn.addEventListener('click', function(){
   this.parentElement.style.display = 'none';
+  header.style.height = '100vh';
+  hero.style.height = 'calc(100vh - 192px)'
 });
 
 const scrollBtn = document.querySelector('.scroll-down-btn');
