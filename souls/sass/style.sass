@@ -6,7 +6,44 @@
 // ======= HEADER ======= //
 
 .header
+  position: relative
+  height: calc(100vh - 46px)
+
+  font-size: 15px
+  line-height: 1.6
+
   @extend %bg-cover
+
+  &__inner
+    position: relative
+    padding: 30px 0 138px
+
+    @extend %align-items-center
+
+  &__logo
+    position: absolute
+    top: 31px
+    left: 50%
+  
+    transform: translateX(-50%)
+
+  &__list
+    @extend %align-items-center
+
+    &:first-child
+      margin: 0 438px 0 -3px
+
+  &__item:not(:last-child)
+    margin-right: 42px
+
+  &__link
+    text-transform: uppercase
+
+  &__lang
+    position: absolute
+    top: 30px
+    right: 30px
+    
 
 
 // ======= HERO ======= //
