@@ -316,9 +316,12 @@
   &__inner
     @extend %space-between
     padding-bottom: 151px
+  
     text-align: left
 
   &__info
+    max-width: 445px
+    
     &-title
       margin-bottom: 38px
 
@@ -343,6 +346,19 @@
       font-size: 32px
       font-weight: 400
 
+    &-inner
+      display: flex
+
+  &__social
+    display: block
+    width: 22px
+    height: 22px
+  
+    @extend %bg-contain
+
+    &:not(:last-child)
+      margin-right: 18px
+
   &__payment-methods
     display: flex
     margin-bottom: 20px
@@ -366,7 +382,7 @@
   &__plus
     margin-right: 13px
 
-  &__nav
+  &__grid
     display: flex
     flex-wrap: wrap
     max-width: 570px
@@ -380,6 +396,9 @@
 
     &-link
       display: block
+
+      &:not(:last-child)
+        margin-bottom: 5px
 
   &__title
     margin-bottom: 21px
