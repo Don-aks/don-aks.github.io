@@ -71,6 +71,49 @@ if (!(/*@cc_on!@*/false || !!document.documentMode) && window.innerWidth > 992) 
         scenes[i].children[j].setAttribute('data-depth', '0.1');
 }
 
+
+function changeLanguage(){
+  let hash = window.location.hash.substring(1);
+  let isLang = false;
+  for (let i = 0; i < langList.length; i++)
+    if (hash.indexOf(langList[i]) !== -1)
+      isLang = true;
+  
+  if (!isLang) {
+    location.href = window.location.pathname + '#en';
+    hash = 'en';
+    return;
+  }
+
+  if (hash == 'en')
+    return;
+  
+  document.querySelector('html').setAttribute('lang', hash)
+  langBtn.innerHTML = hash;
+
+  for(let key in langArray) {
+    const elems = document.querySelectorAll('.lng-' + key);
+    const text = langArray[key][hash];
+    if (elems.length === 0)
+      continue;
+  
+    if (text === "") {
+      for (let i = 0; i < elems.length; i++)
+        elems[i].parentElement.removeChild(elems[i]);
+      continue;
+    }
+    
+    for (let i = 0; i < elems.length; i++)
+      if(elems[i].tagName === "IMG")
+        elems[i].setAttribute("alt", text);
+      else if(elems[i].tagName === "INPUT")
+        elems[i].setAttribute("placeholder", text)
+      else
+        elems[i].innerHTML = text;
+  }
+}
+
+function scrollIntoView(e){
   e.preventDefault();
   const href = e.target.getAttribute('href');
   if (!href)
