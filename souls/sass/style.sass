@@ -178,6 +178,102 @@
       right: 336px
       transform: rotate(-15deg)
 
+
+// ======= NUT ======= //
+
+.nut
+  display: flex
+  
+  &-product
+    position: relative
+
+    padding: 95px 250px 164px 164px
+    margin-right: 43.7%
+    max-width: 835px
+    min-height: 833px
+
+    border-top-right-radius: $border-radius-section
+    background-color: $second-color
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      bottom: 74px
+      right: 19px
+      z-index: 2
+
+      display: block
+      width: 350px
+      height: 433px
+
+      background-image: url("../img/nut.png")
+      @extend %bg-contain
+
+    &::after
+      top: 230px
+      bottom: auto
+      right: 34px
+      z-index: 1
+
+      width: 86px
+      height: 158px
+
+      background-image: url("../img/hand-rock.svg")
+
+    &__title
+      margin-bottom: 51px
+
+    &__card
+      max-width: 234px
+
+      &-title
+        max-width: 157px
+        margin-bottom: 14px
+
+        font-size: 42px
+        font-weight: 700
+        line-height: $title-lh
+
+    &__text
+      margin-bottom: 20px
+
+    &__price
+      margin-bottom: 46px
+      font-size: 21px
+
+    &__link
+      padding: 10px 67px
+
+  &-discover
+    max-width: 285px
+    padding-top: 88px
+
+    font-size: 21px
+
+    &__title
+      max-width: 255px
+      margin-bottom: 92px
+    
+      font-size: 21px
+      font-weight: 400
+
+    &__name-wrap
+      display: flex
+      padding-bottom: 4px
+      margin-bottom: 41px
+
+      font-size: 40px
+      font-weight: 700
+      line-height: 1.26
+
+      border-bottom: 1px solid #000
+
+    &__num
+      font-size: 16px
+      line-height: 0
+      font-weight: 400
+
     &:nth-child(2)
       right: 184px   
       transform: rotate(15deg)   
@@ -255,9 +351,73 @@
       top: 260px
       right: 72px
 
-    &:nth-child(2)
-      top: 265px
-      right: 331px
+
+// ======= HALVA ======= //
+
+.halva
+  display: flex
+  justify-content: space-between
+  background-color: $third-color
+
+  &__inner
+    position: relative
+
+    max-width: 815px
+    margin-right: 15px
+    padding: 90px 226px 105px 165px
+
+    background-color: $fourth-color
+    border-top-right-radius: $border-radius-section
+
+    &::after
+      content: ''
+      position: absolute
+      bottom: 63px
+      right: 19px
+      z-index: 2
+
+      display: block
+      width: 350px
+      height: 385px
+
+      background-image: url("../img/halva.png")
+      @extend %bg-contain
+
+  &__title
+    margin-bottom: 53px
+  
+  &__subtitle
+    max-width: 332px
+    margin-bottom: 62px
+  
+    font-size: 42px
+    line-height: $title-lh
+  
+  &__text
+    max-width: 245px
+    margin-bottom: 21px
+
+  &__price
+    margin-bottom: 45px
+    
+  &__link
+    padding: 10px 70px
+
+.wild-gift
+  max-width: 445px
+  padding: 431px 58px 55px
+
+  text-align: center
+  background: $red url("../img/gift.svg") center 63px no-repeat
+
+  &__title
+    margin-bottom: 30px
+  
+    font-size: 42px
+    line-height: $title-lh
+
+  &__link
+    padding: 16px 75px
 
 
 // ======= TREASURES ======= //
