@@ -31,6 +31,34 @@ scrollBtn.addEventListener('click', scrollIntoView);
 const headerWrapper = document.querySelector('.header__wrapper');
 headerWrapper.addEventListener('click', scrollIntoView);
 
+const images = document.querySelectorAll('.images-rotate__img');
+const animatedElements = document.querySelectorAll('.animate__animated');
+const blockHero = document.querySelector('.hero');
+const title = document.querySelector('.hero__title');
+window.addEventListener('scroll', function(){
+  for (let i = 0; i < images.length; i++)
+    addClassOnScroll(images[i], 'images-rotate__img--show', true);
+
+  for (let i = 0; i < animatedElements.length; i++) {
+    const el = animatedElements[i];
+    const classes = el.classList;
+    let className, classOutOfVisibility;
+
+    for (let i = 0; i < classes.length; i++)
+      if(classes[i].indexOf('anim--') == 0)
+        className = classes[i].slice(6, classes[i].length);
+
+    if (className && className.indexOf('In') !== -1)
+      classOutOfVisibility = className.replace('In', 'Out');
+
+    addClassOnScroll(el, 'animate__' + className, false, 550, classOutOfVisibility ? ('animate__' + classOutOfVisibility) : null);
+  }
+
+  const scrollY = this.scrollY;
+  if (scrollY < blockHero.offsetHeight)
+    title.style.marginTop = scrollY * 1.5 + 'px';
+});
+
   e.preventDefault();
   const href = e.target.getAttribute('href');
   if (!href)

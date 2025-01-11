@@ -174,9 +174,14 @@
     right: 260px
     max-width: 540px
     
-    &:first-child
-      right: 336px
-      transform: rotate(-15deg)
+    &.images-rotate__img--show
+      &:first-child
+        right: 260px + 76px
+        transform: rotate(-15deg)
+
+      &:nth-child(2)
+        right: 260px - 76px
+        transform: rotate(15deg)   
 
 
 // ======= NUT ======= //

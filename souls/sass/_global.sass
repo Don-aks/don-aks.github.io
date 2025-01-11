@@ -22,17 +22,23 @@ body
 .images-rotate
   &__img
     position: absolute
+    transition: transform 0.3s, top 0.3s, bottom 0.3s, left 0.3s, right 0.3s
 
     &:first-child
       z-index: 1
-      transform: rotate(15deg)
 
     &:nth-child(2)
       z-index: 2
-      transform: rotate(-15deg)
 
     &:last-child
       z-index: 3
+
+    &--show
+      &:first-child
+        transform: rotate(15deg)
+
+      &:nth-child(2)
+        transform: rotate(-15deg)
 
 .round-icon
   position: relative
