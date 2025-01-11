@@ -1,3 +1,22 @@
+const langBtn = document.querySelector('.lang');
+const langMenu = document.querySelector('.lang__menu');
+const langList = ['en', 'ru', 'uk'];
+changeLanguage();
+
+langBtn.addEventListener('click', function() {
+  langMenu.classList.toggle('lang__menu--active');
+});
+
+langMenu.addEventListener('click', function(e) {
+  e.preventDefault();
+  const langHref = e.target.getAttribute('href');
+  if (!langHref)
+    return;
+
+  location.href = window.location.pathname + langHref;
+  location.reload();
+});
+
 const closeBtn = document.querySelector('.notify__close');
 const header = document.querySelector('.header');
 const hero = document.querySelector('.hero');
