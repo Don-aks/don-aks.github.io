@@ -59,6 +59,18 @@ window.addEventListener('scroll', function(){
     title.style.marginTop = scrollY * 1.5 + 'px';
 });
 
+// Parralax is not for IE
+if (!(/*@cc_on!@*/false || !!document.documentMode) && window.innerWidth > 992) {
+  const scenes = document.querySelectorAll('.image-scene');
+  for (let i = 0; i < scenes.length; i++)
+    new Parallax(scenes[i]);
+
+  if (window.innerWidth <= 1200)
+    for (let i = 0; i < scenes.length; i++)
+      for (let j = 0; j < scenes[i].children.length; j++)
+        scenes[i].children[j].setAttribute('data-depth', '0.1');
+}
+
   e.preventDefault();
   const href = e.target.getAttribute('href');
   if (!href)
