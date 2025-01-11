@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -25,9 +25,26 @@
         </a>
       </li>
       <li class="header__cell-item header__cell-salons">
-        <a class="cell header__cell header__salons" href="#">
+        <button class="cell header__cell salons header__salons" href="#">
           Наши салоны
-        </a>
+        </button>
+        <ul class="salons__submenu salons__submenu--hidden">
+          <li class="salons__item">
+            <a class="salons__link animation-link" href="#">
+              Харьков
+            </a>
+          </li>
+          <li class="salons__item">
+            <a class="salons__link animation-link" href="#">
+              Киев
+            </a>
+          </li>
+          <li class="salons__item">
+            <a class="salons__link animation-link" href="#">
+              Одесса
+            </a>
+          </li>
+        </ul>
       </li>
       <li class="cell header__cell-item header__cell btn-cell header__btn-cell">
         <button class="btn btn--visually-impaired header__btn">
@@ -66,10 +83,27 @@
               </a>
             </li>
           
-            <li class="header__mobile-item">
-              <a class="header__salons-mobile" href="#">
+            <li class="header__mobile-item header__salons-item">
+              <button class="salons header__salons-mobile" href="#">
                 Наши салоны
-              </a>
+              </button>
+              <ul class="salons__submenu salons__submenu--mobile salons__submenu--hidden">
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#">
+                    Харьков
+                  </a>
+                </li>
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#">
+                    Киев
+                  </a>
+                </li>
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#">
+                    Одесса
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="header__mobile-item header__social-medias">
               <ul class="social-list">
@@ -153,7 +187,7 @@
   <div class="container">
     <div class="wrapper">
       <section class="innovations" style="background-image: url('img/cosmetology-2.jpg');">
-        <h2 class="label-title">Инновации</h2>
+        <h2 class="label-title innovations__label-title">Инновации</h2>
         <h3 class="innovations__title">Мы практикуем новый курс процедур аппаратной косметологии</h3>
         <a class="innovations__link animation-link" href="#">Подробнее</a>
       </section>
@@ -186,7 +220,7 @@
           <h2 class="label-title news__label-title">Новости</h2>
           <ul class="tabs">
             <li class="tabs__tab tabs__tab--active" data-tab="1">
-              <span class="sr-only">Выберите вкладку</span>
+              <span class="sr-only">Выберите статью</span>
               <button class="tabs__btn" type="button">
                 Почему рекомендуется посещать профессионального косметолога. Мнение специалистов центра.
               </button>
@@ -471,6 +505,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/uhpv-full.min.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>

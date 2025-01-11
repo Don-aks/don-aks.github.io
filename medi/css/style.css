@@ -1474,6 +1474,7 @@ body.locked {
   }
 
   .hero__slider-wrap {
+    top: 5.5px;
     width: 100%;
   }
   
@@ -1522,6 +1523,10 @@ body.locked {
   .numbers__img-wrap {
     display: inline-block;
     position: static;
+  }
+
+  .numbers__img {
+    max-width: 100%;
   }
 
   .tabs__btn {
