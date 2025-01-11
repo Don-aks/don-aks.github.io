@@ -30,11 +30,20 @@
   &__list
     @extend %align-items-center
 
-    &:first-child
-      margin: 0 438px 0 -3px
+    &--first
+      min-width: 370px
+      margin: 0 436px 0 -3px
+
+    &--second
+      .header__item:nth-child(2)
+        transform: translateX(6px)
+        
+      .header__item:last-child
+        transform: translateX(16px)
+
 
   &__item:not(:last-child)
-    margin-right: 42px
+    margin-right: 43px
 
   &__link
     text-transform: uppercase
