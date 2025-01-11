@@ -28,6 +28,8 @@ closeBtn.addEventListener('click', function(){
 
 const scrollBtn = document.querySelector('.scroll-down-btn');
 scrollBtn.addEventListener('click', scrollIntoView);
+const headerWrapper = document.querySelector('.header__wrapper');
+headerWrapper.addEventListener('click', scrollIntoView);
 
   e.preventDefault();
   const href = e.target.getAttribute('href');
@@ -48,3 +50,24 @@ scrollBtn.addEventListener('click', scrollIntoView);
   });
 }
 
+function addClassOnScroll(el, className, isImages, offset, classOutOfVisibility) {
+  if (!offset)
+    offset = 550;
+  let scrollY = window.scrollY;
+  let top = el.offsetTop - offset;
+  
+  if (isImages) {
+    scrollY = window.innerHeight - offset;
+    top = el.getBoundingClientRect().top;
+  }
+
+  if (top < scrollY) {
+    el.classList.add(className);
+    if (classOutOfVisibility)
+      el.classList.remove(classOutOfVisibility);
+  } else {
+    el.classList.remove(className);
+    if (classOutOfVisibility)
+      el.classList.add(classOutOfVisibility);
+  }
+}
