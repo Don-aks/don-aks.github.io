@@ -5,8 +5,9 @@ body
   flex-direction: column
   min-height: 100vh
 
-  font: 400 16px/1.5 $main-font
-  letter-spacing: normal
+  font: 400 16px $main-font
+  line-height: $normal-lh
+  letter-spacing: 0
   
   background-color: $primary-color
   color: $black
@@ -104,3 +105,38 @@ body
 .animation-link
   border-bottom: 1px solid transparent
   transition: border-color 0.3s
+
+.lang
+  text-transform: uppercase
+
+  &__menu
+    position: absolute
+    top: 70px
+    right: 25px
+
+    display: block
+    min-width: 50px
+
+    background-color: $primary-color
+  
+    transform: translateX(400%)
+    transition: transform 0.3s
+
+    &::before
+      content: ''
+      position: absolute
+      top: -8px
+      right: 9px
+
+      border-style: solid
+      border-width: 0 4px 8px 4px
+      border-color: transparent transparent $primary-color transparent
+
+    &--active
+      transform: translateX(0)
+
+  &__link
+    display: block
+  
+    text-transform: uppercase
+    text-align: center
