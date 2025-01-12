@@ -67,29 +67,24 @@
   height: calc(100vh - 192px - 46px)
 
   &__title
-    max-width: 600px
     margin: 0 auto
 
     font-size: 85px
     line-height: $title-lh-2
     font-weight: 400
+    text-align: center
 
     &-span
       margin-right: 14px
 
-      &:nth-child(3)
-        margin-left: -10px
-      
-      &:nth-child(4)
-        margin-left: 13px
-
       &--no-margin
         margin-right: 0
+        transform: translateX(19px)
     
   &__scroll-down
     position: absolute
     bottom: 7px
-    left: 52.7%
+    left: 50%
 
 .cookies
   position: absolute
@@ -150,6 +145,7 @@
       background-image: url("../img/no-gluten.svg")
 
   &__title
+    min-width: 635px
     margin-bottom: 12px
 
 
@@ -160,9 +156,6 @@
   padding: 422px 0 491px
 
   &__inner
-    display: flex
-    
-  &__info
     max-width: 370px
 
   &__title
@@ -334,6 +327,7 @@
 .store
   position: relative
   padding: 421px 0 490px
+
   background-color: $third-color
 
   &__info
@@ -346,8 +340,10 @@
 
   &__title
     margin-bottom: 19px
+    font-size: 55px
   
   &__text
+    max-width: 320px
     margin-bottom: 47px
 
   &__img
@@ -599,7 +595,7 @@
     width: 100%
     height: 120px
 
-    @extend %bg-cover
+    @extend %bg-cover-center
 
 
 @import 'media'
