@@ -279,9 +279,6 @@
       line-height: 0
       font-weight: 400
 
-    &:nth-child(2)
-      right: 184px   
-      transform: rotate(15deg)   
 
 
 // ======= SLIDER ======= //
@@ -352,9 +349,14 @@
     right: 199px
     max-width: 486px
 
-    &:first-child
-      top: 260px
-      right: 72px
+    &.images-rotate__img--show
+      &:first-child
+        top: 260px
+        right: 72px
+
+      &:nth-child(2)
+        top: 265px
+        right: 331px
 
 
 // ======= HALVA ======= //
@@ -450,13 +452,14 @@
     top: 394px
     right: 199px
 
-    &:first-child
-      top: 363px
-      right: 84px
+    &.images-rotate__img--show
+      &:first-child
+        top: 363px
+        right: 84px
 
-    &:nth-child(2)
-      top: 365px
-      right: 312px
+      &:nth-child(2)
+        top: 365px
+        right: 312px
 
 
 // ======= RECIEPES ======= //

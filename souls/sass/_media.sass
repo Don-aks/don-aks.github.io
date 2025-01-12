@@ -55,7 +55,74 @@
         
 
 @media (max-width: 992px) 
+  .section__inner
+    max-width: 100%
+    text-align: center
 
+  .section__text
+    margin-right: auto
+    margin-left: auto
+  
+  .images-rotate
+    position: relative
+
+    &__img
+      top: 100px
+      left: 50%
+      right: auto
+
+      max-width: 430px
+      transform: translateX(-50%)
+
+  .photos
+    padding-bottom: 790px
+
+    &__img.images-rotate__img--show
+      &:first-child
+        left: calc(50% - 76px)
+        right: auto
+        transform: translateX(-50%) rotate(-15deg)
+      
+      &:nth-child(2)
+        left: calc(50% + 76px)
+        right: auto
+        transform: translateX(-50%) rotate(15deg)
+
+  .store
+    padding-bottom: 808px
+
+    &__img.images-rotate__img--show
+      &:first-child
+        top: 100px
+        left: calc(50% + 76px)
+        right: auto
+      
+        transform: translateX(-50%) rotate(15deg)
+
+      &:nth-child(2)
+        top: 100px
+        left: calc(50% - 76px)
+        right: auto
+      
+        transform: translateX(-50%) rotate(-15deg)
+
+  .treasures
+    padding-bottom: 650px
+
+    &__img.images-rotate__img--show
+      &:first-child
+        top: 100px
+        left: calc(50% + 76px)
+        right: auto
+      
+        transform: translateX(-50%) rotate(15deg)
+
+      &:nth-child(2)
+        top: 100px
+        left: calc(50% - 76px)
+        right: auto
+      
+        transform: translateX(-50%) rotate(-15deg)
 
 @media (max-width: 768px) 
 
