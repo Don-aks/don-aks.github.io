@@ -4,11 +4,55 @@
   .animation-link:hover
     border-bottom: 1px solid $black
 
-@media (max-width: 1400px) 
+@media (max-width: 2020px)
+  .nut-product
+    margin-right: 26.7%
   
+  .halva
+    justify-content: start
+
+    &__inner
+      margin-right: 445px
+
+
+@media (max-width: 1700px)
+  .nut-product
+    margin-right: 250px
+
+  .halva__inner
+    margin-right: 110px
+  
+
+@media (max-width: 1440px) 
+  .nut-product
+    margin-right: 95px
+
+  .halva__inner
+    margin-right: 15px
+
+@media (max-width: 1350px)
+  .images-rotate__img
+    max-width: 430px
+    
+  .photos__img
+    top: 343px
   
 @media (max-width: 1200px) 
+  .images-rotate__img
+    max-width: 343px
 
+  .photos__img
+    top: 430px
+    right: 100px
+
+    &.images-rotate__img--show
+      &:first-child
+        right: 100px + 76px
+      
+      &:nth-child(2)
+        right: 100px - 76px
+      
+        
 
 @media (max-width: 992px) 
 
