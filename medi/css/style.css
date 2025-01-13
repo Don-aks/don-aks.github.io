@@ -236,12 +236,23 @@ body.locked {
 /* ======= HEADER__TOP ======= */
 
 .header__top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   min-height: 90px;
 
   font-size: 16px;
+
+  background-color: #ffffff;
 }
 
 .cell {
@@ -456,6 +467,8 @@ body.locked {
 /* ======= HEADER__MENU ======= */
 
 .header__menu {
+  padding-top: 90px;
+
   font-size: 18px;
   background-color: #4fbfa5;
 }
@@ -1216,6 +1229,10 @@ body.locked {
 
   .header__salons-mobile::after {
     right: 0;
+  }
+
+  .header__menu {
+    padding-top: 0;
   }
 
   .social-list {
