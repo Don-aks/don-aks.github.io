@@ -1131,7 +1131,6 @@ body.locked {
   }
 
   .header__top {
-    position: relative;
     z-index: 4;
   
     -webkit-box-pack: justify;
@@ -1283,6 +1282,7 @@ body.locked {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-top: 90px;
   }
   
   .hero__info {
@@ -1490,6 +1490,10 @@ body.locked {
 
   .header__btn-mobile {
     margin: 0 auto;
+  }
+
+  .hero__inner {
+    padding-top: 65px;
   }
 
   .hero__slider-wrap {
