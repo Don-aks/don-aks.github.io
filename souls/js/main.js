@@ -37,7 +37,7 @@ const blockHero = document.querySelector('.hero');
 const title = document.querySelector('.hero__title');
 window.addEventListener('scroll', function(){
   for (let i = 0; i < images.length; i++)
-    addClassOnScroll(images[i], 'images-rotate__img--show', true);
+    addClassOnScroll(images[i], 'images-rotate__img--show');
 
   for (let i = 0; i < animatedElements.length; i++) {
     const el = animatedElements[i];
@@ -51,7 +51,7 @@ window.addEventListener('scroll', function(){
     if (className && className.indexOf('In') !== -1)
       classOutOfVisibility = className.replace('In', 'Out');
 
-    addClassOnScroll(el, 'animate__' + className, false, 550, classOutOfVisibility ? ('animate__' + classOutOfVisibility) : null);
+    addClassOnScroll(el, 'animate__' + className, true, 550, classOutOfVisibility ? ('animate__' + classOutOfVisibility) : null);
   }
 
   const scrollY = this.scrollY;
@@ -137,15 +137,9 @@ function addClassOnScroll(el, className, isUsingTransform, offset, classOutOfVis
   if (!offset)
     offset = 550;
 
-  let scrollY = window.innerHeight - offset;
-  let top = el.getBoundingClientRect().top;
-
-  if (isUsingTransform) {
-    scrollY = window.scrollY;
-    top = el.offsetTop - offset;
-  }
-
-  if (top < scrollY) {
+  const isScrolled = isScrolledDown(el, isUsingTransform, offset);
+  
+  if (isScrolled) {
     el.classList.add(className);
     if (classOutOfVisibility)
       el.classList.remove(classOutOfVisibility);
@@ -154,4 +148,16 @@ function addClassOnScroll(el, className, isUsingTransform, offset, classOutOfVis
     if (classOutOfVisibility)
       el.classList.add(classOutOfVisibility);
   }
+}
+
+function isScrolledDown(el, isUsingTransform, offset) {
+  let scrollY = window.innerHeight - offset;
+  let top = el.getBoundingClientRect().top;
+
+  if (isUsingTransform) {
+    scrollY = window.scrollY;
+    top = el.offsetTop - offset;
+  }
+
+  return top < scrollY;
 }
