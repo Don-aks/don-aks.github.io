@@ -2,7 +2,7 @@ $(function(){
   $(".hero__slider").slick({
     responsive: [
       {
-        breakpoint: 1281,
+        breakpoint: 1331,
         settings: {
           arrows: false
         }
