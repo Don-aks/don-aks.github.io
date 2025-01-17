@@ -17,6 +17,7 @@ langMenu.addEventListener('click', function(e) {
   location.reload();
 });
 
+
 const closeBtn = document.querySelector('.notify__close');
 const header = document.querySelector('.header');
 const hero = document.querySelector('.hero');
@@ -26,10 +27,21 @@ closeBtn.addEventListener('click', function(){
   hero.style.height = 'calc(100vh - 192px)';
 });
 
+
+const menuBtn = document.querySelector('.header__btn');
+const menu = document.querySelector('.header__list')
+menuBtn.addEventListener('click', function() {
+  const line = menuBtn.querySelector('.header__btn-line');
+  line.classList.toggle('header__btn-line--active');
+  menu.classList.toggle('header__list--active');
+});
+
+
 const scrollBtn = document.querySelector('.scroll-down-btn');
 scrollBtn.addEventListener('click', scrollIntoView);
 const headerWrapper = document.querySelector('.header__wrapper');
 headerWrapper.addEventListener('click', scrollIntoView);
+
 
 const images = document.querySelectorAll('.images-rotate__img');
 const animatedElements = document.querySelectorAll('.animate__animated');
@@ -59,7 +71,9 @@ window.addEventListener('scroll', function(){
     title.style.marginTop = scrollY * 1.5 + 'px';
 });
 
-// Parralax is not for IE
+
+// Parralax is not for IE and
+// not for screens under 992
 if (!(/*@cc_on!@*/false || !!document.documentMode) && window.innerWidth > 992) {
   const scenes = document.querySelectorAll('.image-scene');
   for (let i = 0; i < scenes.length; i++)
@@ -71,6 +85,8 @@ if (!(/*@cc_on!@*/false || !!document.documentMode) && window.innerWidth > 992) 
         scenes[i].children[j].setAttribute('data-depth', '0.1');
 }
 
+
+// ====== FUNCTIONS ====== //
 
 function changeLanguage(){
   let hash = window.location.hash.substring(1);
