@@ -43,6 +43,7 @@ const headerWrapper = document.querySelector('.header__wrapper');
 headerWrapper.addEventListener('click', scrollIntoView);
 
 
+const windowOffset = window.innerHeight / 2;
 const images = document.querySelectorAll('.images-rotate__img');
 const animatedElements = document.querySelectorAll('.animate__animated');
 const blockHero = document.querySelector('.hero');
@@ -63,7 +64,7 @@ window.addEventListener('scroll', function(){
     if (className && className.indexOf('In') !== -1)
       classOutOfVisibility = className.replace('In', 'Out');
 
-    addClassOnScroll(el, 'animate__' + className, true, 550, classOutOfVisibility ? ('animate__' + classOutOfVisibility) : null);
+    addClassOnScroll(el, 'animate__' + className, true, windowOffset, classOutOfVisibility ? ('animate__' + classOutOfVisibility) : null);
   }
 
   const scrollY = this.scrollY;
@@ -151,7 +152,7 @@ function scrollIntoView(e){
 
 function addClassOnScroll(el, className, isUsingTransform, offset, classOutOfVisibility) {
   if (!offset)
-    offset = 550;
+    offset = windowOffset;
 
   const isScrolled = isScrolledDown(el, isUsingTransform, offset);
   

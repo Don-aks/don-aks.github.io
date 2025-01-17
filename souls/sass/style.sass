@@ -101,7 +101,6 @@
 // ======= HERO ======= //
 
 .hero
-  position: relative
   padding-top: 16px
   height: calc(100vh - 192px - 46px)
 
@@ -369,7 +368,7 @@
 
   background-color: $third-color
 
-  &__info
+  &__inner
     &::before
       top: -70px - $round-icon-size
       background-image: url("../img/zero-plastic-shop.svg")
@@ -476,7 +475,7 @@
 
   background-color: $third-color
 
-  &__info
+  &__inner
     max-width: 385px
 
     &::before
@@ -544,8 +543,10 @@
     &-title
       margin-bottom: 38px
 
-  &__input
+  &__form
     margin-bottom: 113px
+
+  &__input
     padding: 6px 0
     min-width: 445px
 
@@ -603,6 +604,7 @@
 
   &__grid
     display: flex
+    justify-content: center
     flex-wrap: wrap
     max-width: 570px
     margin: 0 -61px -81px 0

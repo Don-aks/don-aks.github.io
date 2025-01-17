@@ -25,12 +25,25 @@
     margin-right: 110px
   
 
-@media (max-width: 1440px) 
+@media (max-width: 1440px)
   .nut-product
     margin-right: 113px
 
   .halva__inner
     margin-right: 15px
+    
+  .photos__img
+    top: 260px
+    right: 130px
+
+    max-width: 500px
+
+    &.images-rotate__img--show
+      &:first-child
+        right: 130px + 76px
+      
+      &:nth-child(2)
+        right: 130px - 76px
 
 
 @media (max-width: 1350px)
@@ -61,19 +74,17 @@
     &__item:not(:last-child)
       margin-right: 0
 
-    
-  .photos__img
-    top: 430px
-    right: 130px
+  .lang
+    right: 0
+    width: 44px
+    height: 44px
 
-    max-width: 343px
-
-    &.images-rotate__img--show
-      &:first-child
-        right: 130px + 76px
-      
-      &:nth-child(2)
-        right: 130px - 76px
+  .products
+    &__inner::before
+      top: -40px
+      left: -249px
+      width: 189px
+      height: 192px
 
   .nut
     flex-direction: column
@@ -86,6 +97,9 @@
     &-discover
       margin: 0 10px
 
+  .photos__img
+    top: 430px
+    max-width: 343px
 
   .store
     padding-bottom: 808px
@@ -101,14 +115,14 @@
       &.images-rotate__img--show
         &:first-child
           top: 100px
-          left: calc(50% + 76px)
+          left: 50% + 13.7%
           right: auto
         
           transform: translateX(-50%) rotate(15deg)
 
         &:nth-child(2)
           top: 100px
-          left: calc(50% - 76px)
+          left: 50% - 13.7%
           right: auto
         
           transform: translateX(-50%) rotate(-15deg)
@@ -148,11 +162,6 @@
   .section__text
     margin-right: auto
     margin-left: auto
-
-  .lang
-    right: 0
-    width: 40px
-    height: 40px
   
   .images-rotate
     position: relative
@@ -165,17 +174,34 @@
       max-width: 425px
       transform: translateX(-50%)
 
+  .cookies
+    bottom: 110px
+
+  .products
+    padding-top: 223px
+
+    &__inner
+      margin: 0 auto
+
+      &::before
+        top: -200px
+        left: 50%
+        transform: translateX(-50%)
+
+    &__title
+      min-width: auto
+
   .photos
     padding-bottom: 790px
 
     &__img.images-rotate__img--show
       &:first-child
-        left: calc(50% - 76px)
+        left: 50% - 13.7%
         right: auto
         transform: translateX(-50%) rotate(-15deg)
       
       &:nth-child(2)
-        left: calc(50% + 76px)
+        left: 50% + 13.7%
         right: auto
         transform: translateX(-50%) rotate(15deg)
 
@@ -191,7 +217,13 @@
       max-width: 300px
       width: 100%
 
+  .store__inner::before,
+  .treasures__inner::before
+    width: 231px
+    height: 231px
+
   .treasures
+    padding-top: 390px
     padding-bottom: 650px
 
     &__img.images-rotate__img--show
@@ -213,11 +245,15 @@
     padding-top: 100px
 
     &__inner
-      justify-content: center
+      align-items: center
+      flex-direction: column
       flex-wrap: wrap
 
     &__logo
       margin: 0 auto 45px
+
+    &__form
+      margin-bottom: 40px
     
     &__info
       margin: 0 0 60px 
@@ -237,6 +273,15 @@
 
   .images-rotate__img
     max-width: 315px
+  
+  .store
+    padding: 325px 0 600px
+
+    &__inner::before
+      top: -285px
+      left: 50%
+
+      transform: translateX(-50%)
 
   .halva__inner
     margin: 0 10px 30px
@@ -249,10 +294,19 @@
     margin: 0 10px
     width: auto
 
+  .treasures
+    padding-bottom: 500px
+
 
 @media (max-width: 576px)
   .title
     font-size: 58px
+
+  .images-rotate__img
+    max-width: 47%
+
+  .btn
+    padding: 10px 35px
 
   .notify
     &__text
@@ -261,6 +315,25 @@
     &__close
       top: 10px
 
+  .header
+    &__inner
+      padding-bottom: 100px
+
+    &__logo
+      max-width: 100px
+  
+  .cookies
+    right: 50%
+    min-width: 260px
+
+    transform: translateX(50%)
+  
+    &__span
+      margin-right: 4px
+  
+    &__btn
+      margin-left: 25px
+
   .nut-product
     &__title
       margin-bottom: 25px
@@ -268,28 +341,44 @@
     &__card-title
       font-size: 36px
 
-  .images-rotate__img
-    max-width: 47%
-
-  .btn
-    padding: 10px 35px
-
   .halva__link
     padding: 10px 30px
 
   .wild-gift__link
     padding: 16px 30px
 
+  .products
+    padding-top: 180px
+
+    &__inner::before
+      top: -150px
+      width: 140px
+      height: 140px
+
+  .footer__input
+    min-width: auto
+    width: 100%
+
 
 @media (max-width: 440px) 
+  .btn
+    padding: 10px 25px
+    min-height: 44px
+
   .hero__title
     font-size: 38px
 
     &-span
       margin-right: 0
   
-  .images-rotate__img
-    max-width: 37%
+  .store
+    padding-top: 215px
+
+    &__inner::before
+      top: -180px
+    
+      width: 160px
+      height: 160px
 
 
 @media (max-width: 375px)
