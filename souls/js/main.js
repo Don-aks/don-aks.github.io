@@ -104,8 +104,8 @@ function changeLanguage(){
   if (hash == 'en')
     return;
   
-  document.querySelector('html').setAttribute('lang', hash)
-  langBtn.innerHTML = hash;
+  document.querySelector('html').setAttribute('lang', hash);
+  langBtn.querySelectorAll('lang__text').innerHTML = hash;
 
   for(let key in langArray) {
     const elems = document.querySelectorAll('.lng-' + key);
