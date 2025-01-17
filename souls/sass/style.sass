@@ -29,16 +29,57 @@
   
     transform: translateX(-50%)
 
+  &__btn
+    position: relative
+
+    display: none
+    justify-content: center
+    align-items: center
+    width: 40px
+    height: 40px
+
+    transform: translateX(-5px)
+
+    &-line
+      position: relative
+
+      display: block
+      width: 30px
+      height: 2px
+
+      background-color: $black
+      border-radius: 2px
+    
+    &-line::before,
+    &-line::after
+      content: ''
+      position: absolute
+      top: 10px
+      
+      display: block
+      width: 30px
+      height: 2px
+
+      background-color: $black
+      border-radius: 2px
+
+      transition: transform 0.3s
+
+    &-line::after
+      top: -10px
+
+    &-line--active
+      background-color: transparent
+
+    &-line--active::before
+      transform: rotate(-45deg) translate(7px, -7px)
+
+    &-line--active::after
+      transform: rotate(45deg) translate(7px, 7px)
+
   &__list
     @extend %align-items-center
     margin-left: -3px
-
-    &--second
-      .header__item:nth-child(2)
-        transform: translateX(6px)
-        
-      .header__item:last-child
-        transform: translateX(16px)
 
   &__item
     &:not(:last-child)
@@ -223,6 +264,7 @@
       background-image: url("../img/hand-rock.svg")
 
     &__title
+      max-width: 620px
       margin-bottom: 51px
 
     &__card
@@ -496,6 +538,7 @@
     text-align: left
 
   &__info
+    margin-right: 15px
     max-width: 445px
     
     &-title
@@ -566,6 +609,9 @@
 
   &__column
     margin: 0 61px 81px 0
+
+    &-wrap
+      margin-bottom: 81px
 
   &__contact
     margin-right: 120px

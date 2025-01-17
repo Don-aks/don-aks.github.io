@@ -1,8 +1,10 @@
 @use 'vars' as *
 
 @media (any-hover: hover)
-  .animation-link:hover
+  .animation-link:hover,
+  .header__lang:hover .lang__text
     border-bottom: 1px solid $black
+
 
 @media (max-width: 2020px)
   .nut-product
@@ -25,34 +27,118 @@
 
 @media (max-width: 1440px) 
   .nut-product
-    margin-right: 95px
+    margin-right: 113px
 
   .halva__inner
     margin-right: 15px
 
+
 @media (max-width: 1350px)
-  .images-rotate__img
-    max-width: 430px
+  .header
+    &__btn
+      display: flex
+
+    &__list
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      z-index: 10
+  
+      flex-direction: column
+      width: 500px
+    
+      background-color: $primary-color
+
+      transform: translateX(-200%)
+      transition: transform 0.3s
+
+      &--active
+        transform: translate(0)
+
+        &::before
+
+    &__item:not(:last-child)
+      margin-right: 0
+
     
   .photos__img
-    top: 343px
-  
-@media (max-width: 1200px) 
-  .images-rotate__img
-    max-width: 343px
-
-  .photos__img
     top: 430px
-    right: 100px
+    right: 130px
+
+    max-width: 343px
 
     &.images-rotate__img--show
       &:first-child
-        right: 100px + 76px
+        right: 130px + 76px
       
       &:nth-child(2)
-        right: 100px - 76px
-      
+        right: 130px - 76px
+
+  .nut
+    flex-direction: column
+    align-items: center
+
+    &-product
+      margin: 0 10px 30px
+      max-width: 100%
+
+    &-discover
+      margin: 0 10px
+
+
+  .store
+    padding-bottom: 808px
+
+    &__img
+      top: 100px
+      left: 50%
+      right: auto
+
+      max-width: 425px
+      transform: translateX(-50%)
+
+      &.images-rotate__img--show
+        &:first-child
+          top: 100px
+          left: calc(50% + 76px)
+          right: auto
         
+          transform: translateX(-50%) rotate(15deg)
+
+        &:nth-child(2)
+          top: 100px
+          left: calc(50% - 76px)
+          right: auto
+        
+          transform: translateX(-50%) rotate(-15deg)
+  
+  .halva
+    flex-direction: column
+    align-items: center
+    
+    &__inner
+      max-width: 100%
+      margin: 0 0 30px
+  
+  .wild-gift
+    max-width: 100%
+    width: 73.6%
+
+  .treasures
+    &__img
+      right: 80px
+      max-width: 400px
+      
+      &.images-rotate__img--show
+        &:first-child
+          right: 16px
+        &:nth-child(2)
+          right: 137px
+
+  .footer__grid
+    margin-right: 0
+
 
 @media (max-width: 992px) 
   .section__inner
@@ -62,6 +148,11 @@
   .section__text
     margin-right: auto
     margin-left: auto
+
+  .lang
+    right: 0
+    width: 40px
+    height: 40px
   
   .images-rotate
     position: relative
@@ -88,23 +179,17 @@
         right: auto
         transform: translateX(-50%) rotate(15deg)
 
-  .store
-    padding-bottom: 808px
+  .nut
+    &-product
+      padding: 95px 137px 69px 45px
 
-    &__img.images-rotate__img--show
-      &:first-child
-        top: 100px
-        left: calc(50% + 76px)
-        right: auto
-      
-        transform: translateX(-50%) rotate(15deg)
+      &::before,
+      &::after
+        display: none
 
-      &:nth-child(2)
-        top: 100px
-        left: calc(50% - 76px)
-        right: auto
-      
-        transform: translateX(-50%) rotate(-15deg)
+    &-discover
+      max-width: 300px
+      width: 100%
 
   .treasures
     padding-bottom: 650px
@@ -123,21 +208,90 @@
         right: auto
       
         transform: translateX(-50%) rotate(-15deg)
+  
+  .footer
+    padding-top: 100px
+
+    &__inner
+      justify-content: center
+      flex-wrap: wrap
+
+    &__logo
+      margin: 0 auto 45px
+    
+    &__info
+      margin: 0 0 60px 
+
+      &-title
+        text-align: center   
+
 
 @media (max-height: 870px)
   .header
     background-position: top center
 
+
 @media (max-width: 768px) 
+  .hero__title
+    font-size: 54px
+
   .images-rotate__img
     max-width: 315px
 
+  .halva__inner
+    margin: 0 10px 30px
+    padding: 75px 65px 69px 35px
+
+    &::after
+      display: none
+
+  .wild-gift
+    margin: 0 10px
+    width: auto
+
+
 @media (max-width: 576px)
+  .title
+    font-size: 58px
+
+  .notify
+    &__text
+      font-size: 12px
+    
+    &__close
+      top: 10px
+
+  .nut-product
+    &__title
+      margin-bottom: 25px
+
+    &__card-title
+      font-size: 36px
+
   .images-rotate__img
     max-width: 47%
 
+  .btn
+    padding: 10px 35px
+
+  .halva__link
+    padding: 10px 30px
+
+  .wild-gift__link
+    padding: 16px 30px
+
+
 @media (max-width: 440px) 
+  .hero__title
+    font-size: 38px
+
+    &-span
+      margin-right: 0
+  
   .images-rotate__img
     max-width: 37%
 
+
 @media (max-width: 375px)
+  .hero__title
+    font-size: 26px
