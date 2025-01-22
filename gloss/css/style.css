@@ -221,24 +221,6 @@ body.locked {
   justify-content: space-between;
 }
 
-.logo {
-  font: 600 28.44px/1.38 Spartan, Helvetica, Arial, sans-serif;
-  letter-spacing: -0.01em;
-  color: #ffffff;
-}
-
-.logo__text--transparent {
-  margin-right: 4.63px;
-  color: #1b1b1b;
-  text-shadow: 0.85px 0.85px #ffffff, -0.85px -0.85px #ffffff,
-               0.85px -0.85px #ffffff, -0.85px 0.85px #ffffff;
-}
-
-.logo__text--brown {
-  font-weight: 400;
-  color: #cea561;
-}
-
 .header__logo {
   position: relative;
   z-index: 2;
