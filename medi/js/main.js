@@ -34,9 +34,8 @@ $(function(){
   });
 
   var tabs = $(".tabs__tab");
-  className = "tabs__tab--active";
-
   tabs.on("click", function(){
+    className = "tabs__tab--active";
     tabs.removeClass(className);
     $(this).addClass(className);
 
