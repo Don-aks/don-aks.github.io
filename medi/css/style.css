@@ -1591,7 +1591,7 @@ body.locked {
   }
 
   .hero__inner {
-    padding-top: 65px;
+    padding-top: 0;
   }
 
   .hero__slider-wrap {
