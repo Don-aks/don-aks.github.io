@@ -218,7 +218,6 @@ body.locked {
 }
 
 .animation-link {
-  padding: 2px;
   border-radius: 2px;
 
   -webkit-text-decoration: underline transparent;
@@ -1225,13 +1224,14 @@ body.locked {
   }
 
   .header__top {
-    z-index: 4;
-  
     -webkit-box-pack: justify;
   
         -ms-flex-pack: justify;
   
             justify-content: space-between;
+  
+    max-width: 1316px;
+    padding: 0 10px;
   }
 
   .header__logo {
@@ -1352,10 +1352,13 @@ body.locked {
   .header__link,
   .header__item-mobile {
     display: block;
-    padding: 11px 0;
     width: 100%;
   
     text-align: center;
+  }
+
+  .header__link {
+    padding: 9px 0;
   }
 
   .header__item:not(:last-child) {
