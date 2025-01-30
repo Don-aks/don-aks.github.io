@@ -15,16 +15,54 @@ $(function(){
     $("body").toggleClass("locked");
   });
 
-  $(".salons").on("click", function() {
-    $(".salons__submenu").toggleClass("salons__submenu--hidden");
+  var salonsSubmenu = $(".salons__submenu");
+
+  $("body").on("click", function(e) {
+    var className = "salons__submenu--hidden";
+  
+    if ($(e.target).hasClass("salons")) {
+      if (salonsSubmenu.hasClass(className))
+        showSalonsSubmenu();
+      else
+        hideSalonsSubmenu();
+    }
+    else if (
+      !$(e.target).hasClass("salons__submenu") && 
+      !$(e.target).hasClass("salons__link")
+    )
+      salonsSubmenu.addClass(className);
   });
 
-  $(".tabs__tab").on("click", function(){
-    $(".tabs__tab").removeClass("tabs__tab--active");
-    $(this).addClass("tabs__tab--active");
+  var tabs = $(".tabs__tab");
+  className = "tabs__tab--active";
 
-    let contentSelector = ".news__item[data-tab=" + $(this).data("tab") + "]";
-    $(".news__item").removeClass("news__item--active");
-    $(contentSelector).addClass("news__item--active");
+  tabs.on("click", function(){
+    tabs.removeClass(className);
+    $(this).addClass(className);
+
+    var selector = ".news__item";
+    className = "news__item--active";
+
+    let contentSelector = selector + "[data-tab=" + $(this).data("tab") + "]";
+    $(selector).removeClass(className);
+    $(contentSelector).addClass(className);
   });
 });
+
+function showSalonsSubmenu() {
+  className = "salons__submenu--hidden";
+  var salonsSubmenu = $(".salons__submenu");
+  var salonsLinks = $(".salons__link");
+
+  salonsSubmenu.removeClass(className);
+  salonsLinks.removeAttr("tabindex");
+}
+
+function hideSalonsSubmenu() {
+  className = "salons__submenu--hidden";
+  var salonsSubmenu = $(".salons__submenu");
+  var salonsLinks = $(".salons__link");
+
+  salonsSubmenu.addClass(className);
+  salonsLinks.attr("tabindex", "-1");
+}
