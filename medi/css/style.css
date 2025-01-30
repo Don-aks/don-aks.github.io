@@ -84,6 +84,7 @@ button {
   border: 0;
   background-color: transparent;
   color: inherit;
+  outline: transparent;
 
   cursor: pointer;
   -webkit-appearance: none;
@@ -99,7 +100,9 @@ textarea {
 
 a {
   text-decoration: none;
+
   color: inherit;
+  outline: transparent;
 }
 
 body {
@@ -172,6 +175,13 @@ body.locked {
 
   color: #ffffff;
   background-color: #00868a;
+
+  transition: background-color 0.3s;
+}
+
+.btn:focus {
+  background-color: #009ca1;
+  outline: 2px solid #4fbfa5;
 }
 
 .btn--visually-impaired {
@@ -208,6 +218,9 @@ body.locked {
 }
 
 .animation-link {
+  padding: 2px;
+  border-radius: 2px;
+
   -webkit-text-decoration: underline transparent;
           text-decoration: underline transparent;
   -webkit-transition: -webkit-text-decoration 0.3s;
@@ -215,6 +228,14 @@ body.locked {
   -o-transition: text-decoration 0.3s;
   transition: text-decoration 0.3s;
   transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
+}
+
+.animation-link:focus {
+  outline: 2px solid #ffffff;
+}
+
+.animation-link.footer__link:focus {
+  outline: 2px solid #009ca1;
 }
 
 .sr-only {
@@ -271,6 +292,10 @@ body.locked {
   border-right: 1px solid #c4c4c4;
 }
 
+.cell:focus {
+  outline: 2px solid #4fbfa5;
+}
+
 .header__cell-item:first-child {
   border-left: 1px solid #c4c4c4;
 }
@@ -325,7 +350,7 @@ body.locked {
 
   min-width: 145px;
   
-  background-color: #4fbfa5;
+  background-color: #00868a;
   color: #ffffff;
   transform: translate(-50%, 0);
   transition: transform 0.5s;
@@ -347,7 +372,7 @@ body.locked {
   
   border-style: solid;
   border-width: 0 4px 8px 4px;
-  border-color: transparent transparent #4fbfa5 transparent;
+  border-color: transparent transparent #00868a transparent;
 }
 
 .salons__submenu--hidden,
@@ -362,7 +387,13 @@ body.locked {
 
 .salons__link {
   display: block;
+  padding: 10px 0;
+
   text-align: center;
+}
+
+.salons__submenu--hidden .salons__link {
+  pointer-events: none;
 }
 
 .btn-cell {
@@ -377,6 +408,11 @@ body.locked {
   padding: 33px 28px;
 
   background: center no-repeat;
+}
+
+.social:focus {
+  border: 2px solid #4fbfa5;
+  outline: transparent;
 }
 
 .header__btn-menu-cell {
@@ -467,7 +503,7 @@ body.locked {
 /* ======= HEADER__MENU ======= */
 
 .header__menu {
-  padding-top: 90px;
+  padding-top: 94px;
 
   font-size: 18px;
   background-color: #4fbfa5;
@@ -512,6 +548,11 @@ body.locked {
 
   background-color: #ffffff;
   color: #000000;
+  transition: backrgound-color 0.3s;
+}
+
+.header__btn-booking:focus {
+  outline: 2px solid #000000;
 }
 
 
@@ -552,6 +593,10 @@ body.locked {
   letter-spacing: 0.05em;
 }
 
+.hero__btn:focus {
+  outline: 2px solid #ffffff;
+}
+
 .hero__slider-wrap {
   position: relative;
   top: 6px;
@@ -578,6 +623,12 @@ body.locked {
   border: 1px solid #ffffff;
   background: url("../img/arrow.svg") center no-repeat;
 }
+
+.hero__slider .slick-prev:focus,
+.hero__slider .slick-next:focus {
+  outline: 1px solid #ffffff;
+}
+
 
 .hero__slider .slick-prev {
   left: -179px;
@@ -614,6 +665,15 @@ body.locked {
 
 .hero__item:first-child {
   max-width: 648px;
+}
+  
+.hero__link:focus {
+  background-color: #00969b;
+  border: 2px solid #ffffff;
+}
+
+.hero__item--selected .hero__link:focus {
+  background-color: #57cfb3;
 }
 
 .hero__link {
@@ -663,8 +723,8 @@ body.locked {
 .innovations__link {
   position: relative;
 
-  display: block;
-  padding-left: 70px;
+  display: inline-block;
+  padding: 10px 0 10px 70px;
 
   font-size: 16px;
   font-weight: 700;
@@ -681,8 +741,8 @@ body.locked {
 .innovations__link::before {
   content: '';
   position: absolute;
-  top: 61%;
-  left: -4px;
+  top: 50%;
+  left: 0;
 
   width: 50px;
   height: 40px;
@@ -821,6 +881,15 @@ body.locked {
   text-align: left;
 }
 
+.tabs__tab .tabs__btn:focus {
+  background-color: #57cfb3;
+  outline: 2px solid #ffffff;
+}
+
+.tabs__tab--active .tabs__btn:focus {
+  background-color: #00969b;
+}
+
 .news__content {
   width: 59%;
   max-width: 770px;
@@ -921,6 +990,18 @@ body.locked {
   background-color: #4fbfa5;
 }
 
+.offer__link {
+  transition: text-decoration 0.3s;
+}
+
+.offer__link:focus {
+  text-decoration: underline;
+}
+
+.offer__link:focus .offer__title::after {
+  outline: 1px solid #ffffff;
+}
+
 .offer__title {
   position: relative;
   margin-top: 25px;
@@ -992,6 +1073,7 @@ body.locked {
 
 .footer__contact {
   margin-top: 15px;
+  font-style: normal;
 }
 
 .footer__contact-title {
@@ -1058,6 +1140,10 @@ body.locked {
           text-decoration-skip-ink: none;
 }
 
+.footer__politic-link:focus {
+  outline: 1px solid #000000;
+}
+
 .footer__visually-impaired {
   padding-right: 0;
 }
@@ -1103,8 +1189,16 @@ body.locked {
 /* ======= MEDIA ======= */
 
 @media (any-hover: hover) {
+  .btn:hover {
+    background-color: #009ca1;
+  }
+
   .animation-link:hover {
     text-decoration: underline;
+  }
+
+  .header__btn-booking:hover {
+    background-color: #f2f2f2;
   }
   
   .hero__item:hover {
@@ -1473,6 +1567,10 @@ body.locked {
 
   .header__top {
     min-height: 65px;
+  }
+
+  .header__menu {
+    padding-top: 65px;
   }
 
   .header__list {
