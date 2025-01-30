@@ -1598,7 +1598,7 @@ body.locked {
   }
 
   .hero__slider-wrap {
-    top: 7px;
+    top: 6px;
     width: 100%;
   }
   
@@ -1686,14 +1686,11 @@ body.locked {
   }
 }
 
-@media (max-height: 623px) {
-  .header__list {
-    height: auto;
-    max-height: calc(100vh - 89px);
-  }
-}
-
 @media (max-width: 576px) {
+  .hero__slider-wrap {
+    top: 7px;
+  }
+
   .innovations {
     padding: 25px 25px 288px;
   }
