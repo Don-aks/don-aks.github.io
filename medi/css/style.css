@@ -1649,10 +1649,6 @@ body.locked {
     position: static;
   }
 
-  .numbers__img {
-    max-width: 100%;
-  }
-
   .tabs__btn {
     padding: 35px 30px;
   }
@@ -1839,6 +1835,10 @@ body.locked {
   .numbers__item--selected .numbers__num {
     font-size: 48px;
     margin-right: 20px;
+  }
+
+  .numbers__img {
+    max-width: 100%;
   }
 
   .article {
