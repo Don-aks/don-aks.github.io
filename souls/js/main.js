@@ -43,10 +43,11 @@ body.addEventListener('click', function(e){
   }
 });
 
+const products = document.querySelector('.products__inner');
 const productsSwiper = new Swiper('.products__inner', {
   loop: true,
   slidesPerView: 3.5,
-  spaceBetween: 30,
+  spaceBetween: 60,
   navigation: {
     nextEl: '.products__next',
     prevEl: '.products__prev',
@@ -61,7 +62,7 @@ const productsSwiper = new Swiper('.products__inner', {
   }
 });
 
-// const recipes = document.querySelector('.recipes__wrapper');
+const slider = document.querySelector('.slider__wrapper');
 const sliderSwiper  = new Swiper('.slider__wrapper', {
   loop: true,
   slidesPerView: 2,
@@ -69,6 +70,7 @@ const sliderSwiper  = new Swiper('.slider__wrapper', {
   spaceBetween: 230,
 });
 
+const recipes = document.querySelector('.recipes__wrapper');
 const recipesSwiper = new Swiper('.recipes__wrapper', {
   loop: true,
   a11y: {
@@ -78,6 +80,12 @@ const recipesSwiper = new Swiper('.recipes__wrapper', {
   slidesPerView: 3,
   spaceBetween: 39
 });
+
+let isScrolledToSlider = {
+  slider: false,
+  products: false,
+  recipes: false
+}
 
 
 const scrollBtn = document.querySelector('.scroll-down-btn');
@@ -113,6 +121,27 @@ window.addEventListener('scroll', function(){
   const scrollY = this.scrollY;
   if (scrollY < blockHero.offsetHeight)
     title.style.marginTop = scrollY * 1.5 + 'px';
+
+  // Behavior sliders on scroll
+  if (
+    isScrolledDown(slider, false, windowOffset) && 
+    !isScrolledToSlider.slider
+  ) {
+    sliderSwiper.slideNext();
+    isScrolledToSlider.slider = true;
+  }
+  else if (
+    isScrolledDown(recipes, false, windowOffset) && !isScrolledToSlider.recipes
+  ) {
+    recipesSwiper.slideNext();
+    isScrolledToSlider.recipes = true;
+  }
+  else if (
+    isScrolledDown(products, false, windowOffset) && !isScrolledToSlider.products
+  ) {
+    productsSwiper.slideNext();
+    isScrolledToSlider.products = true;
+  }
 });
 
 
