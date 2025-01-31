@@ -124,20 +124,22 @@ window.addEventListener('scroll', function(){
 
   // Behavior sliders on scroll
   if (
-    isScrolledDown(slider, false, windowOffset) && 
+    isScrolledDown(slider, false) && 
     !isScrolledToSlider.slider
   ) {
     sliderSwiper.slideNext();
     isScrolledToSlider.slider = true;
   }
   else if (
-    isScrolledDown(recipes, false, windowOffset) && !isScrolledToSlider.recipes
+    isScrolledDown(recipes, false) && 
+    !isScrolledToSlider.recipes
   ) {
     recipesSwiper.slideNext();
     isScrolledToSlider.recipes = true;
   }
   else if (
-    isScrolledDown(products, false, windowOffset) && !isScrolledToSlider.products
+    isScrolledDown(products, false) && 
+    !isScrolledToSlider.products
   ) {
     productsSwiper.slideNext();
     isScrolledToSlider.products = true;
@@ -240,6 +242,9 @@ function addClassOnScroll(el, className, isUsingTransform, offset, classOutOfVis
 }
 
 function isScrolledDown(el, isUsingTransform, offset) {
+  if (!offset)
+    offset = windowOffset;
+
   let scrollY = window.innerHeight - offset;
   let top = el.getBoundingClientRect().top;
 
