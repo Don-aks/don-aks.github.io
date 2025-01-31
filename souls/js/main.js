@@ -1,6 +1,8 @@
 const langBtn = document.querySelector('.lang');
+const langText = document.querySelector('.lang__text');
 const langMenu = document.querySelector('.lang__menu');
 const langList = ['en', 'ru', 'uk'];
+let currentLang;
 changeLanguage();
 
 langBtn.addEventListener('click', function() {
@@ -28,12 +30,53 @@ closeBtn.addEventListener('click', function(){
 });
 
 
-const menuBtn = document.querySelector('.header__btn');
-const menu = document.querySelector('.header__list')
-menuBtn.addEventListener('click', function() {
-  const line = menuBtn.querySelector('.header__btn-line');
-  line.classList.toggle('header__btn-line--active');
-  menu.classList.toggle('header__list--active');
+const menuBtns = document.querySelectorAll('.header__btn');
+const body = document.querySelector('body')
+for (let i = 0; i < menuBtns.length; i++) {
+  menuBtns[i].addEventListener('click', changeMenuState);
+}
+body.addEventListener('click', function(e){
+  if (e.target.classList.contains('locked'))
+    changeMenuState();
+  else if (e.target != langBtn && e.target != langText && langMenu.classList.contains('lang__menu--active')) {
+    langMenu.classList.remove('lang__menu--active');
+  }
+});
+
+const productsSwiper = new Swiper('.products__inner', {
+  loop: true,
+  slidesPerView: 3.5,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.products__next',
+    prevEl: '.products__prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2
+    },
+    1200: {
+      slidesPerView: 3
+    }
+  }
+});
+
+// const recipes = document.querySelector('.recipes__wrapper');
+const sliderSwiper  = new Swiper('.slider__wrapper', {
+  loop: true,
+  slidesPerView: 2,
+  slidesPerGroup: 2,
+  spaceBetween: 230,
+});
+
+const recipesSwiper = new Swiper('.recipes__wrapper', {
+  loop: true,
+  a11y: {
+    prevSlideMessage: langArray.prevSlideMessage[currentLang],
+    nextSlideMessage: langArray.nextSlideMessage[currentLang]
+  },
+  slidesPerView: 3,
+  spaceBetween: 39
 });
 
 
