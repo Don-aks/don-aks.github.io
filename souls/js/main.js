@@ -68,15 +68,15 @@ const sliderSwiper  = new Swiper('.slider__wrapper', {
   slidesPerView: 2,
   slidesPerGroup: 2,
   spaceBetween: 230,
+  pagination: {
+    el: '.slider__pagination',
+    type: 'bullets',
+  }
 });
 
 const recipes = document.querySelector('.recipes__wrapper');
 const recipesSwiper = new Swiper('.recipes__wrapper', {
   loop: true,
-  a11y: {
-    prevSlideMessage: langArray.prevSlideMessage[currentLang],
-    nextSlideMessage: langArray.nextSlideMessage[currentLang]
-  },
   slidesPerView: 3,
   spaceBetween: 39
 });
