@@ -40,18 +40,24 @@
 
     transform: translateX(-5px)
 
-    &-line
-      position: relative
+    &--close
+      position: absolute
+      top: 10px
+      right: 0
 
-      display: block
-      width: 30px
-      height: 2px
+  &__btn-line
+    position: relative
 
-      background-color: $black
-      border-radius: 2px
-    
-    &-line::before,
-    &-line::after
+    display: block
+    width: 30px
+    height: 2px
+
+    background-color: $black
+    border-radius: 2px
+  
+  &__btn-line
+    &::before,
+    &::after
       content: ''
       position: absolute
       top: 10px
@@ -65,17 +71,17 @@
 
       transition: transform 0.3s
 
-    &-line::after
+    &::after
       top: -10px
 
-    &-line--active
+    &--active
       background-color: transparent
 
-    &-line--active::before
-      transform: rotate(-45deg) translate(7px, -7px)
+      &::before
+        transform: rotate(-45deg) translate(7px, -7px)
 
-    &-line--active::after
-      transform: rotate(45deg) translate(7px, 7px)
+      &::after
+        transform: rotate(45deg) translate(7px, 7px)
 
   &__list
     @extend %align-items-center
@@ -112,12 +118,12 @@
     font-weight: 400
     text-align: center
 
-    &-span
-      margin-right: 14px
+  &__title-span
+    margin-right: 14px
 
-      &--no-margin
-        margin-right: 0
-        transform: translateX(19px)
+    &--no-margin
+      margin-right: 0
+      transform: translateX(19px)
     
   &__scroll-down
     position: absolute
@@ -228,96 +234,96 @@
 
 .nut
   display: flex
-  
-  &-product
-    position: relative
 
-    padding: 95px 250px 164px 183px
-    margin-right: 43.7%
-    max-width: 835px
+  &__text
+    margin-bottom: 20px
 
-    border-top-right-radius: $border-radius-section
-    background-color: $second-color
-
-    &::before,
-    &::after
-      content: ''
-      position: absolute
-      bottom: 74px
-      right: 19px
-      z-index: 2
-
-      display: block
-      width: 350px
-      height: 433px
-
-      background-image: url("../img/nut.png")
-      @extend %bg-contain
-
-    &::after
-      top: 230px
-      bottom: auto
-      right: 34px
-      z-index: 1
-
-      width: 86px
-      height: 158px
-
-      background-image: url("../img/hand-rock.svg")
-
-    &__title
-      max-width: 620px
-      margin-bottom: 51px
-
-    &__card
-      max-width: 234px
-
-      &-title
-        max-width: 157px
-        margin-bottom: 14px
-
-        font-size: 42px
-        font-weight: 700
-        line-height: $title-lh
-
-    &__text
-      margin-bottom: 20px
-
-    &__price
-      margin-bottom: 46px
-      font-size: 21px
-
-    &__link
-      padding: 10px 67px
-
-  &-discover
-    max-width: 285px
-    padding-top: 86px
-
+  &__price
+    margin-bottom: 46px
     font-size: 21px
 
-    &__title
-      max-width: 255px
-      margin-bottom: 92px
-    
-      font-size: 21px
-      font-weight: 400
+  &__link
+    padding: 10px 67px
 
-    &__name-wrap
-      display: flex
-      padding-bottom: 4px
-      margin-bottom: 41px
+.nut-product
+  position: relative
 
-      font-size: 40px
-      font-weight: 700
-      line-height: 1.26
+  padding: 95px 250px 164px 183px
+  margin-right: 110px
+  max-width: 835px
 
-      border-bottom: 1px solid #000
+  border-top-right-radius: $border-radius-section
+  background-color: $second-color
 
-    &__num
-      font-size: 16px
-      line-height: 0
-      font-weight: 400
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    bottom: 74px
+    right: 19px
+    z-index: 2
+
+    display: block
+    width: 350px
+    height: 433px
+
+    background-image: url("../img/nut.png")
+    @extend %bg-contain
+
+  &::after
+    top: 230px
+    bottom: auto
+    right: 34px
+    z-index: 1
+
+    width: 86px
+    height: 158px
+
+    background-image: url("../img/hand-rock.svg")
+
+  &__title
+    max-width: 620px
+    margin-bottom: 51px
+
+  &__card
+    max-width: 234px
+
+  &__card-title
+    max-width: 157px
+    margin-bottom: 14px
+
+    font-size: 42px
+    font-weight: 700
+    line-height: $title-lh
+
+.nut-discover
+  max-width: 285px
+  padding-top: 86px
+
+  font-size: 21px
+
+  &__title
+    max-width: 255px
+    margin-bottom: 92px
+  
+    font-size: 21px
+    font-weight: 400
+
+  &__name-wrap
+    display: flex
+    padding-bottom: 4px
+    margin-bottom: 41px
+
+    font-size: 40px
+    font-weight: 700
+    line-height: 1.26
+
+    border-bottom: 1px solid #000
+
+  &__num
+    font-size: 16px
+    line-height: 0
+    font-weight: 400
 
 
 
@@ -568,8 +574,8 @@
     margin-right: 15px
     max-width: 445px
     
-    &-title
-      margin-bottom: 38px
+  &__info-title
+    margin-bottom: 38px
 
   &__form
     margin-bottom: 113px
@@ -588,35 +594,21 @@
   &__follow
     margin-bottom: 74px
 
-    &-title
-      margin-bottom: 21px
-  
-      font-size: 32px
-      font-weight: 400
+  &__follow-title
+    margin-bottom: 21px
 
-    &-inner
-      display: flex
+    font-size: 32px
+    font-weight: 400
 
-  &__social
-    display: block
-    width: 22px
-    height: 22px
-  
-    @extend %bg-contain
+  &__follow-inner
+    display: flex
 
-    &:not(:last-child)
-      margin-right: 18px
+  &__social:not(:last-child)
+    margin-right: 18px
 
   &__payment-methods
     display: flex
     margin-bottom: 20px
-
-  &__payment
-    display: block
-    width: 36px
-    height: 25px
-
-    @extend %bg-contain
 
   &__payment:not(:last-child)
     margin-right: 14px
@@ -640,17 +632,17 @@
   &__column
     margin: 0 61px 81px 0
 
-    &-wrap
-      margin-bottom: 81px
+  &__column-wrap
+    margin-bottom: 81px
 
   &__contact
     margin-right: 120px
 
-    &-link
-      display: block
+  &__contact-link
+    display: block
 
-      &:not(:last-child)
-        margin-bottom: 5px
+    &:not(:last-child)
+      margin-bottom: 5px
 
   &__title
     margin-bottom: 21px
