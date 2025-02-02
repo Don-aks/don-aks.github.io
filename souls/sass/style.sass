@@ -603,8 +603,15 @@
   &__follow-inner
     display: flex
 
-  &__social:not(:last-child)
-    margin-right: 18px
+  &__social
+    display: block
+    width: 22px
+    height: 22px
+  
+    @extend %bg-contain
+
+    &:not(:last-child)
+      margin-right: 18px
 
   &__payment-methods
     display: flex
