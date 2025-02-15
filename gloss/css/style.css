@@ -1086,7 +1086,7 @@ body.locked {
   }
 
   .header__logo {
-    font-size: 23px;
+    width: 100px;
   }
 
   .header__buttons > *:not(:last-child) {
