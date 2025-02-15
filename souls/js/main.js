@@ -19,14 +19,36 @@ langMenu.addEventListener('click', function(e) {
   location.reload();
 });
 
-
+const headerWrapper = document.querySelector('.header__wrapper');
 const closeBtn = document.querySelector('.notify__close');
 const header = document.querySelector('.header');
+const menu = document.querySelector('.header__menu');
 const hero = document.querySelector('.hero');
+let isNotifyClosed = false;
 closeBtn.addEventListener('click', function(){
+  isNotifyClosed = true;
   this.parentElement.style.display = 'none';
-  header.style.height = '100vh';
-  hero.style.height = 'calc(100vh - 192px)';
+  header.setAttribute(
+    'style', 
+    header.getAttribute('style') + ' height: 100vh; height: 100dvh'
+  );
+  if (window.innerHeight <= 465)
+    hero.setAttribute(
+      'style',
+      'height: calc(100vh - 124px); height: calc(100dvh - 124px)'
+    );
+  else if (window.offsetWidth <= 440 || window.innerHeight <= 750)
+    hero.setAttribute(
+      'style',
+      'height: calc(100vh - 114px); height: calc(100dvh - 114px)'
+    );
+  else
+    hero.setAttribute(
+      'style', 
+      'height: calc(100vh - 209px); height: calc(100dvh - 209px)'
+    );
+  menu.style.top = '0';
+  headerWrapper.style.top = '0';
 });
 
 
