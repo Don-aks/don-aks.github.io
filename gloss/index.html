@@ -89,8 +89,12 @@
           </li>
         </ul>
         <div class="header__buttons">
-          <button class="header__button header__button--basket" type="button"></button>
-          <button class="header__button header__button--search" type="button"></button>
+          <button class="header__button header__button--basket" type="button">
+            <span class="sr-only">Basket</span>
+          </button>
+          <button class="header__button header__button--search" type="button">
+            <span class="sr-only">Search</span>
+          </button>
           <button class="button header__sign-up" type="button">
             Sign up
           </button>
@@ -214,11 +218,15 @@
         </button>
       </div>
       <div class="appointment__inputs">
-        <input class="input appointment__input" type="text" name="name" placeholder="Enter Your Name *" required>
-        <input class="input appointment__input" type="email" name="email" placeholder="Enter Your Email *" required>
-        <input class="input appointment__input" type="tel" name="phone" placeholder="Enter Phone Number *" required>
+        <label for="name">Enter Your Name *</label>
+        <input class="input appointment__input" type="text" name="name" placeholder="Enter Your Name *" id="name" required>
+        <label for="email">Enter Your Email *</label>
+        <input class="input appointment__input" type="email" name="email" placeholder="Enter Your Email *" id="email" required>
+        <label for="tel">Enter Phone Number *</label>
+        <input class="input appointment__input" type="tel" name="phone" placeholder="Enter Phone Number *" id="tel" required>
         <div class="select-wrapper appointment__select-wrapper">
-          <select class="select appointment__select" name="service" required>
+          <label class="sr-only" for="service">Select service</label>
+          <select class="select appointment__select" name="service" id="service" required>
             <option class="select__option appointment__option" value="" disabled selected hidden>
               Select service
             </option>
