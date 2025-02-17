@@ -9,11 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 <div class="notify">
-  <button class="notify__close" type="button">Close</button>
+  <button class="notify__close" type="button">
+    <span class="sr-only lng-close">Close</span>
+  </button>
   <div class="container">
     <p class="notify__text">
       Free shipping in Greece for Wild orders over 50 euros!
@@ -66,24 +69,62 @@
             </a>
           </li> 
         </ul>
+        <button class="lang header__lang" type="button" aria-haspopup="listbox">
+          <span class="sr-only lng-change-lng">Change language</span>
+          <span class="lang__text animation-link">en</span>
+        </button>
+        <ul class="lang__menu">
+          <li class="lang__item">
+            <a class="lang__link" href="#en">En</a>
+          </li>
+          <li class="lang__item">
+            <a class="lang__link" href="#ru">Ru</a>
+          </li>
+          <li class="lang__item">
+            <a class="lang__link" href="#uk">Uk</a>
+          </li>
+        </ul>
       </nav>
     </div>
-    <button class="lang header__lang" type="button">
-      <span class="sr-only lng-change-lng">Change language</span>
-      <span class="lang__text animation-link">en</span>
-    </button>
-    <ul class="lang__menu">
-      <li class="lang__item">
-        <a class="lang__link" href="#en">En</a>
-      </li>
-      <li class="lang__item">
-        <a class="lang__link" href="#ru">Ru</a>
-      </li>
-      <li class="lang__item">
-        <a class="lang__link" href="#uk">Uk</a>
-      </li>
-    </ul>
   </div>
+  <nav class="menu header__menu">
+    <button class="header__btn header__btn--close" type="button">
+      <span class="sr-only lng-open-menu">Open menu</span>
+      <span class="header__btn-line header__btn-line--active"></span>
+    </button>
+    <ul class="menu__list">
+      <li class="menu__item">
+        <a class="menu__link animation-link lng-products" href="#products">
+          Products
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link animation-link lng-who" href="#who">
+          Who we are
+        </a>
+      </li>
+      <li class="menu__item header__item--separator">
+        <a class="menu__link animation-link lng-store" href="#store">
+          Concept Store
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link animation-link lng-recipes" href="#recipes">
+          Recipes
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link animation-link lng-login" href="#">
+          Log In
+        </a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link animation-link lng-cart" href="#">
+          Cart (0)
+        </a>
+      </li> 
+    </ul>
+  </nav>
   <div class="hero">
     <h1 class="hero__title animate__animated animate__backInLeft">
       <span class="hero__title-span lng-span1">Taste</span>

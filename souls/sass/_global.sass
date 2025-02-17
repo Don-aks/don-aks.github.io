@@ -12,6 +12,25 @@ body
   background-color: $primary-color
   color: $black
 
+  &::before
+    content: ''
+    background-color: rgba($black, 0)
+    transition: background-color 0.3s
+
+  &.locked
+    overflow: hidden
+
+    &::before
+      position: fixed
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 998
+
+      background-color: rgba($black, 0.5)
+  
+
 .page
   flex: 1 0 auto
 
