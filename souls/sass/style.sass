@@ -181,8 +181,8 @@
 .products
   padding: 147px 0 178px
 
-  &__inner
-    margin: 0 129px 0 auto
+  &__info
+    margin: 0 129px 132px auto
     max-width: 506px
 
     &::before
@@ -196,8 +196,86 @@
     min-width: 635px
     margin-bottom: 12px
 
-  &__slider
-    // width: 100vw
+  &__inner
+    padding: 96px 0 0 48px
+
+  &__product
+    height: auto
+    padding-bottom: 70px
+
+.product
+  position: relative
+
+  display: flex
+  align-items: flex-start
+  flex-direction: column
+  padding-top: 63px
+  height: 100%
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+
+    width: 360px
+    height: 526px
+
+    background-color: $green
+    border-radius: 275px
+
+  &--top-offset
+    margin-top: -96px
+
+  &--brown
+    &::before
+      background-color: $brown
+
+    .product__btn
+      background-color: $brown
+
+  &--blue
+    &::before
+      background-color: $blue
+
+    .product__btn
+      background-color: $blue
+
+  &--yellow
+    &::before
+      background-color: $yellow
+    
+    .product__btn
+      background-color: $yellow
+
+  &__name
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    flex: 1 1 auto
+    max-width: 333px
+    margin: -44px 0 8px
+
+    font-size: 36px
+    line-height: $title-lh
+    font-weight: 700
+
+  &__price
+    margin-bottom: 23px
+  
+    font-size: 21px
+    font-weight: 700
+
+  &__btn
+    display: block
+    padding: 10px 47px
+
+    font-size: 18px
+    text-transform: uppercase
+
+    background-color: $green
+    border-radius: 36px
 
 
 // ======= PHOTOS ======= //
