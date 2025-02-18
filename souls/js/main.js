@@ -72,7 +72,6 @@ cookiesBtn.addEventListener('click', function() {
 
 const products = document.querySelector('.products__inner');
 const productsSwiper = new Swiper('.products__inner', {
-  loop: true,
   slidesPerView: 4.5,
   spaceBetween: 60,
   breakpoints: {
