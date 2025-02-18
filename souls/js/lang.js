@@ -112,8 +112,8 @@ const langArray = {
     "uk": "Всі скарби заховані в скрині. Відповідно, наші скарби укладені у свою Дику оболонку."
   },
   "nut-price": {
-    "ru": "250г | 220₴",
-    "uk": "250г | 220₴"
+    "ru": "250г | 220 <span class=\"nut-product__currency\">₴</span>",
+    "uk": "250г | 220 <span class=\"nut-product__currency\">₴</span>"
   },
   "nut-link": {
     "ru": "ПОПРОБОВАТЬ!",
@@ -184,8 +184,8 @@ const langArray = {
     "uk": "Це не десерт, не перекус і не повноцінна їжа. Але все це одночасно. Це те, що ви хочете бачити."
   },
   "halva-price": {
-    "ru": "500г | ВІД 399₴",
-    "uk": "500г | ОТ 399₴"
+    "ru": "500г | ВІД 399<span class=\"halva__currency\">₴</span>",
+    "uk": "500г | ОТ 399<span class=\"halva__currency\">₴</span>"
   },
   "discover-now": {
     "ru": "ОТКРОЙТЕ СЕЙЧАС!",
