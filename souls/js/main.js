@@ -2,7 +2,6 @@ const langBtn = document.querySelector('.lang');
 const langText = document.querySelector('.lang__text');
 const langMenu = document.querySelector('.lang__menu');
 const langList = ['en', 'ru', 'uk'];
-let currentLang;
 changeLanguage();
 
 langBtn.addEventListener('click', function() {
@@ -257,9 +256,10 @@ function changeLanguage(){
 
   if (hash == 'en')
     return;
-  
+
+
   document.querySelector('html').setAttribute('lang', hash);
-  langBtn.querySelectorAll('lang__text').innerHTML = hash;
+  langText.innerHTML = hash;
 
   for(let key in langArray) {
     const elems = document.querySelectorAll('.lng-' + key);
@@ -354,4 +354,32 @@ function isScrolledDown(el, isUsingTransform, offset) {
   }
 
   return top < scrollY;
+}
+
+function setHeaderBgColor() {
+  for (let i = 0; i < sectionsBgColor.length; i++) {
+    let el = document.querySelector(sectionsBgColor[i].section);
+    if (isScrolledDown(el, false)) {
+      const bgColor = sectionsBgColor[i].color;
+      menu.style.backgroundColor = bgColor + '1)';
+      headerWrapper.style.backgroundColor = bgColor + '0.5)';
+    }
+  }
+}
+
+function setAnimationOnElements() {
+  for (let i = 0; i < animatedElements.length; i++) {
+    const el = animatedElements[i];
+    const classes = el.classList;
+    let className, classOutOfVisibility;
+
+    for (let i = 0; i < classes.length; i++)
+      if(classes[i].indexOf('anim--') == 0)
+        className = classes[i].slice(6, classes[i].length);
+
+    if (className && className.indexOf('In') !== -1)
+      classOutOfVisibility = className.replace('In', 'Out');
+
+    addClassOnScroll(el, 'animate__' + className, true, windowOffset, classOutOfVisibility ? ('animate__' + classOutOfVisibility) : null);
+  }
 }
