@@ -74,18 +74,20 @@ cookiesBtn.addEventListener('click', function() {
 const products = document.querySelector('.products__inner');
 const productsSwiper = new Swiper('.products__inner', {
   loop: true,
-  slidesPerView: 3.5,
+  slidesPerView: 4.5,
   spaceBetween: 60,
-  navigation: {
-    nextEl: '.products__next',
-    prevEl: '.products__prev',
-  },
   breakpoints: {
-    768: {
-      slidesPerView: 2
+    0: {
+      slidesPerView: 1
     },
-    1200: {
-      slidesPerView: 3
+    576: {
+      slidesPerView: 1.5
+    },
+    920: {
+      slidesPerView: 2.5
+    },
+    1320: {
+      slidesPerView: 3.5
     }
   }
 });
@@ -99,14 +101,40 @@ const sliderSwiper  = new Swiper('.slider__wrapper', {
   pagination: {
     el: '.slider__pagination',
     type: 'bullets',
+    clickable: true
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1
+    },
+    660: {
+      spaceBetween: 50
+    },
+    768: {
+      spaceBetween: 100
+    },
+    992: {
+      spaceBetween: 230,
+    }
   }
 });
 
-const recipes = document.querySelector('.recipes__wrapper');
 const recipesSwiper = new Swiper('.recipes__wrapper', {
   loop: true,
   slidesPerView: 3,
-  spaceBetween: 39
+  spaceBetween: 39,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    576: {
+      slidesPerView: 2
+    },
+    992: {
+      slidesPerView: 3
+    }
+  }
 });
 
 let isScrolledToSlider = {
@@ -126,30 +154,54 @@ const images = document.querySelectorAll('.images-rotate__img');
 const animatedElements = document.querySelectorAll('.animate__animated');
 const blockHero = document.querySelector('.hero');
 const title = document.querySelector('.hero__title');
+const sectionsBgColor = [
+  {
+    section: '.hero',
+    color: 'rgba(237, 123, 73, '
+  },
+  {
+    section: '.slider',
+    color: 'rgba(233, 168, 198, '
+  },
+  {
+    section: '.store',
+    color: 'rgba(245, 175, 185, '
+  },
+  {
+    section: '.footer',
+    color: 'rgba(190, 90, 75, '
+  }
+]
+
+if (window.scrollY > headerWrapper.offsetHeight) {
+  headerWrapper.style.top = '0';
+  setHeaderBgColor();
+}
+
 window.addEventListener('scroll', function(){
+  if (this.scrollY > headerWrapper.offsetHeight) {
+    headerWrapper.style.top = '0';
+    setHeaderBgColor();
+  }
+  else {
+    headerWrapper.style.backgroundColor = 'transparent';
+    if (isNotifyClosed)
+      headerWrapper.style.top = '0';
+    else
+      headerWrapper.style.top = '46px';
+  }
+
+
   for (let i = 0; i < images.length; i++)
     addClassOnScroll(images[i], 'images-rotate__img--show');
 
-  for (let i = 0; i < animatedElements.length; i++) {
-    const el = animatedElements[i];
-    const classes = el.classList;
-    let className, classOutOfVisibility;
-
-    for (let i = 0; i < classes.length; i++)
-      if(classes[i].indexOf('anim--') == 0)
-        className = classes[i].slice(6, classes[i].length);
-
-    if (className && className.indexOf('In') !== -1)
-      classOutOfVisibility = className.replace('In', 'Out');
-
-    addClassOnScroll(el, 'animate__' + className, true, windowOffset, classOutOfVisibility ? ('animate__' + classOutOfVisibility) : null);
-  }
+  setAnimationOnElements();
 
   const scrollY = this.scrollY;
   if (scrollY < blockHero.offsetHeight)
     title.style.marginTop = scrollY * 1.5 + 'px';
 
-  // Behavior sliders on scroll
+  // Behavior of sliders on scroll
   if (
     isScrolledDown(slider, false) && 
     !isScrolledToSlider.slider
