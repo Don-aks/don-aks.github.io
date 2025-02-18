@@ -118,7 +118,7 @@ body
 
 .logo
   &:focus
-    @include focus()
+    @include focus
 
 .title
   font-size: 85px
@@ -145,7 +145,7 @@ body
   transition: border-color 0.3s
 
   &:focus
-    @include focus()
+    @include focus
 
 .lang
   text-transform: uppercase
@@ -184,6 +184,9 @@ body
   
     text-transform: uppercase
     text-align: center
+
+    &:focus
+      @include focus
 
 .sr-only
   position: absolute
