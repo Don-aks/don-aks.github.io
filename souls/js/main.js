@@ -65,6 +65,12 @@ body.addEventListener('click', function(e){
   }
 });
 
+const cookies = document.querySelector('.cookies');
+const cookiesBtn = document.querySelector('.cookies__btn');
+cookiesBtn.addEventListener('click', function() {
+  cookies.style.display = 'none';
+});
+
 const products = document.querySelector('.products__inner');
 const productsSwiper = new Swiper('.products__inner', {
   loop: true,
