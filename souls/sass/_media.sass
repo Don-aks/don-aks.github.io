@@ -7,32 +7,15 @@
     border-bottom: 1px solid $black
 
 
-@media (max-width: 2020px)
-  .nut-product
-    margin-right: 26.7%
-  
-  .halva
-    justify-content: start
-
-    &__inner
-      margin-right: 445px
-
-
-@media (max-width: 1700px)
-  .nut-product
-    margin-right: 250px
-
-  .halva__inner
-    margin-right: 110px
+@media (max-width: 1680px)
+  .store__img
+    max-width: 425px
   
 
 @media (max-width: 1440px)
-  .nut-product
-    margin-right: 113px
+  .store__img
+    max-width: 325px
 
-  .halva__inner
-    margin-right: 15px
-    
   .photos__img
     top: 260px
     right: 130px
@@ -45,6 +28,13 @@
       
       &:nth-child(2)
         right: 130px - 76px
+
+  .recipes__wrapper
+    padding: 0 10px
+
+  .recipe__img
+    width: 100%
+    height: auto
 
 
 @media (max-width: 1350px)
@@ -101,8 +91,13 @@
     width: 44px
     height: 44px
 
+  .hero
+    height: calc(100vh - 209px - 46px)
+    height: calc(100dvh - 209px - 46px)
+    padding-top: 209px
+
   .products
-    &__inner::before
+    &__info::before
       top: -40px
       left: -249px
       width: 189px
@@ -127,27 +122,24 @@
     padding-bottom: 808px
 
     &__img
-      top: 100px
-      left: 50%
-      right: auto
+      top: 300px
+      right: 90px
 
-      max-width: 425px
+      max-width: 300px
       transform: translateX(-50%)
 
       &.images-rotate__img--show
         &:first-child
-          top: 100px
-          left: 50% + 13.7%
-          right: auto
+          top: 300px - 10px
+          right: 0
         
-          transform: translateX(-50%) rotate(15deg)
+          transform: rotate(15deg)
 
         &:nth-child(2)
-          top: 100px
-          left: 50% - 13.7%
-          right: auto
+          top: 300px - 10px
+          right: 161px
         
-          transform: translateX(-50%) rotate(-15deg)
+          transform: rotate(-15deg)
   
   .halva
     flex-direction: column
@@ -162,6 +154,8 @@
     width: 73.6%
 
   .treasures
+    padding-bottom: 0
+
     &__img
       right: 80px
       max-width: 400px
@@ -172,6 +166,9 @@
         &:nth-child(2)
           right: 137px
 
+  .recipes
+    padding-top: 100px
+
   .footer__grid
     margin-right: 0
 
@@ -181,6 +178,7 @@
     max-width: 100%
     text-align: center
 
+  .title,
   .section__text
     margin-right: auto
     margin-left: auto
@@ -199,10 +197,13 @@
   .cookies
     bottom: 110px
 
+  .hero__title
+    font-size: 54px
+
   .products
     padding-top: 223px
 
-    &__inner
+    &__info
       margin: 0 auto
 
       &::before
@@ -238,6 +239,32 @@
     &-discover
       max-width: 300px
       width: 100%
+  
+  .store
+    padding-bottom: 808px
+
+    &__img
+      top: 100px
+      left: 50%
+      right: auto
+
+      max-width: 425px
+      transform: translateX(-50%)
+
+      &.images-rotate__img--show
+        &:first-child
+          top: 100px
+          left: 50% + 13.7%
+          right: auto
+        
+          transform: translateX(-50%) rotate(15deg)
+
+        &:nth-child(2)
+          top: 100px
+          left: 50% - 13.7%
+          right: auto
+        
+          transform: translateX(-50%) rotate(-15deg)
 
   .store__inner::before,
   .treasures__inner::before
@@ -245,23 +272,25 @@
     height: 231px
 
   .treasures
-    padding-top: 390px
-    padding-bottom: 650px
+    padding: 390px 0 650px
 
     &__img.images-rotate__img--show
       &:first-child
         top: 100px
-        left: calc(50% + 76px)
+        left: 50% + 13.7%
         right: auto
       
         transform: translateX(-50%) rotate(15deg)
 
       &:nth-child(2)
         top: 100px
-        left: calc(50% - 76px)
+        left: 50% - 13.7%
         right: auto
       
         transform: translateX(-50%) rotate(-15deg)
+
+  .recipe--with-offset
+    margin-top: 0
   
   .footer
     padding-top: 100px
@@ -287,17 +316,27 @@
 @media (max-height: 870px)
   .header
     background-position: top center
-
-
-@media (max-width: 768px) 
+  
   .hero__title
     font-size: 54px
 
+
+@media (max-width: 768px)
   .images-rotate__img
     max-width: 315px
+
+  .slider
+    padding: 60px 0
+
+    &__title
+      position: static
+      max-width: 200px
+      margin: 0 auto 30px
+
+      transform: none
   
   .store
-    padding: 325px 0 600px
+    padding: 325px 0 110%
 
     &__inner::before
       top: -285px
@@ -317,8 +356,35 @@
     width: auto
 
   .treasures
-    padding-bottom: 500px
+    padding: 300px 0 510px
 
+    &__inner::before
+      width: 212px
+      height: 212px
+      top: -227px
+      left: 50%
+      transform: translateX(-50%)
+
+@media (max-height: 750px), (max-width: 440px)
+  .header
+    &__inner
+      padding-bottom: 28px + 16px
+
+    &__logo
+      top: 10px
+      max-width: 70px
+    
+  .hero
+    height: calc(100vh - 124px - 46px)
+    height: calc(100dvh - 124px - 46px)
+    padding-top: 124px
+
+    &__title
+      padding-top: 40px
+      font-size: 38px
+
+    &__title-span
+      margin-right: 0
 
 @media (max-width: 576px)
   .title
@@ -336,25 +402,36 @@
     
     &__close
       top: 10px
-
-  .header
-    &__inner
-      padding-bottom: 100px
-
-    &__logo
-      max-width: 100px
   
   .cookies
     right: 50%
-    min-width: 260px
-
+    min-width: 358px
     transform: translateX(50%)
-  
-    &__span
-      margin-right: 4px
-  
+
     &__btn
-      margin-left: 25px
+      margin-left: 70px
+
+  .hero
+    &__title
+      font-size: 38px
+
+    &__title-span
+      margin-right: 0
+
+  .products
+    padding: 180px 0 20px
+
+    &__info::before
+      top: -150px
+      width: 140px
+      height: 140px
+
+  .product
+    &--top-offset
+      margin-top: 0
+
+  .photos
+    padding: 100px 0 500px
 
   .nut-product
     &__title
@@ -363,35 +440,89 @@
     &__card-title
       font-size: 36px
 
-  .halva__link
-    padding: 10px 30px
+  .halva
+    &__inner
+      margin-right: 0
+      margin-left: 0
+
+    &__link
+      padding: 10px 30px
 
   .wild-gift__link
     padding: 16px 30px
 
-  .products
-    padding-top: 180px
+  .treasures
+    padding-bottom: 95%
 
-    &__inner::before
-      top: -150px
-      width: 140px
-      height: 140px
+  .recipes
+    padding: 100px 0
 
-  .footer__input
-    min-width: auto
-    width: 100%
+    &__wrapper
+      padding: 0 10px
 
+    &__info
+      margin-bottom: 100px
 
-@media (max-width: 440px) 
+  .recipe
+    text-align: center
+
+    &__img
+      margin-left: auto
+      margin-right: auto
+
+  .footer
+    &__input
+      min-width: auto
+      width: 100%
+
+    &__grid
+      flex-direction: column
+      align-items: center
+
+    &__column-wrap
+      width: 100%
+
+@media (max-height: 565px) and (max-width: 930px)
+  // Add text stroke
+  .hero__title
+    text-shadow: -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white
+
+@media (max-width: 440px)
   .btn
     padding: 10px 25px
     min-height: 44px
+  
+  .cookies
+    min-width: 220px
+  
+    &__span
+      margin-right: 4px
+  
+    &__btn
+      margin-left: 25px
 
   .hero__title
-    font-size: 38px
+    font-size: 26px
 
-    &-span
-      margin-right: 0
+  .products__inner
+    padding: 0 0 0 25px
+
+  .product
+    &::before
+      top: 50px
+      left: 21px
+      width: 200px
+      height: 306px
+
+    &__img
+      width: 250px
+      height: auto
+  
+  .notify__text
+    font-size: 10px 
+    
+  .nut-product
+    padding-right: 0
   
   .store
     padding-top: 215px
@@ -402,7 +533,15 @@
       width: 160px
       height: 160px
 
+  .recipes__info
+    margin: 0 0 60px
 
-@media (max-width: 375px)
+
+@media (max-height: 465px)
+  .hero__cookies,
+  .hero__scroll-down
+    display: none
+
+@media (max-height: 300px)
   .hero__title
-    font-size: 26px
+    padding-top: 0
