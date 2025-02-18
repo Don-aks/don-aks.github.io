@@ -79,6 +79,7 @@ body
 
 .notify
   position: relative
+
   padding: 11px 0
   text-align: center
 
@@ -89,11 +90,13 @@ body
     position: absolute
     top: 15px
     right: 9px
-    font-size: 0
 
     display: block
     width: 15px
     height: 15px
+    
+    &:focus
+      @include focus($white)
 
     &::before,
     &::after
@@ -113,6 +116,10 @@ body
   &__text
     padding-right: 20px
 
+.logo
+  &:focus
+    @include focus()
+
 .title
   font-size: 85px
   line-height: $title-lh-2
@@ -130,12 +137,21 @@ body
   background-color: $black
   border-radius: 32px
 
+  &:focus
+    @include focus($white, 32px)
+
 .animation-link
   border-bottom: 1px solid transparent
   transition: border-color 0.3s
 
+  &:focus
+    @include focus()
+
 .lang
   text-transform: uppercase
+
+  &:focus
+    @include focus
 
   &__menu
     position: absolute
