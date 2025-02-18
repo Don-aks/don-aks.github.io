@@ -327,16 +327,6 @@
 .nut
   display: flex
 
-  &__text
-    margin-bottom: 20px
-
-  &__price
-    margin-bottom: 46px
-    font-size: 21px
-
-  &__link
-    padding: 10px 67px
-
 .nut-product
   position: relative
 
@@ -372,6 +362,18 @@
     height: 158px
 
     background-image: url("../img/hand-rock.svg")
+  
+  &__text
+    margin-bottom: 20px
+
+  &__price
+    display: block
+    margin-bottom: 46px
+
+    font-size: 21px
+
+  &__link
+    padding: 10px 67px
 
   &__title
     max-width: 620px
@@ -441,9 +443,14 @@
 
     transform: translateX(-50%)
 
+  &__inner
+    margin-bottom: 39px
+
   &__item
     position: relative
-    padding-top: 136px
+    padding-top: 111px + 25px
+
+    text-align: center
 
     &::before
       content: ''
@@ -459,6 +466,35 @@
       @extend %bg-contain
     
       transform: translateX(-50%)
+
+  &__name
+    margin-bottom: 15px
+    text-transform: uppercase
+
+  .slider__pagination
+    position: absolute
+    bottom: 0
+    left: 50%
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    transform: translateX(-50%)
+
+    .swiper-pagination-bullet
+      width: 10px
+      height: 10px
+  
+      background-color: transparent
+      border: 1px solid $black
+      border-radius: 0
+
+      transition: background-color 0.3s, border-color 0.3s
+
+    .swiper-pagination-bullet-active
+      background-color: $black
+  
 
 
 // ======= STORE ======= //
