@@ -2,24 +2,24 @@
 
 @font-face {
   font-family: Gilroy;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2");
-  src: url("../fonts/Gilroy-Regular.ttf") format("truetype");
+  src: url('../fonts/Gilroy-Regular.woff2') format('woff2');
+  src: url('../fonts/Gilroy-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gilroy;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2");
-  src: url("../fonts/Gilroy-Medium.ttf") format("truetype");
+  src: url('../fonts/Gilroy-Medium.woff2') format('woff2');
+  src: url('../fonts/Gilroy-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Gilroy;
-  src: url("../fonts/Gilroy-Bold.woff2") format("woff2");
-  src: url("../fonts/Gilroy-Bold.ttf") format("truetype");
+  src: url('../fonts/Gilroy-Bold.woff2') format('woff2');
+  src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -199,10 +199,10 @@ body.locked {
   width: 26px;
   height: 22px;
 
-  background: url("../img/visually-impaired.svg") center/contain no-repeat;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+  background: url('../img/visually-impaired.svg') center/contain no-repeat;
 }
 
 .label-title {
@@ -332,13 +332,13 @@ body.locked {
   width: 20px;
   height: 20px;
   
-  background: url("../img/arrow-down.svg") center/contain no-repeat;
 
   -webkit-transform: translateY(-50%);
 
       -ms-transform: translateY(-50%);
 
           transform: translateY(-50%);
+  background: url('../img/arrow-down.svg') center/contain no-repeat;
 }
 
 .salons__submenu {
@@ -348,7 +348,7 @@ body.locked {
   z-index: 5;
 
   min-width: 145px;
-  
+
   background-color: #00868a;
   color: #ffffff;
   transform: translate(-50%, 0);
@@ -368,7 +368,7 @@ body.locked {
   z-index: 5;
 
   display: block;
-  
+
   border-style: solid;
   border-width: 0 4px 8px 4px;
   border-color: transparent transparent #00868a transparent;
@@ -465,7 +465,7 @@ body.locked {
   content: '';
   position: absolute;
   top: 10px;
-  
+
   display: block;
   width: 30px;
   height: 2px;
@@ -554,7 +554,6 @@ body.locked {
   outline: 2px solid #000000;
 }
 
-
 /* ======= HERO ======= */
 
 .hero {
@@ -620,14 +619,13 @@ body.locked {
   font-size: 0;
 
   border: 1px solid #ffffff;
-  background: url("../img/arrow.svg") center no-repeat;
+  background: url('../img/arrow.svg') center no-repeat;
 }
 
 .hero__slider .slick-prev:focus,
 .hero__slider .slick-next:focus {
   outline: 1px solid #ffffff;
 }
-
 
 .hero__slider .slick-prev {
   left: -179px;
@@ -665,7 +663,7 @@ body.locked {
 .hero__item:first-child {
   max-width: 648px;
 }
-  
+
 .hero__link:focus {
   background-color: #00969b;
   border: 2px solid #ffffff;
@@ -691,7 +689,6 @@ body.locked {
   font-size: 21px;
   text-align: center;
 }
-
 
 /* ======= INNOVATIONS ======= */
 
@@ -747,12 +744,11 @@ body.locked {
   height: 40px;
 
   border: 1px solid #ffffff;
-  background: url("../img/arrow-small.svg") center no-repeat;
+  background: url('../img/arrow-small.svg') center no-repeat;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-
 
 /* ======= NUMBERS ======= */
 
@@ -825,7 +821,6 @@ body.locked {
 .numbers__img {
   max-width: 306px;
 }
-
 
 /* ======= NEWS ======= */
 
@@ -937,7 +932,6 @@ body.locked {
   border-radius: 2px;
 }
 
-
 /* ======= OFFERS ======= */
 
 .offers {
@@ -1014,14 +1008,13 @@ body.locked {
   position: absolute;
   bottom: 9px;
   right: -1px;
-  
+
   width: 50px;
   height: 40px;
 
-  background: url("../img/arrow-small.svg") center no-repeat;
+  background: url('../img/arrow-small.svg') center no-repeat;
   border: 1px solid #ffffff;
 }
-
 
 /* ======= FOOTER ======= */
 
@@ -1152,7 +1145,6 @@ body.locked {
   min-width: 81px;
 }
 
-
 /* ======= MODAL ======= */
 
 .modal {
@@ -1185,7 +1177,6 @@ body.locked {
   margin: 40px auto 0;
 }
 
-
 /* ======= MEDIA ======= */
 
 @media (any-hover: hover) {
@@ -1200,7 +1191,7 @@ body.locked {
   .header__btn-booking:hover {
     background-color: #f2f2f2;
   }
-  
+
   .hero__item:hover {
     background-color: #00969b;
   }
@@ -1282,7 +1273,7 @@ body.locked {
     -o-transition: transform 0.5s;
     transition: transform 0.5s;
     transition: transform 0.5s, -webkit-transform 0.5s;
-    
+
     overflow-y: auto;
   }
 
@@ -1354,7 +1345,7 @@ body.locked {
   .header__item-mobile {
     display: block;
     width: 100%;
-  
+
     text-align: center;
   }
 
@@ -1382,7 +1373,7 @@ body.locked {
             flex-direction: column;
     padding-top: 90px;
   }
-  
+
   .hero__info {
     padding-top: 20px;
     margin: 0 auto 40px;
@@ -1451,7 +1442,7 @@ body.locked {
   .offer:not(:last-child) {
     margin-right: 24px;
   }
-  
+
   .offer__title::after {
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1602,7 +1593,7 @@ body.locked {
     top: 6px;
     width: 100%;
   }
-  
+
   .hero__slider {
     padding-bottom: 0;
   }
@@ -1626,7 +1617,7 @@ body.locked {
   .hero__item {
     max-width: none;
   }
-  
+
   .numbers {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1747,7 +1738,7 @@ body.locked {
   .innovations__title {
     font-size: 20px;
   }
-  
+
   .innovations {
     padding: 20px 20px 270px;
   }
@@ -1788,7 +1779,7 @@ body.locked {
   .offer__label {
     top: 15px;
     left: 17px;
-    
+
     font-size: 14px;
   }
 

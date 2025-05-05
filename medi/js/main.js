@@ -1,36 +1,38 @@
-$(function(){
-  $(".hero__slider").slick({
+'use strict';
+
+$(function () {
+  $('.hero__slider').slick({
     responsive: [
       {
         breakpoint: 1331,
         settings: {
-          arrows: false
-        }
-      }
-    ]
+          arrows: false,
+        },
+      },
+    ],
   });
-  $(".header__btn-menu").on("click", function() {
-    $(".header__btn-menu .btn-menu__line").toggleClass("btn-menu__line--active");
-    $(".header__list").toggleClass("header__list--active");
-    $("body").toggleClass("locked");
+  $('.header__btn-menu').on('click', function () {
+    $('.header__btn-menu .btn-menu__line').toggleClass(
+      'btn-menu__line--active'
+    );
+    $('.header__list').toggleClass('header__list--active');
+    $('body').toggleClass('locked');
   });
 
   var salonsSubmenu = $(".salons__submenu");
 
-  $("body").on("click", function(e) {
-    var className = "salons__submenu--hidden";
-  
-    if ($(e.target).hasClass("salons")) {
-      if (salonsSubmenu.hasClass(className))
-        showSalonsSubmenu();
-      else
-        hideSalonsSubmenu();
-    }
-    else if (
-      !$(e.target).hasClass("salons__submenu") && 
-      !$(e.target).hasClass("salons__link")
-    )
+  $('body').on('click', function (e) {
+    const className = 'salons__submenu--hidden';
+
+    if ($(e.target).hasClass('salons')) {
+      if (salonsSubmenu.hasClass(className)) showSalonsSubmenu();
+      else hideSalonsSubmenu();
+    } else if (
+      !$(e.target).hasClass('salons__submenu') &&
+      !$(e.target).hasClass('salons__link')
+    ) {
       salonsSubmenu.addClass(className);
+    }
   });
 
   var tabs = $(".tabs__tab");
@@ -54,7 +56,7 @@ function showSalonsSubmenu() {
   var salonsLinks = $(".salons__link");
 
   salonsSubmenu.removeClass(className);
-  salonsLinks.removeAttr("tabindex");
+  salonsLinks.removeAttr('tabindex');
 }
 
 function hideSalonsSubmenu() {
@@ -63,5 +65,5 @@ function hideSalonsSubmenu() {
   var salonsLinks = $(".salons__link");
 
   salonsSubmenu.addClass(className);
-  salonsLinks.attr("tabindex", "-1");
+  salonsLinks.attr('tabindex', '-1');
 }

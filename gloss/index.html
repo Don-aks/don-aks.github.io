@@ -1,352 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gloss &amp; Glam</title>
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@400..600&display=swap">
-  <link rel="stylesheet" href="css/air-datepicker.css">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
-<header class="header" style="background-image: url('img/banner.svg');">
-  <div class="container">
-    <div class="header__inner">
-      <nav class="header__nav">
-        <a class="logo header__logo" href="index.html">
-          <img class="logo__img" src="img/logo.svg" alt="Gloss & Glam Logotype" width="204" height="40">
-        </a>
-        <ul class="header__list">
-          <li class="header__item header__item--selected">
-            <span class="header__link header__link--selected">Home</span>
-          </li>
-          <li class="header__item">
-            <a class="header__link" href="#">About us</a>
-          </li>
-          <li class="header__item">
-            <button class="header__link header__link--drop-down" type="button">
-              Services
-            </button>
-            <ul class="submenu submenu--hidden">
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Hair Cut
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gloss &amp; Glam</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@400..600&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header" style="background-image: url('img/banner.svg')">
+      <div class="container">
+        <div class="header__inner">
+          <nav class="header__nav">
+            <a class="logo header__logo" href="index.html">
+              <img
+                class="logo__img"
+                src="img/logo.svg"
+                alt="Gloss & Glam Logotype"
+                width="204"
+                height="40"
+              />
+            </a>
+            <ul class="header__list">
+              <li class="header__item header__item--selected">
+                <a
+                  class="header__link animation-link header__link--selected"
+                  href="index.html"
+                >
+                  Home
                 </a>
               </li>
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Shaving
-                </a>
+              <li class="header__item">
+                <a class="header__link animation-link" href="#">About us</a>
               </li>
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Hair Dye
-                </a>
+              <li class="header__item">
+                <button
+                  class="header__link animation-link header__link--drop-down"
+                  type="button"
+                >
+                  <span class="icon icon--arrow-down">Services</span>
+                </button>
+                <ul class="submenu submenu--hidden">
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Hair Cut
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Shaving
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Hair Dye
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Facial
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Keratin Treatment
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Hair Removal
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Hair Treatment
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a
+                      class="submenu__link animation-link"
+                      href="#"
+                      tabindex="-1"
+                    >
+                      Wedding Package
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Facial
-                </a>
+              <li class="header__item">
+                <a class="header__link animation-link" href="#">Pricing</a>
               </li>
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Keratin Treatment
-                </a>
+              <li class="header__item">
+                <a class="header__link animation-link" href="#">Appointment</a>
               </li>
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Hair Removal
-                </a>
+              <li class="header__item">
+                <a class="header__link animation-link" href="#">Contact</a>
               </li>
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Hair Treatment
-                </a>
-              </li>
-              <li class="submenu__item">
-                <a class="submenu__link animation-link" href="#">
-                  Wedding Package
-                </a>
+              <li class="header__item header__item-sign-up">
+                <button class="button" type="button">Sign up</button>
               </li>
             </ul>
-          </li>
-          <li class="header__item">
-            <a class="header__link" href="#">Pricing</a>
-          </li>
-          <li class="header__item">
-            <a class="header__link" href="#">Appointment</a>
-          </li>
-          <li class="header__item">
-            <a class="header__link" href="#">Contact</a>
-          </li>
-          <li class="header__item header__item-sign-up">
-            <button class="button" type="button">
-              Sign up
+            <div class="header__buttons">
+              <button
+                class="header__button header__button--basket"
+                type="button"
+              >
+                <span class="sr-only">Basket</span>
+              </button>
+              <button
+                class="header__button header__button--search"
+                type="button"
+              >
+                <span class="sr-only">Search</span>
+              </button>
+              <button class="button header__sign-up" type="button">
+                Sign up
+              </button>
+              <button class="menu-button" type="button">
+                <span class="menu-button__line"></span>
+                <span class="sr-only">Open menu</span>
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        <div class="banner">
+          <h1 class="banner__title">Services</h1>
+          <p class="banner__text">Home • Services</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="services section">
+        <div class="container">
+          <h2 class="section__title">Our services</h2>
+          <p class="section__text services__text">
+            Borem ipsum dolor sit amet, consectetur adipiscin elit. Nunc
+            vulputate libero amet, consectetur adipiscin
+          </p>
+          <ul class="services__grid">
+            <li class="services__item services__item--haircut">
+              <h3 class="services__name">
+                <a class="services__link" href="#hair-cut">Hair Cut</a>
+              </h3>
+            </li>
+            <li class="services__item services__item--shaving">
+              <h3 class="services__name">
+                <a class="services__link" href="#shaving">Shaving</a>
+              </h3>
+            </li>
+            <li class="services__item services__item--hairdye">
+              <h3 class="services__name">
+                <a class="services__link" href="#hair-dye">Hair Dye</a>
+              </h3>
+            </li>
+            <li class="services__item services__item--facial">
+              <h3 class="services__name">
+                <a class="services__link" href="#facial">Facial</a>
+              </h3>
+            </li>
+            <li class="services__item services__item--treatment">
+              <h3 class="services__name">
+                <a class="services__link" href="#keratin-treatment">
+                  Keratin Treatment
+                </a>
+              </h3>
+            </li>
+            <li class="services__item services__item--removal">
+              <h3 class="services__name">
+                <a class="services__link" href="#hair-removal">Hair Removal</a>
+              </h3>
+            </li>
+            <li class="services__item services__item--treatment">
+              <h3 class="services__name">
+                <a class="services__link" href="#hair-treatment">
+                  Hair Treatment
+                </a>
+              </h3>
+            </li>
+            <li class="services__item services__item--wedding">
+              <h3 class="services__name">
+                <a class="services__link" href="#wedding-package">
+                  Wedding Package
+                </a>
+              </h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="packages section">
+        <div class="container">
+          <h2 class="section__title">Our packages</h2>
+          <p class="section__text">Choose The Option That Fits You The Best</p>
+          <ul class="packages__list">
+            <li class="package">
+              <h3 class="package__title">Grooming Package</h3>
+              <div class="package__price">
+                <span class="package__price-dollar">$</span>
+                499
+              </div>
+              <ul class="package__ul">
+                <li class="package__li">Hair Cut of Your Choice</li>
+                <li class="package__li">Beard Style / Shaving for Men</li>
+                <li class="package__li">Facial Treatment</li>
+                <li class="package__li">
+                  Hair Treatment / Keratin Treatment Suited for You
+                </li>
+              </ul>
+              <button class="button button--transparent package__button">
+                Choose plan
+              </button>
+            </li>
+            <li class="package">
+              <h3 class="package__title">Grooming Package</h3>
+              <div class="package__price">
+                <span class="package__price-dollar">$</span>
+                699
+              </div>
+              <ul class="package__ul">
+                <li class="package__li">Hair Cut of Your Choice</li>
+                <li class="package__li">Beard Style / Shaving for Men</li>
+                <li class="package__li">Facial Treatment</li>
+                <li class="package__li">
+                  Hair Treatment / Keratin Treatment Suited for You
+                </li>
+              </ul>
+              <button class="button button--transparent package__button">
+                Choose plan
+              </button>
+            </li>
+            <li class="package">
+              <h3 class="package__title">Wedding Package</h3>
+              <div class="package__price">
+                <span class="package__price-dollar">$</span>
+                799
+              </div>
+              <ul class="package__ul">
+                <li class="package__li">Hair Cut of Your Choice</li>
+                <li class="package__li">Beard Style / Shaving for Men</li>
+                <li class="package__li">Facial Treatment</li>
+                <li class="package__li">
+                  Hair Treatment / Keratin Treatment Suited for You
+                </li>
+              </ul>
+              <button class="button button--transparent package__button">
+                Choose plan
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section appointment">
+        <div class="container">
+          <h2 class="section__title">Make An Appointment</h2>
+          <p class="section__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            condimentum justo sit amet dui feugiat, ut consectetur lacus
+            consectetur.
+          </p>
+          <form class="appointment__form" id="appointment-form" action="#">
+            <input type="text" name="date" value="" id="input-date" hidden />
+            <div class="appointment__date"></div>
+            <h3 class="appointment__form-title">Select a time</h3>
+            <div class="appointment__buttons">
+              <input type="text" name="time" id="input-time" hidden />
+              <button
+                class="button button--transparent appointment__button"
+                type="button"
+              >
+                8:30 am - 9:30 am
+              </button>
+              <button
+                class="button button--transparent appointment__button"
+                type="button"
+              >
+                9:30 am - 10:30 am
+              </button>
+              <button
+                class="button button--transparent appointment__button"
+                type="button"
+              >
+                10:30 am - 11:30 am
+              </button>
+              <button
+                class="button button--transparent appointment__button"
+                type="button"
+              >
+                11:30 am - 12:30 pm
+              </button>
+            </div>
+            <div class="appointment__inputs">
+              <label class="sr-only" for="name">Enter Your Name *</label>
+              <input
+                class="input appointment__input"
+                type="text"
+                name="name"
+                placeholder="Enter Your Name *"
+                id="name"
+                required
+              />
+              <label class="sr-only" for="email">Enter Your Email *</label>
+              <input
+                class="input appointment__input"
+                type="email"
+                name="email"
+                placeholder="Enter Your Email *"
+                id="email"
+                required
+              />
+              <label class="sr-only" for="tel">Enter Phone Number *</label>
+              <input
+                class="input appointment__input"
+                type="tel"
+                name="phone"
+                placeholder="Enter Phone Number *"
+                id="tel"
+                required
+              />
+              <div class="select-wrapper appointment__select-wrapper">
+                <label class="sr-only" for="service">Select service</label>
+                <select
+                  class="select appointment__select"
+                  name="service"
+                  id="service"
+                  required
+                >
+                  <option
+                    class="select__option appointment__option"
+                    value=""
+                    disabled
+                    selected
+                    hidden
+                  >
+                    Select service
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="hair-cut"
+                  >
+                    Hair cut
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="shaving"
+                  >
+                    Shaving
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="hair-dye"
+                  >
+                    Hair dye
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="facial"
+                  >
+                    Facial
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="keratin-treatment"
+                  >
+                    Keratin treatment
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="hair-removal"
+                  >
+                    Hair removal
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="hair-treatment"
+                  >
+                    Hair treatment
+                  </option>
+                  <option
+                    class="select__option appointment__option"
+                    value="wedding-package"
+                  >
+                    Wedding package
+                  </option>
+                </select>
+              </div>
+            </div>
+            <button class="button appointment__button-submit" type="submit">
+              Book appointment
             </button>
-          </li>
-        </ul>
-        <div class="header__buttons">
-          <button class="header__button header__button--basket" type="button">
-            <span class="sr-only">Basket</span>
-          </button>
-          <button class="header__button header__button--search" type="button">
-            <span class="sr-only">Search</span>
-          </button>
-          <button class="button header__sign-up" type="button">
-            Sign up
-          </button>
-          <button class="menu-button" type="button">
-            <span class="menu-button__line"></span>
-            <span class="sr-only">Open menu</span>
-          </button>
+          </form>
         </div>
-      </nav>
-    </div>
+      </section>
 
-    <div class="banner">
-      <h1 class="banner__title">Services</h1>
-      <p class="banner__text">Home • Services</p>
-    </div>
-  </div>
-</header>
+      <section class="mailing-list">
+        <div class="container">
+          <div class="mailing-list__inner">
+            <h2 class="section__title mailing-list__title">Stay updated</h2>
+            <p class="section__text mailing-list__text">
+              Borem ipsum dolor sit amet, consectetur adipiscin elit. Nunc
+              vulputate libero amet, consectetur adipiscin
+            </p>
+            <form class="mailing-list__form" action="#">
+              <input
+                class="input mailing-list__input"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+              <button class="button mailing-list__button" type="submit">
+                Sign up
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<main class="main">
-<section class="services section">
-  <div class="container">
-    <h2 class="section__title">Our services</h2>
-    <p class="section__text services__text">Borem ipsum dolor sit amet, consectetur adipiscin elit. Nunc vulputate libero amet, consectetur adipiscin</p>
-    <div class="services__grid">
-      <div class="services__item services__item--haircut">
-        <h3 class="services__name">Hair Cut</h3>
-      </div>
-      <div class="services__item services__item--shaving">
-        <h3 class="services__name">Shaving</h3>
-      </div>
-      <div class="services__item services__item--hairdye">
-        <h3 class="services__name">Hair Dye</h3>
-      </div>
-      <div class="services__item services__item--facial">
-        <h3 class="services__name">Facial</h3>
-      </div>
-      <div class="services__item services__item--treatment">
-        <h3 class="services__name">Keratin Treatment</h3>
-      </div>
-      <div class="services__item services__item--removal">
-        <h3 class="services__name">Hair Removal</h3>
-      </div>
-      <div class="services__item services__item--treatment">
-        <h3 class="services__name">Hair Treatment</h3>
-      </div>
-      <div class="services__item services__item--wedding">
-        <h3 class="services__name">Wedding Package</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="packages section">
-  <div class="container">
-    <h2 class="section__title">Our packages</h2>
-    <p class="section__text">Choose The Option That Fits You The Best</p>
-    <ul class="packages__list">
-      <li class="package">
-        <h3 class="package__title">Grooming Package</h3>
-        <div class="package__price">
-          <span class="package__price-dollar">$</span>499
-        </div>
-        <ul class="package__ul">
-          <li class="package__li">Hair Cut of Your Choice</li>
-          <li class="package__li">Beard Style / Shaving for Men</li>
-          <li class="package__li">Facial Treatment</li>
-          <li class="package__li">Hair Treatment / Keratin Treatment  Suited for You</li>
-        </ul>
-        <button class="button button--transparent package__button">Choose plan</button>
-      </li>
-      <li class="package">
-        <h3 class="package__title">Grooming Package</h3>
-        <div class="package__price">
-          <span class="package__price-dollar">$</span>699
-        </div>
-        <ul class="package__ul">
-          <li class="package__li">Hair Cut of Your Choice</li>
-          <li class="package__li">Beard Style / Shaving for Men</li>
-          <li class="package__li">Facial Treatment</li>
-          <li class="package__li">Hair Treatment / Keratin Treatment  Suited for You</li>
-        </ul>
-        <button class="button button--transparent package__button">Choose plan</button>
-      </li>
-      <li class="package">
-        <h3 class="package__title">Wedding Package</h3>
-        <div class="package__price">
-          <span class="package__price-dollar">$</span>799
-        </div>
-        <ul class="package__ul">
-          <li class="package__li">Hair Cut of Your Choice</li>
-          <li class="package__li">Beard Style / Shaving for Men</li>
-          <li class="package__li">Facial Treatment</li>
-          <li class="package__li">Hair Treatment / Keratin Treatment  Suited for You</li>
-        </ul>
-        <button class="button button--transparent package__button">Choose plan</button>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section class="section appointment">
-  <div class="container">
-    <h2 class="section__title">Make An Appointment</h2>
-    <p class="section__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum justo sit amet dui feugiat, ut consectetur lacus consectetur.</p>
-    <form class="appointment__form" id="appointment-form" action="#">
-      <input type="text" name="date" value="" id="input-date" hidden>
-      <h3 class="appointment__form-title">Select a time</h3>
-      <div class="appointment__buttons">
-        <input type="text" name="time" id="input-time" hidden>
-        <button class="button button--transparent appointment__button" type="button">
-          8:30 am - 9:30 am
-        </button>
-        <button class="button button--transparent appointment__button" type="button">
-          9:30 am - 10:30 am
-        </button>
-        <button class="button button--transparent appointment__button" type="button">
-          10:30 am - 11:30 am
-        </button>
-        <button class="button button--transparent appointment__button" type="button">
-          11:30 am - 12:30 pm
-        </button>
-      </div>
-      <div class="appointment__inputs">
-        <label for="name">Enter Your Name *</label>
-        <input class="input appointment__input" type="text" name="name" placeholder="Enter Your Name *" id="name" required>
-        <label for="email">Enter Your Email *</label>
-        <input class="input appointment__input" type="email" name="email" placeholder="Enter Your Email *" id="email" required>
-        <label for="tel">Enter Phone Number *</label>
-        <input class="input appointment__input" type="tel" name="phone" placeholder="Enter Phone Number *" id="tel" required>
-        <div class="select-wrapper appointment__select-wrapper">
-          <label class="sr-only" for="service">Select service</label>
-          <select class="select appointment__select" name="service" id="service" required>
-            <option class="select__option appointment__option" value="" disabled selected hidden>
-              Select service
-            </option>
-            <option class="select__option appointment__option" value="hair-cut">
-              Hair cut
-            </option>
-            <option class="select__option appointment__option" value="shaving">
-              Shaving
-            </option>
-            <option class="select__option appointment__option" value="hair-dye">
-              Hair dye
-            </option>
-            <option class="select__option appointment__option" value="facial">
-              Facial
-            </option>
-            <option class="select__option appointment__option" value="keratin-treatment">
-              Keratin treatment
-            </option>
-            <option class="select__option appointment__option" value="hair-removal">
-              Hair removal
-            </option>
-            <option class="select__option appointment__option" value="hair-treatment">
-              Hair treatment
-            </option>
-            <option class="select__option appointment__option" value="wedding-package">
-              Wedding package
-            </option>
-          </select>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__social-media">
+            <a class="logo footer__logo" href="index.html">
+              <img
+                class="logo__img"
+                src="img/logo.svg"
+                alt="Gloss & Glam Logotype"
+                width="204"
+                height="40"
+              />
+            </a>
+            <p class="footer__text">
+              Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis.
+            </p>
+            <div class="footer__socials">
+              <a
+                class="footer__social-link footer__social-link--facebook"
+                href="#"
+                aria-label="Facebook"
+              ></a>
+              <a
+                class="footer__social-link footer__social-link--twitter"
+                href="#"
+                aria-label="Twitter"
+              ></a>
+              <a
+                class="footer__social-link footer__social-link--linkedin"
+                href="#"
+                aria-label="LinkedIn"
+              ></a>
+            </div>
+          </div>
+          <nav class="footer__nav">
+            <div class="footer__nav-block">
+              <h3 class="footer__title">Services</h3>
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Hair Cut</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Hair Dye</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Shaving</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Facial</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Massage</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__nav-block">
+              <h3 class="footer__title">Related Links</h3>
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a class="footer__link" href="#">About Us</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Our Blog</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Pricing</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Social links</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__nav-block">
+              <h3 class="footer__title">Terms</h3>
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Terms &amp; Conditions</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Privacy policy</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Tax Forms</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">FAQs</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">FAQs</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="footer__contact">
+            <h3 class="footer__title">Contact Us</h3>
+            <div class="footer__contact-item footer__location">
+              <div class="footer__contact-title">Location</div>
+              523 Main Street, New York
+            </div>
+            <div class="footer__contact-item footer__mobile">
+              <div class="footer__contact-title">Mobile</div>
+              <a class="footer__link" href="tel:+8801316440504">
+                +880 1316-440504
+              </a>
+            </div>
+            <div class="footer__contact-item footer__email">
+              <div class="footer__contact-title footer__email">Email</div>
+              <a class="footer__link" href="mailto:qubenext@gmail.com">
+                qubenext@gmail.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <button class="button appointment__button-submit" type="submit">Book appointment</button>
-    </form>
-  </div>
-</section>
-
-<section class="mailing-list">
-  <div class="container">
-    <div class="mailing-list__inner">
-      <h2 class="section__title mailing-list__title">Stay updated</h2>
-      <p class="section__text mailing-list__text">Borem ipsum dolor sit amet, consectetur adipiscin elit. Nunc vulputate libero amet, consectetur adipiscin</p>
-      <form class="mailing-list__form" action="#">
-        <input class="input mailing-list__input" type="email" name="email" placeholder="Enter your email" required>
-        <button class="button mailing-list__button" type="submit">Sign up</button>
-      </form>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div class="footer__social-media">
-        <a class="logo footer__logo" href="index.html">
-          <img class="logo__img" src="img/logo.svg" alt="Gloss & Glam Logotype" width="204" height="40">
-        </a>
-        <p class="footer__text">
-          Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
-        </p>
-         <div class="footer__socials">
-           <a class="footer__social-link footer__social-link--facebook"  href="#" aria-label="Facebook"></a>
-           <a class="footer__social-link footer__social-link--twitter" href="#" aria-label="Twitter"></a>
-           <a class="footer__social-link footer__social-link--linkedin"  href="#" aria-label="LinkedIn"></a>
-        </div>
+      <div class="footer__copyright">
+        Copyright © 2023 CryptoVault. All Rights Reserved
       </div>
-      <nav class="footer__nav">
-        <div class="footer__nav-block">
-          <h3 class="footer__title">Services</h3>
-          <ul class="footer__list">
-            <li class="footer__item"><a class="footer__link" href="#">Hair Cut</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Hair Dye</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Shaving</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Facial</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Massage</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-block">
-          <h3 class="footer__title">Related Links</h3>
-          <ul class="footer__list">
-            <li class="footer__item"><a class="footer__link" href="#">About Us</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Our Blog</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Pricing</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Social links</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-block">
-          <h3 class="footer__title">Terms</h3>
-          <ul class="footer__list">
-            <li class="footer__item"><a class="footer__link" href="#">Terms &amp; Conditions</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Privacy policy</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">Tax Forms</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">FAQs</a></li>
-            <li class="footer__item"><a class="footer__link" href="#">FAQs</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="footer__contact">
-        <h3 class="footer__title">Contact Us</h3>
-        <div class="footer__contact-item footer__location">
-          <div class="footer__contact-title">Location</div>
-          523 Main Street, New York
-        </div>
-        <div class="footer__contact-item footer__mobile">
-          <div class="footer__contact-title">Mobile</div>
-          <a class="footer__link" href="tel:+8801316440504">+880 1316-440504</a>
-        </div>
-        <div class="footer__contact-item footer__email">
-          <div class="footer__contact-title footer__email">Email</div>
-          <a class="footer__link" href="mailto:qubenext@gmail.com">qubenext@gmail.com</a>
-        </div>  
-      </div>
-    </div>
-  </div>
-  <div class="footer__copyright">
-    Copyright © 2023 CryptoVault. All Rights Reserved
-  </div>
-</footer>
+    </footer>
 
 <script src="js/air-datepicker.js"></script>
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

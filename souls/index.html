@@ -1,686 +1,973 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wild Souls</title>
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
-<div class="notify">
-  <button class="notify__close" type="button">
-    <span class="sr-only lng-close">Close</span>
-  </button>
-  <div class="container">
-    <p class="notify__text">
-      Free shipping in Greece for Wild orders over 50 euros!
-    </p>
-  </div>
-</div>
-
-<header class="header" style="background-image: url('img/header-bg.jpg'); background-image: url('img/header-bg.webp');">
-  <div class="header__wrapper">
-    <div class="container">
-      <nav class="header__inner">
-        <button class="header__btn" type="button">
-          <span class="sr-only lng-open-menu">Open menu</span>
-          <span class="header__btn-line"></span>
-        </button>
-
-        <a class="logo header__logo" href="index.html">
-          <img class="logo__img" src="img/logo.svg" alt="Wild Souls logotype">
-        </a>
-
-        <ul class="header__list">
-          <li class="header__item">
-            <a class="header__link animation-link lng-products" href="#products">
-              Products
-            </a>
-          </li>
-          <li class="header__item">
-            <a class="header__link animation-link lng-who" href="#who">
-              Who we are
-            </a>
-          </li>
-          <li class="header__item header__item--separator">
-            <a class="header__link animation-link lng-store" href="#store">
-              Concept Store
-            </a>
-          </li>
-          <li class="header__item">
-            <a class="header__link animation-link lng-recipes" href="#recipes">
-              Recipes
-            </a>
-          </li>
-          <li class="header__item">
-            <a class="header__link animation-link lng-login" href="#">
-              Log In
-            </a>
-          </li>
-          <li class="header__item">
-            <a class="header__link animation-link lng-cart" href="#">
-              Cart (0)
-            </a>
-          </li> 
-        </ul>
-        <button class="lang header__lang" type="button" aria-haspopup="listbox">
-          <span class="sr-only lng-change-lng">Change language</span>
-          <span class="lang__text animation-link">en</span>
-        </button>
-        <ul class="lang__menu">
-          <li class="lang__item">
-            <a class="lang__link" href="#en">En</a>
-          </li>
-          <li class="lang__item">
-            <a class="lang__link" href="#ru">Ru</a>
-          </li>
-          <li class="lang__item">
-            <a class="lang__link" href="#uk">Uk</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <nav class="menu header__menu">
-    <button class="header__btn header__btn--close" type="button" tabindex="-1">
-      <span class="sr-only lng-close-menu">Close menu</span>
-      <span class="header__btn-line header__btn-line--active"></span>
-    </button>
-    <ul class="menu__list">
-      <li class="menu__item">
-        <a class="menu__link animation-link lng-products" href="#products" tabindex="-1">
-          Products
-        </a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__link animation-link lng-who" href="#who" tabindex="-1">
-          Who we are
-        </a>
-      </li>
-      <li class="menu__item header__item--separator">
-        <a class="menu__link animation-link lng-store" href="#store" tabindex="-1">
-          Concept Store
-        </a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__link animation-link lng-recipes" href="#recipes" tabindex="-1">
-          Recipes
-        </a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__link animation-link lng-login" href="#" tabindex="-1">
-          Log In
-        </a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__link animation-link lng-cart" href="#" tabindex="-1">
-          Cart (0)
-        </a>
-      </li> 
-    </ul>
-  </nav>
-  <div class="hero">
-    <h1 class="hero__title animate__animated animate__backInLeft">
-      <span class="hero__title-span lng-span1">Taste</span>
-      <span class="hero__title-span lng-span2">the</span>
-      <span class="hero__title-span hero__title-span--no-margin lng-span3">Wild.</span><br>
-      <span class="hero__title-span lng-span4">Find</span>
-      <span class="hero__title-span lng-span5">your</span>
-      <span class="hero__title-span hero__title-span--no-margin lng-span6">Soul.</span>
-    </h1>
-    <div class="cookies hero__cookies">
-      <span class="cookies__span lng-use-cookies">Our Website use</span>
-      cookies
-      <button class="cookies__btn" type="button">OK</button>
-    </div>
-    <a class="scroll-down-btn hero__scroll-down" href="#page" aria-label="Scroll down"></a>
-  </div>
-</header>
-
-<main class="page" id="page">
-  <section class="products" id="products">
-    <div class="container">
-      <div class="products__info round-icon animate__animated anim--zoomIn">
-        <h2 class="title products__title lng-products-title">
-          Wildly Loved
-        </h2>
-        <p class="products__text lng-products-text">
-          You will find our wild products in their simplest form. No additives or anything else can spoil their nature
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wild Souls</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <div class="notify">
+      <button class="notify__close" type="button">
+        <span class="sr-only lng-close">Close</span>
+      </button>
+      <div class="container">
+        <p class="notify__text">
+          Free shipping in Greece for Wild orders over 50 euros!
         </p>
       </div>
     </div>
-    <div class="products__inner swiper">
-      <ul class="products__slider swiper-wrapper">
-        <li class="products__product swiper-slide">
-          <article class="product product--green">
-            <img class="product__img lng-product1" src="img/peanut-butter.png" alt="The Wild Peanut Butter" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product1">
-              The Wild Peanut Butter
-            </h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              4,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-        <li class="products__product swiper-slide">
-          <article class="product product--brown product--top-offset">
-            <img class="product__img lng-product2" src="img/tahini-cocoa.png" alt="Tahini with Cocoa & Honey" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product2">Tahini with Cocoa &amp; Honey</h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              5,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-        <li class="products__product swiper-slide">
-          <article class="product product--blue">
-            <img class="product__img lng-product3" src="img/hazelnut-butter.png" alt="The Wild Hazelnut Butter" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product3">The Wild Hazelnut Butter</h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              6,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-        <li class="products__product swiper-slide">
-          <article class="product product--yellow product--top-offset">
-            <img class="product__img lng-product4" src="img/tahini.png" alt="The Wild Tahini" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product4">The Wild Tahini</h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              4,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-        <li class="products__product swiper-slide">
-          <article class="product product--green">
-            <img class="product__img lng-product1" src="img/peanut-butter.png" alt="The Wild Peanut Butter" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product1">
-              The Wild Peanut Butter
-            </h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              4,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-        <li class="products__product swiper-slide">
-          <article class="product product--brown product--top-offset">
-            <img class="product__img lng-product2" src="img/tahini-cocoa.png" alt="Tahini with Cocoa & Honey" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product2">Tahini with Cocoa &amp; Honey</h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              4,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-        <li class="products__product swiper-slide">
-          <article class="product product--blue">
-            <img class="product__img  lng-product3" src="img/hazelnut-butter.png" alt="The Wild Hazelnut Butter" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product3">The Wild Hazelnut Butter</h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              4,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-        <li class="products__product swiper-slide">
-          <article class="product product--yellow product--top-offset">
-            <img class="product__img lng-product4" src="img/tahini.png" alt="The Wild Tahini" width="360" height="396" loading="lazy">
-            <h3 class="product__name lng-product4">The Wild Tahini</h3>
-            <span class="product__price">
-              <span class="product__currency">€</span>
-              4,90
-            </span>
-            <button class="product__btn" type="button">
-              Buy Now!
-            </button>
-          </article>
-        </li>
-      </ul>
-    </div>
-  </section>
 
-  <section class="photos section" id="who">
-    <div class="container">
-      <div class="section__inner photos__inner">
-        <h2 class="title photos__title lng-wild-way">
-          Our<br> Wild Way
-        </h2>
-        <p class="section__text photos__text lng-photos-text">
-          Our philosophy is present in every stage of our production. We are endeavoring to contribute to the creation of a better world.
-        </p>
-        <a class="btn photos__link lng-discover" href="#">DISCOVER MORE!</a>
-      </div>
-    </div>
-    <div class="images-rotate photos__images image-scene">
-      <img class="images-rotate__img images-rotate__img--show photos__img lng-photos-img1" src="img/photos-1.jpg" alt="Wild Souls products" data-depth="0.3" loading="lazy">
-      <img class="images-rotate__img images-rotate__img--show photos__img lng-photos-img2" src="img/photos-2.jpg" alt="Wild Souls drinks" data-depth="0.3" loading="lazy">
-      <img class="images-rotate__img images-rotate__img--show photos__img lng-photos-img3" src="img/photos-3.jpg" alt="Hand opening a water tap" data-depth="0.3" loading="lazy">
-    </div>
-  </section>
+    <header
+      class="header"
+      style="
+        background-image: url('img/header-bg.jpg');
+        background-image: image-set(
+          url('img/header-bg.webp') type('image/webp'),
+          url('img/header-bg.jpg') type('image/jpeg')
+        );
+        background-image: -webkit-image-set(
+          url('img/header-bg.webp') type('image/webp'),
+          url('img/header-bg.jpg') type('image/jpeg')
+        );
+      "
+    >
+      <div class="header__wrapper">
+        <div class="container">
+          <nav class="header__inner">
+            <button class="header__btn" type="button">
+              <span class="sr-only lng-open-menu">Open menu</span>
+              <span class="header__btn-line"></span>
+            </button>
 
-  <section class="nut">
-    <div class="nut-product anim animate__animated anim--fadeInLeft">
-      <h2 class="title nut-product__title lng-nut-title">
-        Wild like a Nut??
-      </h2>
-      <div class="nut-product__card">
-        <h3 class="nut-product__card-title lng-nut-card-title">
-          Roasted Almond
-        </h3>
-        <p class="nut-product__text lng-nut-text">
-          All the treasures are hidden in a chest. Respectively, our treasures are enclosed in their Wild shell.
-        </p>
-        <div class="nut-product__price lng-nut-price">
-          250G | 5,00 <span class="nut-product__currency">€</span>
-        </div>
-        <a class="btn nut-product__link lng-nut-link" href="#">TASTE IT!</a>
-      </div>
-    </div>
-    <div class="nut-discover">
-      <h3 class="nut-discover__title lng-discover-title">
-        DISCOVER OUR<br> PRODUCTS THROUGH THE 5 TREASURES OF NATURE!
-      </h3>
-      <ul class="nut-discover__list">
-        <li class="nut-discover__name-wrap">
-          <a class="nut-discover__name lng-sesame" href="#">Sesame</a>
-          <sup class="nut-discover__num">20</sup>
-        </li>
-        <li class="nut-discover__name-wrap">
-          <a class="nut-discover__name lng-peanut" href="#">Peanut</a>
-          <sup class="nut-discover__num">5</sup>
-        </li>
-        <li class="nut-discover__name-wrap">
-          <a class="nut-discover__name lng-almond" href="#">Almond</a>
-          <sup class="nut-discover__num"> 9</sup>
-        </li> 
-        <li class="nut-discover__name-wrap">
-          <a class="nut-discover__name lng-hazelnut" href="#">Hazelnut</a>
-          <sup class="nut-discover__num"> 5</sup>
-        </li>
-        <li class="nut-discover__name-wrap">
-          <a class="nut-discover__name lng-cashew" href="#">Cashew</a>
-          <sup class="nut-discover__num"> 4</sup>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="slider">
-    <div class="container">
-      <h2 class="slider__title lng-slider-title">
-        Words from the soul!
-      </h2>
-      <div class="slider__wrapper swiper">
-        <ul class="slider__inner swiper-wrapper">
-          <li class="slider__item swiper-slide">
-            <h3 class="slider__name lng-slider-title1">POPANGADA</h3>
-            <p class="slider__text lng-slider-text1">
-              A different shop in the center of Athens grinds fruit, offers butter made from just one ingredient, and halva flavors that confirm that healthy can be delicious.
-            </p>
-          </li>
-          <li class="slider__item swiper-slide">
-            <h3 class="slider__name lng-slider-title2">Athens Voice</h3>
-            <p class="slider__text lng-slider-text2">
-              Wild Souls works mainly with sesame and nut products (pistachio, hazelnut, almond, cashews), creating hellish spreads that you want to swallow with the jar.
-            </p>
-          </li>
-          <li class="slider__item swiper-slide">
-            <h3 class="slider__name lng-slider-title1">POPANGADA</h3>
-            <p class="slider__text  lng-slider-text1">
-              A different shop in the center of Athens grinds fruit, offers butter made from just one ingredient, and halva flavors that confirm that healthy can be delicious.
-            </p>
-          </li>
-          <li class="slider__item swiper-slide">
-            <h3 class="slider__name lng-slider-title2">Athens Voice</h3>
-            <p class="slider__tex lng-slider-text2">
-              Wild Souls works mainly with sesame and nut products (pistachio, hazelnut, almond, cashews), creating hellish spreads that you want to swallow with the jar.
-            </p>
-          </li>
-        </ul>
-        <div class="slider__pagination"></div>
-      </div>
-    </div>
-  </section>
-  <section class="store section" id="store">
-    <div class="container">
-      <div class="section__inner store__inner round-icon">
-        <h2 class="title store__title lng-store-title">The Concept Store</h2>
-        <p class="section__text store__text lng-store-text">
-          We invite you to explore it, live it, and take photographs of it. But be careful, it is very addictive!
-        </p>
-        <a class="btn store__link lng-discover" href="#">
-          DISCOVER MORE!
-        </a>
-      </div>
-    </div>
-
-    <div class="images-rotate store__images image-scene">
-      <img class="images-rotate__img images-rotate__img--show store__img" src="img/store-1.jpg" alt="Сake stand. On the wall it says: Born to eat wild" data-depth="0.3" loading="lazy">
-      <img class="images-rotate__img images-rotate__img--show store__img" src="img/store-2.jpg" alt="Orange room with terrace view" data-depth="0.3" loading="lazy">
-      <img class="images-rotate__img images-rotate__img--show store__img" src="img/store-3.jpg" alt="An orange room with a cactus in the middle" data-depth="0.3" loading="lazy">
-    </div>
-  </section>
-  <section class="halva section">
-    <div class="halva__inner">
-      <h2 class="title halva__title lng-halva-title">Wild Halva</h2>
-      <h3 class="halva__subtitle lng-halva-subtitle">A magical seed..</h3>
-      <div class="halva__text lng-halva-text">
-        It is neither a dessert nor a snack nor a proper meal. It is, though, all these simultaneously. It is what you want it to be.
-      </div>
-      <div class="halva__price lng-halva-price">500G | FROM 8,90 <span class="halva__currency">€</span></div>
-      <a class="btn halva__link lng-discover-now" href="#">
-        DISCOVER THEM NOW!
-      </a>
-    </div>
-    <div class="wild-gift animate__animated anim--bounceInRight">
-      <h3 class="wild-gift__title lng-gift-title">
-        Spread your Love with a Wild Gift!
-      </h3>
-      <a class="btn wild-gift__link lng-discover-now" href="#">
-        DISCOVER THEM NOW!
-      </a>
-    </div>
-  </section>
-  <section class="treasures section">
-    <div class="container">
-      <div class="section__inner treasures__inner round-icon">
-        <h2 class="title treasures__title lng-five-treasures">
-          The Five Treasures
-        </h2>
-        <p class="section__text treasures__text lng-treasures-text">
-          As Hippocrates said, we are what we eat.<br> Let’s see what happens by eating these WILD treasures.
-        </p>
-        <a class="btn treasures__link lng-discover-now" href="#">
-          DISCOVER THEM NOW!
-        </a>
-      </div>
-    </div>
-
-    <div class="images-rotate treasures__images image-scene">
-      <img class="images-rotate__img images-rotate__img--show treasures__img" src="img/treasures-1.jpg" alt="" data-depth="0.3" loading="lazy">
-      <img class="images-rotate__img images-rotate__img--show treasures__img" src="img/treasures-2.jpg" alt="" data-depth="0.3" loading="lazy">
-      <img class="images-rotate__img images-rotate__img--show treasures__img" src="img/treasures-3.jpg" alt="" data-depth="0.3" loading="lazy">
-    </div>
-  </section>
-  <section class="recipes" id="recipes">
-    <div class="container">
-      <div class="recipes__info animate__animated anim--flipInY">
-        <h2 class="title recipes__title lng-recipes-title">
-          Wild Recipes
-        </h2>
-        <p class="recipes__text lng-recipes-text">
-          Take a look at the keyhole of our Wild kitchen! Get ideas on how to turn your own kitchen into a Wild.
-        </p>
-      </div>
-    </div>
-    <div class="swiper recipes__wrapper">
-      <ul class="recipes__inner swiper-wrapper">
-        <li class="recipe recipes__recipe swiper-slide">
-          <img class="recipe__img lng-granola" src="img/granola.jpg" alt="Wild 6 Ingredient Granola" loading="lazy" width="450" height="450">
-          <span class="recipe__type lng-sweet">
-            Sweet
-          </span>
-          <h3 class="recipe__name lng-granola">
-            Wild 6 Ingredient Granola
-          </h3>
-        </li>
-        <li class="recipe recipes__recipe swiper-slide">
-          <img class="recipe__img lng-coleslaw" src="img/coleslaw.jpg" alt="Coleslaw with High Fibre Tahini" loading="lazy" width="450" height="450">
-          <span class="recipe__type lng-salty">
-            Salty
-          </span>
-          <h3 class="recipe__name lng-coleslaw">
-            Coleslaw with High Fibre Tahini
-          </h3>
-        </li>
-        <li class="recipe recipe--with-offset recipes__recipe swiper-slide">
-          <img class="recipe__img lng-hummus" src="img/hummus.jpg" alt="Wild Hummus" loading="lazy" width="450" height="450">
-          <span class="recipe__type lng-salty">
-            Salty
-          </span>
-          <h3 class="recipe__name lng-hummus">
-            Wild Hummus
-          </h3>
-        </li>
-        <li class="recipe recipes__recipe swiper-slide">
-          <img class="recipe__img lng-granola" src="img/granola.jpg" alt="Wild 6 Ingredient Granola" loading="lazy" width="450" height="450">
-          <span class="recipe__type lng-sweet">
-            Sweet
-          </span>
-          <h3 class="recipe__name lng-granola">
-            Wild 6 Ingredient Granola
-          </h3>
-        </li>
-        <li class="recipe recipes__recipe swiper-slide">
-          <img class="recipe__img lng-coleslaw" src="img/coleslaw.jpg" alt="Coleslaw with High Fibre Tahini" loading="lazy" width="450" height="450">
-          <span class="recipe__type lng-salty">
-            Salty
-          </span>
-          <h3 class="recipe__name lng-coleslaw">
-            Coleslaw with High Fibre Tahini
-          </h3>
-        </li>
-        <li class="recipe recipe--with-offset recipes__recipe swiper-slide">
-          <img class="recipe__img lng-hummus" src="img/hummus.jpg" alt="Wild Hummus" loading="lazy" width="450" height="450">
-          <span class="recipe__type lng-salty">
-            Salty
-          </span>
-          <h3 class="recipe__name lng-hummus">
-            Wild Hummus
-          </h3>
-        </li>
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <a class="logo footer__logo" href="index.html">
-      <img class="logo__img" src="img/logo.svg" alt="Wild Souls Logotype">
-    </a>
-    <div class="footer__inner">
-      <div class="footer__info">
-        <h2 class="title footer__info-title lng-footer-title">
-          Stay Wild!
-        </h2>
-        <form class="footer__form" action="#">
-          <input class="footer__input lng-input" type="email" name="email" placeholder="Write your email">
-          <input type="submit" hidden>
-        </form>
-        <div class="footer__follow">
-          <h3 class="footer__follow-title lng-follow">
-            Follow Us
-          </h3>
-          <div class="footer__follow-inner">
-            <a class="footer__social" style="background-image: url('img/inst.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a>
-            <a class="footer__social" style="background-image: url('img/fb.svg');" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"></a>
-          </div>
-        </div>
-        <div class="footer__payment-methods">
-          <span class="footer__payment">
-            <img src="img/visa.svg" alt="Visa" width="36" height="25" loading="lazy">
-          </span>
-          <span class="footer__payment">
-            <img src="img/mastercard.svg" alt="Master Card" width="36" height="25" loading="lazy">
-          </span>
-          <span class="footer__payment">
-            <img src="img/discover.svg" alt="Discover" width="36" height="25" loading="lazy">
-          </span>
-          <span class="footer__payment">
-            <img src="img/paypal.svg" alt="PayPal" width="36" height="25" loading="lazy">
-          </span>
-        </div>
-        <div class="footer__copyright">
-          <div class="footer__copy">
-            Copyright 2021 Wild Souls
-          </div>
-          <div class="footer__copy-website">
-            <span class="footer__website lng-website">Website by</span>
-            <span class="footer__horror">Big Horror</span>
-            <span class="footer__plus">+</span>
-            <span class="footer__no-matter lng-no-matter">No Matter</span>
-          </div>
-        </div>
-      </div>
-      <nav class="footer__grid">
-        <div class="footer__column-wrap">
-          <div class="footer__column">
-            <h3 class="footer__title lng-products">Products</h3>
-            <ul class="footer__list">
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-sesame" href="#">
-                  Sesame Butter / Tahini
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-butters" href="#">
-                  Nut Butters
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-honey" href="#">
-                  Honey
-                </a></li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-marmalades" href="#">
-                  Marmalades
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-halva" href="#">
-                  Halva
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-dry-nuts" href="#">
-                  Dry Nuts
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-open-sesame" href="#">
-                  Open Sesame
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-card" href="#">
-                  Gift Card
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer__contact">
-            <h3 class="footer__title lng-footer-title2">Contact</h3>
-            <a class="footer__contact-link animation-link" href="mailto:info@wildsouls.gr">
-              info@wildsouls.gr
+            <a class="logo header__logo" href="index.html">
+              <img
+                class="logo__img"
+                src="img/logo.svg"
+                alt="Wild Souls logotype"
+              />
             </a>
-            <a class="footer__contact-link animation-link" href="tel:+302103231438">
-              +30 210 3231 438
-            </a>
-          </div>
-        </div>
 
-        <div class="footer__column-wrap">
-          <div class="footer__column">
-            <h3 class="footer__title lng-footer-title3">Company</h3>
-            <ul class="footer__list">
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-who " href="#">
+            <ul class="header__list">
+              <li class="header__item">
+                <a
+                  class="header__link animation-link lng-products"
+                  href="#products"
+                >
+                  Products
+                </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link animation-link lng-who" href="#who">
                   Who we are
                 </a>
               </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-wild-way" href="#">
-                  Our Wild Way
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-concept-store" href="#">
+              <li class="header__item header__item--separator">
+                <a class="header__link animation-link lng-store" href="#store">
                   Concept Store
-                </a></li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-five-treasures" href="#">
-                  The Five Treasures
                 </a>
               </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-recipes" href="#">
+              <li class="header__item">
+                <a
+                  class="header__link animation-link lng-recipes"
+                  href="#recipes"
+                >
                   Recipes
                 </a>
               </li>
-            </ul>
-          </div>
-  
-          <div class="footer__help">
-            <h3 class="footer__title lng-help">Help</h3>
-            <ul class="footer__list">
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-terms" href="#">
-                  Terms &amp; Conditions
+              <li class="header__item">
+                <a class="header__link animation-link lng-login" href="#">
+                  Log In
                 </a>
               </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-policy" href="#">
-                  Privacy Policy
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-cookies" href="#">
-                  Cookies
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-methods" href="#">
-                  Payment Methods
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="footer__link animation-link lng-shipping" href="#">
-                  Shipping &amp; Returns
+              <li class="header__item">
+                <a class="header__link animation-link lng-cart" href="#">
+                  Cart (0)
                 </a>
               </li>
             </ul>
+            <button
+              class="lang header__lang"
+              type="button"
+              aria-haspopup="listbox"
+            >
+              <span class="sr-only lng-change-lng">Change language</span>
+              <span class="lang__text animation-link">en</span>
+            </button>
+            <ul class="lang__menu">
+              <li class="lang__item">
+                <a class="lang__link" href="#en">En</a>
+              </li>
+              <li class="lang__item">
+                <a class="lang__link" href="#ru">Ru</a>
+              </li>
+              <li class="lang__item">
+                <a class="lang__link" href="#uk">Uk</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <nav class="menu header__menu">
+        <button
+          class="header__btn header__btn--close"
+          type="button"
+          tabindex="-1"
+        >
+          <span class="sr-only lng-close-menu">Close menu</span>
+          <span class="header__btn-line header__btn-line--active"></span>
+        </button>
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a
+              class="menu__link animation-link lng-products"
+              href="#products"
+              tabindex="-1"
+            >
+              Products
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__link animation-link lng-who"
+              href="#who"
+              tabindex="-1"
+            >
+              Who we are
+            </a>
+          </li>
+          <li class="menu__item header__item--separator">
+            <a
+              class="menu__link animation-link lng-store"
+              href="#store"
+              tabindex="-1"
+            >
+              Concept Store
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__link animation-link lng-recipes"
+              href="#recipes"
+              tabindex="-1"
+            >
+              Recipes
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__link animation-link lng-login"
+              href="#"
+              tabindex="-1"
+            >
+              Log In
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__link animation-link lng-cart"
+              href="#"
+              tabindex="-1"
+            >
+              Cart (0)
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="hero">
+        <h1 class="hero__title animate__animated animate__backInLeft">
+          <span class="hero__title-span lng-span1">Taste</span>
+          <span class="hero__title-span lng-span2">the</span>
+          <span class="hero__title-span hero__title-span--no-margin lng-span3">
+            Wild.
+          </span>
+          <br />
+          <span class="hero__title-span lng-span4">Find</span>
+          <span class="hero__title-span lng-span5">your</span>
+          <span class="hero__title-span hero__title-span--no-margin lng-span6">
+            Soul.
+          </span>
+        </h1>
+        <div class="cookies hero__cookies">
+          <span class="cookies__span lng-use-cookies">Our Website use</span>
+          cookies
+          <button class="cookies__btn" type="button">OK</button>
+        </div>
+        <a
+          class="scroll-down-btn hero__scroll-down"
+          href="#page"
+          aria-label="Scroll down"
+        ></a>
+      </div>
+    </header>
+
+    <main class="page" id="page">
+      <section class="products" id="products">
+        <div class="container">
+          <div class="products__info round-icon animate__animated anim--zoomIn">
+            <h2 class="title products__title lng-products-title">
+              Wildly Loved
+            </h2>
+            <p class="products__text lng-products-text">
+              You will find our wild products in their simplest form. No
+              additives or anything else can spoil their nature
+            </p>
           </div>
         </div>
-      </nav>
-    </div>
-  </div>
-  <div class="footer__bottom" style="background-image: url('img/footer-bottom.svg');"></div>
-</footer>
+        <div class="products__inner swiper">
+          <ul class="products__slider swiper-wrapper">
+            <li class="products__product swiper-slide">
+              <article class="product product--green">
+                <img
+                  class="product__img lng-product1"
+                  src="img/peanut-butter.png"
+                  alt="The Wild Peanut Butter"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product1">
+                  The Wild Peanut Butter
+                </h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  4,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+            <li class="products__product swiper-slide">
+              <article class="product product--brown product--top-offset">
+                <img
+                  class="product__img lng-product2"
+                  src="img/tahini-cocoa.png"
+                  alt="Tahini with Cocoa & Honey"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product2">
+                  Tahini with Cocoa &amp; Honey
+                </h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  5,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+            <li class="products__product swiper-slide">
+              <article class="product product--blue">
+                <img
+                  class="product__img lng-product3"
+                  src="img/hazelnut-butter.png"
+                  alt="The Wild Hazelnut Butter"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product3">
+                  The Wild Hazelnut Butter
+                </h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  6,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+            <li class="products__product swiper-slide">
+              <article class="product product--yellow product--top-offset">
+                <img
+                  class="product__img lng-product4"
+                  src="img/tahini.png"
+                  alt="The Wild Tahini"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product4">The Wild Tahini</h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  4,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+            <li class="products__product swiper-slide">
+              <article class="product product--green">
+                <img
+                  class="product__img lng-product1"
+                  src="img/peanut-butter.png"
+                  alt="The Wild Peanut Butter"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product1">
+                  The Wild Peanut Butter
+                </h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  4,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+            <li class="products__product swiper-slide">
+              <article class="product product--brown product--top-offset">
+                <img
+                  class="product__img lng-product2"
+                  src="img/tahini-cocoa.png"
+                  alt="Tahini with Cocoa & Honey"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product2">
+                  Tahini with Cocoa &amp; Honey
+                </h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  4,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+            <li class="products__product swiper-slide">
+              <article class="product product--blue">
+                <img
+                  class="product__img lng-product3"
+                  src="img/hazelnut-butter.png"
+                  alt="The Wild Hazelnut Butter"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product3">
+                  The Wild Hazelnut Butter
+                </h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  4,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+            <li class="products__product swiper-slide">
+              <article class="product product--yellow product--top-offset">
+                <img
+                  class="product__img lng-product4"
+                  src="img/tahini.png"
+                  alt="The Wild Tahini"
+                  width="360"
+                  height="396"
+                  loading="lazy"
+                />
+                <h3 class="product__name lng-product4">The Wild Tahini</h3>
+                <span class="product__price">
+                  <span class="product__currency">€</span>
+                  4,90
+                </span>
+                <button class="product__btn" type="button">Buy Now!</button>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-<script src="js/swiper-bundle.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/lang.js"></script>
-<script src="js/main.min.js"></script>
-</body>
+      <section class="photos section" id="who">
+        <div class="container">
+          <div class="section__inner photos__inner">
+            <h2 class="title photos__title lng-wild-way">
+              Our
+              <br />
+              Wild Way
+            </h2>
+            <p class="section__text photos__text lng-photos-text">
+              Our philosophy is present in every stage of our production. We are
+              endeavoring to contribute to the creation of a better world.
+            </p>
+            <a class="btn photos__link lng-discover" href="#">DISCOVER MORE!</a>
+          </div>
+        </div>
+        <div class="images-rotate photos__images image-scene">
+          <img
+            class="images-rotate__img images-rotate__img--show photos__img lng-photos-img1"
+            src="img/photos-1.jpg"
+            alt="Wild Souls products"
+            data-depth="0.3"
+            loading="lazy"
+          />
+          <img
+            class="images-rotate__img images-rotate__img--show photos__img lng-photos-img2"
+            src="img/photos-2.jpg"
+            alt="Wild Souls drinks"
+            data-depth="0.3"
+            loading="lazy"
+          />
+          <img
+            class="images-rotate__img images-rotate__img--show photos__img lng-photos-img3"
+            src="img/photos-3.jpg"
+            alt="Hand opening a water tap"
+            data-depth="0.3"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="nut">
+        <div class="nut-product anim animate__animated anim--fadeInLeft">
+          <h2 class="title nut-product__title lng-nut-title">
+            Wild like a Nut??
+          </h2>
+          <div class="nut-product__card">
+            <h3 class="nut-product__card-title lng-nut-card-title">
+              Roasted Almond
+            </h3>
+            <p class="nut-product__text lng-nut-text">
+              All the treasures are hidden in a chest. Respectively, our
+              treasures are enclosed in their Wild shell.
+            </p>
+            <div class="nut-product__price lng-nut-price">
+              250G | 5,00
+              <span class="nut-product__currency">€</span>
+            </div>
+            <a class="btn nut-product__link lng-nut-link" href="#">TASTE IT!</a>
+          </div>
+        </div>
+        <div class="nut-discover">
+          <h3 class="nut-discover__title lng-discover-title">
+            DISCOVER OUR
+            <br />
+            PRODUCTS THROUGH THE 5 TREASURES OF NATURE!
+          </h3>
+          <ul class="nut-discover__list">
+            <li class="nut-discover__name-wrap">
+              <a class="nut-discover__name lng-sesame" href="#">Sesame</a>
+              <sup class="nut-discover__num">20</sup>
+            </li>
+            <li class="nut-discover__name-wrap">
+              <a class="nut-discover__name lng-peanut" href="#">Peanut</a>
+              <sup class="nut-discover__num">5</sup>
+            </li>
+            <li class="nut-discover__name-wrap">
+              <a class="nut-discover__name lng-almond" href="#">Almond</a>
+              <sup class="nut-discover__num">9</sup>
+            </li>
+            <li class="nut-discover__name-wrap">
+              <a class="nut-discover__name lng-hazelnut" href="#">Hazelnut</a>
+              <sup class="nut-discover__num">5</sup>
+            </li>
+            <li class="nut-discover__name-wrap">
+              <a class="nut-discover__name lng-cashew" href="#">Cashew</a>
+              <sup class="nut-discover__num">4</sup>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slider">
+        <div class="container">
+          <h2 class="slider__title lng-slider-title">Words from the soul!</h2>
+          <div class="slider__wrapper swiper">
+            <ul class="slider__inner swiper-wrapper">
+              <li class="slider__item swiper-slide">
+                <h3 class="slider__name lng-slider-title1">POPANGADA</h3>
+                <p class="slider__text lng-slider-text1">
+                  A different shop in the center of Athens grinds fruit, offers
+                  butter made from just one ingredient, and halva flavors that
+                  confirm that healthy can be delicious.
+                </p>
+              </li>
+              <li class="slider__item swiper-slide">
+                <h3 class="slider__name lng-slider-title2">Athens Voice</h3>
+                <p class="slider__text lng-slider-text2">
+                  Wild Souls works mainly with sesame and nut products
+                  (pistachio, hazelnut, almond, cashews), creating hellish
+                  spreads that you want to swallow with the jar.
+                </p>
+              </li>
+              <li class="slider__item swiper-slide">
+                <h3 class="slider__name lng-slider-title1">POPANGADA</h3>
+                <p class="slider__text lng-slider-text1">
+                  A different shop in the center of Athens grinds fruit, offers
+                  butter made from just one ingredient, and halva flavors that
+                  confirm that healthy can be delicious.
+                </p>
+              </li>
+              <li class="slider__item swiper-slide">
+                <h3 class="slider__name lng-slider-title2">Athens Voice</h3>
+                <p class="slider__tex lng-slider-text2">
+                  Wild Souls works mainly with sesame and nut products
+                  (pistachio, hazelnut, almond, cashews), creating hellish
+                  spreads that you want to swallow with the jar.
+                </p>
+              </li>
+            </ul>
+            <div class="slider__pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section class="store section" id="store">
+        <div class="container">
+          <div class="section__inner store__inner round-icon">
+            <h2 class="title store__title lng-store-title">
+              The Concept Store
+            </h2>
+            <p class="section__text store__text lng-store-text">
+              We invite you to explore it, live it, and take photographs of it.
+              But be careful, it is very addictive!
+            </p>
+            <a class="btn store__link lng-discover" href="#">DISCOVER MORE!</a>
+          </div>
+        </div>
+
+        <div class="images-rotate store__images image-scene">
+          <img
+            class="images-rotate__img images-rotate__img--show store__img"
+            src="img/store-1.jpg"
+            alt="Сake stand. On the wall it says: Born to eat wild"
+            data-depth="0.3"
+            loading="lazy"
+          />
+          <img
+            class="images-rotate__img images-rotate__img--show store__img"
+            src="img/store-2.jpg"
+            alt="Orange room with terrace view"
+            data-depth="0.3"
+            loading="lazy"
+          />
+          <img
+            class="images-rotate__img images-rotate__img--show store__img"
+            src="img/store-3.jpg"
+            alt="An orange room with a cactus in the middle"
+            data-depth="0.3"
+            loading="lazy"
+          />
+        </div>
+      </section>
+      <section class="halva section">
+        <div class="halva__inner">
+          <h2 class="title halva__title lng-halva-title">Wild Halva</h2>
+          <h3 class="halva__subtitle lng-halva-subtitle">A magical seed..</h3>
+          <div class="halva__text lng-halva-text">
+            It is neither a dessert nor a snack nor a proper meal. It is,
+            though, all these simultaneously. It is what you want it to be.
+          </div>
+          <div class="halva__price lng-halva-price">
+            500G | FROM 8,90
+            <span class="halva__currency">€</span>
+          </div>
+          <a class="btn halva__link lng-discover-now" href="#">
+            DISCOVER THEM NOW!
+          </a>
+        </div>
+        <div class="wild-gift animate__animated anim--bounceInRight">
+          <h3 class="wild-gift__title lng-gift-title">
+            Spread your Love with a Wild Gift!
+          </h3>
+          <a class="btn wild-gift__link lng-discover-now" href="#">
+            DISCOVER THEM NOW!
+          </a>
+        </div>
+      </section>
+      <section class="treasures section">
+        <div class="container">
+          <div class="section__inner treasures__inner round-icon">
+            <h2 class="title treasures__title lng-five-treasures">
+              The Five Treasures
+            </h2>
+            <p class="section__text treasures__text lng-treasures-text">
+              As Hippocrates said, we are what we eat.
+              <br />
+              Let’s see what happens by eating these WILD treasures.
+            </p>
+            <a class="btn treasures__link lng-discover-now" href="#">
+              DISCOVER THEM NOW!
+            </a>
+          </div>
+        </div>
+
+        <div class="images-rotate treasures__images image-scene">
+          <img
+            class="images-rotate__img images-rotate__img--show treasures__img"
+            src="img/treasures-1.jpg"
+            alt=""
+            data-depth="0.3"
+            loading="lazy"
+          />
+          <img
+            class="images-rotate__img images-rotate__img--show treasures__img"
+            src="img/treasures-2.jpg"
+            alt=""
+            data-depth="0.3"
+            loading="lazy"
+          />
+          <img
+            class="images-rotate__img images-rotate__img--show treasures__img"
+            src="img/treasures-3.jpg"
+            alt=""
+            data-depth="0.3"
+            loading="lazy"
+          />
+        </div>
+      </section>
+      <section class="recipes" id="recipes">
+        <div class="container">
+          <div class="recipes__info animate__animated anim--flipInY">
+            <h2 class="title recipes__title lng-recipes-title">Wild Recipes</h2>
+            <p class="recipes__text lng-recipes-text">
+              Take a look at the keyhole of our Wild kitchen! Get ideas on how
+              to turn your own kitchen into a Wild.
+            </p>
+          </div>
+        </div>
+        <div class="swiper recipes__wrapper">
+          <ul class="recipes__inner swiper-wrapper">
+            <li class="recipe recipes__recipe swiper-slide">
+              <img
+                class="recipe__img lng-granola"
+                src="img/granola.jpg"
+                alt="Wild 6 Ingredient Granola"
+                loading="lazy"
+                width="450"
+                height="450"
+              />
+              <span class="recipe__type lng-sweet">Sweet</span>
+              <h3 class="recipe__name lng-granola">
+                Wild 6 Ingredient Granola
+              </h3>
+            </li>
+            <li class="recipe recipes__recipe swiper-slide">
+              <img
+                class="recipe__img lng-coleslaw"
+                src="img/coleslaw.jpg"
+                alt="Coleslaw with High Fibre Tahini"
+                loading="lazy"
+                width="450"
+                height="450"
+              />
+              <span class="recipe__type lng-salty">Salty</span>
+              <h3 class="recipe__name lng-coleslaw">
+                Coleslaw with High Fibre Tahini
+              </h3>
+            </li>
+            <li class="recipe recipe--with-offset recipes__recipe swiper-slide">
+              <img
+                class="recipe__img lng-hummus"
+                src="img/hummus.jpg"
+                alt="Wild Hummus"
+                loading="lazy"
+                width="450"
+                height="450"
+              />
+              <span class="recipe__type lng-salty">Salty</span>
+              <h3 class="recipe__name lng-hummus">Wild Hummus</h3>
+            </li>
+            <li class="recipe recipes__recipe swiper-slide">
+              <img
+                class="recipe__img lng-granola"
+                src="img/granola.jpg"
+                alt="Wild 6 Ingredient Granola"
+                loading="lazy"
+                width="450"
+                height="450"
+              />
+              <span class="recipe__type lng-sweet">Sweet</span>
+              <h3 class="recipe__name lng-granola">
+                Wild 6 Ingredient Granola
+              </h3>
+            </li>
+            <li class="recipe recipes__recipe swiper-slide">
+              <img
+                class="recipe__img lng-coleslaw"
+                src="img/coleslaw.jpg"
+                alt="Coleslaw with High Fibre Tahini"
+                loading="lazy"
+                width="450"
+                height="450"
+              />
+              <span class="recipe__type lng-salty">Salty</span>
+              <h3 class="recipe__name lng-coleslaw">
+                Coleslaw with High Fibre Tahini
+              </h3>
+            </li>
+            <li class="recipe recipe--with-offset recipes__recipe swiper-slide">
+              <img
+                class="recipe__img lng-hummus"
+                src="img/hummus.jpg"
+                alt="Wild Hummus"
+                loading="lazy"
+                width="450"
+                height="450"
+              />
+              <span class="recipe__type lng-salty">Salty</span>
+              <h3 class="recipe__name lng-hummus">Wild Hummus</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <a class="logo footer__logo" href="index.html">
+          <img class="logo__img" src="img/logo.svg" alt="Wild Souls Logotype" />
+        </a>
+        <div class="footer__inner">
+          <div class="footer__info">
+            <h2 class="title footer__info-title lng-footer-title">
+              Stay Wild!
+            </h2>
+            <form class="footer__form" action="#">
+              <input
+                class="footer__input lng-input"
+                type="email"
+                name="email"
+                placeholder="Write your email"
+                required
+              />
+              <input type="submit" hidden />
+            </form>
+            <div class="footer__follow">
+              <h3 class="footer__follow-title lng-follow">Follow Us</h3>
+              <div class="footer__follow-inner">
+                <a
+                  class="footer__social"
+                  style="background-image: url('img/inst.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                ></a>
+                <a
+                  class="footer__social"
+                  style="background-image: url('img/fb.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                ></a>
+              </div>
+            </div>
+            <div class="footer__payment-methods">
+              <span class="footer__payment">
+                <img
+                  src="img/visa.svg"
+                  alt="Visa"
+                  width="36"
+                  height="25"
+                  loading="lazy"
+                />
+              </span>
+              <span class="footer__payment">
+                <img
+                  src="img/mastercard.svg"
+                  alt="Master Card"
+                  width="36"
+                  height="25"
+                  loading="lazy"
+                />
+              </span>
+              <span class="footer__payment">
+                <img
+                  src="img/discover.svg"
+                  alt="Discover"
+                  width="36"
+                  height="25"
+                  loading="lazy"
+                />
+              </span>
+              <span class="footer__payment">
+                <img
+                  src="img/paypal.svg"
+                  alt="PayPal"
+                  width="36"
+                  height="25"
+                  loading="lazy"
+                />
+              </span>
+            </div>
+            <div class="footer__copyright">
+              <div class="footer__copy">Copyright 2021 Wild Souls</div>
+              <div class="footer__copy-website">
+                <span class="footer__website lng-website">Website by</span>
+                <span class="footer__horror">Big Horror</span>
+                <span class="footer__plus">+</span>
+                <span class="footer__no-matter lng-no-matter">No Matter</span>
+              </div>
+            </div>
+          </div>
+          <nav class="footer__grid">
+            <div class="footer__column-wrap">
+              <div class="footer__column">
+                <h3 class="footer__title lng-products">Products</h3>
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-sesame" href="#">
+                      Sesame Butter / Tahini
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-butters" href="#">
+                      Nut Butters
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-honey" href="#">
+                      Honey
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a
+                      class="footer__link animation-link lng-marmalades"
+                      href="#"
+                    >
+                      Marmalades
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-halva" href="#">
+                      Halva
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a
+                      class="footer__link animation-link lng-dry-nuts"
+                      href="#"
+                    >
+                      Dry Nuts
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a
+                      class="footer__link animation-link lng-open-sesame"
+                      href="#"
+                    >
+                      Open Sesame
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-card" href="#">
+                      Gift Card
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__contact">
+                <h3 class="footer__title lng-footer-title2">Contact</h3>
+                <a
+                  class="footer__contact-link animation-link"
+                  href="mailto:info@wildsouls.gr"
+                >
+                  info@wildsouls.gr
+                </a>
+                <a
+                  class="footer__contact-link animation-link"
+                  href="tel:+302103231438"
+                >
+                  +30 210 3231 438
+                </a>
+              </div>
+            </div>
+
+            <div class="footer__column-wrap">
+              <div class="footer__column">
+                <h3 class="footer__title lng-footer-title3">Company</h3>
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-who" href="#">
+                      Who we are
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a
+                      class="footer__link animation-link lng-wild-way"
+                      href="#"
+                    >
+                      Our Wild Way
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a
+                      class="footer__link animation-link lng-concept-store"
+                      href="#"
+                    >
+                      Concept Store
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a
+                      class="footer__link animation-link lng-five-treasures"
+                      href="#"
+                    >
+                      The Five Treasures
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-recipes" href="#">
+                      Recipes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__help">
+                <h3 class="footer__title lng-help">Help</h3>
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-terms" href="#">
+                      Terms &amp; Conditions
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-policy" href="#">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-cookies" href="#">
+                      Cookies
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link animation-link lng-methods" href="#">
+                      Payment Methods
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a
+                      class="footer__link animation-link lng-shipping"
+                      href="#"
+                    >
+                      Shipping &amp; Returns
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div
+        class="footer__bottom"
+        style="background-image: url('img/footer-bottom.svg')"
+      ></div>
+    </footer>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
 </html>

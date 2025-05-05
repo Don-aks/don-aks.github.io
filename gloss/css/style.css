@@ -71,7 +71,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font: 400 16px/1.5 Manrope, Arial, Helvetica, sans-serif;
-  
+
   background-color: #000;
   color: #fff;
 }
@@ -93,7 +93,7 @@ body.locked {
 .section__title {
   margin-bottom: 12px;
 
-  font: 600 64px/1.25 "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font: 600 64px/1.25 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   text-align: center;
   text-transform: capitalize;
 }
@@ -166,7 +166,7 @@ body.locked {
   width: 24px;
   height: 24px;
 
-  background: url("../img/select-arrow.svg") center/contain no-repeat;
+  background: url('../img/select-arrow.svg') center/contain no-repeat;
   transform: translateY(-50%);
 }
 
@@ -183,7 +183,7 @@ body.locked {
   border-radius: 12px;
   color: #151515;
   background-color: #cea561;
-  
+
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
@@ -265,7 +265,7 @@ body.locked {
   width: 12px;
   height: 12px;
 
-  background: url("../img/arrow-down.svg") center/contain no-repeat;
+  background: url('../img/arrow-down.svg') center/contain no-repeat;
 }
 
 .submenu {
@@ -276,7 +276,7 @@ body.locked {
 
   min-width: 200px;
   padding: 0 5px;
-  
+
   background-color: #222222;
   color: #ffffff;
   transform: translate(-50%);
@@ -291,7 +291,7 @@ body.locked {
   z-index: 5;
 
   display: block;
-  
+
   border-style: solid;
   border-width: 0 5px 10px 5px;
   border-color: transparent transparent #222222 transparent;
@@ -394,7 +394,6 @@ body.locked {
   bottom: 0;
 }
 
-
 /* ======= BANNER ======= */
 
 .banner {
@@ -405,7 +404,7 @@ body.locked {
 .banner__title {
   margin-bottom: 8px;
 
-  font: 600 80px/1.2 "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font: 600 80px/1.2 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 }
 
 .banner__text {
@@ -415,14 +414,12 @@ body.locked {
   color: rgba(255, 255, 255, 0.5);
 }
 
-
 /* ======= MAIN ======= */
 
 .main {
   flex: 1 0 auto;
   overflow: hidden;
 }
-
 
 /* ======= SERVICES ======= */
 
@@ -462,35 +459,35 @@ body.locked {
 }
 
 .services__item--haircut::before {
-  background-image: url("../img/haircut.png");
+  background-image: url('../img/haircut.png');
 }
 
 .services__item--shaving::before {
-  background-image: url("../img/shaving.png");
+  background-image: url('../img/shaving.png');
 }
 
 .services__item--hairdye::before {
-  background-image: url("../img/hairdye.png");
+  background-image: url('../img/hairdye.png');
 }
 
 .services__item--facial::before {
-  background-image: url("../img/facial.png");
+  background-image: url('../img/facial.png');
 }
 
 .services__item--treatment::before {
-  background-image: url("../img/treatment.png");
+  background-image: url('../img/treatment.png');
 }
 
 .services__item--removal::before {
-  background-image: url("../img/removal.png");
+  background-image: url('../img/removal.png');
 }
 
 .services__item--wedding::before {
-  background-image: url("../img/wedding.png");
+  background-image: url('../img/wedding.png');
 }
 
 .services__name {
-  font: 500 48px/64px "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font: 500 48px/64px 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 }
 
 
@@ -556,7 +553,7 @@ body.locked {
   width: 24px;
   height: 24px;
 
-  background: url("../img/checkmark.svg") center/contain no-repeat;
+  background: url('../img/checkmark.svg') center/contain no-repeat;
 }
 
 .package__li:not(:last-child) {
@@ -566,7 +563,6 @@ body.locked {
 .package__button {
   padding: 16px 48px;
 }
-
 
 /* ======= CALENDAR ======= */
 
@@ -760,7 +756,6 @@ body.locked {
   margin: 0 auto;
 }
 
-
 /* ======= MAILING-LIST ======= */
 
 .mailing-list {
@@ -799,7 +794,6 @@ body.locked {
 
   transform: translateY(-50%);
 }
-
 
 /* ======= FOOTER ======= */
 
@@ -843,15 +837,15 @@ body.locked {
 }
 
 .footer__social-link--facebook {
-  background-image: url("../img/fb.svg");
+  background-image: url('../img/fb.svg');
 }
 
 .footer__social-link--twitter {
-  background-image: url("../img/x.svg");
+  background-image: url('../img/x.svg');
 }
 
 .footer__social-link--linkedin {
-  background-image: url("../img/linkedin.svg");
+  background-image: url('../img/linkedin.svg');
 }
 
 .footer__social-link:not(:last-child) {
@@ -927,15 +921,15 @@ body.locked {
 }
 
 .footer__location::before {
-  background-image: url("../img/location.svg");
+  background-image: url('../img/location.svg');
 }
 
 .footer__mobile::before {
-  background-image: url("../img/phone.svg");
+  background-image: url('../img/phone.svg');
 }
 
 .footer__email::before {
-  background-image: url("../img/mail.svg");
+  background-image: url('../img/mail.svg');
 }
 
 .footer__contact-item {
@@ -948,7 +942,7 @@ body.locked {
 
 .footer__contact-title {
   margin-bottom: 4px;
-  font: 500 18px/1.33 "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font: 500 18px/1.33 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   color: #ffffff;
 }
 
