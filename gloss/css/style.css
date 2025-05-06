@@ -572,7 +572,7 @@ body.locked {
   color: #cea561;
 }
 
-.services__item--cut::before {
+.services__item--hair-cut::before {
   background-image: url('../img/haircut.png');
 }
 
@@ -580,7 +580,7 @@ body.locked {
   background-image: url('../img/shaving.png');
 }
 
-.services__item--dye::before {
+.services__item--hair-dye::before {
   background-image: url('../img/hairdye.png');
 }
 
