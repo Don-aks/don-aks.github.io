@@ -322,6 +322,7 @@ body.locked {
 
   display: block;
   min-width: 200px;
+  padding: 0 5px;
 
   background-color: #222222;
   color: #ffffff;

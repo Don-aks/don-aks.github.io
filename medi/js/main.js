@@ -1,3 +1,5 @@
+'use strict';
+
 $(function () {
   $('.hero__slider').slick({
     responsive: [
@@ -20,12 +22,17 @@ $(function () {
   const salonsSubmenu = $('.salons__submenu');
 
   $('body').on('click', function (e) {
-    var className = 'salons__submenu--hidden';
+    const className = 'salons__submenu--hidden';
 
     if ($(e.target).hasClass('salons')) {
       if (salonsSubmenu.hasClass(className)) showSalonsSubmenu();
       else hideSalonsSubmenu();
-    } else if (!$(e.target).hasClass('salons__submenu') && !$(e.target).hasClass('salons__link')) salonsSubmenu.addClass(className);
+    } else if (
+      !$(e.target).hasClass('salons__submenu') &&
+      !$(e.target).hasClass('salons__link')
+    ) {
+      salonsSubmenu.addClass(className);
+    }
   });
 
   const tabs = $('.tabs__tab');

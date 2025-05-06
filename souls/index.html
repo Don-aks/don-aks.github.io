@@ -27,7 +27,20 @@
       </div>
     </div>
 
-    <header class="header" style="background-image: url('img/header-bg.jpg')">
+    <header
+      class="header"
+      style="
+        background-image: url('img/header-bg.jpg');
+        background-image: image-set(
+          url('img/header-bg.webp') type('image/webp'),
+          url('img/header-bg.jpg') type('image/jpeg')
+        );
+        background-image: -webkit-image-set(
+          url('img/header-bg.webp') type('image/webp'),
+          url('img/header-bg.jpg') type('image/jpeg')
+        );
+      "
+    >
       <div class="header__wrapper">
         <div class="container">
           <nav class="header__inner">
@@ -724,6 +737,7 @@
                 type="email"
                 name="email"
                 placeholder="Write your email"
+                required
               />
               <input type="submit" hidden />
             </form>

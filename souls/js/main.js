@@ -150,12 +150,16 @@ window.addEventListener('scroll', function () {
     setHeaderBgColor();
   } else {
     headerWrapper.style.backgroundColor = 'transparent';
-    if (isNotifyClosed) headerWrapper.style.top = '0';
-    else headerWrapper.style.top = '46px';
+    if (isNotifyClosed) {
+      headerWrapper.style.top = '0';
+    } else {
+      headerWrapper.style.top = '46px';
+    }
   }
 
-  for (let i = 0; i < images.length; i++)
+  for (let i = 0; i < images.length; i++) {
     addClassOnScroll(images[i], 'images-rotate__img--show');
+  }
 
   setAnimationOnElements();
 
@@ -176,8 +180,8 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// Parralax is not for IE and
-// not for screens under 992
+// Parralax is not for IE
+// and not for screens under 992
 if (
   !(/*@cc_on!@*/ (false || !!document.documentMode)) &&
   window.innerWidth > 992
@@ -205,7 +209,9 @@ function changeLanguage() {
     return;
   }
 
-  if (hash == 'en') return;
+  if (hash == 'en') {
+    return;
+  }
 
   document.querySelector('html').setAttribute('lang', hash);
   langText.innerHTML = hash;
@@ -213,7 +219,9 @@ function changeLanguage() {
   for (let key in langArray) {
     const elems = document.querySelectorAll('.lng-' + key);
     const text = langArray[key][hash];
-    if (elems.length === 0) continue;
+    if (elems.length === 0) {
+      continue;
+    }
 
     if (text === '') {
       for (let i = 0; i < elems.length; i++)
@@ -221,11 +229,12 @@ function changeLanguage() {
       continue;
     }
 
-    for (let i = 0; i < elems.length; i++)
+    for (let i = 0; i < elems.length; i++) {
       if (elems[i].tagName === 'IMG') elems[i].setAttribute('alt', text);
       else if (elems[i].tagName === 'INPUT')
         elems[i].setAttribute('placeholder', text);
       else elems[i].innerHTML = text;
+    }
   }
 }
 
@@ -259,20 +268,14 @@ function changeMenuState() {
 
   if (menu.classList.contains('header__menu--active')) {
     btn.removeAttribute('tabindex');
-    for (let i = 0; i < links.length; i++) links[i].removeAttribute('tabindex');
-  }
-}
-
-function bodyClickHandler(e) {
-  const langClass = 'lang__menu--active';
-  if (e.target.classList.contains('locked')) {
-    changeMenuState();
-  } else if (
-    e.target !== langBtn &&
-    e.target !== langText &&
-    langMenu.classList.contains(langClass)
-  ) {
-    langMenu.classList.remove(langClass);
+    for (let i = 0; i < links.length; i++) {
+      links[i].removeAttribute('tabindex');
+    }
+  } else {
+    btn.setAttribute('tabindex', '-1');
+    for (let i = 0; i < links.length; i++) {
+      links[i].setAttribute('tabindex', '-1');
+    }
   }
 }
 
@@ -308,17 +311,19 @@ function addClassOnScroll(
 
   const isScrolled = isScrolledDown(el, isUsingTransform, offset);
 
+  isScrolled ? el.classList.add(className) : el.classList.remove(className);
+
   if (isScrolled) {
-    el.classList.add(className);
-    if (classOutOfVisibility) el.classList.remove(classOutOfVisibility);
+    classOutOfVisibility ? el.classList.remove(classOutOfVisibility) : null;
   } else {
-    el.classList.remove(className);
-    if (classOutOfVisibility) el.classList.add(classOutOfVisibility);
+    classOutOfVisibility ? el.classList.add(classOutOfVisibility) : null;
   }
 }
 
 function isScrolledDown(el, isUsingTransform, offset) {
-  if (!offset) offset = windowOffset;
+  if (!offset) {
+    offset = windowOffset;
+  }
 
   let scrollY = window.innerHeight - offset;
   let top = el.getBoundingClientRect().top;
@@ -334,6 +339,7 @@ function isScrolledDown(el, isUsingTransform, offset) {
 function setHeaderBgColor() {
   for (let i = 0; i < sectionsBgColor.length; i++) {
     let el = document.querySelector(sectionsBgColor[i].section);
+
     if (isScrolledDown(el, false)) {
       const bgColor = sectionsBgColor[i].color;
       menu.style.backgroundColor = bgColor + '1)';
@@ -349,11 +355,13 @@ function setAnimationOnElements() {
     let className, classOutOfVisibility;
 
     for (let i = 0; i < classes.length; i++)
-      if (classes[i].indexOf('anim--') == 0)
+      if (classes[i].indexOf('anim--') == 0) {
         className = classes[i].slice(6, classes[i].length);
+      }
 
-    if (className && className.indexOf('In') !== -1)
+    if (className && className.indexOf('In') !== -1) {
       classOutOfVisibility = className.replace('In', 'Out');
+    }
 
     addClassOnScroll(
       el,

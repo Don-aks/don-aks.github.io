@@ -316,13 +316,12 @@ body.locked {
   width: 20px;
   height: 20px;
 
-  background: url('../img/arrow-down.svg') center/contain no-repeat;
-
   -webkit-transform: translateY(-50%);
 
   -ms-transform: translateY(-50%);
 
   transform: translateY(-50%);
+  background: url('../img/arrow-down.svg') center/contain no-repeat;
 }
 
 .salons__submenu {
