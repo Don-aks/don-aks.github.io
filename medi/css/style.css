@@ -1547,8 +1547,8 @@ body.locked {
   .header__list {
     top: 65px;
 
-    height: 100vh;
-    height: 100dvh;
+    height: calc(100vh - 65px);
+    height: calc(100dvh - 65px);
     padding-top: 40px;
   }
 

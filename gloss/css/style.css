@@ -322,7 +322,6 @@ body.locked {
 
   display: block;
   min-width: 200px;
-  padding: 0 5px;
 
   background-color: #222222;
   color: #ffffff;
@@ -572,7 +571,7 @@ body.locked {
   color: #cea561;
 }
 
-.services__item--haircut::before {
+.services__item--cut::before {
   background-image: url('../img/haircut.png');
 }
 
@@ -580,7 +579,7 @@ body.locked {
   background-image: url('../img/shaving.png');
 }
 
-.services__item--hairdye::before {
+.services__item--dye::before {
   background-image: url('../img/hairdye.png');
 }
 
@@ -646,7 +645,7 @@ body.locked {
   font-weight: 600;
 }
 
-.package__price-dollar {
+.package__price-currency {
   font-size: 32px;
   color: rgba(255, 255, 255, 0.7);
 }
