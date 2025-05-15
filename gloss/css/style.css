@@ -120,6 +120,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font: 400 16px/1.5 Manrope, Arial, Helvetica, sans-serif;
+  letter-spacing: 0.0015em;
 
   background-color: #000;
   color: #fff;
@@ -310,6 +311,9 @@ body.locked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transform: translateX(37px);
+  -ms-transform: translateX(37px);
+  transform: translateX(37px);
 }
 
 .header__item {
@@ -318,7 +322,7 @@ body.locked {
 }
 
 .header__item:not(:last-child) {
-  margin-right: 32px;
+  margin-right: 33px;
 }
 
 .header__link {
@@ -430,6 +434,9 @@ body.locked {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .header__button {
@@ -526,7 +533,7 @@ body.locked {
 /* ======= BANNER ======= */
 
 .banner {
-  padding: 96px 0 192px;
+  padding: 93px 0 192px;
   text-align: center;
 }
 
@@ -669,12 +676,24 @@ body.locked {
   color: #ececec;
 }
 
+.package__container {
+  max-width: 288px;
+  margin: 0 auto;
+}
+
 .package__title {
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 9px;
 
   font-size: 32px;
   font-weight: 500;
+}
+
+.packages__package:nth-child(1) .package__title,
+.packages__package:nth-child(2) .package__title {
+  -webkit-transform: translateX(7px);
+  -ms-transform: translateX(7px);
+  transform: translateX(7px);
 }
 
 .package__price {
@@ -684,6 +703,13 @@ body.locked {
   font-weight: 600;
 }
 
+.packages__package:nth-child(1) .package__price,
+.packages__package:nth-child(2) .package__price {
+  -webkit-transform: translateX(6px);
+  -ms-transform: translateX(6px);
+  transform: translateX(6px);
+}
+
 .package__price-currency {
   font-size: 32px;
   color: rgba(255, 255, 255, 0.7);
@@ -691,6 +717,7 @@ body.locked {
 
 .package__ul {
   margin-bottom: 56px;
+
   text-align: left;
   color: rbga(255, 255, 255, 0.7);
 }
@@ -729,9 +756,8 @@ body > .ui-datepicker {
 .ui-datepicker {
   width: 100% !important;
   max-width: 648px;
+  padding-bottom: 30px;
   margin: 0 auto;
-
-  padding-bottom: 25px;
 
   font-family: Manrope, Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -751,9 +777,9 @@ body > .ui-datepicker {
 .ui-datepicker-header {
   position: relative;
 
-  height: 44px;
+  height: 40px;
   padding: 0;
-  margin: 16px 26px 0 16px;
+  margin: 16px 15px 0 16px;
 }
 
 .ui-datepicker-title {
@@ -772,7 +798,7 @@ body > .ui-datepicker {
   padding-right: 15px;
 
   font-size: 17px;
-  line-height: 0.77;
+  line-height: 1.29;
   font-weight: 600;
 
   color: #ffffff;
@@ -818,25 +844,30 @@ body > .ui-datepicker {
 }
 
 .ui-datepicker-prev {
-  right: 31px;
-  background-image: url('../img/arrow-backward.svg');
+  right: 22px;
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  -ms-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .ui-datepicker th {
-  color: #999;
-  font-weight: normal;
-  padding: 5px 0;
+  color: #999999;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.38;
+  text-transform: uppercase;
 }
 
 .ui-datepicker td {
-  padding: 5px;
+  padding: 2px 0;
 }
 
-.ui-datepicker td.past-day a {
+.ui-datepicker td.past-day span {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.ui-datepicker td a {
+.ui-datepicker td a,
+.ui-datepicker td span {
   display: block;
   width: 40px;
   height: 40px;
@@ -1033,11 +1064,12 @@ body > .ui-datepicker {
 }
 
 .appointment__button {
-  padding: 20px 34px;
+  padding: 19px 30px;
+  text-transform: none;
 }
 
 .appointment__button:not(:last-child) {
-  margin-right: 24px;
+  margin-right: 25px;
 }
 
 .appointment__button--active {
@@ -1051,16 +1083,17 @@ body > .ui-datepicker {
 
 .appointment__input,
 .appointment__select-wrapper {
-  width: 47%;
+  width: 48%;
   margin: 0 24px 40px 0;
 }
 
 .appointment__input {
-  padding: 24px 32px;
+  padding: 22px 32px;
 }
 
 .appointment__button-submit {
   display: block;
+  padding: 17px 39px 18px;
   margin: 0 auto;
 }
 
@@ -1068,7 +1101,6 @@ body > .ui-datepicker {
 
 .mailing-list {
   padding: 120px 0;
-  margin-top: 120px;
 
   background-color: #1b1b1b;
 }
@@ -1079,7 +1111,7 @@ body > .ui-datepicker {
 }
 
 .mailing-list__text {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .mailing-list__form {
@@ -1093,12 +1125,15 @@ body > .ui-datepicker {
 .mailing-list__input {
   width: 100%;
   padding-right: 135px;
+  padding-bottom: 14px;
 }
 
 .mailing-list__button {
   position: absolute;
   right: 0;
   top: 50%;
+
+  padding: 17px 35px 15px;
 
   -webkit-transform: translateY(-50%);
 
@@ -1120,7 +1155,7 @@ body > .ui-datepicker {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 120px 0 88px;
+  padding: 111px 0 88px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -1231,8 +1266,9 @@ body > .ui-datepicker {
 
 .footer__contact-item {
   position: relative;
-
   padding-left: 28px;
+
+  font-size: 14px;
 }
 
 .footer__contact-item::before {
@@ -1249,6 +1285,10 @@ body > .ui-datepicker {
   background-size: contain;
 }
 
+.footer__contact-item:not(:last-child) {
+  margin-bottom: 22px;
+}
+
 .footer__location::before {
   background-image: url('../img/location.svg');
 }
@@ -1259,14 +1299,6 @@ body > .ui-datepicker {
 
 .footer__email::before {
   background-image: url('../img/mail.svg');
-}
-
-.footer__contact-item {
-  font-size: 14px;
-}
-
-.footer__contact-item:not(:last-child) {
-  margin-bottom: 20px;
 }
 
 .footer__contact-title {
@@ -1305,14 +1337,6 @@ body > .ui-datepicker {
 
   .footer__link:hover {
     text-decoration: underline;
-  }
-}
-
-@media (max-width: 1360px) {
-  .services__grid {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
   }
 }
 
