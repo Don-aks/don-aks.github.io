@@ -10,6 +10,10 @@ $(function () {
         },
       },
     ],
+    prevArrow:
+      '<button class="slick-prev" aria-label="Попередній слайд" type="button">→</button>',
+    nextArrow:
+      '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });
   $('.header__btn-menu').on('click', function () {
     $('.header__btn-menu .btn-menu__line').toggleClass(
