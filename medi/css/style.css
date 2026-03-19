@@ -1045,13 +1045,9 @@ body.locked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 306px 0 74px;
-}
+  justify-content: space-around;
 
-.footer__links {
-  margin: 4px 127px 0 0;
+  padding: 287px 0 74px;
 }
 
 .footer__links-list {
@@ -1060,17 +1056,28 @@ body.locked {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0 -191px -30px 0;
-  max-width: 1055px;
+  margin: 0 -35px -30px 0;
 }
 
 .footer__column {
-  max-width: 158px;
-  width: 100%;
-  margin: 0 192px 30px 0;
+  width: 33.3333%;
+  margin-bottom: 30px;
+
+  -webkit-box-sizing: content-box;
+
+  box-sizing: content-box;
+}
+
+.footer__column:nth-child(3n + 2) {
+  -webkit-transform: translateX(36px);
+  -ms-transform: translateX(36px);
+  transform: translateX(36px);
+}
+
+.footer__column:nth-child(3n + 3) {
+  -webkit-transform: translateX(71px);
+  -ms-transform: translateX(71px);
+  transform: translateX(71px);
 }
 
 .footer__title {
@@ -1089,7 +1096,7 @@ body.locked {
 
 .footer__contact-title {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
   text-transform: uppercase;
   font-size: 11px;
@@ -1103,7 +1110,7 @@ body.locked {
 
 .footer__text {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 
   font-size: 21px;
   font-weight: 700;
@@ -1121,10 +1128,6 @@ body.locked {
   padding: 11px 25px;
 
   letter-spacing: 0.05em;
-
-  -webkit-transform: translateY(3px);
-  -ms-transform: translateY(3px);
-  transform: translateY(3px);
 }
 
 .footer__bottom {
@@ -1152,10 +1155,6 @@ body.locked {
 
 .footer__politic-link:focus {
   outline: 1px solid #000000;
-}
-
-.footer__visually-impaired {
-  padding-right: 0;
 }
 
 .footer__social {
@@ -1196,17 +1195,12 @@ body.locked {
 
 /* ======= MEDIA ======= */
 
-@media (any-hover: hover) {
-  .btn:hover {
-    background-color: #009ca1;
-  }
-
-  .animation-link:hover {
-    text-decoration: underline;
-  }
-
-  .header__btn-booking:hover {
-    background-color: #f2f2f2;
+@media (max-width: 1325px) {
+  .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .hero__item:hover {
@@ -1504,12 +1498,13 @@ body.locked {
 
   .footer__inner {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    padding-top: 80px;
   }
 
   .footer__links,
@@ -1517,23 +1512,11 @@ body.locked {
     margin: 0;
   }
 
-  .footer__column {
-    margin-right: 107px;
-  }
-
-  .footer__inner {
-    padding-top: 80px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
   .footer__contact {
     margin-bottom: 30px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 
   .footer__bottom {
@@ -1594,6 +1577,18 @@ body.locked {
   .offer:not(:last-child) {
     margin-right: 0;
     margin-bottom: 48px;
+  }
+
+  .footer__column:nth-child(3n + 2) {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  .footer__column:nth-child(3n + 3) {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
   }
 
   .footer__social-cell {
@@ -1716,8 +1711,19 @@ body.locked {
   }
 
   .footer__column {
-    margin-right: 54px;
+    padding-right: 27px;
+    padding-left: 27px;
   }
+
+  /* .footer__copy-wrap {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  } */
 
   .footer__copy {
     margin-bottom: 20px;
