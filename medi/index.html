@@ -12,96 +12,111 @@
   <body>
     <header class="header">
       <div class="header__top">
-        <div class="header__cell-item">
-          <a class="cell header__cell logo header__logo" href="index.html">
-            <img
-              class="logo__img header__logo-img"
-              src="img/logo.svg"
-              alt="MEDI логотип"
-            />
-          </a>
-        </div>
-        <div class="header__cell-item header__cell-phone">
-          <a class="cell header__cell header__phone" href="tel:+380123456789">
-            +380 (123) 456 789
-          </a>
-        </div>
-        <div class="header__cell-item header__cell-salons">
-          <button class="cell header__cell salons header__salons" type="button">
-            Наши салоны
-          </button>
-          <ul class="salons__submenu salons__submenu--hidden">
-            <li class="salons__item">
-              <a class="salons__link animation-link" href="#" tabindex="-1">
-                Харьков
+        <div class="container">
+          <div class="header__top-inner">
+            <div class="cell header__cell header__cell-logo">
+              <a class="header__cell-link logo header__logo" href="index.html">
+                <img
+                  class="logo__img header__logo-img"
+                  src="img/logo.svg"
+                  alt="MEDI логотип"
+                  width="189"
+                  height="55"
+                />
               </a>
-            </li>
-            <li class="salons__item">
-              <a class="salons__link animation-link" href="#" tabindex="-1">
-                Киев
+            </div>
+            <div class="cell header__cell header__cell-phone">
+              <a
+                class="header__cell-link header__phone"
+                href="tel:+380123456789"
+              >
+                +380 (123) 456 789
               </a>
-            </li>
-            <li class="salons__item">
-              <a class="salons__link animation-link" href="#" tabindex="-1">
-                Одесса
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div
-          class="cell header__cell-item header__cell btn-cell header__btn-cell"
-        >
-          <button class="btn btn--visually-impaired header__btn">
-            Версия для слабовидящих
-          </button>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/vk.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="ВКонтакте"
-          ></a>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/yt.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          ></a>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/fb.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          ></a>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/inst.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          ></a>
-        </div>
-        <div class="header__btn-menu-cell">
-          <button class="btn-menu header__btn-menu" type="button">
-            <span class="btn-menu__line"></span>
-            <span class="sr-only">Открыть меню</span>
-          </button>
+            </div>
+            <div class="cell header__cell header__cell-salons">
+              <button
+                class="header__cell-link salons header__salons"
+                type="button"
+              >
+                Наши салоны
+              </button>
+              <ul class="salons__submenu salons__submenu--hidden">
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#" tabindex="-1">
+                    Харьков
+                  </a>
+                </li>
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#" tabindex="-1">
+                    Киев
+                  </a>
+                </li>
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#" tabindex="-1">
+                    Одесса
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="cell cell--btn btn-cell header__cell header__btn-cell">
+              <button
+                class="header__cell-link btn btn--visually-impaired header__btn bvi-open"
+              >
+                Версия для слабовидящих
+              </button>
+            </div>
+            <ul class="header__social-list">
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/vk.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="ВКонтакте"
+                ></a>
+              </li>
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/yt.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                ></a>
+              </li>
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/fb.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                ></a>
+              </li>
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/inst.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                ></a>
+              </li>
+            </ul>
+            <div class="header__btn-menu-cell">
+              <button class="btn-menu header__btn-menu" type="button">
+                <span class="btn-menu__line"></span>
+                <span class="sr-only">Открыть меню</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
       <nav class="header__menu-wrapper">
         <div class="container">
           <div class="header__list">
@@ -209,6 +224,7 @@
                 </div>
               </div>
             </div>
+
             <ul class="header__menu">
               <li class="header__item">
                 <a class="header__link animation-link" href="#">Косметология</a>
@@ -230,16 +246,15 @@
                 <a class="header__link animation-link" href="#">Контакты</a>
               </li>
             </ul>
-            <div class="header__item header__item-btn">
-              <button
-                class="header__btn-booking"
-                type="button"
-                data-fancybox
-                data-src="#modal-booking"
-              >
-                Запись на прием
-              </button>
-            </div>
+
+            <button
+              class="header__btn-booking"
+              type="button"
+              data-fancybox
+              data-src="#modal-booking"
+            >
+              Запись на прием
+            </button>
           </div>
         </div>
       </nav>
