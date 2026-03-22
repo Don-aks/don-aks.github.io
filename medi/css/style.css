@@ -186,12 +186,25 @@ body.locked {
   height: 100%;
 
   background: center no-repeat;
-
-  transition: outline-color 0.3s;
+  transition: transform 0.3s;
 }
 
 .social:focus {
   border: 2px solid #4fbfa5;
+}
+
+.social:hover,
+.social:active {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.social:hover,
+.social:active {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .logo__img {
@@ -214,6 +227,11 @@ body.locked {
 .btn:focus {
   background-color: #009ca1;
   outline: 2px solid #4fbfa5;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #009ca1;
 }
 
 .btn--visually-impaired {
@@ -259,6 +277,11 @@ body.locked {
 
 .animation-link.footer__link:focus {
   outline: 2px solid #009ca1;
+}
+
+.animation-link:hover,
+.animation-link:active {
+  text-decoration: underline;
 }
 
 .sr-only {
@@ -309,12 +332,6 @@ body.locked {
   margin: 0 auto;
 }
 
-.header__cell-link {
-  -webkit-transition: outline-color 0.3s;
-  -o-transition: outline-color 0.3s;
-  transition: outline-color 0.3s;
-}
-
 .header__cell-link:focus {
   outline: 2px solid #4fbfa5;
 }
@@ -341,10 +358,18 @@ body.locked {
   position: relative;
 
   width: 100%;
+  height: 100%;
   padding-right: 65px;
   padding-left: 27px;
 
   text-align: right;
+}
+
+.salons:hover::after,
+.salons:active::after {
+  -webkit-transform: translateY(-50%) rotate(360deg);
+  -ms-transform: translateY(-50%) rotate(360deg);
+  transform: translateY(-50%) rotate(360deg);
 }
 
 .salons::after {
@@ -363,6 +388,8 @@ body.locked {
 
   transform: translateY(-50%);
   background: url('../img/arrow-down.svg') center/contain no-repeat;
+
+  transition: transform 0.5s;
 }
 
 .salons__submenu {
@@ -438,6 +465,8 @@ body.locked {
   width: 80px;
   height: 90px;
   flex-grow: 0;
+
+  overflow: hidden;
 }
 
 .header__cell-social:first-child {
@@ -452,6 +481,10 @@ body.locked {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.header__btn:focus {
+  border: 0;
 }
 
 .btn-menu {
@@ -571,11 +604,17 @@ body.locked {
 
   background-color: #ffffff;
   color: #000000;
-  transition: backrgound-color 0.3s;
+
+  transition: background-color 0.3s;
 }
 
 .header__btn-booking:focus {
   outline: 2px solid #000000;
+}
+
+.header__btn-booking:hover,
+.header__btn-booking:active {
+  background-color: #f2f2f2;
 }
 
 /* ======= HERO ======= */
@@ -680,8 +719,18 @@ body.locked {
   transition: background-color 0.3s;
 }
 
+.hero__item:hover,
+.hero__item:active {
+  background-color: #00969b;
+}
+
 .hero__item--selected {
   background-color: #4fbfa5;
+}
+
+.hero__item--selected:hover,
+.hero__item--selected:active {
+  background-color: #57cfb3;
 }
 
 .hero__item:first-child {
@@ -881,7 +930,17 @@ body.locked {
   transition: background-color 0.3s;
 }
 
+.tabs__tab:hover,
+.tabs__tab:active {
+  background-color: #57cfb3;
+}
+
 .tabs__tab--active {
+  background-color: #00868a;
+}
+
+.tabs__tab--active:hover,
+.tabs__tab--active:active {
   background-color: #00868a;
 }
 
@@ -1010,8 +1069,15 @@ body.locked {
   text-decoration: underline;
 }
 
-.offer__link:focus .offer__title::after {
-  outline: 1px solid #ffffff;
+.offer__link:focus .offer__title::after,
+.offer__link:hover .offer__title::after,
+.offer__link:active .offer__title::after {
+  outline-color: #ffffff;
+}
+
+.offer__link:hover,
+.offer__link:active {
+  text-decoration: underline;
 }
 
 .offer__title {
@@ -1033,6 +1099,11 @@ body.locked {
 
   background: url('../img/arrow-small.svg') center no-repeat;
   border: 1px solid #ffffff;
+  outline: 1px solid transparent;
+
+  -webkit-transition: outline-color 0.3s;
+  -o-transition: outline-color 0.3s;
+  transition: outline-color 0.3s;
 }
 
 /* ======= FOOTER ======= */
