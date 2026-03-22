@@ -1066,7 +1066,9 @@ body.locked {
 }
 
 .offer__link {
-  transition: text-decoration 0.3s;
+  display: block;
+  max-width: 246px;
+  margin: 0 auto;
 }
 
 .offer__link:focus {
