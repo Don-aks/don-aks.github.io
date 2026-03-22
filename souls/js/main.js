@@ -3,7 +3,8 @@
 const langBtn = getEl('lang');
 const langText = getEl('lang__text');
 const langMenu = getEl('lang__menu');
-const langList = ['en', 'ru', 'uk'];
+const langLinks = getElements('lang__link');
+const langList = ['en', 'pl', 'uk'];
 changeLanguage();
 
 langBtn.addEventListener('click', function () {

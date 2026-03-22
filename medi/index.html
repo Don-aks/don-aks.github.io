@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -12,96 +12,111 @@
   <body>
     <header class="header">
       <div class="header__top">
-        <div class="header__cell-item">
-          <a class="cell header__cell logo header__logo" href="index.html">
-            <img
-              class="logo__img header__logo-img"
-              src="img/logo.svg"
-              alt="MEDI логотип"
-            />
-          </a>
-        </div>
-        <div class="header__cell-item header__cell-phone">
-          <a class="cell header__cell header__phone" href="tel:+380123456789">
-            +380 (123) 456 789
-          </a>
-        </div>
-        <div class="header__cell-item header__cell-salons">
-          <button class="cell header__cell salons header__salons" type="button">
-            Наши салоны
-          </button>
-          <ul class="salons__submenu salons__submenu--hidden">
-            <li class="salons__item">
-              <a class="salons__link animation-link" href="#" tabindex="-1">
-                Харьков
+        <div class="container">
+          <div class="header__top-inner">
+            <div class="cell header__cell header__cell-logo">
+              <a class="header__cell-link logo header__logo" href="index.html">
+                <img
+                  class="logo__img header__logo-img"
+                  src="img/logo.svg"
+                  alt="MEDI логотип"
+                  width="189"
+                  height="55"
+                />
               </a>
-            </li>
-            <li class="salons__item">
-              <a class="salons__link animation-link" href="#" tabindex="-1">
-                Киев
+            </div>
+            <div class="cell header__cell header__cell-phone">
+              <a
+                class="header__cell-link header__phone"
+                href="tel:+380123456789"
+              >
+                +380 (123) 456 789
               </a>
-            </li>
-            <li class="salons__item">
-              <a class="salons__link animation-link" href="#" tabindex="-1">
-                Одесса
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div
-          class="cell header__cell-item header__cell btn-cell header__btn-cell"
-        >
-          <button class="btn btn--visually-impaired header__btn">
-            Версия для слабовидящих
-          </button>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/vk.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="ВКонтакте"
-          ></a>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/yt.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          ></a>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/fb.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          ></a>
-        </div>
-        <div class="header__cell-item header__cell-social">
-          <a
-            class="cell header__cell social header__social"
-            style="background-image: url('img/inst.svg')"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          ></a>
-        </div>
-        <div class="header__btn-menu-cell">
-          <button class="btn-menu header__btn-menu" type="button">
-            <span class="btn-menu__line"></span>
-            <span class="sr-only">Открыть меню</span>
-          </button>
+            </div>
+            <div class="cell header__cell header__cell-salons">
+              <button
+                class="header__cell-link salons header__salons"
+                type="button"
+              >
+                Наші салони
+              </button>
+              <ul class="salons__submenu salons__submenu--hidden">
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#" tabindex="-1">
+                    Харків
+                  </a>
+                </li>
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#" tabindex="-1">
+                    Київ
+                  </a>
+                </li>
+                <li class="salons__item">
+                  <a class="salons__link animation-link" href="#" tabindex="-1">
+                    Одеса
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="cell cell--btn btn-cell header__cell header__btn-cell">
+              <button
+                class="header__cell-link btn btn--visually-impaired header__btn bvi-open"
+              >
+                Версія для людей з вадами зору
+              </button>
+            </div>
+            <ul class="header__social-list">
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/yt.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                ></a>
+              </li>
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/fb.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                ></a>
+              </li>
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/inst.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                ></a>
+              </li>
+              <li class="cell header__cell header__cell-social">
+                <a
+                  class="header__cell-link social header__social"
+                  style="background-image: url('img/tw.svg')"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                ></a>
+              </li>
+            </ul>
+            <div class="header__btn-menu-cell">
+              <button class="btn-menu header__btn-menu" type="button">
+                <span class="btn-menu__line"></span>
+                <span class="sr-only">Открыть меню</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
       <nav class="header__menu-wrapper">
         <div class="container">
           <div class="header__list">
@@ -115,7 +130,7 @@
 
                 <div class="header__mobile-item header__salons-item">
                   <button class="salons header__salons-mobile" type="button">
-                    Наши салоны
+                    Наши салони
                   </button>
                   <ul
                     class="salons__submenu salons__submenu--mobile salons__submenu--hidden"
@@ -126,7 +141,7 @@
                         href="#"
                         tabindex="-1"
                       >
-                        Харьков
+                        Харків
                       </a>
                     </li>
                     <li class="salons__item">
@@ -135,7 +150,7 @@
                         href="#"
                         tabindex="-1"
                       >
-                        Киев
+                        Київ
                       </a>
                     </li>
                     <li class="salons__item">
@@ -144,24 +159,13 @@
                         href="#"
                         tabindex="-1"
                       >
-                        Одесса
+                        Одеса
                       </a>
                     </li>
                   </ul>
                 </div>
                 <div class="header__mobile-item header__social-medias">
                   <ul class="social-list">
-                    <li class="social-list__item">
-                      <a
-                        class="social header__social-mobile"
-                        style="background-image: url('img/vk.svg')"
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="ВКонтакте"
-                      ></a>
-                    </li>
-
                     <li class="social-list__item">
                       <a
                         class="social header__social-mobile"
@@ -194,6 +198,17 @@
                         aria-label="Instagram"
                       ></a>
                     </li>
+
+                    <li class="social-list__item">
+                      <a
+                        class="social header__social-mobile"
+                        style="background-image: url('img/tw.svg')"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Twitter"
+                      ></a>
+                    </li>
                   </ul>
                 </div>
 
@@ -204,42 +219,42 @@
                     class="btn btn--visually-impaired header__btn-mobile"
                     type="button"
                   >
-                    Версия для слабовидящих
+                    Версія для людей з вадами зору
                   </button>
                 </div>
               </div>
             </div>
+
             <ul class="header__menu">
               <li class="header__item">
-                <a class="header__link animation-link" href="#">Косметология</a>
+                <a class="header__link animation-link" href="#">Косметологія</a>
               </li>
               <li class="header__item">
                 <a class="header__link animation-link" href="#">
-                  Пластическая хирургия
+                  Пластична хірургія
                 </a>
               </li>
               <li class="header__item">
-                <a class="header__link animation-link" href="#">Стоматология</a>
+                <a class="header__link animation-link" href="#">Стоматологія</a>
               </li>
               <li class="header__item">
                 <a class="header__link animation-link" href="#">
-                  Лазерная медицина
+                  Лазерна медицина
                 </a>
               </li>
               <li class="header__item">
-                <a class="header__link animation-link" href="#">Контакты</a>
+                <a class="header__link animation-link" href="#">Контакти</a>
               </li>
             </ul>
-            <div class="header__item header__item-btn">
-              <button
-                class="header__btn-booking"
-                type="button"
-                data-fancybox
-                data-src="#modal-booking"
-              >
-                Запись на прием
-              </button>
-            </div>
+
+            <button
+              class="header__btn-booking"
+              type="button"
+              data-fancybox
+              data-src="#modal-booking"
+            >
+              Запис на прийом
+            </button>
           </div>
         </div>
       </nav>
@@ -250,36 +265,36 @@
         <div class="container">
           <div class="hero__inner">
             <div class="hero__info">
-              <h1 class="hero__title">Косметология</h1>
+              <h1 class="hero__title">Косметологія</h1>
               <p class="hero__text">
-                Современный мир диктует новые каноны жизни: ухоженное лицо и
-                тело, стройная, подтянутая фигура — сегодня это неотъемлемые
-                черты привлекательной внешности, характеризующие человека
-                благополучного и успешного.
+                Сучасний світ диктує нові канони життя: доглянуте обличчя і
+                тіло, струнка, підтягнута фігура — сьогодні це невід'ємні риси
+                привабливої зовнішності, що характеризують людину благополучну і
+                успішну.
               </p>
-              <button class="btn hero__btn" type="button">Подробнее</button>
+              <button class="btn hero__btn" type="button">Докладніше</button>
             </div>
             <div class="hero__slider-wrap">
               <div class="hero__slider">
                 <img
                   class="hero__img"
                   src="img/cosmetology.jpg"
-                  alt="Девушке наносят маску на лицо"
+                  alt="Дівчині наносять маску на обличчя"
                 />
                 <img
                   class="hero__img"
                   src="img/cosmetology.jpg"
-                  alt="Девушке наносят маску на лицо"
+                  alt="Дівчині наносять маску на обличчя"
                 />
                 <img
                   class="hero__img"
                   src="img/cosmetology.jpg"
-                  alt="Девушке наносят маску на лицо"
+                  alt="Дівчині наносять маску на обличчя"
                 />
                 <img
                   class="hero__img"
                   src="img/cosmetology.jpg"
-                  alt="Девушке наносят маску на лицо"
+                  alt="Дівчині наносять маску на обличчя"
                 />
               </div>
             </div>
@@ -288,13 +303,13 @@
         <div class="hero__nav">
           <ul class="row hero__list">
             <li class="row__column row__column--long hero__item">
-              <a class="hero__link" href="#">Комплексные процедуры</a>
+              <a class="hero__link" href="#">Комплексні процедури</a>
             </li>
             <li class="row__column hero__item hero__item--selected">
-              <a class="hero__link" href="#">Центр обучения</a>
+              <a class="hero__link" href="#">Центр навчання</a>
             </li>
             <li class="row__column hero__item">
-              <a class="hero__link" href="#">VIP клиентам</a>
+              <a class="hero__link" href="#">VIP клієнтам</a>
             </li>
           </ul>
         </div>
@@ -305,32 +320,32 @@
             class="innovations"
             style="background-image: url('img/cosmetology-2.jpg')"
           >
-            <h2 class="label-title innovations__label-title">Инновации</h2>
+            <h2 class="label-title innovations__label-title">Інновації</h2>
             <h3 class="innovations__title">
-              Мы практикуем новый курс процедур аппаратной косметологии
+              Ми практикуємо новий курс процедур апаратної косметології
             </h3>
-            <a class="innovations__link animation-link" href="#">Подробнее</a>
+            <a class="innovations__link animation-link" href="#">Докладніше</a>
           </section>
           <section class="numbers">
-            <h2 class="label-title">Эстетика красоты</h2>
+            <h2 class="label-title">Естетика краси</h2>
             <ul class="numbers__inner">
               <li class="numbers__item">
                 <span class="numbers__num">78</span>
-                Современных центра в странах СНГ
+                Сучасних центрів у країнах СНД
               </li>
               <li class="numbers__item">
                 <span class="numbers__num">78</span>
-                Современных центра в странах СНГ
+                Сучасних центрів у країнах СНД
               </li>
               <li class="numbers__item numbers__item--selected">
                 <span class="numbers__num">20</span>
-                Уникальных патентов
+                Унікальних патентів
                 <br />
-                в области косметологии
+                в області косметології
               </li>
               <li class="numbers__item">
                 <span class="numbers__num">78</span>
-                Современных центра в странах СНГ
+                Сучасних центрів у країнах СНД
               </li>
             </ul>
             <div class="numbers__img-wrap">
@@ -347,25 +362,25 @@
         <div class="container">
           <div class="news__inner">
             <div class="news__menu">
-              <h2 class="label-title news__label-title">Новости</h2>
+              <h2 class="label-title news__label-title">Новини</h2>
               <ul class="tabs">
                 <li class="tabs__tab tabs__tab--active" data-tab="1">
-                  <span class="sr-only">Выберите статью</span>
+                  <span class="sr-only">Виберіть статтю</span>
                   <button class="tabs__btn" type="button">
-                    Почему рекомендуется посещать профессионального косметолога.
-                    Мнение специалистов центра.
+                    Чому рекомендується відвідувати професійного косметолога.
+                    Думка фахівців центру.
                   </button>
                 </li>
                 <li class="tabs__tab" data-tab="2">
                   <button class="tabs__btn" type="button">
-                    Стандартизация деятельности клиник в соответствии с ISO
+                    Стандартизація діяльності клінік відповідно до ISO
                     9001:2015.
                   </button>
                 </li>
                 <li class="tabs__tab" data-tab="3">
                   <button class="tabs__btn" type="button">
-                    Индивидуальный подход к каждому пациенту и подбор
-                    оптимальных косметологических методик.
+                    Індивідуальний підхід до кожного пацієнта і підбір
+                    оптимальних косметологічних методик.
                   </button>
                 </li>
               </ul>
@@ -374,34 +389,33 @@
               <li class="news__item news__item--active" data-tab="1">
                 <article class="article">
                   <h3 class="article__title">
-                    Почему рекомендуется посещать профессионального косметолога.
-                    Мнение специалистов центра.
+                    Чому рекомендується відвідувати професійного косметолога.
+                    Думка фахівців центру.
                   </h3>
                   <ul class="article__list">
                     <li class="article__item">
-                      Процедуры аппаратной косметологии на оборудовании
-                      экспертного класса от ведущих мировых производителей могут
-                      проводиться в любом возрасте и решать широкий спектр
-                      проблем: возрастные изменения, покраснения, акне и
-                      купероз, потеря тонуса и упругости кожи, отечность,
-                      целлюлит и т. п.
+                      Процедури апаратної косметології на обладнанні експертного
+                      класу від провідних світових виробників можуть проводитися
+                      в будь-якому віці і вирішувати широкий спектр проблем:
+                      вікові зміни, почервоніння, акне і купероз, втрата тонусу
+                      і пружності шкіри, набряклість, целюліт і т. п.
                     </li>
                     <li class="article__item">
-                      С помощью инъекционных методик мы можем разгладить
-                      морщины, провести объёмное моделирование, увлажнить кожу,
-                      ввести активные вещества в поверхностные и средние слои
-                      кожи, запустить процессы омоложения.
+                      За допомогою ін'єкційних методик ми можемо розгладити
+                      зморшки, провести об'ємне моделювання, зволожити шкіру,
+                      ввести активні речовини в поверхневі та середні шари
+                      шкіри, запустити процеси омолодження.
                     </li>
                     <li class="article__item">
-                      Лазерное и фотоомоложение помогут запустить процесс
-                      синтеза собственного коллагена, улучшить светооптические
-                      свойства кожи, а также получить максимальный эффект
-                      подтяжки лица без уколов и длительного восстановительного
-                      периода.
+                      Лазерне і фотоомолодження допоможуть запустити процес
+                      синтезу власного колагену, покращити світлооптичні
+                      властивості шкіри, а також отримати максимальний ефект
+                      підтяжки обличчя без уколів і тривалого відновлювального
+                      періоду.
                     </li>
                     <li class="article__item">
-                      Курс процедур лазерной эпиляции поможет навсегда
-                      избавиться от проблемы нежелательных волос.
+                      Курс процедур лазерної епіляції допоможе назавжди
+                      позбутися проблеми небажаного волосся.
                     </li>
                   </ul>
                 </article>
@@ -410,34 +424,33 @@
               <li class="news__item" data-tab="2">
                 <article class="article">
                   <h3 class="article__title">
-                    Стандартизация деятельности клиник в соответствии с ISO
+                    Стандартизація діяльності клінік відповідно до ISO
                     9001:2015.
                   </h3>
                   <ul class="article__list">
                     <li class="article__item">
-                      Процедуры аппаратной косметологии на оборудовании
-                      экспертного класса от ведущих мировых производителей могут
-                      проводиться в любом возрасте и решать широкий спектр
-                      проблем: возрастные изменения, покраснения, акне и
-                      купероз, потеря тонуса и упругости кожи, отечность,
-                      целлюлит и т. п.
+                      Процедури апаратної косметології на обладнанні експертного
+                      класу від провідних світових виробників можуть проводитися
+                      в будь-якому віці і вирішувати широкий спектр проблем:
+                      вікові зміни, почервоніння, акне і купероз, втрата тонусу
+                      і пружності шкіри, набряклість, целюліт і т. п.
                     </li>
                     <li class="article__item">
-                      С помощью инъекционных методик мы можем разгладить
-                      морщины, провести объёмное моделирование, увлажнить кожу,
-                      ввести активные вещества в поверхностные и средние слои
-                      кожи, запустить процессы омоложения.
+                      За допомогою ін'єкційних методик ми можемо розгладити
+                      зморшки, провести об'ємне моделювання, зволожити шкіру,
+                      ввести активні речовини в поверхневі та середні шари
+                      шкіри, запустити процеси омолодження.
                     </li>
                     <li class="article__item">
-                      Лазерное и фотоомоложение помогут запустить процесс
-                      синтеза собственного коллагена, улучшить светооптические
-                      свойства кожи, а также получить максимальный эффект
-                      подтяжки лица без уколов и длительного восстановительного
-                      периода.
+                      Лазерне і фотоомолодження допоможуть запустити процес
+                      синтезу власного колагену, покращити світлооптичні
+                      властивості шкіри, а також отримати максимальний ефект
+                      підтяжки обличчя без уколів і тривалого відновлювального
+                      періоду.
                     </li>
                     <li class="article__item">
-                      Курс процедур лазерной эпиляции поможет навсегда
-                      избавиться от проблемы нежелательных волос.
+                      Курс процедур лазерної епіляції допоможе назавжди
+                      позбутися проблеми небажаного волосся.
                     </li>
                   </ul>
                 </article>
@@ -446,34 +459,33 @@
               <li class="news__item" data-tab="3">
                 <article class="article">
                   <h3 class="article__title">
-                    Индивидуальный подход к каждому пациенту и подбор
-                    оптимальных косметологических методик.
+                    Індивідуальний підхід до кожного пацієнта і підбір
+                    оптимальних косметологічних методик.
                   </h3>
                   <ul class="article__list">
                     <li class="article__item">
-                      Процедуры аппаратной косметологии на оборудовании
-                      экспертного класса от ведущих мировых производителей могут
-                      проводиться в любом возрасте и решать широкий спектр
-                      проблем: возрастные изменения, покраснения, акне и
-                      купероз, потеря тонуса и упругости кожи, отечность,
-                      целлюлит и т. п.
+                      Процедури апаратної косметології на обладнанні експертного
+                      класу від провідних світових виробників можуть проводитися
+                      в будь-якому віці і вирішувати широкий спектр проблем:
+                      вікові зміни, почервоніння, акне і купероз, втрата тонусу
+                      і пружності шкіри, набряклість, целюліт і т. п.
                     </li>
                     <li class="article__item">
-                      С помощью инъекционных методик мы можем разгладить
-                      морщины, провести объёмное моделирование, увлажнить кожу,
-                      ввести активные вещества в поверхностные и средние слои
-                      кожи, запустить процессы омоложения.
+                      За допомогою ін'єкційних методик ми можемо розгладити
+                      зморшки, провести об'ємне моделювання, зволожити шкіру,
+                      ввести активні речовини в поверхневі та середні шари
+                      шкіри, запустити процеси омолодження.
                     </li>
                     <li class="article__item">
-                      Лазерное и фотоомоложение помогут запустить процесс
-                      синтеза собственного коллагена, улучшить светооптические
-                      свойства кожи, а также получить максимальный эффект
-                      подтяжки лица без уколов и длительного восстановительного
-                      периода.
+                      Лазерне і фотоомолодження допоможуть запустити процес
+                      синтезу власного колагену, покращити світлооптичні
+                      властивості шкіри, а також отримати максимальний ефект
+                      підтяжки обличчя без уколів і тривалого відновлювального
+                      періоду.
                     </li>
                     <li class="article__item">
-                      Курс процедур лазерной эпиляции поможет навсегда
-                      избавиться от проблемы нежелательных волос.
+                      Курс процедур лазерної епіляції допоможе назавжди
+                      позбутися проблеми небажаного волосся.
                     </li>
                   </ul>
                 </article>
@@ -484,30 +496,30 @@
       </section>
       <section class="offers">
         <div class="container">
-          <h2 class="offers__title">Актуальные спецпредложения</h2>
+          <h2 class="offers__title">Актуальні спецпропозиції</h2>
           <ul class="offers__inner">
             <li class="offer" style="background-image: url('img/pc.jpg')">
-              <span class="offer__label">Косметология</span>
+              <span class="offer__label">Косметологія</span>
               <a class="offer__link" href="#">
-                <h3 class="offer__title">Лазерное и фотоомоложение</h3>
+                <h3 class="offer__title">Лазерне і фотоомолодження</h3>
               </a>
             </li>
             <li class="offer" style="background-image: url('img/doctor-1.jpg')">
-              <span class="offer__label">Косметология</span>
+              <span class="offer__label">Косметологія</span>
               <a class="offer__link" href="#">
-                <h3 class="offer__title">Лазерное и фотоомоложение</h3>
+                <h3 class="offer__title">Лазерне і фотоомолодження</h3>
               </a>
             </li>
             <li class="offer" style="background-image: url('img/doctor-2.jpg')">
-              <span class="offer__label">Косметология</span>
+              <span class="offer__label">Косметологія</span>
               <a class="offer__link" href="#">
-                <h3 class="offer__title">Лазерное и фотоомоложение</h3>
+                <h3 class="offer__title">Лазерне і фотоомолодження</h3>
               </a>
             </li>
             <li class="offer" style="background-image: url('img/doctors.jpg')">
-              <span class="offer__label">Косметология</span>
+              <span class="offer__label">Косметологія</span>
               <a class="offer__link" href="#">
-                <h3 class="offer__title">Лазерное и фотоомоложение</h3>
+                <h3 class="offer__title">Лазерне і фотоомолодження</h3>
               </a>
             </li>
           </ul>
@@ -521,151 +533,151 @@
           <nav class="footer__links">
             <ul class="footer__links-list">
               <li class="footer__column">
-                <h2 class="footer__title">Услуги</h2>
+                <h2 class="footer__title">Послуги</h2>
                 <ul class="footer__list">
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Косметология
+                      Косметологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Пластическая хирургия
+                      Пластична хірургія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Стоматология
+                      Стоматологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Лазерная медицина
+                      Лазерна медицина
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="footer__column">
-                <h2 class="footer__title">Услуги</h2>
+                <h2 class="footer__title">Послуги</h2>
                 <ul class="footer__list">
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Косметология
+                      Косметологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Пластическая хирургия
+                      Пластична хірургія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Стоматология
+                      Стоматологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Лазерная медицина
+                      Лазерна медицина
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="footer__column">
-                <h2 class="footer__title">Услуги</h2>
+                <h2 class="footer__title">Послуги</h2>
                 <ul class="footer__list">
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Косметология
+                      Косметологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Пластическая хирургия
+                      Пластична хірургія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Стоматология
+                      Стоматологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Лазерная медицина
+                      Лазерна медицина
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="footer__column">
-                <h2 class="footer__title">Услуги</h2>
+                <h2 class="footer__title">Послуги</h2>
                 <ul class="footer__list">
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Косметология
+                      Косметологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Пластическая хирургия
+                      Пластична хірургія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Стоматология
+                      Стоматологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Лазерная медицина
+                      Лазерна медицина
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="footer__column">
-                <h2 class="footer__title">Услуги</h2>
+                <h2 class="footer__title">Послуги</h2>
                 <ul class="footer__list">
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Косметология
+                      Косметологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Пластическая хирургия
+                      Пластична хірургія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Стоматология
+                      Стоматологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Лазерная медицина
+                      Лазерна медицина
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="footer__column">
-                <h2 class="footer__title">Услуги</h2>
+                <h2 class="footer__title">Послуги</h2>
                 <ul class="footer__list">
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Косметология
+                      Косметологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Пластическая хирургия
+                      Пластична хірургія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Стоматология
+                      Стоматологія
                     </a>
                   </li>
                   <li class="footer__item">
                     <a class="footer__link animation-link" href="#">
-                      Лазерная медицина
+                      Лазерна медицина
                     </a>
                   </li>
                 </ul>
@@ -682,36 +694,33 @@
             </a>
 
             <span class="footer__contact-title">адрес</span>
-            <span class="footer__text">Харьков ул. Тобольская, 63</span>
+            <span class="footer__text">Харків ул. Тобольська, 63</span>
             <a
               class="btn footer__btn"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
-              как проехать?
+              як проїхати?
             </a>
 
             <span class="footer__contact-title">адрес</span>
-            <span class="footer__text">Харьков ул. Тобольская, 63</span>
+            <span class="footer__text">Харків ул. Тобольська, 63</span>
             <a
               class="btn footer__btn"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
-              как проехать?
+              як проїхати?
             </a>
           </address>
         </div>
-        <div class="footer__bottom row">
-          <div
-            class="cell footer__cell-item row__column--long footer__copy-wrap"
-          >
+        <ul class="footer__bottom row">
+          <li class="cell footer__cell row__column--long footer__copy-wrap">
             <div class="footer__copy">
-              (c) 2021. Центр космелогии. Все права защищены. Наши сертификаты
-              на осуществление деятельности. Патенты на использование
-              технологий.
+              (c) 2026. Центр косметології. Всі права захищені. Наші сертифікати
+              на здійснення діяльності. Патенти на використання технологій.
             </div>
             <a
               class="footer__politic-link"
@@ -719,71 +728,71 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Политика конфиденциальности
+              Політика конфіденційності
             </a>
-          </div>
-          <div class="cell btn-cell footer__btn-cell">
+          </li>
+          <li class="cell btn-cell footer__btn-cell">
             <button
-              class="btn btn--visually-impaired footer__visually-impaired"
+              class="btn btn--visually-impaired footer__visually-impaired bvi-open"
               type="button"
             >
-              Версия для слабовидящих
+              Версія для людей з вадами зору
             </button>
-          </div>
-          <div class="footer__cell-item">
+          </li>
+          <li class="cell footer__cell footer__social-cell">
             <a
-              class="cell footer__cell social footer__social"
-              style="background-image: url('img/vk.svg')"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="ВКонтакте"
-            ></a>
-          </div>
-          <div class="footer__cell-item">
-            <a
-              class="cell footer__cell social footer__social"
+              class="footer__cell-link social footer__social"
               style="background-image: url('img/yt.svg')"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
             ></a>
-          </div>
-          <div class="footer__cell-item">
+          </li>
+          <li class="cell footer__cell footer__social-cell">
             <a
-              class="cell footer__cell social footer__social"
+              class="footer__cell-link social footer__social"
               style="background-image: url('img/fb.svg')"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
             ></a>
-          </div>
-          <div class="footer__cell-item">
+          </li>
+          <li class="cell footer__cell footer__social-cell">
             <a
-              class="cell footer__cell social footer__social"
+              class="footer__cell-link social footer__social"
               style="background-image: url('img/inst.svg')"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             ></a>
-          </div>
-        </div>
+          </li>
+          <li class="cell footer__cell footer__social-cell">
+            <a
+              class="footer__cell-link social footer__social"
+              style="background-image: url('img/tw.svg')"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            ></a>
+          </li>
+        </ul>
       </div>
     </footer>
 
     <div class="modal modal-booking" id="modal-booking">
-      <h2 class="modal__title">Запись на прием</h2>
+      <h2 class="modal__title">Запис на прийом</h2>
       <form class="modal__form" action="#">
-        <label class="sr-only" for="name">Имя</label>
+        <label class="sr-only" for="name">Ім'я</label>
         <input
           class="modal__input"
           name="name"
           id="name"
           type="text"
-          placeholder="Имя"
+          placeholder="Ім'я"
           required
         />
         <label class="sr-only" for="phone">Телефон</label>
@@ -795,7 +804,7 @@
           placeholder="Телефон"
           required
         />
-        <button class="btn modal__btn" type="submit">Отправить</button>
+        <button class="btn modal__btn" type="submit">Відправити</button>
       </form>
     </div>
 

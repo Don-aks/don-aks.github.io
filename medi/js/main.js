@@ -10,60 +10,91 @@ $(function () {
         },
       },
     ],
+    autoplay: true,
+    autoplaySpeed: 5000,
+
+    prevArrow:
+      '<button class="slick-prev" aria-label="Попередній слайд" type="button">→</button>',
+    nextArrow:
+      '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });
+
+  $(window).on('scroll', function () {
+    var $header = $('.header__top');
+
+    if ($(this).scrollTop() > 0) {
+      $header.addClass('header__top--scrolled');
+      return;
+    }
+
+    $header.removeClass('header__top--scrolled');
+  });
+
   $('.header__btn-menu').on('click', function () {
     $('.header__btn-menu .btn-menu__line').toggleClass(
-      'btn-menu__line--active'
+      'btn-menu__line--active',
     );
+
     $('.header__list').toggleClass('header__list--active');
     $('body').toggleClass('locked');
   });
 
-  const salonsSubmenu = $('.salons__submenu');
+  var $salonsSubmenu = $('.salons__submenu');
 
   $('body').on('click', function (e) {
-    const className = 'salons__submenu--hidden';
+    var className = 'salons__submenu--hidden';
+    var $target = $(e.target);
 
-    if ($(e.target).hasClass('salons')) {
-      if (salonsSubmenu.hasClass(className)) showSalonsSubmenu();
-      else hideSalonsSubmenu();
-    } else if (
-      !$(e.target).hasClass('salons__submenu') &&
-      !$(e.target).hasClass('salons__link')
-    ) {
-      salonsSubmenu.addClass(className);
+    var isToggleBtn = $target.closest('.salons').length;
+    var isSubmenu = $target.closest('.salons__submenu').length;
+
+    if (isToggleBtn && $salonsSubmenu.hasClass(className)) {
+      showSalonsSubmenu();
+      return;
+    }
+
+    if (isToggleBtn && !$salonsSubmenu.hasClass(className)) {
+      hideSalonsSubmenu();
+      return;
+    }
+
+    if (!isSubmenu) {
+      hideSalonsSubmenu();
+      return;
     }
   });
 
-  const tabs = $('.tabs__tab');
-  tabs.on('click', function () {
-    className = 'tabs__tab--active';
-    tabs.removeClass(className);
+  var $tabs = $('.tabs__tab');
+  $tabs.on('click', function () {
+    var className = 'tabs__tab--active';
+    $tabs.removeClass(className);
     $(this).addClass(className);
 
-    const selector = '.news__item';
+    var selector = '.news__item';
     className = 'news__item--active';
 
-    const contentSelector = selector + '[data-tab=' + $(this).data('tab') + ']';
+    var contentSelector = selector + '[data-tab=' + $(this).data('tab') + ']';
     $(selector).removeClass(className);
     $(contentSelector).addClass(className);
   });
 });
 
-function showSalonsSubmenu() {
-  const className = 'salons__submenu--hidden';
-  const salonsSubmenu = $('.salons__submenu');
-  const salonsLinks = $('.salons__link');
+// FUNCTIONS
 
-  salonsSubmenu.removeClass(className);
-  salonsLinks.removeAttr('tabindex');
+function showSalonsSubmenu() {
+  var className = 'salons__submenu--hidden';
+  var $salonsSubmenu = $('.salons__submenu');
+  var $salonsLinks = $('.salons__link');
+
+  $salonsSubmenu.removeClass(className);
+  $salonsLinks.removeAttr('tabindex');
 }
 
 function hideSalonsSubmenu() {
-  const className = 'salons__submenu--hidden';
-  const salonsSubmenu = $('.salons__submenu');
-  const salonsLinks = $('.salons__link');
+  var className = 'salons__submenu--hidden';
+  var $salonsSubmenu = $('.salons__submenu');
+  var $salonsLinks = $('.salons__link');
 
-  salonsSubmenu.addClass(className);
-  salonsLinks.attr('tabindex', '-1');
+  $salonsSubmenu.addClass(className);
+  $salonsLinks.attr('tabindex', '-1');
 }
