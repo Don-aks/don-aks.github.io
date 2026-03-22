@@ -19,6 +19,17 @@ $(function () {
       '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });
 
+  $(window).on('scroll', function () {
+    var $header = $('.header__top');
+
+    if ($(this).scrollTop() > 0) {
+      $header.addClass('header__top--scrolled');
+      return;
+    }
+
+    $header.removeClass('header__top--scrolled');
+  });
+
   $('.header__btn-menu').on('click', function () {
     $('.header__btn-menu .btn-menu__line').toggleClass(
       'btn-menu__line--active',

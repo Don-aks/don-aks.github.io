@@ -313,6 +313,10 @@ body.locked {
   background-color: #ffffff;
 }
 
+.header__top--scrolled {
+  border-bottom: 1px solid #c4c4c4;
+}
+
 .header__top-inner {
   display: -webkit-box;
   display: -ms-flexbox;
