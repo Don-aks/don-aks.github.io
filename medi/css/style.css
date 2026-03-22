@@ -137,6 +137,8 @@ body.locked {
 }
 
 .page {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
@@ -147,8 +149,14 @@ body.locked {
 }
 
 .row__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   max-width: 324px;
   width: 100%;
@@ -220,6 +228,8 @@ body.locked {
   color: #ffffff;
   background-color: #00868a;
 
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
 
@@ -340,6 +350,7 @@ body.locked {
 }
 
 .header__cell-phone {
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 100%;
   max-width: 185px;
@@ -385,9 +396,7 @@ body.locked {
   height: 20px;
 
   -webkit-transform: translateY(-50%);
-
   -ms-transform: translateY(-50%);
-
   transform: translateY(-50%);
   background: url('../img/arrow-down.svg') center/contain no-repeat;
 
@@ -404,8 +413,15 @@ body.locked {
 
   background-color: #00868a;
   color: #ffffff;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  transition: transform 0.5s;
+
+  -webkit-transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition:
+    transform 0.5s,
+    -webkit-transform 0.5s;
 }
 
 .salons__submenu--mobile {
@@ -429,6 +445,8 @@ body.locked {
 
 .salons__submenu--hidden,
 .salons__submenu--hidden::before {
+  -webkit-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
   transform: translate(-50%, -500%);
 }
 
@@ -452,6 +470,8 @@ body.locked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
   flex-grow: 0;
   min-width: 0;
 }
@@ -466,6 +486,8 @@ body.locked {
 .header__cell-social {
   width: 80px;
   height: 90px;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
   flex-grow: 0;
 
   overflow: hidden;
@@ -532,9 +554,7 @@ body.locked {
 
   background-color: #00868a;
   -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
   -o-transition: transform 0.3s;
-  transition: transform 0.3s;
   transition:
     transform 0.3s,
     -webkit-transform 0.3s;
@@ -549,10 +569,14 @@ body.locked {
 }
 
 .btn-menu__line--active::before {
+  -webkit-transform: rotate(-45deg) translate(7px, -7px);
+  -ms-transform: rotate(-45deg) translate(7px, -7px);
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .btn-menu__line--active::after {
+  -webkit-transform: rotate(45deg) translate(7px, 7px);
+  -ms-transform: rotate(45deg) translate(7px, 7px);
   transform: rotate(45deg) translate(7px, 7px);
 }
 
@@ -582,8 +606,14 @@ body.locked {
 }
 
 .header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -1122,6 +1152,7 @@ body.locked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
 
   padding: 287px 0 74px;
@@ -1313,6 +1344,8 @@ body.locked {
   }
 
   .header__cell {
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
     flex-grow: 0;
   }
 
@@ -1325,6 +1358,8 @@ body.locked {
   }
 
   .header__cell-logo {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
   }
 
@@ -1370,10 +1405,9 @@ body.locked {
     -webkit-transform: translateY(-200%);
     -ms-transform: translateY(-200%);
     transform: translateY(-200%);
+
     -webkit-transition: -webkit-transform 0.5s;
-    transition: -webkit-transform 0.5s;
     -o-transition: transform 0.5s;
-    transition: transform 0.5s;
     transition:
       transform 0.5s,
       -webkit-transform 0.5s;
@@ -1432,7 +1466,12 @@ body.locked {
   }
 
   .header__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 
@@ -1645,6 +1684,8 @@ body.locked {
 
   .header__top-inner {
     height: 65px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
