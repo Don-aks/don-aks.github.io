@@ -578,13 +578,15 @@ strong {
 }
 
 .cloud__text-wrapper {
+  position: relative;
   padding-left: 98px;
   margin-bottom: 44px;
 }
 
-.cloud__text-container {
-  position: relative;
-  max-width: 508px;
+@media (min-width: 992px) {
+  .cloud__text-wrapper {
+    max-width: 508px;
+  }
 }
 
 .cloud__strong--highlighted {
@@ -1000,6 +1002,7 @@ strong {
 }
 
 .post-scriptum__inner {
+  position: relative;
   max-width: 952px;
   margin: 0 auto;
 }
@@ -1039,8 +1042,8 @@ strong {
 }
 
 .post-scriptum__image {
-  top: 2px;
-  right: -26px;
+  top: 72px;
+  right: 364px;
 
   width: 446px;
   height: 314px;
