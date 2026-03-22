@@ -1521,12 +1521,14 @@ body.locked {
   }
 
   .offer {
-    margin: 0 24px 48px 0;
-    padding-top: 315px;
+    margin-right: 24px;
+    margin-bottom: 48px;
+    padding: 315px 30px 25px;
+    max-width: 420px;
   }
 
-  .offer:not(:last-child) {
-    margin-right: 24px;
+  .offer__link {
+    max-width: 100%;
   }
 
   .offer__title::after {
