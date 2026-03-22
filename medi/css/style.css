@@ -1041,7 +1041,9 @@ body.locked {
 
 .offer {
   position: relative;
-  padding: 230px 30px 25px;
+
+  width: 100%;
+  padding: 17.7% 0 25px;
 
   background: #00868a top center/contain no-repeat;
   color: #ffffff;
