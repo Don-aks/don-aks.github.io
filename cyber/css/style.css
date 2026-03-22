@@ -386,6 +386,23 @@ strong {
   z-index: 2;
 
   background-color: #ffffff;
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
+}
+
+.header--fixed {
+  z-index: 4;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header--fixed .header__inner {
+  padding: 10px 0 20px;
+}
+
+.header--hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
 }
 
 .page {
@@ -394,6 +411,7 @@ strong {
 
 .header__inner {
   padding: 20px 0 28px;
+  transition: padding 0.3s;
 }
 
 .header__logo {
