@@ -15,9 +15,10 @@ $(function () {
     nextArrow:
       '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });
+
   $('.header__btn-menu').on('click', function () {
     $('.header__btn-menu .btn-menu__line').toggleClass(
-      'btn-menu__line--active'
+      'btn-menu__line--active',
     );
     $('.header__list').toggleClass('header__list--active');
     $('body').toggleClass('locked');
@@ -54,6 +55,8 @@ $(function () {
     $(contentSelector).addClass(className);
   });
 });
+
+// FUNCTIONS
 
 function showSalonsSubmenu() {
   const className = 'salons__submenu--hidden';
