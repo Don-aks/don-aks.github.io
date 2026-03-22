@@ -24,11 +24,11 @@ $(function () {
     $('body').toggleClass('locked');
   });
 
-  const $salonsSubmenu = $('.salons__submenu');
+  var $salonsSubmenu = $('.salons__submenu');
 
   $('body').on('click', function (e) {
-    const className = 'salons__submenu--hidden';
-    const $target = $(e.target);
+    var className = 'salons__submenu--hidden';
+    var $target = $(e.target);
 
     if ($target.hasClass('salons')) {
       if ($salonsSubmenu.hasClass(className)) showSalonsSubmenu();
@@ -41,16 +41,16 @@ $(function () {
     }
   });
 
-  const $tabs = $('.tabs__tab');
+  var $tabs = $('.tabs__tab');
   $tabs.on('click', function () {
     var className = 'tabs__tab--active';
     $tabs.removeClass(className);
     $(this).addClass(className);
 
-    const selector = '.news__item';
+    var selector = '.news__item';
     className = 'news__item--active';
 
-    const contentSelector = selector + '[data-tab=' + $(this).data('tab') + ']';
+    var contentSelector = selector + '[data-tab=' + $(this).data('tab') + ']';
     $(selector).removeClass(className);
     $(contentSelector).addClass(className);
   });
@@ -59,18 +59,18 @@ $(function () {
 // FUNCTIONS
 
 function showSalonsSubmenu() {
-  const className = 'salons__submenu--hidden';
-  const $salonsSubmenu = $('.salons__submenu');
-  const $salonsLinks = $('.salons__link');
+  var className = 'salons__submenu--hidden';
+  var $salonsSubmenu = $('.salons__submenu');
+  var $salonsLinks = $('.salons__link');
 
   $salonsSubmenu.removeClass(className);
   $salonsLinks.removeAttr('tabindex');
 }
 
 function hideSalonsSubmenu() {
-  const className = 'salons__submenu--hidden';
-  const $salonsSubmenu = $('.salons__submenu');
-  const $salonsLinks = $('.salons__link');
+  var className = 'salons__submenu--hidden';
+  var $salonsSubmenu = $('.salons__submenu');
+  var $salonsLinks = $('.salons__link');
 
   $salonsSubmenu.addClass(className);
   $salonsLinks.attr('tabindex', '-1');
