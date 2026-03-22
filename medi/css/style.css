@@ -635,9 +635,9 @@ body.locked {
 }
 
 .hero__info {
-  max-width: 416px;
+  max-width: 550px;
   padding-top: 134px;
-  margin-right: 134px;
+  padding-right: 134px;
 }
 
 .hero__title {
@@ -1685,6 +1685,10 @@ body.locked {
 
   .hero__inner {
     padding-top: 0;
+  }
+
+  .hero__info {
+    padding-right: 0;
   }
 
   .hero__slider-wrap {
