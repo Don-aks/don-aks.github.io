@@ -20,6 +20,7 @@ $(function () {
     $('.header__btn-menu .btn-menu__line').toggleClass(
       'btn-menu__line--active',
     );
+
     $('.header__list').toggleClass('header__list--active');
     $('body').toggleClass('locked');
   });
@@ -30,14 +31,22 @@ $(function () {
     var className = 'salons__submenu--hidden';
     var $target = $(e.target);
 
-    if ($target.hasClass('salons')) {
-      if ($salonsSubmenu.hasClass(className)) showSalonsSubmenu();
-      else hideSalonsSubmenu();
-    } else if (
-      $target.hasClass('salons__submenu') &&
-      $target.hasClass('salons__link')
-    ) {
-      $salonsSubmenu.addClass(className);
+    var isToggleBtn = $target.closest('.salons').length;
+    var isSubmenu = $target.closest('.salons__submenu').length;
+
+    if (isToggleBtn && $salonsSubmenu.hasClass(className)) {
+      showSalonsSubmenu();
+      return;
+    }
+
+    if (isToggleBtn && !$salonsSubmenu.hasClass(className)) {
+      hideSalonsSubmenu();
+      return;
+    }
+
+    if (!isSubmenu) {
+      hideSalonsSubmenu();
+      return;
     }
   });
 
