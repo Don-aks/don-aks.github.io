@@ -1280,28 +1280,23 @@ body.locked {
     flex-direction: column;
   }
 
-  .hero__item:hover {
-    background-color: #00969b;
+  .innovations,
+  .numbers {
+    width: 100%;
+    margin: 0 auto;
   }
 
-  .hero__item--selected:hover {
-    background-color: #57cfb3;
+  .innovations {
+    max-width: 690px;
+    padding: 25px 35px 288px;
   }
 
-  .tabs__tab:hover {
-    background-color: #57cfb3;
+  .numbers {
+    max-width: 740px;
   }
 
-  .tabs__tab--active:hover {
-    background-color: #00969b;
-  }
-
-  .offer__link:hover {
-    text-decoration: underline;
-  }
-
-  .offer__link:hover .offer__title::after {
-    outline: 1px solid #ffffff;
+  .numbers__img-wrap {
+    right: 53px;
   }
 }
 
@@ -1516,32 +1511,6 @@ body.locked {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-  }
-
-  .wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .innovations,
-  .numbers {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .innovations {
-    max-width: 690px;
-    padding: 25px 35px 288px;
-  }
-
-  .numbers {
-    max-width: 740px;
-  }
-
-  .numbers__img-wrap {
-    right: 53px;
   }
 
   .offers__inner {
