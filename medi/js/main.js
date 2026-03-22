@@ -10,6 +10,9 @@ $(function () {
         },
       },
     ],
+    autoplay: true,
+    autoplaySpeed: 5000,
+
     prevArrow:
       '<button class="slick-prev" aria-label="Попередній слайд" type="button">→</button>',
     nextArrow:
