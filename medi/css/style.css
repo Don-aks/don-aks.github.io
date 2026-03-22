@@ -1538,12 +1538,6 @@ body.locked {
     transform: translateY(-50%);
   }
 
-  .footer__contact {
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
-  }
-
   .footer__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
