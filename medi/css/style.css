@@ -186,7 +186,6 @@ body.locked {
   height: 100%;
 
   background: center no-repeat;
-  transition: transform 0.3s;
 }
 
 .social:focus {
