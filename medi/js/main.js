@@ -23,26 +23,27 @@ $(function () {
     $('body').toggleClass('locked');
   });
 
-  const salonsSubmenu = $('.salons__submenu');
+  const $salonsSubmenu = $('.salons__submenu');
 
   $('body').on('click', function (e) {
     const className = 'salons__submenu--hidden';
+    const $target = $(e.target);
 
-    if ($(e.target).hasClass('salons')) {
-      if (salonsSubmenu.hasClass(className)) showSalonsSubmenu();
+    if ($target.hasClass('salons')) {
+      if ($salonsSubmenu.hasClass(className)) showSalonsSubmenu();
       else hideSalonsSubmenu();
     } else if (
-      !$(e.target).hasClass('salons__submenu') &&
-      !$(e.target).hasClass('salons__link')
+      $target.hasClass('salons__submenu') &&
+      $target.hasClass('salons__link')
     ) {
-      salonsSubmenu.addClass(className);
+      $salonsSubmenu.addClass(className);
     }
   });
 
-  const tabs = $('.tabs__tab');
-  tabs.on('click', function () {
-    className = 'tabs__tab--active';
-    tabs.removeClass(className);
+  const $tabs = $('.tabs__tab');
+  $tabs.on('click', function () {
+    var className = 'tabs__tab--active';
+    $tabs.removeClass(className);
     $(this).addClass(className);
 
     const selector = '.news__item';
@@ -56,18 +57,18 @@ $(function () {
 
 function showSalonsSubmenu() {
   const className = 'salons__submenu--hidden';
-  const salonsSubmenu = $('.salons__submenu');
-  const salonsLinks = $('.salons__link');
+  const $salonsSubmenu = $('.salons__submenu');
+  const $salonsLinks = $('.salons__link');
 
-  salonsSubmenu.removeClass(className);
-  salonsLinks.removeAttr('tabindex');
+  $salonsSubmenu.removeClass(className);
+  $salonsLinks.removeAttr('tabindex');
 }
 
 function hideSalonsSubmenu() {
   const className = 'salons__submenu--hidden';
-  const salonsSubmenu = $('.salons__submenu');
-  const salonsLinks = $('.salons__link');
+  const $salonsSubmenu = $('.salons__submenu');
+  const $salonsLinks = $('.salons__link');
 
-  salonsSubmenu.addClass(className);
-  salonsLinks.attr('tabindex', '-1');
+  $salonsSubmenu.addClass(className);
+  $salonsLinks.attr('tabindex', '-1');
 }
