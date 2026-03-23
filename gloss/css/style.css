@@ -47,6 +47,11 @@ html {
   box-sizing: border-box;
 }
 
+:focus {
+  outline: 2px solid #cea561;
+  border-radius: 2px;
+}
+
 *,
 *::before,
 *::after {
@@ -191,6 +196,11 @@ body.locked {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.input:focus {
+  border-color: #ffffff;
+  outline-color: transparent;
+}
+
 .input::-webkit-input-placeholder {
   font: inherit;
   line-height: 1.5;
@@ -237,6 +247,11 @@ body.locked {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+.select:focus {
+  border-color: #ffffff;
+  outline-color: transparent;
 }
 
 .select::-ms-expand {
@@ -287,6 +302,11 @@ body.locked {
   cursor: pointer;
 }
 
+.button:focus {
+  outline-color: #ffffff;
+  border-radius: 12px;
+}
+
 .button:hover {
   background-color: #f1b85b;
 }
@@ -295,6 +315,10 @@ body.locked {
   background-color: transparent;
   border: 1px solid #cea561;
   color: #ffffff;
+}
+
+.button--transparent:focus {
+  outline-color: #ffffff;
 }
 
 .button--transparent:hover {
@@ -1209,6 +1233,10 @@ body > .ui-datepicker {
 
 .footer {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.footer :focus {
+  outline-color: #ffffff;
 }
 
 .footer__inner {
