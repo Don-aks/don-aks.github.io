@@ -456,9 +456,9 @@ body.locked {
 }
 
 .submenu--hidden {
-  -webkit-transform: translateX(200%) scale(0);
-  -ms-transform: translateX(200%) scale(0);
-  transform: translateX(200%) scale(0);
+  -webkit-transform: translateX(700%);
+  -ms-transform: translateX(700%);
+  transform: translateX(700%);
 }
 
 .submenu__link {
