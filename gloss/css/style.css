@@ -327,6 +327,10 @@ body.locked {
   color: #000000;
 }
 
+[hidden] {
+  display: none;
+}
+
 /* ======= HEADER ======= */
 
 .header {
