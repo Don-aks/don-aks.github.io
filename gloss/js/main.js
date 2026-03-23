@@ -1,12 +1,11 @@
 'use strict';
 
-const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const menu = document.querySelector('.header__list');
 const menuButton = document.querySelector('.menu-button');
 
 menuButton.addEventListener('click', function () {
-  body.classList.toggle('locked');
+  document.body.classList.toggle('locked');
   menu.classList.toggle('header__list--active');
   header.classList.toggle('header--active');
   menuButton.classList.toggle('menu-button--active');
