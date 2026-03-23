@@ -287,10 +287,19 @@ body.locked {
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: #f1b85b;
+}
+
 .button--transparent {
   background-color: transparent;
   border: 1px solid #cea561;
   color: #ffffff;
+}
+
+.button--transparent:hover {
+  background-color: #cea561;
+  color: #000000;
 }
 
 /* ======= HEADER ======= */
@@ -347,8 +356,16 @@ body.locked {
   border-bottom: 1px solid transparent;
 }
 
+.header__link:hover {
+  border-bottom: 1px solid #ffffff;
+}
+
 .header__link--selected {
   pointer-events: none;
+}
+
+.header__link--selected:hover {
+  border: 0;
 }
 
 .icon {
@@ -905,6 +922,14 @@ body > .ui-datepicker {
   padding: 2px 0;
 }
 
+.ui-datepicker td a:hover {
+  background-color: #3a3a3a;
+}
+
+.ui-datepicker-current-day a:hover {
+  background-color: transparent;
+}
+
 .ui-datepicker td.past-day span {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -1360,29 +1385,6 @@ body > .ui-datepicker {
 }
 
 /* ======= MEDIA ======= */
-
-@media (any-hover: hover) {
-  .button--transparent:hover {
-    background-color: #cea561;
-    color: #000000;
-  }
-
-  .button:hover {
-    background-color: #f1b85b;
-  }
-
-  .header__link:not(.header__link--selected):hover {
-    border-bottom: 1px solid #ffffff;
-  }
-
-  .ui-datepicker td:not(.ui-datepicker-current-day) a:hover {
-    background-color: #3a3a3a;
-  }
-
-  .footer__link:hover {
-    text-decoration: underline;
-  }
-}
 
 @media (max-width: 1200px) {
   .header__list {
