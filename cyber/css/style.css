@@ -328,14 +328,7 @@ strong {
   outline: 5px solid #942d2e;
 }
 
-@media (any-hover: hover) {
-  .btn:hover {
-    background-color: #ef2227;
-    box-shadow: 0 20px 40px 0 rgba(201, 38, 42, 0.2);
-  }
-}
-
-.btn:active {
+.btn:hover {
   background-color: #ef2227;
   box-shadow: 0 20px 40px 0 rgba(201, 38, 42, 0.2);
 }
@@ -441,14 +434,7 @@ strong {
   outline: 2px solid #182877;
 }
 
-@media (any-hover: hover) {
-  .header__btn:hover {
-    background-color: #182877;
-    color: #ffffff;
-  }
-}
-
-.header__btn:active {
+.header__btn:hover {
   background-color: #182877;
   color: #ffffff;
 }
@@ -1107,13 +1093,7 @@ strong {
   outline: 2px solid #ffffff;
 }
 
-@media (any-hover: hover) {
-  .footer__btn:hover {
-    background-color: #3248b6;
-  }
-}
-
-.footer__btn:active {
+.footer__btn:hover {
   background-color: #3248b6;
 }
 
