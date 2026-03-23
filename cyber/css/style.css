@@ -123,7 +123,11 @@ body {
   display: flex;
   flex-direction: column;
 
-  font: 400 18px/1.56 Montserrat, Arial, Helvetica, sans-serif;
+  font:
+    400 18px/1.56 Montserrat,
+    Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 0;
 
   background-color: #ffffff;
@@ -318,7 +322,9 @@ strong {
   border-radius: 80px;
   border: 0;
 
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   box-shadow: 0 10px 40px 0 rgba(201, 38, 42, 0.2);
 
   cursor: pointer;
@@ -427,7 +433,9 @@ strong {
 
 .header__btn {
   border: 1px solid #182877;
-  transition: color 0.3s, background-color 0.3s;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
 }
 
 .header__btn:focus {
