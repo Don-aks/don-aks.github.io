@@ -336,7 +336,7 @@ strong {
 
 .btn:hover {
   background-color: #ef2227;
-  box-shadow: 0 20px 40px 0 rgba(201, 38, 42, 0.2);
+  box-shadow: 0 15px 40px 0 rgba(201, 38, 42, 0.2);
 }
 
 .phone-btn {
