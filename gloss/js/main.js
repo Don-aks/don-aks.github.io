@@ -42,50 +42,50 @@ body.addEventListener('click', function (e) {
 //   }
 // });
 
-// let dp = new AirDatepicker('#input-date', {
-//   inline: true,
-//   locale: {
-//     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-//     daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-//     daysMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-//     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-//     monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-//     today: 'Today',
-//     clear: 'Clear',
-//     dateFormat: 'MM/dd/yyyy',
-//     timeFormat: 'hh:mm aa',
-//     firstDay: 0
-//   },
-//   prevHtml: '',
-//   nextHtml: '',
-//   onRenderCell: function({date, cellType}) {
-//     if (cellType === 'day') {
-//       const now = new Date(Date.now());
-//       const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
-//       const currentDate = new Date(Date.now()).setHours(0, 0, 0, 0);
+/*let dp = new AirDatepicker('#input-date', {
+  inline: true,
+  locale: {
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    daysMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    today: 'Today',
+    clear: 'Clear',
+    dateFormat: 'MM/dd/yyyy',
+    timeFormat: 'hh:mm aa',
+    firstDay: 0
+  },
+  prevHtml: '',
+  nextHtml: '',
+  onRenderCell: function({date, cellType}) {
+    if (cellType === 'day') {
+      const now = new Date(Date.now());
+      const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
+      const currentDate = new Date(Date.now()).setHours(0, 0, 0, 0);
 
-//       if ((date - currentDate == 0 && now > today12_30am) || date < currentDate) {
-//         return {
-//           disabled: true
-//         }
-//       }
-//     }
-//   }
-// });
+      if ((date - currentDate == 0 && now > today12_30am) || date < currentDate) {
+        return {
+          disabled: true
+        }
+      }
+    }
+  }
+});
 
-// let isAllDatesDisabled = true;
-// const dates = document.querySelectorAll(
-//   '.-inline- .air-datepicker-cell:not(.-other-month-)'
-// );
-// for (let i = 0; i < dates.length; i++) {
-//   if (!dates[i].classList.contains('-disabled-')) {
-//     isAllDatesDisabled = false;
-//   }
-// }
+let isAllDatesDisabled = true;
+const dates = document.querySelectorAll(
+  '.-inline- .air-datepicker-cell:not(.-other-month-)'
+);
+for (let i = 0; i < dates.length; i++) {
+  if (!dates[i].classList.contains('-disabled-')) {
+    isAllDatesDisabled = false;
+  }
+}
 
-// if (isAllDatesDisabled) {
-//   dp.next();
-// }
+if (isAllDatesDisabled) {
+  dp.next();
+}*/
 
 $.datepicker.setDefaults({
   dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
