@@ -578,10 +578,15 @@ body.locked {
 }
 
 .services__item {
-  max-width: 312px;
   width: 100%;
-  padding: 110px 50px;
+  max-width: 312px;
   margin: 0 24px 48px 0;
+}
+
+.service {
+  position: relative;
+  height: 100%;
+  padding: 76px 10px;
 
   text-align: center;
 
@@ -589,7 +594,19 @@ body.locked {
   border: solid 1px #cea561;
 }
 
-.services__item::before {
+.service--long {
+  padding: 109px 0;
+}
+
+.service--big-image {
+  padding: 49px 0;
+}
+
+.service--big-image .service__bg {
+  height: 144px;
+}
+
+.service__bg {
   content: '';
   display: block;
   width: 110px;
@@ -601,52 +618,34 @@ body.locked {
   background-repeat: no-repeat;
 }
 
-.services__link {
+.service__link {
   -webkit-transition: color 0.3s;
   -o-transition: color 0.3s;
   transition: color 0.3s;
 }
 
-@media (any-hover: hover) {
-  .services__link:hover {
-    color: #cea561;
-  }
-}
-
-.services__link:active {
+.service__link:hover {
   color: #cea561;
 }
 
-.services__item--cut::before {
-  background-image: url('../img/haircut.png');
+.service__link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.services__item--shaving::before {
-  background-image: url('../img/shaving.png');
-}
+.service__name {
+  max-width: 200px;
+  margin: 0 auto;
 
-.services__item--dye::before {
-  background-image: url('../img/hairdye.png');
-}
-
-.services__item--facial::before {
-  background-image: url('../img/facial.png');
-}
-
-.services__item--treatment::before {
-  background-image: url('../img/treatment.png');
-}
-
-.services__item--removal::before {
-  background-image: url('../img/removal.png');
-}
-
-.services__item--wedding::before {
-  background-image: url('../img/wedding.png');
-}
-
-.services__name {
-  font: 500 48px/64px 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    500 48px/64px 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
 }
 
 /* ======= PACKAGES ======= */
