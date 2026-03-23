@@ -561,6 +561,10 @@ body.locked {
 
 /* ======= SERVICES ======= */
 
+.services {
+  padding: 120px 0 60px;
+}
+
 .services__grid {
   display: -webkit-box;
   display: -ms-flexbox;
