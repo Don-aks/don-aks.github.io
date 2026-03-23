@@ -384,10 +384,6 @@ body.locked {
   border-bottom: 1px solid #ffffff;
 }
 
-.header__link--selected {
-  pointer-events: none;
-}
-
 .header__link--selected:hover {
   border: 0;
 }
