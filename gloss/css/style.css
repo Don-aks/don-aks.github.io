@@ -15,7 +15,6 @@
   src:
     url('../fonts/Manrope-Regular.woff2') format('woff2'),
     url('../fonts/Manrope-Regular.woff') format('woff');
-    url('../fonts/Manrope-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -340,8 +339,8 @@ body.locked {
   border-bottom: 1px solid transparent;
 }
 
-.header__item:not(:last-child) {
-  margin-right: 33px;
+.header__item + .header__item {
+  margin-left: 33px;
 }
 
 .header__link {
@@ -439,8 +438,8 @@ body.locked {
   display: none;
 }
 
-.header__buttons > *:not(:last-child) {
-  margin-right: 12px;
+.header__buttons > * + * {
+  margin-left: 12px;
 }
 
 .header__buttons {
@@ -783,8 +782,8 @@ body.locked {
   background: url('../img/checkmark.svg') center/contain no-repeat;
 }
 
-.package__li:not(:last-child) {
-  margin-bottom: 16px;
+.package__li + .package__li {
+  margin-top: 16px;
 }
 
 .package__button {
@@ -925,10 +924,6 @@ body > .ui-datepicker {
   -webkit-transition: background-color 0.3s;
   -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
-}
-
-.ui-datepicker td:not(.ui-datepicker-current-day) a:active {
-  background-color: #3a3a3a;
 }
 
 .ui-datepicker .ui-state-active {
@@ -1111,8 +1106,8 @@ body > .ui-datepicker {
   text-transform: none;
 }
 
-.appointment__button:not(:last-child) {
-  margin-right: 25px;
+.appointment__button + .appointment__button {
+  margin-left: 25px;
 }
 
 .appointment__button--active {
@@ -1213,8 +1208,8 @@ body > .ui-datepicker {
   max-width: 339px;
 }
 
-.footer__social-media > *:not(:last-child) {
-  margin-bottom: 32px;
+.footer__social-media > * + * {
+  margin-top: 32px;
 }
 
 .footer__socials {
@@ -1245,8 +1240,8 @@ body > .ui-datepicker {
   background-image: url('../img/linkedin.svg');
 }
 
-.footer__social-link:not(:last-child) {
-  margin-right: 32px;
+.footer__social-link + .footer__social-link {
+  margin-left: 32px;
 }
 
 /* ======= FOOTER__NAV ======= */
@@ -1294,12 +1289,12 @@ body > .ui-datepicker {
   text-decoration: underline;
 }
 
-.footer__item:not(:last-child) {
-  margin-bottom: 20px;
+.footer__item + .footer__item {
+  margin-top: 20px;
 }
 
-.footer__nav-block:not(:last-child) {
-  margin-right: 106px;
+.footer__nav-block + .footer__nav-block {
+  margin-left: 106px;
 }
 
 /* ======= FOOTER__CONTACT ======= */
@@ -1330,8 +1325,8 @@ body > .ui-datepicker {
   background-size: contain;
 }
 
-.footer__contact-item:not(:last-child) {
-  margin-bottom: 22px;
+.footer__contact-item + .footer__contact-item {
+  margin-top: 22px;
 }
 
 .footer__location::before {
@@ -1435,8 +1430,8 @@ body > .ui-datepicker {
     transform: translateY(0);
   }
 
-  .header__item:not(:last-child) {
-    margin-right: 0;
+  .header__item + .header__item {
+    margin-left: 0;
   }
 
   .icon {
@@ -1465,7 +1460,7 @@ body > .ui-datepicker {
 
   .header__item,
   .header__item--selected,
-  .header__link:not(.header__link--selected):hover {
+  .header__link:hover {
     border-color: transparent;
   }
 
@@ -1559,8 +1554,8 @@ body > .ui-datepicker {
     min-height: calc(100dvh - 68px);
   }
 
-  .header__buttons > *:not(:last-child) {
-    margin-right: 15px;
+  .header__buttons > * + * {
+    margin-left: 15px;
   }
 
   .appointment__buttons {
@@ -1602,8 +1597,8 @@ body > .ui-datepicker {
     text-align: center;
   }
 
-  .footer__nav-block:not(:last-child) {
-    margin-right: 0;
+  .footer__nav-block + .footer__nav-block {
+    margin-left: 0;
   }
 }
 
