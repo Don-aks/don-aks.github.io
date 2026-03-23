@@ -111,9 +111,11 @@ datePicker.datepicker({
     enableNavKeyboardSupport();
   },
   onChangeMonthYear: function () {
-    disablePastDateFocus();
-    enableNavKeyboardSupport();
-    restoreDatepickerNavFocus();
+    setTimeout(function () {
+      disablePastDateFocus();
+      enableNavKeyboardSupport();
+      restoreDatepickerNavFocus();
+    }, 0);
   },
   beforeShowDay: function (date) {
     if (
