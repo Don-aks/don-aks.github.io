@@ -154,7 +154,8 @@ body.locked {
 }
 
 .section__title {
-  margin-bottom: 12px;
+  max-width: 900px;
+  margin: 0 auto 12px;
 
   font:
     600 64px/1.25 'Cormorant Garamond',
@@ -613,6 +614,12 @@ body.locked {
 .banner {
   padding: 93px 0 192px;
   text-align: center;
+}
+
+.banner__title,
+.banner__text {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .banner__title {
@@ -1148,7 +1155,8 @@ body > .ui-datepicker {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 72px;
+  max-width: 1000px;
+  margin: 0 auto 72px;
 }
 
 .appointment__button {
