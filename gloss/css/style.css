@@ -145,7 +145,7 @@ body.locked {
 }
 
 .section {
-  margin: 120px 0;
+  padding: 60px 0;
 }
 
 .section__title {
@@ -1528,7 +1528,7 @@ body > .ui-datepicker {
 
 @media (max-width: 768px) {
   .section {
-    margin: 50px 0;
+    padding: 25px 0;
   }
 
   .button {
