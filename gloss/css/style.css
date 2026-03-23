@@ -329,7 +329,9 @@ body.locked {
 /* ======= HEADER ======= */
 
 .header {
-  background: center/cover no-repeat;
+  /* Additional background-color
+  if image doesn't load */
+  background: #1b1b1b center/cover no-repeat;
   overflow: hidden;
 }
 
