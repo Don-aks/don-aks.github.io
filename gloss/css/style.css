@@ -2,8 +2,9 @@
 
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('../fonts/CormorantGaramond-SemiBold.woff') format('woff'),
-    url('../fonts/CormorantGaramond-SemiBold.woff2') format('woff2');
+  src:
+    url('../fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+    url('../fonts/CormorantGaramond-SemiBold.woff') format('woff');
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -11,7 +12,9 @@
 
 @font-face {
   font-family: Manrope;
-  src: url('../fonts/Manrope-Regular.woff') format('woff'),
+  src:
+    url('../fonts/Manrope-Regular.woff2') format('woff2'),
+    url('../fonts/Manrope-Regular.woff') format('woff');
     url('../fonts/Manrope-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
@@ -20,8 +23,9 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('../fonts/Manrope-Medium.woff') format('woff')
-    url('../fonts/Manrope-Medium.woff2') format('woff2');
+  src:
+    url('../fonts/Manrope-Medium.woff2') format('woff2'),
+    url('../fonts/Manrope-Medium.woff') format('woff');
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -29,8 +33,9 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('../fonts/Manrope-SemiBold.woff') format('woff'),
-    url('../fonts/CormorantGaramond-SemiBold.woff2') format('woff2');
+  src:
+    url('../fonts/Manrope-SemiBold.woff2') format('woff2'),
+    url('../fonts/Manrope-SemiBold.woff') format('woff');
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -119,7 +124,11 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
-  font: 400 16px/1.5 Manrope, Arial, Helvetica, sans-serif;
+  font:
+    400 16px/1.5 Manrope,
+    Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 0.0015em;
 
   background-color: #000;
@@ -143,7 +152,11 @@ body.locked {
 .section__title {
   margin-bottom: 12px;
 
-  font: 600 64px/1.25 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    600 64px/1.25 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
   text-align: center;
   text-transform: capitalize;
 }
@@ -261,11 +274,17 @@ body.locked {
   color: #151515;
   background-color: #cea561;
 
-  -webkit-transition: background-color 0.3s, color 0.3s;
+  -webkit-transition:
+    background-color 0.3s,
+    color 0.3s;
 
-  -o-transition: background-color 0.3s, color 0.3s;
+  -o-transition:
+    background-color 0.3s,
+    color 0.3s;
 
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   cursor: pointer;
 }
 
@@ -378,7 +397,9 @@ body.locked {
   transition: -webkit-transform 0.5s;
   -o-transition: transform 0.5s;
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  transition:
+    transform 0.5s,
+    -webkit-transform 0.5s;
 }
 
 .submenu::before {
@@ -491,11 +512,27 @@ body.locked {
   height: 2px;
 
   background-color: #cea561;
-  -webkit-transition: top 0.5s, bottom 0.5s, -webkit-transform 0.5s;
-  transition: top 0.5s, bottom 0.5s, -webkit-transform 0.5s;
-  -o-transition: transform 0.5s, top 0.5s, bottom 0.5s;
-  transition: transform 0.5s, top 0.5s, bottom 0.5s;
-  transition: transform 0.5s, top 0.5s, bottom 0.5s, -webkit-transform 0.5s;
+  -webkit-transition:
+    top 0.5s,
+    bottom 0.5s,
+    -webkit-transform 0.5s;
+  transition:
+    top 0.5s,
+    bottom 0.5s,
+    -webkit-transform 0.5s;
+  -o-transition:
+    transform 0.5s,
+    top 0.5s,
+    bottom 0.5s;
+  transition:
+    transform 0.5s,
+    top 0.5s,
+    bottom 0.5s;
+  transition:
+    transform 0.5s,
+    top 0.5s,
+    bottom 0.5s,
+    -webkit-transform 0.5s;
 }
 
 .menu-button__line::before,
@@ -540,7 +577,11 @@ body.locked {
 .banner__title {
   margin-bottom: 8px;
 
-  font: 600 80px/1.2 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    600 80px/1.2 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
 }
 
 .banner__text {
@@ -895,7 +936,6 @@ body > .ui-datepicker {
   color: #000;
 }
 
-/* Удалить рамки вокруг ячеек */
 .ui-datepicker td,
 .ui-datepicker th {
   border: none;
@@ -907,7 +947,7 @@ body > .ui-datepicker {
   width: 100%;
   margin: 0 auto;
   padding-bottom: 25px;
-  
+
   font-family: Manrope, Arial, Helvetica, sans-serif;;
   font-size: 20px;
   line-height: 1.25;
@@ -1245,7 +1285,9 @@ body > .ui-datepicker {
   transition: -webkit-text-decoration 0.3s;
   -o-transition: text-decoration 0.3s;
   transition: text-decoration 0.3s;
-  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
+  transition:
+    text-decoration 0.3s,
+    -webkit-text-decoration 0.3s;
 }
 
 .footer__link:hover {
@@ -1306,7 +1348,11 @@ body > .ui-datepicker {
 
 .footer__contact-title {
   margin-bottom: 4px;
-  font: 500 18px/1.33 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    500 18px/1.33 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
   color: #ffffff;
 }
 
@@ -1375,7 +1421,9 @@ body > .ui-datepicker {
     transition: -webkit-transform 0.5s;
     -o-transition: transform 0.5s;
     transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s;
+    transition:
+      transform 0.5s,
+      -webkit-transform 0.5s;
 
     overflow-y: auto;
     overflow-x: hidden;
