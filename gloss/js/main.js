@@ -116,7 +116,7 @@ datePicker.datepicker({
       (date - currentDate === 0 && now > today12_30am) ||
       date < currentDate
     ) {
-      return [true, 'past-day'];
+      return [false, 'past-day'];
     } else {
       return [true, ''];
     }
