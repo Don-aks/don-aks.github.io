@@ -1710,6 +1710,15 @@ body > .ui-datepicker {
     padding: 25px 15px;
   }
 
+  .ui-datepicker td a,
+  .ui-datepicker td span {
+    max-width: 40px;
+    width: 100%;
+    padding: 0;
+
+    line-height: 2;
+  }
+
   .mailing-list__input {
     margin-bottom: 24px;
     padding-right: 32px;
