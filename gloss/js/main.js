@@ -16,17 +16,11 @@ const dropDownMenu = document.querySelector('.submenu');
 
 document.body.addEventListener('click', function (e) {
   const className = 'submenu--hidden';
-  const targetClasses = e.target.classList;
+  const cls = e.target.classList;
 
-  if (
-    targetClasses.contains('header__link--drop-down') ||
-    targetClasses.contains('icon')
-  ) {
+  if (cls.contains('header__link--drop-down') || cls.contains('icon')) {
     dropDownMenu.classList.toggle('submenu--hidden');
-  } else if (
-    !targetClasses.contains('submenu') &&
-    !targetClasses.contains('submenu__link')
-  ) {
+  } else if (!cls.contains('submenu') && !cls.contains('submenu__link')) {
     dropDownMenu.classList.add(className);
   }
 });
