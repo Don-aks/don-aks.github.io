@@ -14,7 +14,7 @@ menuButton.addEventListener('click', function () {
 const dropDownLink = document.querySelector('.header__link--drop-down');
 const dropDownMenu = document.querySelector('.submenu');
 
-body.addEventListener('click', function (e) {
+document.body.addEventListener('click', function (e) {
   const className = 'submenu--hidden';
   const targetClasses = e.target.classList;
 
