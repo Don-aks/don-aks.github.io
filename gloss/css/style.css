@@ -1730,6 +1730,10 @@ body > .ui-datepicker {
 }
 
 @media (max-width: 385px) {
+  .header__buttons > * + * {
+    margin-left: -5px;
+  }
+
   .appointment__buttons {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
