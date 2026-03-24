@@ -1139,6 +1139,10 @@ body > .ui-datepicker {
 
 /* ======= APPOINTMENT ======= */
 
+.appointment {
+  padding: 60px 0 120px;
+}
+
 .appointment__date {
   margin-bottom: 72px;
 }
