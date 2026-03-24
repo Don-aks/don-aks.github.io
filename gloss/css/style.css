@@ -962,8 +962,9 @@ body > .ui-datepicker {
   background-color: #3a3a3a;
 }
 
-.ui-datepicker-current-day a:hover {
-  background-color: transparent;
+.ui-datepicker td.ui-datepicker-current-day a:hover {
+  background-color: #d6a758;
+  cursor: default;
 }
 
 .ui-datepicker td.past-day span {
