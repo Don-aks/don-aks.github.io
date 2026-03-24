@@ -752,15 +752,18 @@ body.locked {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   margin: 0 -24px -48px 0;
 }
 
-.package {
+.packages__package {
+  width: 33.333%;
   max-width: 424px;
-  padding: 48px 67px;
   margin: 0 24px 48px 0;
+}
+
+.package {
+  height: 100%;
+  padding: 48px 0;
 
   text-align: center;
 
@@ -771,6 +774,10 @@ body.locked {
 }
 
 .package__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
   max-width: 288px;
   margin: 0 auto;
 }
@@ -810,6 +817,7 @@ body.locked {
 }
 
 .package__ul {
+  flex: 1 0 auto;
   margin-bottom: 56px;
 
   text-align: left;
@@ -1530,6 +1538,15 @@ body > .ui-datepicker {
     display: block;
   }
 
+  .packages__list {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .packages__package {
+    width: 100%;
+  }
+
   .footer__inner {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -1706,7 +1723,7 @@ body > .ui-datepicker {
   }
 
   .package {
-    padding: 25px 15px;
+    padding: 25px 10px;
   }
 
   .ui-datepicker td a,
