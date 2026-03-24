@@ -1701,8 +1701,9 @@ body > .ui-datepicker {
     display: none;
   }
 
-  .services__item {
-    padding: 50px 20px;
+  .service {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .package {
