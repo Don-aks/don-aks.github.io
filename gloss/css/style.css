@@ -1344,6 +1344,7 @@ body > .ui-datepicker {
 }
 
 .footer__link {
+  position: relative;
   -webkit-text-decoration: underline transparent;
   text-decoration: underline transparent;
   -webkit-transition: -webkit-text-decoration 0.3s;
@@ -1357,6 +1358,15 @@ body > .ui-datepicker {
 
 .footer__link:hover {
   text-decoration: underline;
+}
+
+.footer__link::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 0;
+  right: 0;
 }
 
 .footer__item + .footer__item {
