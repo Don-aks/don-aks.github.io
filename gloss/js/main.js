@@ -135,22 +135,9 @@ enableNavKeyboardSupport();
 
 const input = document.getElementById('input-time');
 const buttonContainer = document.querySelector('.appointment__buttons');
+const buttons = buttonContainer.querySelectorAll('.appointment__button');
 
-buttonContainer.addEventListener('click', function (event) {
-  if (event.target.classList.contains('appointment__button')) {
-    // Убираем класс 'active' у всех кнопок
-    const buttons = document.querySelectorAll(
-      '.appointment__buttons .appointment__button'
-    );
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove('appointment__button--active');
-    }
-
-    input.value = event.target.innerText;
-    // Добавляем класс 'active' на кликнутую кнопку
-    event.target.classList.add('appointment__button--active');
-  }
-});
+buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
 function disablePastDateFocus() {
   setTimeout(function () {
@@ -194,4 +181,17 @@ function restoreDatepickerNavFocus() {
     const newButton = $(selector);
     if (newButton.length) newButton.trigger('focus');
   });
+}
+
+function handleClickOnButtonContainer(event) {
+  if (event.target.classList.contains('appointment__button')) {
+    // Убираем класс 'active' у всех кнопок
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('appointment__button--active');
+    }
+
+    input.value = event.target.innerText;
+    // Добавляем класс 'active' на кликнутую кнопку
+    event.target.classList.add('appointment__button--active');
+  }
 }
