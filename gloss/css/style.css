@@ -1458,7 +1458,7 @@ body > .ui-datepicker {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding-top: 20px;
+    padding: 20px 0;
     height: calc(100vh - 98px);
     height: calc(100dvh - 98px);
 
