@@ -156,7 +156,6 @@ datePicker.datepicker({
 });
 
 if (now > today12_30am) {
-  // Устанавливаем выбранную дату на завтра
   let tomorrow = new Date();
   tomorrow.setDate(now.getDate() + 1);
   datePicker.datepicker('setDate', tomorrow);
