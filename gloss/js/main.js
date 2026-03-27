@@ -161,7 +161,7 @@ if (now > today12_30am) {
 disablePastDateFocus();
 enableNavKeyboardSupport();
 
-const input = document.getElementById('input-time');
+const timeInput = document.getElementById('input-time');
 const buttonContainer = document.querySelector('.appointment__buttons');
 const buttons = buttonContainer.querySelectorAll('.appointment__button');
 
@@ -241,7 +241,7 @@ function handleClickOnButtonContainer(event) {
       buttons[i].classList.remove(CLASSES.appointmentBtnActive);
     }
 
-    input.value = event.target.innerText;
+    timeInput.value = event.target.innerText;
     event.target.classList.add(CLASSES.appointmentBtnActive);
   }
 }
