@@ -38,17 +38,19 @@ menuButton.addEventListener('click', function () {
 });
 
 const submenu = document.querySelector('.' + CLASSES.submenu);
+const submenuTransitionDelay = getTransitionDurationInMs(submenu);
+let submenuAnimationTimeoutId;
 
 document.body.addEventListener('click', function (e) {
   const cls = e.target.classList;
 
   if (cls.contains(CLASSES.dropDownLink) || cls.contains('icon')) {
-    submenu.classList.toggle(CLASSES.submenuHidden);
+    animateSubmenu(!isSubmenuClosed());
   } else if (
     !cls.contains(CLASSES.submenu) &&
     !cls.contains(CLASSES.submenuLink)
   ) {
-    submenu.classList.add(CLASSES.submenuHidden);
+    animateSubmenu(true);
   }
 });
 
@@ -169,6 +171,30 @@ const buttons = buttonContainer.querySelectorAll('.appointment__button');
 
 buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
+// FUNCTIONS
+
+function animateSubmenu(isSubmenuHidden) {
+  clearTimeout(submenuAnimationTimeoutId);
+
+  if (isSubmenuHidden) {
+    submenu.classList.add(CLASSES.submenuHidden);
+
+    submenuAnimationTimeoutId = setTimeout(function () {
+      submenu.style.display = 'none';
+    }, submenuTransitionDelay);
+  } else {
+    submenu.style.display = '';
+
+    setTimeout(function () {
+      submenu.classList.remove(CLASSES.submenuHidden);
+    }, 0);
+  }
+}
+
+function isSubmenuClosed() {
+  return submenu.classList.contains(CLASSES.submenuHidden);
+}
+
 function disablePastDateFocus() {
   setTimeout(function () {
     $('.past-day a').attr('tabindex', '-1');
@@ -222,4 +248,18 @@ function handleClickOnButtonContainer(event) {
     input.value = event.target.innerText;
     event.target.classList.add(CLASSES.appointmentBtnActive);
   }
+}
+
+// UTILS
+
+function getTransitionDurationInMs(el) {
+  const durations = getComputedStyle(el)
+    .transitionDuration.split(',')
+    .map((d) => {
+      d = d.trim();
+      return d.endsWith('ms') ? parseFloat(d) : parseFloat(d) * 1000;
+    });
+
+  // if multiple
+  return Math.max(...durations);
 }
