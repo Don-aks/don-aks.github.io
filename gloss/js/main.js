@@ -37,7 +37,6 @@ menuButton.addEventListener('click', function () {
   menuButton.classList.toggle(CLASSES.menuBtnActive);
 });
 
-const dropDownLink = document.querySelector('.' + CLASSES.dropDownLink);
 const dropDownMenu = document.querySelector('.' + CLASSES.submenu);
 
 document.body.addEventListener('click', function (e) {
