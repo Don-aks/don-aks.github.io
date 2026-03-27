@@ -54,16 +54,12 @@ document.body.addEventListener('click', function (e) {
   }
 });
 
-// dropDownMenu.addEventListener('animationend', function () {
-//   console.log('+');
-//   if (dropDownMenu.classList.contains('submenu--hidden')) {
-//     dropDownMenu.style.display = 'none';
-//     console.log('contains');
-//   } else {
-//     dropDownMenu.style.display = 'block';
-//     console.log('not contains');
-//   }
-// });
+document.addEventListener('keydown', function (event) {
+  // Esc key
+  if (event.keyCode === 27) {
+    animateSubmenu(true);
+  }
+});
 
 /*let dp = new AirDatepicker('#input-date', {
   inline: true,
