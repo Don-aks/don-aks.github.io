@@ -1,27 +1,53 @@
 'use strict';
+const CLASSES = {
+  locked: 'locked',
 
-const header = document.querySelector('.header');
-const menu = document.querySelector('.header__list');
-const menuButton = document.querySelector('.menu-button');
+  header: 'header',
+  headerActive: 'header--active',
+
+  menu: 'header__list',
+  menuActive: 'header__list--active',
+
+  menuBtn: 'menu-button',
+  menuBtnActive: 'menu-button--active',
+
+  dropDownLink: 'header__link--drop-down',
+
+  submenu: 'submenu',
+  submenuHidden: 'submenu--hidden',
+  submenuLink: 'submenu__link',
+
+  dpBtnPrev: 'ui-datepicker-prev',
+  dpBtnNext: 'ui-datepicker-next',
+
+  appointmentBtn: 'appointment__button',
+  appointmentBtnActive: 'appointment__button--active',
+};
+
+const header = document.querySelector('.' + CLASSES.header);
+const menu = document.querySelector('.' + CLASSES.menu);
+const menuButton = document.querySelector('.' + CLASSES.menuBtn);
 
 menuButton.addEventListener('click', function () {
-  document.body.classList.toggle('locked');
-  menu.classList.toggle('header__list--active');
-  header.classList.toggle('header--active');
-  menuButton.classList.toggle('menu-button--active');
+  document.body.classList.toggle(CLASSES.locked);
+  menu.classList.toggle(CLASSES.menuActive);
+  header.classList.toggle(CLASSES.headerActive);
+  menuButton.classList.toggle(CLASSES.menuBtnActive);
 });
 
-const dropDownLink = document.querySelector('.header__link--drop-down');
-const dropDownMenu = document.querySelector('.submenu');
+const dropDownLink = document.querySelector('.' + CLASSES.dropDownLink);
+const dropDownMenu = document.querySelector('.' + CLASSES.submenu);
 
 document.body.addEventListener('click', function (e) {
-  const className = 'submenu--hidden';
   const cls = e.target.classList;
 
-  if (cls.contains('header__link--drop-down') || cls.contains('icon')) {
-    dropDownMenu.classList.toggle('submenu--hidden');
-  } else if (!cls.contains('submenu') && !cls.contains('submenu__link')) {
-    dropDownMenu.classList.add(className);
+  if (cls.contains(CLASSES.dropDownLink) || cls.contains('icon')) {
+    dropDownMenu.classList.toggle(CLASSES.submenuHidden);
+  } else if (
+    !cls.contains(CLASSES.submenu) &&
+    !cls.contains(CLASSES.submenuLink)
+  ) {
+    dropDownMenu.classList.add(CLASSES.submenuHidden);
   }
 });
 
@@ -147,7 +173,7 @@ function disablePastDateFocus() {
 
 function enableNavKeyboardSupport() {
   setTimeout(function () {
-    $('.ui-datepicker-prev, .ui-datepicker-next')
+    $('.' + CLASSES.dpBtnPrev + ', .' + CLASSES.dpBtnNext)
       .attr('tabindex', '0')
       .off('keydown')
       .on('keydown', function (e) {
@@ -157,9 +183,9 @@ function enableNavKeyboardSupport() {
           e.keyCode === 13 ||
           e.keyCode === 32
         ) {
-          if ($(this).hasClass('ui-datepicker-prev')) {
+          if ($(this).hasClass(CLASSES.dpBtnPrev)) {
             lastFocusedDirection = 'prev';
-          } else if ($(this).hasClass('ui-datepicker-next')) {
+          } else if ($(this).hasClass(CLASSES.dpBtnNext)) {
             lastFocusedDirection = 'next';
           }
 
@@ -174,24 +200,22 @@ function restoreDatepickerNavFocus() {
   if (!lastFocusedDirection) return;
 
   setTimeout(function () {
-    const selector =
-      lastFocusedDirection === 'prev'
-        ? '.ui-datepicker-prev'
-        : '.ui-datepicker-next';
+    const isPrev = lastFocusedDirection === 'prev';
+    const selector = '.' + (isPrev ? CLASSES.dpBtnPrev : CLASSES.dpBtnNext);
+
     const newButton = $(selector);
     if (newButton.length) newButton.trigger('focus');
   });
 }
 
 function handleClickOnButtonContainer(event) {
-  if (event.target.classList.contains('appointment__button')) {
+  if (event.target.classList.contains(CLASSES.appointmentBtn)) {
     // Убираем класс 'active' у всех кнопок
     for (let i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove('appointment__button--active');
+      buttons[i].classList.remove(CLASSES.appointmentBtnActive);
     }
 
     input.value = event.target.innerText;
-    // Добавляем класс 'active' на кликнутую кнопку
-    event.target.classList.add('appointment__button--active');
+    event.target.classList.add(CLASSES.appointmentBtnActive);
   }
 }
