@@ -1,4 +1,5 @@
 'use strict';
+
 const CLASSES = {
   locked: 'locked',
 
@@ -30,6 +31,7 @@ const menuButton = document.querySelector('.' + CLASSES.menuBtn);
 
 menuButton.addEventListener('click', function () {
   document.body.classList.toggle(CLASSES.locked);
+
   menu.classList.toggle(CLASSES.menuActive);
   header.classList.toggle(CLASSES.headerActive);
   menuButton.classList.toggle(CLASSES.menuBtnActive);
@@ -115,6 +117,7 @@ $.datepicker.setDefaults({
 
 const datePickerSelector = '.appointment__date';
 const datePicker = $(datePickerSelector);
+
 const now = new Date(Date.now());
 const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
 const currentDate = new Date(Date.now()).setHours(0, 0, 0, 0);
@@ -125,11 +128,13 @@ datePicker.datepicker({
   altField: '#input-date',
   // firstDay: 1,
   appendTo: datePickerSelector,
+
   onSelect: function (dateText) {
     $('#input-date').val(dateText);
     disablePastDateFocus();
     enableNavKeyboardSupport();
   },
+
   onChangeMonthYear: function () {
     setTimeout(function () {
       disablePastDateFocus();
@@ -137,6 +142,7 @@ datePicker.datepicker({
       restoreDatepickerNavFocus();
     }, 0);
   },
+
   beforeShowDay: function (date) {
     if (
       (date - currentDate === 0 && now > today12_30am) ||
