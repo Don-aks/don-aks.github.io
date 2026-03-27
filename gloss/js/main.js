@@ -192,9 +192,7 @@ function isSubmenuClosed() {
 }
 
 function disablePastDateFocus() {
-  setTimeout(function () {
-    $('.past-day a').attr('tabindex', '-1');
-  }, 0);
+  $('.past-day a').attr('tabindex', '-1');
 }
 
 function enableNavKeyboardSupport() {
