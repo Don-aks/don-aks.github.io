@@ -37,18 +37,18 @@ menuButton.addEventListener('click', function () {
   menuButton.classList.toggle(CLASSES.menuBtnActive);
 });
 
-const dropDownMenu = document.querySelector('.' + CLASSES.submenu);
+const submenu = document.querySelector('.' + CLASSES.submenu);
 
 document.body.addEventListener('click', function (e) {
   const cls = e.target.classList;
 
   if (cls.contains(CLASSES.dropDownLink) || cls.contains('icon')) {
-    dropDownMenu.classList.toggle(CLASSES.submenuHidden);
+    submenu.classList.toggle(CLASSES.submenuHidden);
   } else if (
     !cls.contains(CLASSES.submenu) &&
     !cls.contains(CLASSES.submenuLink)
   ) {
-    dropDownMenu.classList.add(CLASSES.submenuHidden);
+    submenu.classList.add(CLASSES.submenuHidden);
   }
 });
 
