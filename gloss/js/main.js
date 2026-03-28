@@ -141,10 +141,11 @@ datePicker.datepicker({
   },
 
   beforeShowDay: function (date) {
-    if (
-      (date - currentDate === 0 && now > today12_30am) ||
-      date < currentDate
-    ) {
+    const isPastDay =
+      date.getTime() < currentDate ||
+      (date.getTime() === currentDate && now.getTime() > today12_30am);
+
+    if (isPastDay) {
       return [false, 'past-day'];
     } else {
       return [true, ''];
