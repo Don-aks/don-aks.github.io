@@ -18,6 +18,8 @@ const CLASSES = {
   submenuHidden: 'submenu--hidden',
   submenuLink: 'submenu__link',
 
+  serviceGrid: 'services',
+
   dpBtnPrev: 'ui-datepicker-prev',
   dpBtnNext: 'ui-datepicker-next',
 
@@ -64,6 +66,9 @@ document.addEventListener('keydown', function (event) {
     animateSubmenu(true);
   }
 });
+
+const serviceGrid = document.querySelector('.' + CLASSES.serviceGrid);
+serviceGrid.addEventListener('click', onServiceLinkClick);
 
 /*let dp = new AirDatepicker('#input-date', {
   inline: true,
