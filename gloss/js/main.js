@@ -127,6 +127,7 @@ const datePicker = $(datePickerSelector);
 const now = new Date(Date.now());
 const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
 const currentDate = new Date(Date.now()).setHours(0, 0, 0, 0);
+const firstWorkDay = getFirstAvailableWorkDay(now);
 
 let lastFocusedDirection;
 
@@ -150,18 +151,11 @@ datePicker.datepicker({
   },
 
   beforeShowDay: function (date) {
-    const isPastDay = date.getTime() < currentDate;
-
-    const isToday = date.getTime() === currentDate;
-    const isPastTimeToday = isToday && now > today12_30am;
-
-    const isWeekend = date.getDay() === 0 || date.getDay() === 6;
-
-    if (isPastDay || isPastTimeToday || isWeekend) {
+    if (date < firstWorkDay || isWeekend(date)) {
       return [false, 'past-day'];
-    } else {
-      return [true, ''];
     }
+
+    return [true, ''];
   },
 });
 
@@ -293,4 +287,25 @@ function getTransitionDurationInMs(el) {
 
   // if multiple
   return Math.max(...durations);
+}
+
+function getFirstAvailableWorkDay(startDate) {
+  var targetDate = new Date(startDate.getTime());
+
+  if (now > today12_30am) {
+    targetDate.setDate(targetDate.getDate() + 1);
+  }
+
+  while (isWeekend(targetDate)) {
+    targetDate.setDate(targetDate.getDate() + 1);
+  }
+
+  targetDate.setHours(0, 0, 0, 0);
+
+  return targetDate;
+}
+
+function isWeekend(date) {
+  const day = date.getDay();
+  return day === 0 || day === 6;
 }
