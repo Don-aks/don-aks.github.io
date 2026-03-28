@@ -196,25 +196,22 @@ function disablePastDateFocus() {
 }
 
 function enableNavKeyboardSupport() {
-  setTimeout(function () {
-    $('.' + CLASSES.dpBtnPrev + ', .' + CLASSES.dpBtnNext)
-      .attr('tabindex', '0')
-      .off('keydown')
-      .on('keydown', function (e) {
-        const isSpaceOrEnter = e.keyCode === 13 || e.keyCode === 32;
-        if (!isSpaceOrEnter) return;
+  $('.' + CLASSES.dpBtnPrev + ', .' + CLASSES.dpBtnNext)
+    .attr('tabindex', '0')
+    .off('keydown')
+    .on('keydown', function (e) {
+      const isSpaceOrEnter = e.keyCode === 13 || e.keyCode === 32;
+      if (!isSpaceOrEnter) return;
 
-        if ($(this).hasClass(CLASSES.dpBtnPrev)) {
-          lastFocusedDirection = 'prev';
-        } else if ($(this).hasClass(CLASSES.dpBtnNext)) {
-          lastFocusedDirection = 'next';
-        }
+      if ($(this).hasClass(CLASSES.dpBtnPrev)) {
+        lastFocusedDirection = 'prev';
+      } else if ($(this).hasClass(CLASSES.dpBtnNext)) {
+        lastFocusedDirection = 'next';
+      }
 
-          e.preventDefault(); // предотвращаем прокрутку
-          $(this).trigger('click');
-        }
-      });
-  }, 0);
+      e.preventDefault(); // предотвращаем прокрутку
+      $(this).trigger('click');
+    });
 }
 
 function restoreDatepickerNavFocus() {
