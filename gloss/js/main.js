@@ -21,8 +21,10 @@ const CLASSES = {
   dpBtnPrev: 'ui-datepicker-prev',
   dpBtnNext: 'ui-datepicker-next',
 
+  appointmentSection: 'appointment',
   appointmentBtn: 'appointment__button',
   appointmentBtnActive: 'appointment__button--active',
+  appointmentOption: 'appointment__option',
 };
 
 const header = document.querySelector('.' + CLASSES.header);
@@ -40,6 +42,8 @@ menuButton.addEventListener('click', function () {
 const submenu = document.querySelector('.' + CLASSES.submenu);
 const submenuTransitionDelay = getTransitionDurationInMs(submenu);
 let submenuAnimationTimeoutId;
+
+submenu.addEventListener('click', onServiceLinkClick);
 
 document.body.addEventListener('click', function (e) {
   const cls = e.target.classList;
@@ -190,6 +194,34 @@ function animateSubmenu(isSubmenuHidden) {
 
 function isSubmenuClosed() {
   return submenu.classList.contains(CLASSES.submenuHidden);
+}
+
+function onServiceLinkClick(event) {
+  const section = document.querySelector('.' + CLASSES.appointmentSection);
+  const select = document.querySelector('#service');
+  const link = event.target;
+
+  const optionValue = link.getAttribute('data-option');
+  if (!optionValue) return;
+
+  event.preventDefault();
+
+  const option = document.querySelector(
+    '.' + CLASSES.appointmentOption + '[value="' + optionValue + '"]',
+  );
+
+  if (!option) {
+    console.error('No option with value "' + optionValue + '"');
+    return;
+  }
+
+  animateSubmenu(true);
+
+  const sectionRect = section.getBoundingClientRect();
+  const sectionPosition = sectionRect.top + window.pageYOffset;
+
+  window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
+  select.value = optionValue;
 }
 
 function disablePastDateFocus() {
