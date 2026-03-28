@@ -209,7 +209,9 @@ function enableNavKeyboardSupport() {
         lastFocusedDirection = 'next';
       }
 
-      e.preventDefault(); // предотвращаем прокрутку
+      // Prevent page scroll when space is pressed
+      e.preventDefault();
+
       $(this).trigger('click');
     });
 }
