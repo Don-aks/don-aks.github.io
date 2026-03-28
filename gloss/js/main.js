@@ -159,11 +159,8 @@ datePicker.datepicker({
   },
 });
 
-if (now > today12_30am) {
-  let tomorrow = new Date();
-  tomorrow.setDate(now.getDate() + 1);
-  datePicker.datepicker('setDate', tomorrow);
-}
+datePicker.datepicker('setDate', firstWorkDay);
+$('#input-date').val($.datepicker.formatDate('mm/dd/yy', firstWorkDay));
 
 disablePastDateFocus();
 enableNavKeyboardSupport();
