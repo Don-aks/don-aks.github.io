@@ -150,12 +150,14 @@ datePicker.datepicker({
   },
 
   beforeShowDay: function (date) {
-    const isPastDay =
-      date.getTime() < currentDate ||
-      (date.getTime() === currentDate && now.getTime() > today12_30am);
+    const isPastDay = date.getTime() < currentDate;
+
+    const isToday = date.getTime() === currentDate;
+    const isPastTimeToday = isToday && now > today12_30am;
+
     const isWeekend = date.getDay() === 0 || date.getDay() === 6;
 
-    if (isPastDay || isWeekend) {
+    if (isPastDay || isPastTimeToday || isWeekend) {
       return [false, 'past-day'];
     } else {
       return [true, ''];
