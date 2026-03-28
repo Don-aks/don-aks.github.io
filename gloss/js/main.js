@@ -201,17 +201,14 @@ function enableNavKeyboardSupport() {
       .attr('tabindex', '0')
       .off('keydown')
       .on('keydown', function (e) {
-        if (
-          e.key === 'Enter' ||
-          e.key === ' ' ||
-          e.keyCode === 13 ||
-          e.keyCode === 32
-        ) {
-          if ($(this).hasClass(CLASSES.dpBtnPrev)) {
-            lastFocusedDirection = 'prev';
-          } else if ($(this).hasClass(CLASSES.dpBtnNext)) {
-            lastFocusedDirection = 'next';
-          }
+        const isSpaceOrEnter = e.keyCode === 13 || e.keyCode === 32;
+        if (!isSpaceOrEnter) return;
+
+        if ($(this).hasClass(CLASSES.dpBtnPrev)) {
+          lastFocusedDirection = 'prev';
+        } else if ($(this).hasClass(CLASSES.dpBtnNext)) {
+          lastFocusedDirection = 'next';
+        }
 
           e.preventDefault(); // предотвращаем прокрутку
           $(this).trigger('click');
