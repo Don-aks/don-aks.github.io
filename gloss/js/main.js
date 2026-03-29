@@ -257,7 +257,7 @@ function restoreDatepickerNavFocus() {
 
     const newButton = $(selector);
     if (newButton.length) newButton.trigger('focus');
-  });
+  }, 0);
 }
 
 function handleClickOnButtonContainer(event) {
