@@ -123,6 +123,7 @@ $.datepicker.setDefaults({
 
 const datePickerSelector = '.appointment__date';
 const datePicker = $(datePickerSelector);
+const inputDate = $('#input-date');
 
 const now = new Date(Date.now());
 const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
@@ -137,7 +138,7 @@ datePicker.datepicker({
   appendTo: datePickerSelector,
 
   onSelect: function (dateText) {
-    $('#input-date').val(dateText);
+    inputDate.val(dateText);
     disablePastDateFocus();
     enableNavKeyboardSupport();
   },
