@@ -24,6 +24,7 @@ const CLASSES = {
   dpBtnNext: 'ui-datepicker-next',
 
   appointmentSection: 'appointment',
+  appointmentDp: 'appointment__date',
   appointmentBtn: 'appointment__button',
   appointmentBtnActive: 'appointment__button--active',
   appointmentOption: 'appointment__option',
@@ -121,8 +122,7 @@ $.datepicker.setDefaults({
   prevText: '',
 });
 
-const datePickerSelector = '.appointment__date';
-const datePicker = $(datePickerSelector);
+const datePicker = $('.' + CLASSES.appointmentDp);
 const inputDate = $('#input-date');
 
 const now = new Date(Date.now());
