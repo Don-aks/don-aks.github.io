@@ -20,6 +20,7 @@ const CLASSES = {
 
   serviceGrid: 'services',
 
+  dpContainer: 'ui-datepicker',
   dpBtnPrev: 'ui-datepicker-prev',
   dpBtnNext: 'ui-datepicker-next',
 
@@ -253,10 +254,11 @@ function restoreDatepickerNavFocus() {
   if (!lastFocusedDirection) return;
 
   setTimeout(function () {
+    var datepicker = $('.' + CLASSES.dpContainer);
     const isPrev = lastFocusedDirection === 'prev';
     const selector = '.' + (isPrev ? CLASSES.dpBtnPrev : CLASSES.dpBtnNext);
 
-    const newButton = $(selector);
+    const newButton = datepicker.find(selector);
     if (newButton.length) newButton.trigger('focus');
   }, 0);
 }
