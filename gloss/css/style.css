@@ -553,7 +553,7 @@ body.locked {
 .menu-button__line::after {
   position: absolute;
   top: 20px;
-  left: 4px;
+  left: 6px;
 
   width: 30px;
   height: 2px;
@@ -586,9 +586,9 @@ body.locked {
 .menu-button__line::after {
   content: '';
   top: 10px;
-  -webkit-transform: translateX(-4px);
-  -ms-transform: translateX(-4px);
-  transform: translateX(-4px);
+  -webkit-transform: translateX(-6px);
+  -ms-transform: translateX(-6px);
+  transform: translateX(-6px);
 }
 
 .menu-button__line::after {
