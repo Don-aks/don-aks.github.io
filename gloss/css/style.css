@@ -1070,10 +1070,6 @@ body > .ui-datepicker {
   position: absolute;
 }
 
-.ui-datepicker-month-select {
-  min-width: 92px !important;
-}
-
 .ui-selectmenu-menu {
   pointer-events: none;
 }
@@ -1134,8 +1130,7 @@ body > .ui-datepicker {
 }
 
 .ui-selectmenu-menu .ui-menu-item-wrapper {
-  padding: 5px 0;
-  padding-right: 10px;
+  padding: 5px;
   cursor: pointer;
 }
 
