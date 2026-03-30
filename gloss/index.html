@@ -405,6 +405,30 @@
           <form class="appointment__form" id="appointment-form" action="#">
             <input type="text" name="date" value="" id="input-date" hidden />
             <div class="appointment__date"></div>
+
+            <noscript>
+              <div class="noscript-warning">
+                <div class="noscript-warning__content">
+                  <h3 class="noscript-warning__title">
+                    JavaScript is required for making an appointment
+                  </h3>
+                  <p>
+                    It looks like JavaScript is disabled in your browser. Please
+                    enable it in your settings to use all the features of the
+                    site.
+                  </p>
+                  <a
+                    class="noscript-warning__link"
+                    href="https://www.enable-javascript.com"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Instructions on how to enable JavaScript
+                  </a>
+                </div>
+              </div>
+            </noscript>
+
             <h3 class="appointment__form-title">Select a time</h3>
             <div class="appointment__buttons">
               <input type="text" name="time" id="input-time" hidden />

@@ -861,6 +861,48 @@ body.locked {
   padding: 16px 48px;
 }
 
+/* ======= NOSCRIPT ======= */
+
+.noscript-warning {
+  max-width: 754px;
+  padding: 20px;
+  margin: -60px auto 20px;
+
+  text-align: center;
+
+  background-color: #1b1b1b;
+}
+
+.noscript-warning__title {
+  margin-bottom: 20px;
+
+  font:
+    600 32px/1.25 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
+}
+
+.noscript-warning__link {
+  -webkit-text-decoration: underline transparent;
+  text-decoration: underline transparent;
+  -webkit-transition: -webkit-text-decoration 0.3s;
+
+  color: #cea561;
+
+  transition: -webkit-text-decoration 0.3s;
+  -o-transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s;
+  transition:
+    text-decoration 0.3s,
+    -webkit-text-decoration 0.3s;
+}
+
+.noscript-warning__link:hover {
+  text-decoration: underline;
+  color: #f1b85b;
+}
+
 /* ======= CALENDAR ======= */
 
 body > .ui-datepicker {
