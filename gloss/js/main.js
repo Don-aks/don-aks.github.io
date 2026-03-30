@@ -23,6 +23,12 @@ const CLASSES = {
   dpContainer: 'ui-datepicker',
   dpBtnPrev: 'ui-datepicker-prev',
   dpBtnNext: 'ui-datepicker-next',
+  dpHeader: 'ui-datepicker-header',
+  dpMonthSelect: 'ui-datepicker-month',
+  dpMonthSelectMenu: 'ui-datepicker-month-select',
+  dpYearSelect: 'ui-datepicker-year',
+
+  selectmenuBtn: 'ui-selectmenu-button',
 
   appointmentSection: 'appointment',
   appointmentDp: 'appointment__date',
@@ -135,6 +141,8 @@ let lastFocusedDirection;
 
 datePicker.datepicker({
   altField: '#input-date',
+  changeMonth: true,
+  changeYear: true,
   // firstDay: 1,
   appendTo: '.' + CLASSES.appointmentDp,
 
@@ -142,6 +150,8 @@ datePicker.datepicker({
     inputDate.val(dateText);
     disablePastDateFocus();
     enableNavKeyboardSupport();
+    setTimeout(initDatepickerSelects, 0);
+    setTimeout(fixDatepickerNavTabOrder, 0);
   },
 
   onChangeMonthYear: function () {
@@ -149,6 +159,8 @@ datePicker.datepicker({
       disablePastDateFocus();
       enableNavKeyboardSupport();
       restoreDatepickerNavFocus();
+      setTimeout(initDatepickerSelects, 0);
+      setTimeout(fixDatepickerNavTabOrder, 0);
     }, 0);
   },
 
@@ -166,6 +178,9 @@ $('#input-date').val($.datepicker.formatDate('mm/dd/yy', firstWorkDay));
 
 disablePastDateFocus();
 enableNavKeyboardSupport();
+fixDatepickerNavTabOrder();
+
+initDatepickerSelects();
 
 const timeInput = document.getElementById('input-time');
 const buttonContainer = document.querySelector('.appointment__buttons');
@@ -261,6 +276,60 @@ function restoreDatepickerNavFocus() {
     const newButton = datepicker.find(selector);
     if (newButton.length) newButton.trigger('focus');
   }, 0);
+}
+
+function initDatepickerSelects() {
+  function onChange() {
+    $(this).trigger('change');
+    initDatepickerSelects();
+  }
+
+  $('.' + CLASSES.dpMonthSelect).selectmenu({
+    change: function () {
+      onChange.call(this);
+    },
+    classes: {
+      'ui-selectmenu-menu': CLASSES.dpMonthSelectMenu,
+    },
+  });
+
+  $('.' + CLASSES.dpYearSelect).selectmenu({
+    change: function () {
+      onChange.call(this);
+    },
+  });
+
+  fixDatepickerNavTabOrder();
+  removePastYearsFromSelect();
+}
+
+function fixDatepickerNavTabOrder() {
+  var $header = $('.' + CLASSES.dpHeader);
+  var $prev = $header.find('.' + CLASSES.dpBtnPrev);
+  var $next = $header.find('.' + CLASSES.dpBtnNext);
+
+  if (!$prev.length || !$next.length) {
+    console.error('Datepicker nav buttons not found');
+    return;
+  }
+
+  $header.append($prev).append($next);
+  $prev.attr('tabindex', '0');
+  $next.attr('tabindex', '0');
+}
+
+function removePastYearsFromSelect() {
+  const currentYear = new Date().getFullYear();
+
+  $('.' + CLASSES.dpYearSelect + ' option').each(function () {
+    const year = parseInt($(this).val(), 10);
+
+    if (year < currentYear) {
+      $(this).remove();
+    }
+  });
+
+  $('.' + CLASSES.dpYearSelect).selectmenu('refresh');
 }
 
 function handleClickOnButtonContainer(event) {
