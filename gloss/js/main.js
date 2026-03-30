@@ -136,7 +136,7 @@ let lastFocusedDirection;
 datePicker.datepicker({
   altField: '#input-date',
   // firstDay: 1,
-  appendTo: datePickerSelector,
+  appendTo: '.' + CLASSES.appointmentDp,
 
   onSelect: function (dateText) {
     inputDate.val(dateText);
