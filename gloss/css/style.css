@@ -1243,12 +1243,14 @@ body > .ui-datepicker {
 }
 
 .appointment__inputs {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 -24px 8px 0;
 }
 
 .appointment__input,
 .appointment__select-wrapper {
-  width: 48%;
+  flex: 1 1 47%;
   margin: 0 24px 40px 0;
 }
 
@@ -1628,17 +1630,6 @@ body > .ui-datepicker {
 }
 
 @media (max-width: 992px) {
-  .appointment__inputs {
-    margin-right: 0;
-  }
-
-  .appointment__input,
-  .appointment__select-wrapper {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
   .appointment__buttons {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
