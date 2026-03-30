@@ -1387,12 +1387,18 @@ body > .ui-datepicker {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  max-width: 1000px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 870px;
   margin: 0 auto 72px;
 }
 
 .appointment__button {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
   padding: 19px 30px;
+
   text-transform: none;
 }
 
@@ -1799,16 +1805,21 @@ body > .ui-datepicker {
 
 @media (max-width: 992px) {
   .appointment__buttons {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-right: -24px;
+    max-width: 440px;
   }
 
   .appointment__button {
-    margin: 0 24px 20px 0;
+    -ms-flex-preferred-size: calc(50% - 12.5px);
+    flex-basis: calc(50% - 12.5px);
+    margin-bottom: 20px;
+  }
+
+  .appointment__button + .appointment__button {
+    margin-left: 0;
+  }
+
+  .appointment__button:nth-child(odd) {
+    margin-left: 20px;
   }
 }
 
@@ -1972,18 +1983,34 @@ body > .ui-datepicker {
     margin-left: -5px;
   }
 
-  .appointment__buttons {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
   .header__inner {
     padding-top: 15px;
   }
 
   .services__name {
     font-size: 30px;
+  }
+
+  .appointment__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: 169px;
+  }
+
+  .appointment__button {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  .appointment__button:nth-child(odd),
+  .appointment__button + .appointment__button {
+    margin-left: auto;
   }
 }
