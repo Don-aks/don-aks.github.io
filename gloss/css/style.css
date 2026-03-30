@@ -622,7 +622,7 @@ body.locked {
   display: none;
   width: 44px;
   height: 44px;
-  margin-right: -9px;
+  margin-right: -8px;
 }
 
 .menu-button__line,
@@ -630,7 +630,7 @@ body.locked {
 .menu-button__line::after {
   position: absolute;
   top: 20px;
-  left: 6px;
+  left: 7px;
 
   width: 30px;
   height: 2px;
@@ -663,9 +663,9 @@ body.locked {
 .menu-button__line::after {
   content: '';
   top: 10px;
-  -webkit-transform: translateX(-6px);
-  -ms-transform: translateX(-6px);
-  transform: translateX(-6px);
+  -webkit-transform: translateX(-7px);
+  -ms-transform: translateX(-7px);
+  transform: translateX(-7px);
 }
 
 .menu-button__line::after {
@@ -678,16 +678,16 @@ body.locked {
 }
 
 .menu-button--active .menu-button__line::before {
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -webkit-transform: translateX(-7px) rotate(-45deg);
+  -ms-transform: translateX(-7px) rotate(-45deg);
+  transform: translateX(-7px) rotate(-45deg);
   top: 0;
 }
 
 .menu-button--active .menu-button__line::after {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -webkit-transform: translateX(-7px) rotate(45deg);
+  -ms-transform: translateX(-7px) rotate(45deg);
+  transform: translateX(-7px) rotate(45deg);
   bottom: 0;
 }
 
