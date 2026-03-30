@@ -2,8 +2,9 @@
 
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('../fonts/CormorantGaramond-SemiBold.woff') format('woff'),
-    url('../fonts/CormorantGaramond-SemiBold.woff2') format('woff2');
+  src:
+    url('../fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+    url('../fonts/CormorantGaramond-SemiBold.woff') format('woff');
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -11,8 +12,9 @@
 
 @font-face {
   font-family: Manrope;
-  src: url('../fonts/Manrope-Regular.woff') format('woff'),
-    url('../fonts/Manrope-Regular.woff2') format('woff2');
+  src:
+    url('../fonts/Manrope-Regular.woff2') format('woff2'),
+    url('../fonts/Manrope-Regular.woff') format('woff');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -20,8 +22,9 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('../fonts/Manrope-Medium.woff') format('woff')
-    url('../fonts/Manrope-Medium.woff2') format('woff2');
+  src:
+    url('../fonts/Manrope-Medium.woff2') format('woff2'),
+    url('../fonts/Manrope-Medium.woff') format('woff');
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -29,8 +32,9 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('../fonts/Manrope-SemiBold.woff') format('woff'),
-    url('../fonts/CormorantGaramond-SemiBold.woff2') format('woff2');
+  src:
+    url('../fonts/Manrope-SemiBold.woff2') format('woff2'),
+    url('../fonts/Manrope-SemiBold.woff') format('woff');
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -41,6 +45,11 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+:focus {
+  outline: 2px solid #cea561;
+  border-radius: 2px;
 }
 
 *,
@@ -119,7 +128,11 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
-  font: 400 16px/1.5 Manrope, Arial, Helvetica, sans-serif;
+  font:
+    400 16px/1.5 Manrope,
+    Arial,
+    Helvetica,
+    sans-serif;
   letter-spacing: 0.0015em;
 
   background-color: #000;
@@ -137,13 +150,18 @@ body.locked {
 }
 
 .section {
-  margin: 120px 0;
+  padding: 60px 0;
 }
 
 .section__title {
-  margin-bottom: 12px;
+  max-width: 900px;
+  margin: 0 auto 12px;
 
-  font: 600 64px/1.25 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    600 64px/1.25 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
   text-align: center;
   text-transform: capitalize;
 }
@@ -177,6 +195,11 @@ body.locked {
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: transparent;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.input:focus {
+  border-color: #ffffff;
+  outline-color: transparent;
 }
 
 .input::-webkit-input-placeholder {
@@ -227,6 +250,11 @@ body.locked {
   -moz-appearance: none;
 }
 
+.select:focus {
+  border-color: #ffffff;
+  outline-color: transparent;
+}
+
 .select::-ms-expand {
   display: none;
 }
@@ -261,12 +289,27 @@ body.locked {
   color: #151515;
   background-color: #cea561;
 
-  -webkit-transition: background-color 0.3s, color 0.3s;
+  -webkit-transition:
+    background-color 0.3s,
+    color 0.3s;
 
-  -o-transition: background-color 0.3s, color 0.3s;
+  -o-transition:
+    background-color 0.3s,
+    color 0.3s;
 
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   cursor: pointer;
+}
+
+.button:focus {
+  outline-color: #ffffff;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color: #f1b85b;
 }
 
 .button--transparent {
@@ -275,10 +318,102 @@ body.locked {
   color: #ffffff;
 }
 
+.button--transparent:focus {
+  outline-color: #ffffff;
+}
+
+.button--transparent:hover {
+  background-color: #cea561;
+  color: #000000;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* ======= JQUERY UI ======= */
+
+.ui-helper-hidden {
+  display: none;
+}
+
+.ui-helper-hidden-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+.ui-helper-clearfix:after {
+  clear: both;
+}
+
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.ui-front {
+  z-index: 100;
+}
+
+.ui-state-disabled {
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.ui-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -0.25em;
+  position: relative;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.ui-widget-icon-block {
+  left: 50%;
+  margin-left: -8px;
+  display: block;
+}
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* ======= HEADER ======= */
 
 .header {
-  background: center/cover no-repeat;
+  /* Additional background-color
+  if image doesn't load */
+  background: #1b1b1b center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -321,16 +456,20 @@ body.locked {
   border-bottom: 1px solid transparent;
 }
 
-.header__item:not(:last-child) {
-  margin-right: 33px;
+.header__item + .header__item {
+  margin-left: 33px;
 }
 
 .header__link {
   border-bottom: 1px solid transparent;
 }
 
-.header__link--selected {
-  pointer-events: none;
+.header__link:hover {
+  border-bottom: 1px solid #ffffff;
+}
+
+.header__link--selected:hover {
+  border: 0;
 }
 
 .icon {
@@ -378,7 +517,12 @@ body.locked {
   transition: -webkit-transform 0.5s;
   -o-transition: transform 0.5s;
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  transition:
+    transform 0.5s,
+    -webkit-transform 0.5s;
+  transition:
+    transform 0.5s,
+    -webkit-transform 0.5s;
 }
 
 .submenu::before {
@@ -397,13 +541,13 @@ body.locked {
 }
 
 .submenu--hidden {
-  -webkit-transform: translateX(200%) scale(0);
-  -ms-transform: translateX(200%) scale(0);
-  transform: translateX(200%) scale(0);
+  -webkit-transform: translateX(700%);
+  -ms-transform: translateX(700%);
+  transform: translateX(700%);
 }
 
 .submenu__link {
-  display: block;
+  width: 100%;
   padding: 11px 5px;
 
   text-align: center;
@@ -418,8 +562,8 @@ body.locked {
   display: none;
 }
 
-.header__buttons > *:not(:last-child) {
-  margin-right: 12px;
+.header__buttons > * + * {
+  margin-left: 12px;
 }
 
 .header__buttons {
@@ -478,6 +622,7 @@ body.locked {
   display: none;
   width: 44px;
   height: 44px;
+  margin-right: -9px;
 }
 
 .menu-button__line,
@@ -485,26 +630,42 @@ body.locked {
 .menu-button__line::after {
   position: absolute;
   top: 20px;
-  left: 4px;
+  left: 6px;
 
   width: 30px;
   height: 2px;
 
   background-color: #cea561;
-  -webkit-transition: top 0.5s, bottom 0.5s, -webkit-transform 0.5s;
-  transition: top 0.5s, bottom 0.5s, -webkit-transform 0.5s;
-  -o-transition: transform 0.5s, top 0.5s, bottom 0.5s;
-  transition: transform 0.5s, top 0.5s, bottom 0.5s;
-  transition: transform 0.5s, top 0.5s, bottom 0.5s, -webkit-transform 0.5s;
+  -webkit-transition:
+    top 0.5s,
+    bottom 0.5s,
+    -webkit-transform 0.5s;
+  transition:
+    top 0.5s,
+    bottom 0.5s,
+    -webkit-transform 0.5s;
+  -o-transition:
+    transform 0.5s,
+    top 0.5s,
+    bottom 0.5s;
+  transition:
+    transform 0.5s,
+    top 0.5s,
+    bottom 0.5s;
+  transition:
+    transform 0.5s,
+    top 0.5s,
+    bottom 0.5s,
+    -webkit-transform 0.5s;
 }
 
 .menu-button__line::before,
 .menu-button__line::after {
   content: '';
   top: 10px;
-  -webkit-transform: translateX(-4px);
-  -ms-transform: translateX(-4px);
-  transform: translateX(-4px);
+  -webkit-transform: translateX(-6px);
+  -ms-transform: translateX(-6px);
+  transform: translateX(-6px);
 }
 
 .menu-button__line::after {
@@ -537,10 +698,20 @@ body.locked {
   text-align: center;
 }
 
+.banner__title,
+.banner__text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .banner__title {
   margin-bottom: 8px;
 
-  font: 600 80px/1.2 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    600 80px/1.2 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
 }
 
 .banner__text {
@@ -561,6 +732,10 @@ body.locked {
 
 /* ======= SERVICES ======= */
 
+.services {
+  padding: 120px 0 60px;
+}
+
 .services__grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -578,10 +753,15 @@ body.locked {
 }
 
 .services__item {
-  max-width: 312px;
   width: 100%;
-  padding: 110px 50px;
+  max-width: 312px;
   margin: 0 24px 48px 0;
+}
+
+.service {
+  position: relative;
+  height: 100%;
+  padding: 76px 10px;
 
   text-align: center;
 
@@ -589,7 +769,19 @@ body.locked {
   border: solid 1px #cea561;
 }
 
-.services__item::before {
+.service--long {
+  padding: 109px 0;
+}
+
+.service--big-image {
+  padding: 49px 0;
+}
+
+.service--big-image .service__bg {
+  height: 144px;
+}
+
+.service__bg {
   content: '';
   display: block;
   width: 110px;
@@ -601,52 +793,34 @@ body.locked {
   background-repeat: no-repeat;
 }
 
-.services__link {
+.service__link {
   -webkit-transition: color 0.3s;
   -o-transition: color 0.3s;
   transition: color 0.3s;
 }
 
-@media (any-hover: hover) {
-  .services__link:hover {
-    color: #cea561;
-  }
-}
-
-.services__link:active {
+.service__link:hover {
   color: #cea561;
 }
 
-.services__item--hair-cut::before {
-  background-image: url('../img/haircut.png');
+.service__link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.services__item--shaving::before {
-  background-image: url('../img/shaving.png');
-}
+.service__name {
+  max-width: 200px;
+  margin: 0 auto;
 
-.services__item--hair-dye::before {
-  background-image: url('../img/hairdye.png');
-}
-
-.services__item--facial::before {
-  background-image: url('../img/facial.png');
-}
-
-.services__item--treatment::before {
-  background-image: url('../img/treatment.png');
-}
-
-.services__item--removal::before {
-  background-image: url('../img/removal.png');
-}
-
-.services__item--wedding::before {
-  background-image: url('../img/wedding.png');
-}
-
-.services__name {
-  font: 500 48px/64px 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    500 48px/64px 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
 }
 
 /* ======= PACKAGES ======= */
@@ -658,15 +832,18 @@ body.locked {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   margin: 0 -24px -48px 0;
 }
 
-.package {
+.packages__package {
+  width: 33.333%;
   max-width: 424px;
-  padding: 48px 67px;
   margin: 0 24px 48px 0;
+}
+
+.package {
+  height: 100%;
+  padding: 48px 0;
 
   text-align: center;
 
@@ -677,6 +854,17 @@ body.locked {
 }
 
 .package__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
   max-width: 288px;
   margin: 0 auto;
 }
@@ -716,10 +904,13 @@ body.locked {
 }
 
 .package__ul {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   margin-bottom: 56px;
 
   text-align: left;
-  color: rbga(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .package__li {
@@ -739,12 +930,54 @@ body.locked {
   background: url('../img/checkmark.svg') center/contain no-repeat;
 }
 
-.package__li:not(:last-child) {
-  margin-bottom: 16px;
+.package__li + .package__li {
+  margin-top: 16px;
 }
 
 .package__button {
   padding: 16px 48px;
+}
+
+/* ======= NOSCRIPT ======= */
+
+.noscript-warning {
+  max-width: 754px;
+  padding: 20px;
+  margin: -60px auto 20px;
+
+  text-align: center;
+
+  background-color: #1b1b1b;
+}
+
+.noscript-warning__title {
+  margin-bottom: 20px;
+
+  font:
+    600 32px/1.25 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
+}
+
+.noscript-warning__link {
+  -webkit-text-decoration: underline transparent;
+  text-decoration: underline transparent;
+  -webkit-transition: -webkit-text-decoration 0.3s;
+
+  color: #cea561;
+
+  transition: -webkit-text-decoration 0.3s;
+  -o-transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s;
+  transition:
+    text-decoration 0.3s,
+    -webkit-text-decoration 0.3s;
+}
+
+.noscript-warning__link:hover {
+  text-decoration: underline;
+  color: #f1b85b;
 }
 
 /* ======= CALENDAR ======= */
@@ -819,6 +1052,99 @@ body > .ui-datepicker {
   transform: translateY(-50%);
 }
 
+.ui-datepicker-title .ui-selectmenu-button {
+  cursor: pointer;
+}
+
+/* Will be replaced by Selectmenu from jQuery UI */
+.ui-datepicker-month,
+.ui-datepicker-year {
+  display: none;
+}
+
+.ui-datepicker-month + .ui-selectmenu-button {
+  margin-right: 5px;
+}
+
+.ui-selectmenu-menu {
+  position: absolute;
+}
+
+.ui-datepicker-month-select {
+  min-width: 92px !important;
+}
+
+.ui-selectmenu-menu {
+  pointer-events: none;
+}
+
+.ui-selectmenu-open {
+  pointer-events: auto;
+}
+
+.ui-selectmenu-menu .ui-menu {
+  max-height: 400px;
+  padding: 5px 0;
+
+  opacity: 0;
+
+  border: 2px solid #cea561;
+  background-color: #2b2b2b;
+  border-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
+
+  -webkit-transition:
+    opacity 0.3s,
+    -webkit-transform 0.3s;
+  -o-transition:
+    opacity 0.3s,
+    -o-transform 0.3s;
+  transition:
+    opacity 0.3s,
+    -webkit-transform 0.3s;
+  -o-transition:
+    opacity 0.3s,
+    transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s,
+    -webkit-transform 0.3s;
+
+  overflow: auto;
+  overflow-x: hidden;
+  pointer-events: none;
+}
+
+.ui-selectmenu-open .ui-menu {
+  opacity: 1;
+
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+
+  pointer-events: all;
+}
+
+.ui-selectmenu-menu .ui-menu-item-wrapper {
+  padding: 5px 0;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.ui-selectmenu-menu .ui-menu-item-wrapper.ui-state-focus,
+.ui-selectmenu-menu .ui-menu-item-wrapper.ui-state-active {
+  color: #1b1b1b;
+  background-color: #f1b85b;
+}
+
 .ui-datepicker-prev,
 .ui-datepicker-next {
   top: 8px;
@@ -862,6 +1188,15 @@ body > .ui-datepicker {
   padding: 2px 0;
 }
 
+.ui-datepicker td a:hover {
+  background-color: #3a3a3a;
+}
+
+.ui-datepicker td.ui-datepicker-current-day a:hover {
+  background-color: #d6a758;
+  cursor: default;
+}
+
 .ui-datepicker td.past-day span {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -883,16 +1218,11 @@ body > .ui-datepicker {
   transition: background-color 0.3s;
 }
 
-.ui-datepicker td:not(.ui-datepicker-current-day) a:active {
-  background-color: #3a3a3a;
-}
-
 .ui-datepicker .ui-state-active {
   background-color: #d6a758;
   color: #000;
 }
 
-/* Удалить рамки вокруг ячеек */
 .ui-datepicker td,
 .ui-datepicker th {
   border: none;
@@ -904,7 +1234,7 @@ body > .ui-datepicker {
   width: 100%;
   margin: 0 auto;
   padding-bottom: 25px;
-  
+
   font-family: Manrope, Arial, Helvetica, sans-serif;;
   font-size: 20px;
   line-height: 1.25;
@@ -1040,6 +1370,10 @@ body > .ui-datepicker {
 
 /* ======= APPOINTMENT ======= */
 
+.appointment {
+  padding: 60px 0 120px;
+}
+
 .appointment__date {
   margin-bottom: 72px;
 }
@@ -1060,7 +1394,8 @@ body > .ui-datepicker {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 72px;
+  max-width: 1000px;
+  margin: 0 auto 72px;
 }
 
 .appointment__button {
@@ -1068,8 +1403,8 @@ body > .ui-datepicker {
   text-transform: none;
 }
 
-.appointment__button:not(:last-child) {
-  margin-right: 25px;
+.appointment__button + .appointment__button {
+  margin-left: 25px;
 }
 
 .appointment__button--active {
@@ -1078,12 +1413,19 @@ body > .ui-datepicker {
 }
 
 .appointment__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 -24px 8px 0;
 }
 
 .appointment__input,
 .appointment__select-wrapper {
-  width: 48%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 47%;
+  flex: 1 1 47%;
   margin: 0 24px 40px 0;
 }
 
@@ -1148,6 +1490,10 @@ body > .ui-datepicker {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.footer :focus {
+  outline-color: #ffffff;
+}
+
 .footer__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1170,8 +1516,8 @@ body > .ui-datepicker {
   max-width: 339px;
 }
 
-.footer__social-media > *:not(:last-child) {
-  margin-bottom: 32px;
+.footer__social-media > * + * {
+  margin-top: 32px;
 }
 
 .footer__socials {
@@ -1202,8 +1548,8 @@ body > .ui-datepicker {
   background-image: url('../img/linkedin.svg');
 }
 
-.footer__social-link:not(:last-child) {
-  margin-right: 32px;
+.footer__social-link + .footer__social-link {
+  margin-left: 32px;
 }
 
 /* ======= FOOTER__NAV ======= */
@@ -1236,25 +1582,37 @@ body > .ui-datepicker {
 }
 
 .footer__link {
+  position: relative;
   -webkit-text-decoration: underline transparent;
   text-decoration: underline transparent;
   -webkit-transition: -webkit-text-decoration 0.3s;
   transition: -webkit-text-decoration 0.3s;
   -o-transition: text-decoration 0.3s;
   transition: text-decoration 0.3s;
-  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
+  transition:
+    text-decoration 0.3s,
+    -webkit-text-decoration 0.3s;
 }
 
 .footer__link:hover {
   text-decoration: underline;
 }
 
-.footer__item:not(:last-child) {
-  margin-bottom: 20px;
+.footer__link::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 0;
+  right: 0;
 }
 
-.footer__nav-block:not(:last-child) {
-  margin-right: 106px;
+.footer__item + .footer__item {
+  margin-top: 20px;
+}
+
+.footer__nav-block + .footer__nav-block {
+  margin-left: 106px;
 }
 
 /* ======= FOOTER__CONTACT ======= */
@@ -1285,8 +1643,8 @@ body > .ui-datepicker {
   background-size: contain;
 }
 
-.footer__contact-item:not(:last-child) {
-  margin-bottom: 22px;
+.footer__contact-item + .footer__contact-item {
+  margin-top: 22px;
 }
 
 .footer__location::before {
@@ -1303,7 +1661,11 @@ body > .ui-datepicker {
 
 .footer__contact-title {
   margin-bottom: 4px;
-  font: 500 18px/1.33 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font:
+    500 18px/1.33 'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
   color: #ffffff;
 }
 
@@ -1316,29 +1678,6 @@ body > .ui-datepicker {
 }
 
 /* ======= MEDIA ======= */
-
-@media (any-hover: hover) {
-  .button--transparent:hover {
-    background-color: #cea561;
-    color: #000000;
-  }
-
-  .button:hover {
-    background-color: #f1b85b;
-  }
-
-  .header__link:not(.header__link--selected):hover {
-    border-bottom: 1px solid #ffffff;
-  }
-
-  .ui-datepicker td:not(.ui-datepicker-current-day) a:hover {
-    background-color: #3a3a3a;
-  }
-
-  .footer__link:hover {
-    text-decoration: underline;
-  }
-}
 
 @media (max-width: 1200px) {
   .header__list {
@@ -1357,7 +1696,7 @@ body > .ui-datepicker {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding-top: 20px;
+    padding: 20px 0;
     height: calc(100vh - 98px);
     height: calc(100dvh - 98px);
 
@@ -1372,7 +1711,9 @@ body > .ui-datepicker {
     transition: -webkit-transform 0.5s;
     -o-transition: transform 0.5s;
     transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s;
+    transition:
+      transform 0.5s,
+      -webkit-transform 0.5s;
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -1384,8 +1725,8 @@ body > .ui-datepicker {
     transform: translateY(0);
   }
 
-  .header__item:not(:last-child) {
-    margin-right: 0;
+  .header__item + .header__item {
+    margin-left: 0;
   }
 
   .icon {
@@ -1414,7 +1755,7 @@ body > .ui-datepicker {
 
   .header__item,
   .header__item--selected,
-  .header__link:not(.header__link--selected):hover {
+  .header__link:hover {
     border-color: transparent;
   }
 
@@ -1426,6 +1767,15 @@ body > .ui-datepicker {
 
   .menu-button {
     display: block;
+  }
+
+  .packages__list {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .packages__package {
+    width: 100%;
   }
 
   .footer__inner {
@@ -1455,17 +1805,6 @@ body > .ui-datepicker {
 }
 
 @media (max-width: 992px) {
-  .appointment__inputs {
-    margin-right: 0;
-  }
-
-  .appointment__input,
-  .appointment__select-wrapper {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
   .appointment__buttons {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1482,7 +1821,7 @@ body > .ui-datepicker {
 
 @media (max-width: 768px) {
   .section {
-    margin: 50px 0;
+    padding: 25px 0;
   }
 
   .button {
@@ -1508,8 +1847,8 @@ body > .ui-datepicker {
     min-height: calc(100dvh - 68px);
   }
 
-  .header__buttons > *:not(:last-child) {
-    margin-right: 15px;
+  .header__buttons > * + * {
+    margin-left: 15px;
   }
 
   .appointment__buttons {
@@ -1551,12 +1890,22 @@ body > .ui-datepicker {
     text-align: center;
   }
 
-  .footer__nav-block:not(:last-child) {
-    margin-right: 0;
+  .footer__nav-block + .footer__nav-block {
+    margin-left: 0;
   }
 }
 
-@media (max-height: 477px), (max-width: 460px) {
+@media (max-height: 477px) {
+  .banner__title {
+    font-size: 64px;
+  }
+
+  .banner__text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 460px) {
   .banner__title {
     font-size: 64px;
   }
@@ -1588,12 +1937,22 @@ body > .ui-datepicker {
     display: none;
   }
 
-  .services__item {
-    padding: 50px 20px;
+  .service {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .package {
-    padding: 25px 15px;
+    padding: 25px 10px;
+  }
+
+  .ui-datepicker td a,
+  .ui-datepicker td span {
+    max-width: 40px;
+    width: 100%;
+    padding: 0;
+
+    line-height: 2;
   }
 
   .mailing-list__input {
@@ -1616,6 +1975,10 @@ body > .ui-datepicker {
 }
 
 @media (max-width: 385px) {
+  .header__buttons > * + * {
+    margin-left: -5px;
+  }
+
   .appointment__buttons {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

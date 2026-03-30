@@ -25,12 +25,11 @@
             </a>
             <ul class="header__list">
               <li class="header__item header__item--selected">
-                <a
+                <span
                   class="header__link animation-link header__link--selected"
-                  href="index.html"
                 >
                   Home
-                </a>
+                </span>
               </li>
               <li class="header__item">
                 <a class="header__link animation-link" href="#">About us</a>
@@ -46,7 +45,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#hair-cut"
+                      href="#appointment"
+                      data-option="hair-cut"
                       tabindex="-1"
                     >
                       Hair Cut
@@ -55,7 +55,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#shaving"
+                      href="#appointment"
+                      data-option="shaving"
                       tabindex="-1"
                     >
                       Shaving
@@ -64,7 +65,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#hair-dye"
+                      href="#appointment"
+                      data-option="hair-dye"
                       tabindex="-1"
                     >
                       Hair Dye
@@ -73,7 +75,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#facial"
+                      href="#appointment"
+                      data-option="facial"
                       tabindex="-1"
                     >
                       Facial
@@ -82,7 +85,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#keratin-treatment"
+                      href="#appointment"
+                      data-option="keratin-treatment"
                       tabindex="-1"
                     >
                       Keratin Treatment
@@ -91,7 +95,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#hair-removal"
+                      href="#appointment"
+                      data-option="hair-removal"
                       tabindex="-1"
                     >
                       Hair Removal
@@ -100,7 +105,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#hair-treatment"
+                      href="#appointment"
+                      data-option="hair-treatment"
                       tabindex="-1"
                     >
                       Hair Treatment
@@ -109,7 +115,8 @@
                   <li class="submenu__item">
                     <a
                       class="submenu__link animation-link"
-                      href="#wedding-package"
+                      href="#appointment"
+                      data-option="wedding-package"
                       tabindex="-1"
                     >
                       Wedding Package
@@ -162,7 +169,7 @@
     </header>
 
     <main class="main">
-      <section class="services section">
+      <section class="services">
         <div class="container">
           <h2 class="section__title">Our services</h2>
           <p class="section__text services__text">
@@ -170,51 +177,143 @@
             vulputate libero amet, consectetur adipiscin
           </p>
           <ul class="services__grid">
-            <li class="services__item services__item--hair-cut">
-              <h3 class="services__name">
-                <a class="services__link" href="#hair-cut">Hair Cut</a>
-              </h3>
+            <li class="services__item">
+              <article class="service service--long">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/haircut.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="hair-cut"
+                  >
+                    Hair Cut
+                  </a>
+                </h3>
+              </article>
             </li>
-            <li class="services__item services__item--shaving">
-              <h3 class="services__name">
-                <a class="services__link" href="#shaving">Shaving</a>
-              </h3>
+
+            <li class="services__item">
+              <article class="service service--long">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/shaving.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="shaving"
+                  >
+                    Shaving
+                  </a>
+                </h3>
+              </article>
             </li>
-            <li class="services__item services__item--hair-dye">
-              <h3 class="services__name">
-                <a class="services__link" href="#hair-dye">Hair Dye</a>
-              </h3>
+
+            <li class="services__item">
+              <article class="service service--long">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/hairdye.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="hair-dye"
+                  >
+                    Hair Dye
+                  </a>
+                </h3>
+              </article>
             </li>
-            <li class="services__item services__item--facial">
-              <h3 class="services__name">
-                <a class="services__link" href="#facial">Facial</a>
-              </h3>
+            <li class="services__item">
+              <article class="service service--long">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/facial.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="facial"
+                  >
+                    Facial
+                  </a>
+                </h3>
+              </article>
             </li>
-            <li class="services__item services__item--treatment">
-              <h3 class="services__name">
-                <a class="services__link" href="#keratin-treatment">
-                  Keratin Treatment
-                </a>
-              </h3>
+            <li class="services__item">
+              <article class="service">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/treatment.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="keratin-treatment"
+                  >
+                    Keratin Treatment
+                  </a>
+                </h3>
+              </article>
             </li>
-            <li class="services__item services__item--removal">
-              <h3 class="services__name">
-                <a class="services__link" href="#hair-removal">Hair Removal</a>
-              </h3>
+            <li class="services__item">
+              <article class="service">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/removal.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="hair-removal"
+                  >
+                    Hair Removal
+                  </a>
+                </h3>
+              </article>
             </li>
-            <li class="services__item services__item--treatment">
-              <h3 class="services__name">
-                <a class="services__link" href="#hair-treatment">
-                  Hair Treatment
-                </a>
-              </h3>
+            <li class="services__item">
+              <article class="service">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/treatment.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="hair-treatment"
+                  >
+                    Hair Treatment
+                  </a>
+                </h3>
+              </article>
             </li>
-            <li class="services__item services__item--wedding">
-              <h3 class="services__name">
-                <a class="services__link" href="#wedding-package">
-                  Wedding Package
-                </a>
-              </h3>
+            <li class="services__item">
+              <article class="service service--big-image">
+                <div
+                  class="service__bg"
+                  style="background-image: url('img/wedding.png')"
+                ></div>
+                <h3 class="service__name">
+                  <a
+                    class="service__link"
+                    href="#appointment"
+                    data-option="wedding-package"
+                  >
+                    Wedding Package
+                  </a>
+                </h3>
+              </article>
             </li>
           </ul>
         </div>
@@ -227,69 +326,75 @@
           <ul class="packages__list">
             <li class="packages__package">
               <article class="package">
-                <h3 class="package__title">Grooming Package</h3>
-                <div class="package__price">
-                  <span class="package__price-currency">$</span>
-                  499
+                <div class="package__container">
+                  <h3 class="package__title">Grooming Package</h3>
+                  <!-- prettier-ignore -->
+                  <div class="package__price">
+                    <span class="package__price-currency">$</span>499
+                  </div>
+                  <ul class="package__ul">
+                    <li class="package__li">Hair Cut of Your Choice</li>
+                    <li class="package__li">Beard Style / Shaving for Men</li>
+                    <li class="package__li">Facial Treatment</li>
+                    <li class="package__li">
+                      Hair Treatment / Keratin Treatment Suited for You
+                    </li>
+                  </ul>
+                  <button class="button button--transparent package__button">
+                    Choose plan
+                  </button>
                 </div>
-                <ul class="package__ul">
-                  <li class="package__li">Hair Cut of Your Choice</li>
-                  <li class="package__li">Beard Style / Shaving for Men</li>
-                  <li class="package__li">Facial Treatment</li>
-                  <li class="package__li">
-                    Hair Treatment / Keratin Treatment Suited for You
-                  </li>
-                </ul>
-                <button class="button button--transparent package__button">
-                  Choose plan
-                </button>
               </article>
             </li>
             <li class="packages__package">
               <article class="package">
-                <h3 class="package__title">Grooming Package</h3>
-                <div class="package__price">
-                  <span class="package__price-currency">$</span>
-                  699
+                <div class="package__container">
+                  <h3 class="package__title">Grooming Package</h3>
+                  <!-- prettier-ignore -->
+                  <div class="package__price">
+                    <span class="package__price-currency">$</span>699
+                  </div>
+                  <ul class="package__ul">
+                    <li class="package__li">Hair Cut of Your Choice</li>
+                    <li class="package__li">Beard Style / Shaving for Men</li>
+                    <li class="package__li">Facial Treatment</li>
+                    <li class="package__li">
+                      Hair Treatment / Keratin Treatment Suited for You
+                    </li>
+                  </ul>
+                  <button class="button button--transparent package__button">
+                    Choose plan
+                  </button>
                 </div>
-                <ul class="package__ul">
-                  <li class="package__li">Hair Cut of Your Choice</li>
-                  <li class="package__li">Beard Style / Shaving for Men</li>
-                  <li class="package__li">Facial Treatment</li>
-                  <li class="package__li">
-                    Hair Treatment / Keratin Treatment Suited for You
-                  </li>
-                </ul>
-                <button class="button button--transparent package__button">
-                  Choose plan
-                </button>
               </article>
             </li>
             <li class="packages__package">
               <article class="package">
-                <h3 class="package__title">Wedding Package</h3>
-                <div class="package__price">
-                  <span class="package__price-currency">$</span>
-                  799
+                <div class="package__container">
+                  <h3 class="package__title">Wedding Package</h3>
+                  <!-- prettier-ignore -->
+                  <div class="package__price">
+                    <span class="package__price-currency">$</span>799
+                  </div>
+                  <ul class="package__ul">
+                    <li class="package__li">Hair Cut for Wedding</li>
+                    <li class="package__li">Beard Style / Shaving for Men</li>
+                    <li class="package__li">Facial Treatment for Wedding</li>
+                    <li class="package__li">
+                      Hair Treatment / Keratin Treatment for Wedding
+                    </li>
+                  </ul>
+                  <button class="button button--transparent package__button">
+                    Choose plan
+                  </button>
                 </div>
-                <ul class="package__ul">
-                  <li class="package__li">Hair Cut of Your Choice</li>
-                  <li class="package__li">Beard Style / Shaving for Men</li>
-                  <li class="package__li">Facial Treatment</li>
-                  <li class="package__li">
-                    Hair Treatment / Keratin Treatment Suited for You
-                  </li>
-                </ul>
-                <button class="button button--transparent package__button">
-                  Choose plan
-                </button>
               </article>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="section appointment">
+      <section class="appointment" id="appointment">
         <div class="container">
           <h2 class="section__title">Make An Appointment</h2>
           <p class="section__text">
@@ -300,6 +405,30 @@
           <form class="appointment__form" id="appointment-form" action="#">
             <input type="text" name="date" value="" id="input-date" hidden />
             <div class="appointment__date"></div>
+
+            <noscript>
+              <div class="noscript-warning">
+                <div class="noscript-warning__content">
+                  <h3 class="noscript-warning__title">
+                    JavaScript is required for making an appointment
+                  </h3>
+                  <p>
+                    It looks like JavaScript is disabled in your browser. Please
+                    enable it in your settings to use all the features of the
+                    site.
+                  </p>
+                  <a
+                    class="noscript-warning__link"
+                    href="https://www.enable-javascript.com"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Instructions on how to enable JavaScript
+                  </a>
+                </div>
+              </div>
+            </noscript>
+
             <h3 class="appointment__form-title">Select a time</h3>
             <div class="appointment__buttons">
               <input type="text" name="time" id="input-time" hidden />
@@ -336,6 +465,7 @@
                 name="name"
                 placeholder="Enter Your Name *"
                 id="name"
+                autocomplete="name"
                 required
               />
               <label class="sr-only" for="email">Enter Your Email *</label>
@@ -345,6 +475,7 @@
                 name="email"
                 placeholder="Enter Your Email *"
                 id="email"
+                autocomplete="email"
                 required
               />
               <label class="sr-only" for="tel">Enter Phone Number *</label>
@@ -354,6 +485,7 @@
                 name="phone"
                 placeholder="Enter Phone Number *"
                 id="tel"
+                autocomplete="tel"
                 required
               />
               <div class="select-wrapper appointment__select-wrapper">
@@ -440,11 +572,14 @@
               vulputate libero amet, consectetur adipiscin
             </p>
             <form class="mailing-list__form" action="#">
+              <label class="sr-only" for="email-1">Enter your email</label>
               <input
                 class="input mailing-list__input"
                 type="email"
                 name="email"
+                id="email-1"
                 placeholder="Enter your email"
+                autocomplete="email"
                 required
               />
               <button class="button mailing-list__button" type="submit">
