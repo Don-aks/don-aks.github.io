@@ -361,6 +361,8 @@ body.locked {
 
 .header__cell-salons {
   padding: 0 27px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -400,7 +402,13 @@ body.locked {
   transform: translateY(-50%);
   background: url('../img/arrow-down.svg') center/contain no-repeat;
 
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
   transition: transform 0.5s;
+  transition:
+    transform 0.5s,
+    -webkit-transform 0.5s;
 }
 
 .salons__submenu {
@@ -642,6 +650,8 @@ body.locked {
   background-color: #ffffff;
   color: #000000;
 
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
 
