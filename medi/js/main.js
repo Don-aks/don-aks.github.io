@@ -1,6 +1,10 @@
 'use strict';
 
 $(function () {
+  $('.skip-to-content').on('click', function () {
+    $('#main').focus();
+  });
+
   $('.hero__slider').slick({
     responsive: [
       {

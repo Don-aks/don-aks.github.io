@@ -306,6 +306,42 @@ body.locked {
   overflow: hidden;
 }
 
+/* ======= SKIP TO CONTENT BUTTON ======= */
+
+.skip-to-content {
+  position: fixed;
+  top: 110px;
+  left: 10px;
+  z-index: 5;
+
+  max-width: 270px;
+  padding: 8px 16px;
+
+  font-size: 16px;
+
+  background-color: #ffffff;
+  outline: 2px solid #4fbfa5;
+  color: #4fbfa5;
+
+  -webkit-transform: translateY(calc(-110px - 150%));
+  -ms-transform: translateY(calc(-110px - 150%));
+  transform: translateY(calc(-110px - 150%));
+
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition:
+    transform 0.3s,
+    -webkit-transform 0.3s;
+}
+
+.skip-to-content:focus {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
 /* ======= HEADER__TOP ======= */
 
 #special + .header .header__top {
