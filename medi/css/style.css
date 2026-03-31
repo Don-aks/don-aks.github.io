@@ -508,7 +508,7 @@ body.locked {
 }
 
 .header__btn:focus {
-  border: 0;
+  outline-width: 4px;
 }
 
 .btn-menu {
