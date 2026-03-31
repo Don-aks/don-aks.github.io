@@ -532,6 +532,11 @@ body.locked {
   transform: translateX(7px);
 }
 
+.btn-menu:focus {
+  outline: 2px solid #00868a;
+  border-radius: 2px;
+}
+
 .btn-menu__line {
   position: relative;
 
