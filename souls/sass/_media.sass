@@ -1,6 +1,12 @@
 @use 'sass:color'
 @use 'vars' as *
 
+@media (prefers-reduced-motion: reduce)
+  *,
+  *::before,
+  *::after
+    transition: 0.01s !important
+
 @media (any-hover: hover)
   .animation-link:hover,
   .header__lang:hover .lang__text

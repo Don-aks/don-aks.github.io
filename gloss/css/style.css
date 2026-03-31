@@ -42,6 +42,16 @@
 
 /* ======= GLOBAL STYLES ======= */
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-transition: 0.01s !important;
+    -o-transition: 0.01s !important;
+    transition: 0.01s !important;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

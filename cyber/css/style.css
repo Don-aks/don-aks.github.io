@@ -29,6 +29,14 @@
 
 /* ======= RESET ======= */
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: 0.01s !important;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
