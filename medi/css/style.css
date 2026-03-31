@@ -691,15 +691,8 @@ body.locked {
 }
 
 .hero__slider-wrap {
-  position: relative;
-  top: 6px;
-
   width: 58%;
   max-width: 746px;
-}
-
-.hero__slider {
-  right: -1px;
 }
 
 .hero__slider .slick-prev,
@@ -734,6 +727,7 @@ body.locked {
 }
 
 .hero__img {
+  display: block !important;
   max-width: 746px;
 }
 
@@ -1527,7 +1521,7 @@ body.locked {
 
   .hero__info {
     padding-top: 20px;
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
     max-width: 746px;
   }
 
