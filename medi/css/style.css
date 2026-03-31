@@ -1684,7 +1684,7 @@ body.locked {
   }
 
   .header__logo-img {
-    width: inherit;
+    width: 100%;
     height: auto;
   }
 
@@ -1706,7 +1706,38 @@ body.locked {
   }
 
   .header__btn-cell {
-    display: none;
+    width: auto;
+    margin-left: 50px;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+  }
+
+  .header__btn-cell .btn__caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .header__btn-cell .btn--visually-impaired {
+    width: 44px;
+    height: 44px;
+    min-width: auto;
+    padding: 0;
+  }
+
+  .header__btn-cell .btn--visually-impaired::before {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   .header__item-visually-impaired {
