@@ -1629,6 +1629,10 @@ body.locked {
     max-width: 420px;
   }
 
+  .offer + .offer {
+    margin-left: 0;
+  }
+
   .offer__link {
     max-width: 100%;
   }
