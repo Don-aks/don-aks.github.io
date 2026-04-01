@@ -1391,6 +1391,10 @@ body.locked {
 }
 
 @media (max-width: 1200px) {
+  .skip-to-content {
+    display: none;
+  }
+
   .header__cell:first-child,
   .header__cell {
     border: 0;
