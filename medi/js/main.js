@@ -18,7 +18,7 @@ $(function () {
     autoplaySpeed: 5000,
 
     prevArrow:
-      '<button class="slick-prev" aria-label="Попередній слайд" type="button">→</button>',
+      '<button class="slick-prev" aria-label="Попередній слайд" type="button">←</button>',
     nextArrow:
       '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });

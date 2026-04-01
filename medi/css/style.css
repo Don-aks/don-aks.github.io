@@ -1603,9 +1603,9 @@ body.locked {
   .hero__slider .slick-prev {
     bottom: 30px;
     left: calc(50% - 29px);
-    -webkit-transform: translateX(-50%) rotate(180deg);
-    -ms-transform: translateX(-50%) rotate(180deg);
-    transform: translateX(-50%) rotate(180deg);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 
   .hero__slider .slick-prev {
