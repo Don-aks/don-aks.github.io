@@ -1,5 +1,7 @@
 'use strict';
 
+var FOCUSABLE_SELECTORS = 'a[href], button, [tabindex="0"]';
+
 $(function () {
   $('.skip-to-content').on('click', function () {
     $('#main').focus();
@@ -36,7 +38,14 @@ $(function () {
 
   const $headerBtnMenu = $('.header__btn-menu');
   const $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
+  const $btnMenuCell = $headerBtnMenu.closest('.header__btn-cell');
+
   const $headerList = $('.header__list');
+  const $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
+
+  if ($btnMenuCell.css('display') !== 'none') {
+    setTabIndex($menuFocusableElements, '-1');
+  }
 
   $headerBtnMenu.on('click', function () {
     const isActive = $headerList.hasClass('header__list--active');
@@ -44,7 +53,23 @@ $(function () {
     $btnMenuLine.toggleClass('btn-menu__line--active', !isActive);
     $headerList.toggleClass('header__list--active', !isActive);
     $(document.body).toggleClass('locked', !isActive);
+
+    setTabIndex($menuFocusableElements, !isActive ? '0' : '-1');
   });
+
+  $(window).on(
+    'resize',
+    debounce(function () {
+      console.log($(this).width());
+
+      if ($(this).width() <= 1200) {
+        setTabIndex($menuFocusableElements, '0');
+        return;
+      }
+
+      setTabIndex($menuFocusableElements, '-1');
+    }, 150),
+  );
 
   var $salonsSubmenu = $('.salons__submenu');
 
@@ -104,4 +129,30 @@ function hideSalonsSubmenu() {
 
   $salonsSubmenu.addClass(className);
   $salonsLinks.attr('tabindex', '-1');
+}
+
+// UTILS
+
+function debounce(func, wait) {
+  var timeout;
+
+  return function () {
+    var context = this;
+    var args = arguments;
+
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      func.apply(context, args);
+    }, wait);
+  };
+}
+
+function setTabIndex($elements, value) {
+  $elements.each(function () {
+    if ($(this).attr('tabindex') === value) {
+      return;
+    }
+
+    $(this).attr('tabindex', value);
+  });
 }
