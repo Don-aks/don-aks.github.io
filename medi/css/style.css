@@ -1778,9 +1778,13 @@ body.locked {
     padding-top: 40px;
   }
 
+  .header__cell-logo {
+    margin-right: 50px;
+  }
+
   .header__btn-cell {
     width: auto;
-    margin-left: 50px;
+    margin-left: auto;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: end;
