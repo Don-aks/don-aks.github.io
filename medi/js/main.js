@@ -36,14 +36,14 @@ $(function () {
 
   const $headerBtnMenu = $('.header__btn-menu');
   const $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
+  const $headerList = $('.header__list');
 
   $headerBtnMenu.on('click', function () {
-    $btnMenuLine.toggleClass(
-      'btn-menu__line--active',
-    );
+    const isActive = $headerList.hasClass('header__list--active');
 
-    $('.header__list').toggleClass('header__list--active');
-    $(document.body).toggleClass('locked');
+    $btnMenuLine.toggleClass('btn-menu__line--active', !isActive);
+    $headerList.toggleClass('header__list--active', !isActive);
+    $(document.body).toggleClass('locked', !isActive);
   });
 
   var $salonsSubmenu = $('.salons__submenu');
