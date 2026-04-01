@@ -34,8 +34,11 @@ $(function () {
     $header.removeClass('header__top--scrolled');
   });
 
-  $('.header__btn-menu').on('click', function () {
-    $('.header__btn-menu .btn-menu__line').toggleClass(
+  const $headerBtnMenu = $('.header__btn-menu');
+  const $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
+
+  $headerBtnMenu.on('click', function () {
+    $btnMenuLine.toggleClass(
       'btn-menu__line--active',
     );
 
