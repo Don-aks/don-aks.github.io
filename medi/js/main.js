@@ -40,12 +40,12 @@ $(function () {
     );
 
     $('.header__list').toggleClass('header__list--active');
-    $('body').toggleClass('locked');
+    $(document.body).toggleClass('locked');
   });
 
   var $salonsSubmenu = $('.salons__submenu');
 
-  $('body').on('click', function (e) {
+  $(document.body).on('click', function (e) {
     var className = 'salons__submenu--hidden';
     var $target = $(e.target);
 
