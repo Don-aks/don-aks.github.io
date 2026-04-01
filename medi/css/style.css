@@ -224,6 +224,10 @@ body.locked {
   transform: scale(1.2);
 }
 
+.logo:focus {
+  border-radius: 2px;
+}
+
 .logo__img {
   max-width: 189px;
 }
