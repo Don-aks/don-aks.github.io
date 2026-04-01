@@ -1323,6 +1323,7 @@ body.locked {
 
 .footer__politic-link:focus {
   outline: 1px solid #000000;
+  border-radius: 2px;
 }
 
 .footer__social {
