@@ -13,9 +13,12 @@ $(function () {
   var $window = $(window);
   var $header = $('.header__top');
 
-  $window.on('scroll', function () {
-    handleScroll($window, $header);
-  });
+  $window.on(
+    'scroll',
+    throttle(function () {
+      handleScroll($window, $header);
+    }, 150),
+  );
 
   var $headerBtnMenu = $('.header__btn-menu');
   var $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
@@ -186,6 +189,25 @@ function debounce(func, wait) {
     timeout = setTimeout(function () {
       func.apply(context, args);
     }, wait);
+  };
+}
+
+function throttle(func, limit) {
+  var inThrottle;
+
+  return function () {
+    var context = this;
+    var args = arguments;
+
+    if (!inThrottle) {
+      func.apply(context, args);
+
+      inThrottle = true;
+
+      setTimeout(function () {
+        inThrottle = false;
+      }, limit);
+    }
   };
 }
 
