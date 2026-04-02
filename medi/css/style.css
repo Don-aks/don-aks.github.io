@@ -1655,8 +1655,14 @@ body.locked {
     padding-top: 80px;
   }
 
-  .footer__links,
+  .footer__links {
+    margin: 0;
+  }
+
   .footer__links-list {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin: 0;
   }
 
@@ -1912,9 +1918,18 @@ body.locked {
     padding-left: 27px;
   }
 
+  .footer__copy-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+  }
+
   .footer__copy {
-    margin-bottom: 20px;
-    margin-right: 0;
+    margin: 0 0 5px;
   }
 }
 
