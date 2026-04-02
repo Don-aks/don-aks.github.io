@@ -28,7 +28,7 @@ $(function () {
   var $hiddenCells = $header.find(HIDDEN_CELLS);
   var $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
 
-  if ($window.width() > HIDE_MENU_BREAKPOINT) {
+  if ($window.width() <= HIDE_MENU_BREAKPOINT) {
     setTabIndex($menuFocusableElements, '-1');
     setTabIndex($hiddenCellsFocusableElements, '-1');
   }
