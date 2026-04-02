@@ -119,7 +119,7 @@ function showSalonsSubmenu() {
   var $salonsLinks = $('.salons__link');
 
   $salonsSubmenu.removeClass(className);
-  $salonsLinks.removeAttr('tabindex');
+  setTabIndex($salonsLinks, '0');
 }
 
 function hideSalonsSubmenu() {
@@ -128,7 +128,7 @@ function hideSalonsSubmenu() {
   var $salonsLinks = $('.salons__link');
 
   $salonsSubmenu.addClass(className);
-  $salonsLinks.attr('tabindex', '-1');
+  setTabIndex($salonsLinks, '-1');
 }
 
 // UTILS
