@@ -1,5 +1,6 @@
 'use strict';
 
+var HIDE_MENU_BREAKPOINT = 1200;
 var FOCUSABLE_SELECTORS = 'a[href], button, [tabindex="0"]';
 var HIDDEN_CELLS =
   '.header__cell-phone, .header__cell-salons, .header__cell-social';
@@ -48,7 +49,7 @@ $(function () {
   const $hiddenCells = $header.find(HIDDEN_CELLS);
   const $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
 
-  if ($window.width() > 1200) {
+  if ($window.width() > HIDE_MENU_BREAKPOINT) {
     setTabIndex($menuFocusableElements, '-1');
     setTabIndex($hiddenCellsFocusableElements, '-1');
   }
@@ -67,7 +68,7 @@ $(function () {
   $window.on(
     'resize',
     debounce(function () {
-      if ($window.width() > 1200) {
+      if ($window.width() > HIDE_MENU_BREAKPOINT) {
         setTabIndex($menuFocusableElements, '0');
         setTabIndex($hiddenCellsFocusableElements, '0');
         return;
