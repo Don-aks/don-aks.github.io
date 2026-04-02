@@ -3,6 +3,8 @@
 var FOCUSABLE_SELECTORS = 'a[href], button, [tabindex="0"]';
 
 $(function () {
+  const $window = $(window);
+
   $('.skip-to-content').on('click', function () {
     $('#main').focus();
   });
@@ -28,7 +30,8 @@ $(function () {
   $(window).on('scroll', function () {
     var $header = $('.header__top');
 
-    if ($(this).scrollTop() > 0) {
+  $window.on('scroll', function () {
+    if ($window.scrollTop() > 0) {
       $header.addClass('header__top--scrolled');
       return;
     }
@@ -43,7 +46,7 @@ $(function () {
   const $headerList = $('.header__list');
   const $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
 
-  if ($(window).width() > 1200) {
+  if ($window.width() > 1200) {
     setTabIndex($menuFocusableElements, '-1');
   }
 
@@ -57,12 +60,10 @@ $(function () {
     setTabIndex($menuFocusableElements, !isActive ? '0' : '-1');
   });
 
-  $(window).on(
+  $window.on(
     'resize',
     debounce(function () {
-      console.log($(this).width());
-
-      if ($(this).width() > 1200) {
+      if ($window.width() > 1200) {
         setTabIndex($menuFocusableElements, '0');
         return;
       }
