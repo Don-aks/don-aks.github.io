@@ -1,6 +1,8 @@
 'use strict';
 
 var FOCUSABLE_SELECTORS = 'a[href], button, [tabindex="0"]';
+var HIDDEN_CELLS =
+  '.header__cell-phone, .header__cell-salons, .header__cell-social';
 
 $(function () {
   const $window = $(window);
@@ -27,8 +29,7 @@ $(function () {
       '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });
 
-  $(window).on('scroll', function () {
-    var $header = $('.header__top');
+  var $header = $('.header__top');
 
   $window.on('scroll', function () {
     if ($window.scrollTop() > 0) {
@@ -45,9 +46,12 @@ $(function () {
 
   const $headerList = $('.header__list');
   const $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
+  const $hiddenCells = $header.find(HIDDEN_CELLS);
+  const $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
 
   if ($window.width() > 1200) {
     setTabIndex($menuFocusableElements, '-1');
+    setTabIndex($hiddenCellsFocusableElements, '-1');
   }
 
   $headerBtnMenu.on('click', function () {
@@ -58,6 +62,7 @@ $(function () {
     $(document.body).toggleClass('locked', !isActive);
 
     setTabIndex($menuFocusableElements, !isActive ? '0' : '-1');
+    setTabIndex($hiddenCellsFocusableElements, !isActive ? '0' : '-1');
   });
 
   $window.on(
@@ -65,10 +70,12 @@ $(function () {
     debounce(function () {
       if ($window.width() > 1200) {
         setTabIndex($menuFocusableElements, '0');
+        setTabIndex($hiddenCellsFocusableElements, '0');
         return;
       }
 
       setTabIndex($menuFocusableElements, '-1');
+      setTabIndex($hiddenCellsFocusableElements, '-1');
     }, 150),
   );
 
