@@ -42,7 +42,6 @@ $(function () {
 
   const $headerBtnMenu = $('.header__btn-menu');
   const $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
-  const $btnMenuCell = $headerBtnMenu.closest('.header__btn-cell');
 
   const $headerList = $('.header__list');
   const $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
