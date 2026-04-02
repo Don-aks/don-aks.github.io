@@ -14,7 +14,7 @@ $(function () {
   var $header = $('.header__top');
 
   $window.on('scroll', function () {
-    handleScroll($header);
+    handleScroll($window, $header);
   });
 
   var $headerBtnMenu = $('.header__btn-menu');
@@ -42,7 +42,11 @@ $(function () {
   $window.on(
     'resize',
     debounce(function () {
-      handleResize($menuFocusableElements, $hiddenCellsFocusableElements);
+      handleResize(
+        $window,
+        $menuFocusableElements,
+        $hiddenCellsFocusableElements,
+      );
     }, 150),
   );
 
@@ -72,7 +76,7 @@ $(function () {
 
 // FUNCTIONS
 
-function handleScroll($header) {
+function handleScroll($window, $header) {
   if ($window.scrollTop() > 0) {
     $header.addClass('header__top--scrolled');
     return;
@@ -97,7 +101,11 @@ function handleBtnMenuClick(
   setTabIndex($hiddenCellsFocusableElements, !isActive ? '0' : '-1');
 }
 
-function handleResize($menuFocusableElements, $hiddenCellsFocusableElements) {
+function handleResize(
+  $window,
+  $menuFocusableElements,
+  $hiddenCellsFocusableElements,
+) {
   if ($window.width() > HIDE_MENU_BREAKPOINT) {
     setTabIndex($menuFocusableElements, '0');
     setTabIndex($hiddenCellsFocusableElements, '0');
