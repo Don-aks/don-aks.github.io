@@ -6,11 +6,47 @@ var HIDDEN_CELLS =
   '.header__cell-phone, .header__cell-salons, .header__cell-social';
 
 $(function () {
-  var $window = $(window);
-
   $('.skip-to-content').on('click', function () {
     $('#main').focus();
   });
+
+  var $window = $(window);
+  var $header = $('.header__top');
+
+  $window.on('scroll', function () {
+    handleScroll($header);
+  });
+
+  var $headerBtnMenu = $('.header__btn-menu');
+  var $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
+
+  var $headerList = $('.header__list');
+  var $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
+  var $hiddenCells = $header.find(HIDDEN_CELLS);
+  var $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
+
+  if ($window.width() > HIDE_MENU_BREAKPOINT) {
+    setTabIndex($menuFocusableElements, '-1');
+    setTabIndex($hiddenCellsFocusableElements, '-1');
+  }
+
+  $headerBtnMenu.on('click', function () {
+    handleBtnMenuClick(
+      $btnMenuLine,
+      $headerList,
+      $menuFocusableElements,
+      $hiddenCellsFocusableElements,
+    );
+  });
+
+  $window.on(
+    'resize',
+    debounce(function () {
+      handleResize($menuFocusableElements, $hiddenCellsFocusableElements);
+    }, 150),
+  );
+
+  $(document.body).on('click', handleSalonsClick);
 
   $('.hero__slider').slick({
     responsive: [
@@ -30,96 +66,72 @@ $(function () {
       '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });
 
-  var $header = $('.header__top');
-
-  $window.on('scroll', function () {
-    if ($window.scrollTop() > 0) {
-      $header.addClass('header__top--scrolled');
-      return;
-    }
-
-    $header.removeClass('header__top--scrolled');
-  });
-
-  var $headerBtnMenu = $('.header__btn-menu');
-  var $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
-
-  var $headerList = $('.header__list');
-  var $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
-  var $hiddenCells = $header.find(HIDDEN_CELLS);
-  var $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
-
-  if ($window.width() > HIDE_MENU_BREAKPOINT) {
-    setTabIndex($menuFocusableElements, '-1');
-    setTabIndex($hiddenCellsFocusableElements, '-1');
-  }
-
-  $headerBtnMenu.on('click', function () {
-    var isActive = $headerList.hasClass('header__list--active');
-
-    $btnMenuLine.toggleClass('btn-menu__line--active', !isActive);
-    $headerList.toggleClass('header__list--active', !isActive);
-    $(document.body).toggleClass('locked', !isActive);
-
-    setTabIndex($menuFocusableElements, !isActive ? '0' : '-1');
-    setTabIndex($hiddenCellsFocusableElements, !isActive ? '0' : '-1');
-  });
-
-  $window.on(
-    'resize',
-    debounce(function () {
-      if ($window.width() > HIDE_MENU_BREAKPOINT) {
-        setTabIndex($menuFocusableElements, '0');
-        setTabIndex($hiddenCellsFocusableElements, '0');
-        return;
-      }
-
-      setTabIndex($menuFocusableElements, '-1');
-      setTabIndex($hiddenCellsFocusableElements, '-1');
-    }, 150),
-  );
-
-  var $salonsSubmenu = $('.salons__submenu');
-
-  $(document.body).on('click', function (e) {
-    var className = 'salons__submenu--hidden';
-    var $target = $(e.target);
-
-    var isToggleBtn = $target.closest('.salons').length;
-    var isSubmenu = $target.closest('.salons__submenu').length;
-
-    if (isToggleBtn && $salonsSubmenu.hasClass(className)) {
-      showSalonsSubmenu();
-      return;
-    }
-
-    if (isToggleBtn && !$salonsSubmenu.hasClass(className)) {
-      hideSalonsSubmenu();
-      return;
-    }
-
-    if (!isSubmenu) {
-      hideSalonsSubmenu();
-      return;
-    }
-  });
-
   var $tabs = $('.tabs__tab');
-  $tabs.on('click', function () {
-    var className = 'tabs__tab--active';
-    $tabs.removeClass(className);
-    $(this).addClass(className);
-
-    var selector = '.news__item';
-    className = 'news__item--active';
-
-    var contentSelector = selector + '[data-tab=' + $(this).data('tab') + ']';
-    $(selector).removeClass(className);
-    $(contentSelector).addClass(className);
-  });
+  $tabs.on('click', toggleTab);
 });
 
 // FUNCTIONS
+
+function handleScroll($header) {
+  if ($window.scrollTop() > 0) {
+    $header.addClass('header__top--scrolled');
+    return;
+  }
+
+  $header.removeClass('header__top--scrolled');
+}
+
+function handleBtnMenuClick(
+  $btnMenuLine,
+  $headerList,
+  $menuFocusableElements,
+  $hiddenCellsFocusableElements,
+) {
+  var isActive = $headerList.hasClass('header__list--active');
+
+  $btnMenuLine.toggleClass('btn-menu__line--active', !isActive);
+  $headerList.toggleClass('header__list--active', !isActive);
+  $(document.body).toggleClass('locked', !isActive);
+
+  setTabIndex($menuFocusableElements, !isActive ? '0' : '-1');
+  setTabIndex($hiddenCellsFocusableElements, !isActive ? '0' : '-1');
+}
+
+function handleResize($menuFocusableElements, $hiddenCellsFocusableElements) {
+  if ($window.width() > HIDE_MENU_BREAKPOINT) {
+    setTabIndex($menuFocusableElements, '0');
+    setTabIndex($hiddenCellsFocusableElements, '0');
+    return;
+  }
+
+  setTabIndex($menuFocusableElements, '-1');
+  setTabIndex($hiddenCellsFocusableElements, '-1');
+}
+
+function handleSalonsClick(e) {
+  var $salonsSubmenu = $('.salons__submenu');
+
+  var className = 'salons__submenu--hidden';
+  var $target = $(e.target);
+
+  var isToggleBtn = $target.closest('.salons').length;
+  var isSubmenu = $target.closest('.salons__submenu').length;
+
+  if (isToggleBtn && $salonsSubmenu.hasClass(className)) {
+    showSalonsSubmenu();
+    return;
+  }
+
+  if (isToggleBtn && !$salonsSubmenu.hasClass(className)) {
+    hideSalonsSubmenu();
+    return;
+  }
+
+  if (!isSubmenu) {
+    hideSalonsSubmenu();
+    return;
+  }
+}
 
 function showSalonsSubmenu() {
   var className = 'salons__submenu--hidden';
@@ -137,6 +149,20 @@ function hideSalonsSubmenu() {
 
   $salonsSubmenu.addClass(className);
   setTabIndex($salonsLinks, '-1');
+}
+
+function toggleTab() {
+  var className = 'tabs__tab--active';
+
+  $tabs.removeClass(className);
+  $(this).addClass(className);
+
+  var selector = '.news__item';
+  className = 'news__item--active';
+
+  var contentSelector = selector + '[data-tab=' + $(this).data('tab') + ']';
+  $(selector).removeClass(className);
+  $(contentSelector).addClass(className);
 }
 
 // UTILS
