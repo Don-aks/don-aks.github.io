@@ -6,7 +6,7 @@ var HIDDEN_CELLS =
   '.header__cell-phone, .header__cell-salons, .header__cell-social';
 
 $(function () {
-  const $window = $(window);
+  var $window = $(window);
 
   $('.skip-to-content').on('click', function () {
     $('#main').focus();
@@ -41,13 +41,13 @@ $(function () {
     $header.removeClass('header__top--scrolled');
   });
 
-  const $headerBtnMenu = $('.header__btn-menu');
-  const $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
+  var $headerBtnMenu = $('.header__btn-menu');
+  var $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
 
-  const $headerList = $('.header__list');
-  const $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
-  const $hiddenCells = $header.find(HIDDEN_CELLS);
-  const $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
+  var $headerList = $('.header__list');
+  var $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
+  var $hiddenCells = $header.find(HIDDEN_CELLS);
+  var $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
 
   if ($window.width() > HIDE_MENU_BREAKPOINT) {
     setTabIndex($menuFocusableElements, '-1');
@@ -55,7 +55,7 @@ $(function () {
   }
 
   $headerBtnMenu.on('click', function () {
-    const isActive = $headerList.hasClass('header__list--active');
+    var isActive = $headerList.hasClass('header__list--active');
 
     $btnMenuLine.toggleClass('btn-menu__line--active', !isActive);
     $headerList.toggleClass('header__list--active', !isActive);
