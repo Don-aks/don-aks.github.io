@@ -74,7 +74,7 @@ $(function () {
   });
 
   var $tabs = $('.tabs__tab');
-  $tabs.on('click', toggleTab);
+  $tabs.on('click', { $tabs: $tabs }, toggleTab);
 });
 
 // FUNCTIONS
@@ -162,7 +162,8 @@ function hideSalonsSubmenu() {
   setTabIndex($salonsLinks, '-1');
 }
 
-function toggleTab() {
+function toggleTab(event) {
+  var $tabs = event.data.$tabs;
   var className = 'tabs__tab--active';
 
   $tabs.removeClass(className);
