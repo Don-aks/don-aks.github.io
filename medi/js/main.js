@@ -74,7 +74,9 @@ $(function () {
   });
 
   var $tabs = $('.tabs__tab');
-  $tabs.on('click', { $tabs: $tabs }, toggleTab);
+  var $tabsBtns = $tabs.find('.tabs__btn');
+
+  $tabsBtns.on('click', { $tabs: $tabs, $tabsBtns: $tabsBtns }, toggleTab);
 });
 
 // FUNCTIONS
@@ -163,16 +165,25 @@ function hideSalonsSubmenu() {
 }
 
 function toggleTab(event) {
+  var $container = $(this).closest('.tabs__tab');
   var $tabs = event.data.$tabs;
   var className = 'tabs__tab--active';
 
   $tabs.removeClass(className);
-  $(this).addClass(className);
+  $container.addClass(className);
+
+  var $tabsBtns = $tabs.find('.tabs__btn');
+  setTabIndex($tabsBtns, '0');
+
+  var $btn = $container.find('.tabs__btn');
+  setTabIndex($btn, '-1');
+
+  $btn.blur();
 
   var selector = '.news__item';
   className = 'news__item--active';
 
-  var contentSelector = selector + '[data-tab=' + $(this).data('tab') + ']';
+  var contentSelector = selector + '[data-tab=' + $container.data('tab') + ']';
   $(selector).removeClass(className);
   $(contentSelector).addClass(className);
 }
