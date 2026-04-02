@@ -43,7 +43,7 @@ $(function () {
   const $headerList = $('.header__list');
   const $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
 
-  if ($btnMenuCell.css('display') !== 'none') {
+  if ($(window).width() > 1200) {
     setTabIndex($menuFocusableElements, '-1');
   }
 
@@ -62,7 +62,7 @@ $(function () {
     debounce(function () {
       console.log($(this).width());
 
-      if ($(this).width() <= 1200) {
+      if ($(this).width() > 1200) {
         setTabIndex($menuFocusableElements, '0');
         return;
       }
