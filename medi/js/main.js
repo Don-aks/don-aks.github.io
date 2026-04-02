@@ -149,10 +149,7 @@ function debounce(func, wait) {
 
 function setTabIndex($elements, value) {
   $elements.each(function () {
-    if ($(this).attr('tabindex') === value) {
-      return;
-    }
-
+    if ($(this).attr('tabindex') === value) return;
     $(this).attr('tabindex', value);
   });
 }
