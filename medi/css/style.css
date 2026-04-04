@@ -1289,6 +1289,10 @@ body.locked {
   height: auto;
 }
 
+.footer__social-cell {
+  overflow: hidden;
+}
+
 .footer__btn {
   display: inline-block;
   max-width: 172px;
