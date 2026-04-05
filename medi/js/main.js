@@ -57,6 +57,16 @@ $(function () {
 
   pulse($('.header__btn-booking'));
 
+  $('.modal__form').on('submit', function (event) {
+    event.preventDefault();
+
+    $.fancybox.close();
+    $.fancybox.open({
+      src: '#modal-thanks',
+      type: 'inline',
+    });
+  });
+
   $('.hero__slider').slick({
     responsive: [
       {

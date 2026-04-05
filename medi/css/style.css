@@ -1343,13 +1343,10 @@ body.locked {
   min-width: 81px;
 }
 
-/* ======= MODAL ======= */
+/* ======= MODALS ======= */
 
 .modal {
   display: none;
-}
-
-.modal-booking {
   max-width: 500px;
 }
 
@@ -1373,6 +1370,10 @@ body.locked {
 .modal__btn {
   display: block;
   margin: 40px auto 0;
+}
+
+.modal__text {
+  text-align: center;
 }
 
 /* ======= MEDIA ======= */
