@@ -85,6 +85,15 @@ $(function () {
       '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
   });
 
+  var $heroSliderWrap = $('.hero__slider-wrap');
+  $heroSliderWrap.on('mousedown', function (e) {
+    $heroSliderWrap.css('cursor', 'grabbing');
+  });
+
+  $heroSliderWrap.on('mouseup', function (e) {
+    $heroSliderWrap.css('cursor', '');
+  });
+
   var $tabs = $('.tabs__tab');
   var $tabsBtns = $tabs.find('.tabs__btn');
 

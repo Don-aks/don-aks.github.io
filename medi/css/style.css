@@ -767,6 +767,9 @@ body.locked {
 .hero__slider-wrap {
   width: 58%;
   max-width: 746px;
+
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .hero__slider .slick-prev,
