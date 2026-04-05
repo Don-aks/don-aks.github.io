@@ -20,6 +20,13 @@ $(function () {
     }, 150),
   );
 
+  $('.btn--visually-impaired').on('click', function () {
+    var $body = $(document.body);
+    var isActive = $body.hasClass('visually-impaired');
+
+    $body.toggleClass('visually-impaired', !isActive);
+  });
+
   var $headerBtnMenu = $('.header__btn-menu');
   var $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
 
