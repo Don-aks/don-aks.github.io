@@ -55,6 +55,8 @@ $(function () {
 
   $(document.body).on('click', handleSalonsClick);
 
+  pulse($('.header__btn-booking'));
+
   $('.hero__slider').slick({
     responsive: [
       {
@@ -162,6 +164,17 @@ function hideSalonsSubmenu() {
 
   $salonsSubmenu.addClass(className);
   setTabIndex($salonsLinks, '-1');
+}
+
+function pulse($element, delay = 5000) {
+  $element.css('transform', 'scale(1.05)');
+
+  setTimeout(function () {
+    $element.css('transform', 'scale(1)');
+    setTimeout(function () {
+      pulse($element, delay);
+    }, delay);
+  }, 500);
 }
 
 function toggleTab(event) {
