@@ -7,7 +7,7 @@ var HIDDEN_CELLS =
 
 $(function () {
   $('.skip-to-content').on('click', function () {
-    $('#main').focus();
+    $('#main').trigger('focus');
   });
 
   var $window = $(window);
