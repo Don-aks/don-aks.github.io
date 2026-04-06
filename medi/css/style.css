@@ -1339,7 +1339,7 @@ body.locked {
 .offer__link {
   display: block;
   max-width: 260px;
-  margin: 0 auto;
+  margin: 25px auto 0;
 }
 
 .offer__link:focus {
@@ -1363,7 +1363,6 @@ body.locked {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 25px;
 
   font-size: 21px;
 }
@@ -1836,11 +1835,8 @@ body.locked {
 
   .offer__link {
     max-width: 100%;
-    padding: 2px;
-  }
-
-  .offer__title {
     margin-top: 0;
+    padding: 2px;
   }
 
   .footer__inner {
