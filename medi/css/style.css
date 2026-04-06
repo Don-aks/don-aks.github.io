@@ -1198,22 +1198,18 @@ body.locked {
 }
 
 .tabs__tab {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  padding-bottom: 2px;
 }
 
-.tabs__tab:hover,
-.tabs__tab:active {
+.tabs__tab:hover .tabs__btn {
   background-color: #57cfb3;
 }
 
-.tabs__tab--active {
+.tabs__tab--active .tabs__btn {
   background-color: #00868a;
 }
 
-.tabs__tab--active:hover,
-.tabs__tab--active:active {
+.tabs__tab--active:hover .tabs__btn {
   background-color: #00868a;
 }
 
@@ -1224,6 +1220,10 @@ body.locked {
   padding: 35px 40px;
 
   text-align: left;
+
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .tabs__tab .tabs__btn:focus {
