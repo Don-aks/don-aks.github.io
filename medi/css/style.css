@@ -985,24 +985,24 @@ body.locked {
 
 .hero__item {
   min-height: 83px;
+}
 
+.hero__link {
   background-color: #00868a;
   -webkit-transition: background-color 0.3s;
   -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
 
-.hero__item:hover,
-.hero__item:active {
+.hero__link:hover {
   background-color: #00969b;
 }
 
-.hero__item--selected {
+.hero__item--selected .hero__link {
   background-color: #4fbfa5;
 }
 
-.hero__item--selected:hover,
-.hero__item--selected:active {
+.hero__item--selected .hero__link:hover {
   background-color: #57cfb3;
 }
 
@@ -1011,7 +1011,6 @@ body.locked {
 }
 
 .hero__link:focus {
-  background-color: #00969b;
   border: 2px solid #ffffff;
 }
 
