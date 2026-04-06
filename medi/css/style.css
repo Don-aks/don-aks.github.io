@@ -1314,7 +1314,7 @@ body.locked {
   position: relative;
 
   width: 100%;
-  padding: 17.7% 0 25px;
+  padding: 17.7% 15px 25px;
 
   background: #00868a top center/contain no-repeat;
   color: #ffffff;
@@ -1338,7 +1338,7 @@ body.locked {
 
 .offer__link {
   display: block;
-  max-width: 246px;
+  max-width: 260px;
   margin: 0 auto;
 }
 
