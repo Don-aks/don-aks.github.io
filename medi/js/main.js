@@ -5,62 +5,46 @@ var FOCUSABLE_SELECTORS = 'a[href], button, [tabindex="0"]';
 var HIDDEN_CELLS =
   '.header__cell-phone, .header__cell-salons, .header__cell-social';
 
+var $window = $(window);
+var $header;
+var $body = $(document.body);
+
+var $btnMenuLine;
+var $headerList;
+var $menuFocusableElements;
+var $hiddenCells;
+var $hiddenCellsFocusableElements;
+
 $(function () {
   $('.skip-to-content').on('click', function () {
     $('#main').trigger('focus');
   });
 
-  var $window = $(window);
-  var $header = $('.header__top');
-
-  $window.on(
-    'scroll',
-    throttle(function () {
-      handleScroll($window, $header);
-    }, 150),
-  );
+  $header = $('.header__top');
+  $window.on('scroll', throttle(handleScroll, 150));
 
   $('.btn--visually-impaired').on('click', function () {
-    var $body = $(document.body);
     var isActive = $body.hasClass('visually-impaired');
-
     $body.toggleClass('visually-impaired', !isActive);
   });
 
   var $headerBtnMenu = $('.header__btn-menu');
-  var $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
+  $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
 
-  var $headerList = $('.header__list');
-  var $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
+  $headerList = $('.header__list');
+  $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
+
   var $hiddenCells = $header.find(HIDDEN_CELLS);
-  var $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
+  $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
 
   if ($window.outerWidth() <= HIDE_MENU_BREAKPOINT) {
     setTabIndex($menuFocusableElements, '-1');
     setTabIndex($hiddenCellsFocusableElements, '-1');
   }
 
-  $headerBtnMenu.on('click', function () {
-    handleBtnMenuClick(
-      $btnMenuLine,
-      $headerList,
-      $menuFocusableElements,
-      $hiddenCellsFocusableElements,
-    );
-  });
-
-  $window.on(
-    'resize',
-    debounce(function () {
-      handleResize(
-        $window,
-        $menuFocusableElements,
-        $hiddenCellsFocusableElements,
-      );
-    }, 150),
-  );
-
-  $(document.body).on('click', handleSalonsClick);
+  $headerBtnMenu.on('click', handleBtnMenuClick);
+  $window.on('resize', debounce(handleResize, 150));
+  $body.on('click', handleSalonsClick);
 
   pulse($('.header__btn-booking'));
 
@@ -109,7 +93,7 @@ $(function () {
 
 // FUNCTIONS
 
-function handleScroll($window, $header) {
+function handleScroll() {
   if ($window.scrollTop() > 0) {
     $header.addClass('header__top--scrolled');
     return;
@@ -118,27 +102,18 @@ function handleScroll($window, $header) {
   $header.removeClass('header__top--scrolled');
 }
 
-function handleBtnMenuClick(
-  $btnMenuLine,
-  $headerList,
-  $menuFocusableElements,
-  $hiddenCellsFocusableElements,
-) {
+function handleBtnMenuClick() {
   var isActive = $headerList.hasClass('header__list--active');
 
   $btnMenuLine.toggleClass('btn-menu__line--active', !isActive);
   $headerList.toggleClass('header__list--active', !isActive);
-  $(document.body).toggleClass('locked', !isActive);
+  $body.toggleClass('locked', !isActive);
 
   setTabIndex($menuFocusableElements, !isActive ? '0' : '-1');
   setTabIndex($hiddenCellsFocusableElements, !isActive ? '0' : '-1');
 }
 
-function handleResize(
-  $window,
-  $menuFocusableElements,
-  $hiddenCellsFocusableElements,
-) {
+function handleResize() {
   if ($window.outerWidth() > HIDE_MENU_BREAKPOINT) {
     setTabIndex($menuFocusableElements, '0');
     setTabIndex($hiddenCellsFocusableElements, '0');
