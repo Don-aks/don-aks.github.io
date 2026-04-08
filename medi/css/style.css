@@ -1715,8 +1715,7 @@ body.locked {
     margin-bottom: 20px;
   }
 
-  .header__mobile-item,
-  .social-list__item {
+  .header__mobile-item {
     padding: 0 15px;
   }
 
@@ -1770,13 +1769,19 @@ body.locked {
 
   .header__item-mobile {
     display: block;
-    width: 100%;
+  }
+
+  .header__item {
+    display: inline-block;
+    padding-bottom: 2px;
+    margin: 0 auto;
 
     text-align: center;
   }
 
   .header__link {
-    padding: 9px 0;
+    display: inline-block;
+    padding: 9px 15px;
   }
 
   .header__link:focus {
