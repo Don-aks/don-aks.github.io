@@ -15,81 +15,79 @@ var $menuFocusableElements;
 var $hiddenCells;
 var $hiddenCellsFocusableElements;
 
-$(function () {
-  $('.skip-to-content').on('click', function () {
-    $('#main').trigger('focus');
-  });
-
-  $header = $('.header__top');
-  $window.on('scroll', throttle(handleScroll, 150));
-
-  $('.btn--visually-impaired').on('click', function () {
-    var isActive = $body.hasClass('visually-impaired');
-    $body.toggleClass('visually-impaired', !isActive);
-  });
-
-  var $headerBtnMenu = $('.header__btn-menu');
-  $btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
-
-  $headerList = $('.header__list');
-  $menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
-
-  var $hiddenCells = $header.find(HIDDEN_CELLS);
-  $hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
-
-  if ($window.outerWidth() <= HIDE_MENU_BREAKPOINT) {
-    setTabIndex($menuFocusableElements, '-1');
-    setTabIndex($hiddenCellsFocusableElements, '-1');
-  }
-
-  $headerBtnMenu.on('click', handleBtnMenuClick);
-  $window.on('resize', debounce(handleResize, 150));
-  $body.on('click', handleSalonsClick);
-
-  pulse($('.header__btn-booking'));
-
-  $('.modal__form').on('submit', function (event) {
-    event.preventDefault();
-
-    $.fancybox.close();
-    $.fancybox.open({
-      src: '#modal-thanks',
-      type: 'inline',
-    });
-  });
-
-  $('.hero__slider').slick({
-    responsive: [
-      {
-        breakpoint: 1331,
-        settings: {
-          arrows: false,
-        },
-      },
-    ],
-    autoplay: true,
-    autoplaySpeed: 5000,
-
-    prevArrow:
-      '<button class="slick-prev" aria-label="Попередній слайд" type="button">←</button>',
-    nextArrow:
-      '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
-  });
-
-  var $heroSliderWrap = $('.hero__slider-wrap');
-  $heroSliderWrap.on('mousedown', function (e) {
-    $heroSliderWrap.css('cursor', 'grabbing');
-  });
-
-  $heroSliderWrap.on('mouseup', function (e) {
-    $heroSliderWrap.css('cursor', '');
-  });
-
-  var $tabs = $('.tabs__tab');
-  var $tabsBtns = $tabs.find('.tabs__btn');
-
-  $tabsBtns.on('click', { $tabs: $tabs, $tabsBtns: $tabsBtns }, toggleTab);
+$('.skip-to-content').on('click', function () {
+  $('#main').trigger('focus');
 });
+
+$header = $('.header__top');
+$window.on('scroll', throttle(handleScroll, 150));
+
+$('.btn--visually-impaired').on('click', function () {
+  var isActive = $body.hasClass('visually-impaired');
+  $body.toggleClass('visually-impaired', !isActive);
+});
+
+var $headerBtnMenu = $('.header__btn-menu');
+$btnMenuLine = $headerBtnMenu.find('.btn-menu__line');
+
+$headerList = $('.header__list');
+$menuFocusableElements = $headerList.find(FOCUSABLE_SELECTORS);
+
+var $hiddenCells = $header.find(HIDDEN_CELLS);
+$hiddenCellsFocusableElements = $hiddenCells.find(FOCUSABLE_SELECTORS);
+
+if ($window.outerWidth() <= HIDE_MENU_BREAKPOINT) {
+  setTabIndex($menuFocusableElements, '-1');
+  setTabIndex($hiddenCellsFocusableElements, '-1');
+}
+
+$headerBtnMenu.on('click', handleBtnMenuClick);
+$window.on('resize', debounce(handleResize, 150));
+$body.on('click', handleSalonsClick);
+
+pulse($('.header__btn-booking'));
+
+$('.modal__form').on('submit', function (event) {
+  event.preventDefault();
+
+  $.fancybox.close();
+  $.fancybox.open({
+    src: '#modal-thanks',
+    type: 'inline',
+  });
+});
+
+$('.hero__slider').slick({
+  responsive: [
+    {
+      breakpoint: 1331,
+      settings: {
+        arrows: false,
+      },
+    },
+  ],
+  autoplay: true,
+  autoplaySpeed: 5000,
+
+  prevArrow:
+    '<button class="slick-prev" aria-label="Попередній слайд" type="button">←</button>',
+  nextArrow:
+    '<button class="slick-next" aria-label="Наступний слайд" type="button">→</button>',
+});
+
+var $heroSliderWrap = $('.hero__slider-wrap');
+$heroSliderWrap.on('mousedown', function (e) {
+  $heroSliderWrap.css('cursor', 'grabbing');
+});
+
+$heroSliderWrap.on('mouseup', function (e) {
+  $heroSliderWrap.css('cursor', '');
+});
+
+var $tabs = $('.tabs__tab');
+var $tabsBtns = $tabs.find('.tabs__btn');
+
+$tabsBtns.on('click', { $tabs: $tabs, $tabsBtns: $tabsBtns }, toggleTab);
 
 // FUNCTIONS
 
