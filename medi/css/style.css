@@ -1221,6 +1221,14 @@ body.locked {
   background-color: #00868a;
 }
 
+.tabs__text--current {
+  display: none;
+}
+
+.tabs__tab--active .tabs__text--current {
+  display: block;
+}
+
 .tabs__btn {
   display: block;
   width: 100%;
