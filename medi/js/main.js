@@ -9,6 +9,9 @@ var $window = $(window);
 var $body = $(document.body);
 
 var $header = $('.header__top');
+var $headerList = $('.header__list');
+var $hiddenCells = $header.find(HIDDEN_CELLS);
+
 var $headerBtnMenu = $header.find('.header__btn-menu');
 var $tabs = $('.tabs__tab');
 
@@ -19,12 +22,14 @@ var UI = {
   $highContrastBtn: $('.btn--visually-impaired'),
 
   $header: $header,
-  $headerList: $('.header__list'),
+  $headerList: $headerList,
+  $headerListFocusable: getFocusable($headerList),
   headerListActiveClass: 'header__list--active',
 
   $headerBtnMenu: $headerBtnMenu,
   $btnMenuLine: $headerBtnMenu.find('.btn-menu__line'),
-  $hiddenCells: $header.find(HIDDEN_CELLS),
+  $hiddenCells: $hiddenCells,
+  $hiddenCellsFocusable: getFocusable($hiddenCells),
   btnMenuLineActiveClass: 'btn-menu__line--active',
 
   $btnBooking: $('.header__btn-booking'),
@@ -130,24 +135,21 @@ function handleBtnMenuClick() {
   UI.$headerList.toggleClass(UI.headerListActiveClass, !isActive);
   $body.toggleClass('locked', !isActive);
 
-  setTabIndex(getFocusable(UI.$headerList), !isActive ? '0' : '-1');
-  setTabIndex(getFocusable(UI.$hiddenCells), !isActive ? '0' : '-1');
+  setTabIndex(UI.$headerListFocusable, !isActive ? '0' : '-1');
+  setTabIndex(UI.$hiddenCellsFocusable, !isActive ? '0' : '-1');
   UI.$headerList.attr('aria-hidden', String(isActive));
 }
 
 function handleResize() {
-  var $headerListFocusableElements = getFocusable(UI.$headerList);
-  var $hiddenCellsFocusableElements = getFocusable(UI.$hiddenCells);
-
   if ($window.outerWidth() > HIDE_MENU_BREAKPOINT) {
-    setTabIndex($headerListFocusableElements, '0');
-    setTabIndex($hiddenCellsFocusableElements, '0');
+    setTabIndex(UI.$headerListFocusable, '0');
+    setTabIndex(UI.$hiddenCellsFocusable, '0');
     UI.$headerList.removeAttr('aria-hidden');
     return;
   }
 
-  setTabIndex($headerListFocusableElements, '-1');
-  setTabIndex($hiddenCellsFocusableElements, '-1');
+  setTabIndex(UI.$headerListFocusable, '-1');
+  setTabIndex(UI.$hiddenCellsFocusable, '-1');
   UI.$headerList.attr('aria-hidden', 'true');
 }
 
