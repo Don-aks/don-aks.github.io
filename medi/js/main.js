@@ -159,13 +159,14 @@ function handleSalonsClick(e) {
 
   var isToggleBtn = $target.closest('.salons').length;
   var isSubmenu = $target.closest('.salons__submenu').length;
+  var isSubmenuHidden = UI.$salonsSubmenu.hasClass(UI.salonsHideClass);
 
-  if (isToggleBtn && UI.$salonsSubmenu.hasClass(UI.salonsHideClass)) {
+  if (isToggleBtn && isSubmenuHidden) {
     showSalonsSubmenu();
     return;
   }
 
-  if (isToggleBtn && !UI.$salonsSubmenu.hasClass(UI.salonsHideClass)) {
+  if (isToggleBtn && !isSubmenuHidden) {
     hideSalonsSubmenu();
     return;
   }
