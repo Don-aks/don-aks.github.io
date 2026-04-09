@@ -20,10 +20,12 @@ var UI = {
 
   $header: $header,
   $headerList: $('.header__list'),
+  headerListActiveClass: 'header__list--active',
 
   $headerBtnMenu: $headerBtnMenu,
   $btnMenuLine: $headerBtnMenu.find('.btn-menu__line'),
   $hiddenCells: $header.find(HIDDEN_CELLS),
+  btnMenuLineActiveClass: 'btn-menu__line--active',
 
   $btnBooking: $('.header__btn-booking'),
 
@@ -122,10 +124,10 @@ function handleScroll() {
 }
 
 function handleBtnMenuClick() {
-  var isActive = UI.$headerList.hasClass('header__list--active');
+  var isActive = UI.$headerList.hasClass(UI.headerListActiveClass);
 
-  UI.$btnMenuLine.toggleClass('btn-menu__line--active', !isActive);
-  UI.$headerList.toggleClass('header__list--active', !isActive);
+  UI.$btnMenuLine.toggleClass(UI.btnMenuLineActiveClass, !isActive);
+  UI.$headerList.toggleClass(UI.headerListActiveClass, !isActive);
   $body.toggleClass('locked', !isActive);
 
   setTabIndex(getFocusable(UI.$headerList), !isActive ? '0' : '-1');
