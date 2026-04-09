@@ -39,6 +39,10 @@ var UI = {
 
   $tabs: $tabs,
   $tabsBtns: $tabs.find('.tabs__btn'),
+  tabsActiveClass: 'tabs__tab--active',
+
+  $newsItems: $('.news__item'),
+  newsItemActiveClass: 'news__item--active',
 
   $modalForm: $('.modal__form'),
   modalThanksSelector: '#modal-thanks',
@@ -187,26 +191,25 @@ function pulse($element, delay = 5000) {
 }
 
 function toggleTab() {
-  var $container = $(this).closest('.tabs__tab');
-  var className = 'tabs__tab--active';
+  var $tabContainer = $(this).closest('.tabs__tab');
 
-  UI.$tabs.removeClass(className);
-  $container.addClass(className);
+  UI.$tabs.removeClass(UI.tabsActiveClass);
+  $tabContainer.addClass(UI.tabsActiveClass);
 
   var $tabsBtns = UI.$tabs.find('.tabs__btn');
   setTabIndex($tabsBtns, '0');
 
-  var $btn = $container.find('.tabs__btn');
+  var $btn = $tabContainer.find('.tabs__btn');
   setTabIndex($btn, '-1');
 
   $btn.blur();
 
-  var selector = '.news__item';
-  className = 'news__item--active';
+  var $currentNews = UI.$newsItems.filter(
+    '[data-tab=' + $tabContainer.data('tab') + ']',
+  );
 
-  var contentSelector = selector + '[data-tab=' + $container.data('tab') + ']';
-  $(selector).removeClass(className);
-  $(contentSelector).addClass(className);
+  UI.$newsItems.removeClass(UI.newsItemActiveClass);
+  $currentNews.addClass(UI.newsItemActiveClass);
 }
 
 // UTILS
