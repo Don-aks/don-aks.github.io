@@ -19,7 +19,7 @@ var UI = {
   $highContrastBtn: $('.btn--visually-impaired'),
 
   $header: $header,
-  $headerList: $header.find('.header__list'),
+  $headerList: $('.header__list'),
 
   $headerBtnMenu: $headerBtnMenu,
   $btnMenuLine: $headerBtnMenu.find('.btn-menu__line'),
