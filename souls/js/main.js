@@ -278,6 +278,8 @@ function changeMenuState() {
       links[i].setAttribute('tabindex', '-1');
     }
   }
+
+  menu.setAttribute('aria-hidden', String(isActive));
 }
 
 function scrollIntoView(e) {

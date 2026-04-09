@@ -47,6 +47,8 @@ menuButton.addEventListener('click', function () {
   menu.classList.toggle(CLASSES.menuActive);
   header.classList.toggle(CLASSES.headerActive);
   menuButton.classList.toggle(CLASSES.menuBtnActive);
+
+  menu.setAttribute('aria-hidden', String(isActive));
 });
 
 const submenu = document.querySelector('.' + CLASSES.submenu);

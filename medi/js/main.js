@@ -132,6 +132,7 @@ function handleBtnMenuClick() {
 
   setTabIndex(getFocusable(UI.$headerList), !isActive ? '0' : '-1');
   setTabIndex(getFocusable(UI.$hiddenCells), !isActive ? '0' : '-1');
+  UI.$headerList.attr('aria-hidden', String(isActive));
 }
 
 function handleResize() {
@@ -141,11 +142,13 @@ function handleResize() {
   if ($window.outerWidth() > HIDE_MENU_BREAKPOINT) {
     setTabIndex($headerListFocusableElements, '0');
     setTabIndex($hiddenCellsFocusableElements, '0');
+    UI.$headerList.removeAttr('aria-hidden');
     return;
   }
 
   setTabIndex($headerListFocusableElements, '-1');
   setTabIndex($hiddenCellsFocusableElements, '-1');
+  UI.$headerList.attr('aria-hidden', 'true');
 }
 
 function handleSalonsClick(e) {
