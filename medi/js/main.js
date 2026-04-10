@@ -71,8 +71,8 @@ UI.$highContrastBtn.on('click', function () {
 });
 
 if ($window.outerWidth() <= HIDE_MENU_BREAKPOINT) {
-  setTabIndex(getFocusable(UI.$headerList), '-1');
-  setTabIndex(getFocusable(UI.$hiddenCells), '-1');
+  setTabIndex(getFocusable(UI.$headerList), -1);
+  setTabIndex(getFocusable(UI.$hiddenCells), -1);
 }
 
 UI.$headerBtnMenu.on('click', handleBtnMenuClick);
@@ -139,21 +139,21 @@ function handleBtnMenuClick() {
   UI.$headerList.toggleClass(UI.headerListActiveClass, !isActive);
   $body.toggleClass('locked', !isActive);
 
-  setTabIndex(UI.$headerListFocusable, !isActive ? '0' : '-1');
-  setTabIndex(UI.$hiddenCellsFocusable, !isActive ? '0' : '-1');
+  setTabIndex(UI.$headerListFocusable, !isActive ? 0 : -1);
+  setTabIndex(UI.$hiddenCellsFocusable, !isActive ? 0 : -1);
   UI.$headerList.attr('aria-hidden', String(isActive));
 }
 
 function handleResize() {
   if ($window.outerWidth() > HIDE_MENU_BREAKPOINT) {
-    setTabIndex(UI.$headerListFocusable, '0');
-    setTabIndex(UI.$hiddenCellsFocusable, '0');
+    setTabIndex(UI.$headerListFocusable, 0);
+    setTabIndex(UI.$hiddenCellsFocusable, 0);
     UI.$headerList.removeAttr('aria-hidden');
     return;
   }
 
-  setTabIndex(UI.$headerListFocusable, '-1');
-  setTabIndex(UI.$hiddenCellsFocusable, '-1');
+  setTabIndex(UI.$headerListFocusable, -1);
+  setTabIndex(UI.$hiddenCellsFocusable, -1);
   UI.$headerList.attr('aria-hidden', 'true');
 }
 
@@ -183,12 +183,12 @@ function handleSalonsClick(e) {
 
 function showSalonsSubmenu() {
   UI.$salonsSubmenu.removeClass(UI.salonsHideClass);
-  setTabIndex(UI.$salonsLinks, '0');
+  setTabIndex(UI.$salonsLinks, 0);
 }
 
 function hideSalonsSubmenu() {
   UI.$salonsSubmenu.addClass(UI.salonsHideClass);
-  setTabIndex(UI.$salonsLinks, '-1');
+  setTabIndex(UI.$salonsLinks, -1);
 }
 
 function pulse($element, delay = 5000) {
@@ -208,10 +208,10 @@ function toggleTab() {
   UI.$tabs.removeClass(UI.tabsActiveClass);
   $tabContainer.addClass(UI.tabsActiveClass);
 
-  setTabIndex(UI.$tabsBtns, '0');
+  setTabIndex(UI.$tabsBtns, 0);
 
   var $btn = $tabContainer.find(UI.tabsBtnSelector);
-  $btn.attr('tabindex', '-1');
+  $btn.prop('tabIndex', -1);
   $btn.blur();
 
   var $currentNews = UI.$newsItems.filter(
@@ -259,8 +259,8 @@ function throttle(func, limit) {
 
 function setTabIndex($elements, value) {
   $elements.each(function () {
-    if ($(this).attr('tabindex') === value) return;
-    $(this).attr('tabindex', value);
+    if ($(this).prop('tabIndex') === value) return;
+    $(this).prop('tabIndex', value);
   });
 }
 
