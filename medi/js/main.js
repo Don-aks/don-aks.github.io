@@ -25,6 +25,7 @@ var UI = {
   $headerList: $headerList,
   $headerListFocusable: getFocusable($headerList),
   headerListActiveClass: 'header__list--active',
+  headerScrolledClass: 'header__top--scrolled',
 
   $headerBtnMenu: $headerBtnMenu,
   $btnMenuLine: $headerBtnMenu.find('.btn-menu__line'),
@@ -125,11 +126,11 @@ UI.$tabsBtns.on(
 
 function handleScroll() {
   if ($window.scrollTop() > 0) {
-    UI.$header.addClass('header__top--scrolled');
+    UI.$header.addClass(UI.headerScrolledClass);
     return;
   }
 
-  UI.$header.removeClass('header__top--scrolled');
+  UI.$header.removeClass(UI.headerScrolledClass);
 }
 
 function handleBtnMenuClick() {
