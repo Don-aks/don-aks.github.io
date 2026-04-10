@@ -2207,7 +2207,7 @@ body.locked {
   }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 450px) {
   .hero__title {
     margin-bottom: 5px;
     font-size: 36px;
@@ -2267,7 +2267,7 @@ body.locked {
   }
 
   .offer {
-    padding: 74% 20px 25px;
+    padding: 80% 15px 5%;
     width: 100%;
   }
 
