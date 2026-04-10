@@ -257,8 +257,10 @@ function throttle(func, limit) {
 
 function setTabIndex($elements, value) {
   $elements.each(function () {
-    if ($(this).prop('tabIndex') === value) return;
-    $(this).prop('tabIndex', value);
+    var $this = $(this);
+
+    if ($this.prop('tabIndex') === value) return;
+    $this.prop('tabIndex', value);
   });
 }
 
