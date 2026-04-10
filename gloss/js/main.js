@@ -42,11 +42,12 @@ const menu = document.querySelector('.' + CLASSES.menu);
 const menuButton = document.querySelector('.' + CLASSES.menuBtn);
 
 menuButton.addEventListener('click', function () {
-  document.body.classList.toggle(CLASSES.locked);
+  const isActive = menu.classList.contains(CLASSES.menuActive);
+  document.body.classList.toggle(CLASSES.locked, !isActive);
 
-  menu.classList.toggle(CLASSES.menuActive);
-  header.classList.toggle(CLASSES.headerActive);
-  menuButton.classList.toggle(CLASSES.menuBtnActive);
+  menu.classList.toggle(CLASSES.menuActive, !isActive);
+  header.classList.toggle(CLASSES.headerActive, !isActive);
+  menuButton.classList.toggle(CLASSES.menuBtnActive, !isActive);
 
   menu.setAttribute('aria-hidden', String(isActive));
 });
