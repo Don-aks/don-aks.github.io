@@ -108,11 +108,11 @@ UI.$heroSlider.slick({
   nextArrow: UI.sliderBtnNextHTML,
 });
 
-UI.$heroSlider.on('mousedown', function (e) {
+UI.$heroSlider.on('mousedown', function () {
   UI.$heroSlider.css('cursor', 'grabbing');
 });
 
-UI.$heroSlider.on('mouseup', function (e) {
+UI.$heroSlider.on('mouseup', function () {
   UI.$heroSlider.css('cursor', '');
 });
 
