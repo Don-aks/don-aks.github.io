@@ -405,13 +405,6 @@ body.locked {
   border-color: transparent transparent #1d1d1d transparent !important;
 }
 
-.visually-impaired .header__item,
-.visually-impaired .header__link,
-.visually-impaired .news__content,
-.visually-impaired .news__content * {
-  background-color: transparent !important;
-}
-
 .visually-impaired .salons::after {
   background-image: url('../img/arrow-down_black.svg') !important;
 }
@@ -455,7 +448,12 @@ body.locked {
   background-color: #1d1d1d !important;
 }
 
-.visually-impaired .btn-menu__line--active {
+.visually-impaired .header__item,
+.visually-impaired .header__link,
+.visually-impaired .news__content,
+.visually-impaired .news__content *,
+.visually-impaired .btn-menu__line--active,
+.visually-impaired .numbers__item--selected {
   background-color: transparent !important;
 }
 
@@ -468,10 +466,6 @@ body.locked {
 
 .visually-impaired .hero__slider .slick-prev {
   left: -178px !important;
-}
-
-.visually-impaired .numbers__item--selected {
-  background-color: transparent !important;
 }
 
 .visually-impaired .innovations .innovations__link {
