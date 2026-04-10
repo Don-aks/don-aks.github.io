@@ -177,13 +177,16 @@ function handleSalonsClick(e) {
 }
 
 function showSalonsSubmenu() {
-  UI.$salonsSubmenu.removeClass(UI.salonsHideClass);
-  setTabIndex(UI.$salonsLinks, 0);
+  toggleSalonsSubmenu(false);
 }
 
 function hideSalonsSubmenu() {
-  UI.$salonsSubmenu.addClass(UI.salonsHideClass);
-  setTabIndex(UI.$salonsLinks, -1);
+  toggleSalonsSubmenu(true);
+}
+
+function toggleSalonsSubmenu(shouldHide) {
+  UI.$salonsSubmenu.toggleClass(UI.salonsHideClass, shouldHide);
+  setTabIndex(UI.$salonsLinks, shouldHide ? -1 : 0);
 }
 
 function pulse($element, delay = 5000) {
