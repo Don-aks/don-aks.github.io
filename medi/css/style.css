@@ -1324,7 +1324,7 @@ body.locked {
   position: relative;
 
   width: 100%;
-  padding: 17.7% 15px 25px;
+  padding: 17.7% 12px 25px;
 
   background: #00868a top center/contain no-repeat;
   color: #ffffff;
@@ -1348,6 +1348,7 @@ body.locked {
 
 .offer__link {
   display: block;
+  height: 100%;
   max-width: 260px;
   margin: 25px auto 0;
 }
@@ -1373,6 +1374,7 @@ body.locked {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  width: 100%;
 
   font-size: 21px;
 }
@@ -1384,6 +1386,7 @@ body.locked {
   flex-shrink: 0;
   width: 50px;
   height: 40px;
+  margin-left: 10px;
 
   background: url('../img/arrow-small.svg') center no-repeat;
   border: 1px solid #ffffff;
