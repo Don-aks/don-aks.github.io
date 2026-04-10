@@ -211,8 +211,7 @@ function toggleTab() {
   setTabIndex(UI.$tabsBtns, '0');
 
   var $btn = $tabContainer.find(UI.tabsBtnSelector);
-  setTabIndex($btn, '-1');
-
+  $btn.attr('tabindex', '-1');
   $btn.blur();
 
   var $currentNews = UI.$newsItems.filter(
