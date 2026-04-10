@@ -36,6 +36,8 @@ var UI = {
 
   $salonsSubmenu: $('.salons__submenu'),
   $salonsLinks: $('.salons__link'),
+  salonsSelector: '.salons',
+  salonsSubmenuSelector: '.salons__submenu',
   salonsHideClass: 'salons__submenu--hidden',
 
   $heroSlider: $('.hero__slider'),
@@ -46,6 +48,8 @@ var UI = {
 
   $tabs: $tabs,
   $tabsBtns: $tabs.find('.tabs__btn'),
+  tabsTabSelector: '.tabs__tab',
+  tabsBtnSelector: '.tabs__btn',
   tabsActiveClass: 'tabs__tab--active',
 
   $newsItems: $('.news__item'),
@@ -157,8 +161,8 @@ function handleSalonsClick(e) {
   var className = '';
   var $target = $(e.target);
 
-  var isToggleBtn = $target.closest('.salons').length;
-  var isSubmenu = $target.closest('.salons__submenu').length;
+  var isToggleBtn = $target.closest(UI.salonsSelector).length;
+  var isSubmenu = $target.closest(UI.salonsSubmenuSelector).length;
   var isSubmenuHidden = UI.$salonsSubmenu.hasClass(UI.salonsHideClass);
 
   if (isToggleBtn && isSubmenuHidden) {
@@ -199,15 +203,14 @@ function pulse($element, delay = 5000) {
 }
 
 function toggleTab() {
-  var $tabContainer = $(this).closest('.tabs__tab');
+  var $tabContainer = $(this).closest(UI.tabsTabSelector);
 
   UI.$tabs.removeClass(UI.tabsActiveClass);
   $tabContainer.addClass(UI.tabsActiveClass);
 
-  var $tabsBtns = UI.$tabs.find('.tabs__btn');
-  setTabIndex($tabsBtns, '0');
+  setTabIndex(UI.$tabsBtns, '0');
 
-  var $btn = $tabContainer.find('.tabs__btn');
+  var $btn = $tabContainer.find(UI.tabsBtnSelector);
   setTabIndex($btn, '-1');
 
   $btn.blur();
