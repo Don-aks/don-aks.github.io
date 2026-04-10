@@ -116,11 +116,7 @@ UI.$heroSlider.on('mouseup', function (e) {
   UI.$heroSlider.css('cursor', '');
 });
 
-UI.$tabsBtns.on(
-  'click',
-  { $tabs: UI.$tabs, $tabsBtns: UI.$tabsBtns },
-  toggleTab,
-);
+UI.$tabsBtns.on('click', toggleTab);
 
 // FUNCTIONS
 
