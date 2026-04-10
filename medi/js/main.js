@@ -145,16 +145,11 @@ function handleBtnMenuClick() {
 }
 
 function handleResize() {
-  if ($window.outerWidth() > HIDE_MENU_BREAKPOINT) {
-    setTabIndex(UI.$headerListFocusable, 0);
-    setTabIndex(UI.$hiddenCellsFocusable, 0);
-    UI.$headerList.removeAttr('aria-hidden');
-    return;
-  }
+  var isMenuVisible = $window.outerWidth() > HIDE_MENU_BREAKPOINT;
+  setTabIndex(UI.$headerListFocusable, isMenuVisible ? 0 : -1);
+  setTabIndex(UI.$hiddenCellsFocusable, isMenuVisible ? 0 : -1);
 
-  setTabIndex(UI.$headerListFocusable, -1);
-  setTabIndex(UI.$hiddenCellsFocusable, -1);
-  UI.$headerList.attr('aria-hidden', 'true');
+  UI.$headerList.attr('aria-hidden', String(!isMenuVisible));
 }
 
 function handleSalonsClick(e) {
