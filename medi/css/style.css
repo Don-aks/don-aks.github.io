@@ -1347,7 +1347,12 @@ body.locked {
 }
 
 .offer__link {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   max-width: 260px;
   margin: 25px auto 0;
