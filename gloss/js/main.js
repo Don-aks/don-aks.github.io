@@ -40,6 +40,7 @@ const CLASSES = {
 const header = document.querySelector('.' + CLASSES.header);
 const menu = document.querySelector('.' + CLASSES.menu);
 const menuButton = document.querySelector('.' + CLASSES.menuBtn);
+const menuFocusableElements = getFocusable(menu);
 
 menuButton.addEventListener('click', function () {
   const isActive = menu.classList.contains(CLASSES.menuActive);
@@ -49,8 +50,24 @@ menuButton.addEventListener('click', function () {
   header.classList.toggle(CLASSES.headerActive, !isActive);
   menuButton.classList.toggle(CLASSES.menuBtnActive, !isActive);
 
-  menu.setAttribute('aria-hidden', String(isActive));
+  setElementsAccessibility(menu, menuFocusableElements, isActive);
 });
+
+if (window.innerWidth <= 1200) {
+  disableAccessibility(menu, menuFocusableElements);
+}
+
+window.addEventListener(
+  'resize',
+  debounce(function () {
+    const isMenuVisible = window.innerWidth > 1200;
+    toggleAccessibilityWithTabIndexCondition(
+      menu,
+      menuFocusableElements,
+      !isMenuVisible,
+    );
+  }, 200),
+);
 
 const submenu = document.querySelector('.' + CLASSES.submenu);
 const submenuTransitionDelay = getTransitionDurationInMs(submenu);
@@ -349,6 +366,20 @@ function handleClickOnButtonContainer(event) {
 
 // UTILS
 
+function debounce(func, wait) {
+  let timeout;
+
+  return function (...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func.apply(this, args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 function getTransitionDurationInMs(el) {
   const durations = getComputedStyle(el)
     .transitionDuration.split(',')
@@ -380,4 +411,49 @@ function getFirstAvailableWorkDay(startDate) {
 function isWeekend(date) {
   const day = date.getDay();
   return day === 0 || day === 6;
+}
+
+function getFocusable(container) {
+  return container.querySelectorAll(
+    'a[href], button:not([disabled]), [tabindex]',
+  );
+}
+
+function enableAccessibility(container, focusableElements) {
+  setElementsAccessibility(container, focusableElements, false);
+}
+
+function disableAccessibility(container, focusableElements) {
+  setElementsAccessibility(container, focusableElements, true);
+}
+
+function toggleAccessibilityWithTabIndexCondition(
+  container,
+  focusableElements,
+  isHidden,
+) {
+  setElementsAccessibility(container, focusableElements, isHidden, true);
+}
+
+function setElementsAccessibility(
+  container,
+  focusableElements,
+  isHidden,
+  tabIndexCondition = false,
+) {
+  if (tabIndexCondition) {
+    const wantedTabIndex = isHidden ? '-1' : '0';
+
+    Array.from(focusableElements).forEach((el) => {
+      if (el.getAttribute('tabindex') !== wantedTabIndex) {
+        el.setAttribute('tabindex', wantedTabIndex);
+      }
+    });
+  } else {
+    Array.from(focusableElements).forEach((el) =>
+      el.setAttribute('tabindex', isHidden ? '-1' : '0'),
+    );
+  }
+
+  container.setAttribute('aria-hidden', String(isHidden));
 }
