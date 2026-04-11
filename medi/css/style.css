@@ -1847,7 +1847,8 @@ body.locked {
   .offers__inner {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 0 -10px -48px 0;
+    margin-right: -10px;
+    margin-bottom: -48px;
     padding-bottom: 80px;
   }
 
