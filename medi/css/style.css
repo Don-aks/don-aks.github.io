@@ -1863,6 +1863,10 @@ body.locked {
     padding: 2px;
   }
 
+  .offer__title::after {
+    margin-left: 20px;
+  }
+
   .footer__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
