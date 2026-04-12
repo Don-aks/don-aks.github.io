@@ -130,15 +130,15 @@ function handleScroll() {
 }
 
 function handleBtnMenuClick() {
-  var isActive = UI.$headerList.hasClass(UI.headerListActiveClass);
+  var willBeActive = !UI.$headerList.hasClass(UI.headerListActiveClass);
 
-  UI.$btnMenuLine.toggleClass(UI.btnMenuLineActiveClass, !isActive);
-  UI.$headerList.toggleClass(UI.headerListActiveClass, !isActive);
-  $body.toggleClass('locked', !isActive);
+  UI.$btnMenuLine.toggleClass(UI.btnMenuLineActiveClass, willBeActive);
+  UI.$headerList.toggleClass(UI.headerListActiveClass, willBeActive);
+  $body.toggleClass('locked', willBeActive);
 
-  setTabIndex(UI.$headerListFocusable, !isActive ? 0 : -1);
-  setTabIndex(UI.$hiddenCellsFocusable, !isActive ? 0 : -1);
-  UI.$headerList.attr('aria-hidden', String(isActive));
+  setTabIndex(UI.$headerListFocusable, willBeActive ? 0 : -1);
+  setTabIndex(UI.$hiddenCellsFocusable, willBeActive ? 0 : -1);
+  UI.$headerList.attr('aria-hidden', String(!willBeActive));
 }
 
 function handleResize() {

@@ -43,12 +43,12 @@ const menuButton = document.querySelector('.' + CLASSES.menuBtn);
 const menuFocusableElements = getFocusable(menu);
 
 menuButton.addEventListener('click', function () {
-  const isActive = menu.classList.contains(CLASSES.menuActive);
-  document.body.classList.toggle(CLASSES.locked, !isActive);
+  const willBeActive = !menu.classList.contains(CLASSES.menuActive);
+  document.body.classList.toggle(CLASSES.locked, willBeActive);
 
-  menu.classList.toggle(CLASSES.menuActive, !isActive);
-  header.classList.toggle(CLASSES.headerActive, !isActive);
-  menuButton.classList.toggle(CLASSES.menuBtnActive, !isActive);
+  menu.classList.toggle(CLASSES.menuActive, willBeActive);
+  header.classList.toggle(CLASSES.headerActive, willBeActive);
+  menuButton.classList.toggle(CLASSES.menuBtnActive, willBeActive);
 
   setElementsAccessibility(menu, menuFocusableElements, isActive);
 });
