@@ -4,6 +4,7 @@ const CLASSES = {
   locked: 'locked',
 
   header: 'header',
+  headerNav: 'header__nav',
   headerActive: 'header--active',
 
   menu: 'header__list',
@@ -38,9 +39,13 @@ const CLASSES = {
 };
 
 const header = document.querySelector('.' + CLASSES.header);
+const headerNav = header.querySelector('.' + CLASSES.headerNav);
 const menu = document.querySelector('.' + CLASSES.menu);
 const menuButton = document.querySelector('.' + CLASSES.menuBtn);
 const menuFocusableElements = getFocusable(menu);
+
+const elementsToToggleFocusTrap = getFocusable(headerNav);
+let removeFocusTrapFunc;
 
 menuButton.addEventListener('click', function () {
   const willBeActive = !menu.classList.contains(CLASSES.menuActive);
@@ -51,6 +56,14 @@ menuButton.addEventListener('click', function () {
   menuButton.classList.toggle(CLASSES.menuBtnActive, willBeActive);
 
   setElementsAccessibility(menu, menuFocusableElements, isActive);
+
+  if (willBeActive) {
+    removeFocusTrapFunc = setFocusTrap(elementsToToggleFocusTrap);
+    menuFocusableElements[0].focus();
+  } else {
+    removeFocusTrapFunc();
+    menuButton.focus();
+  }
 });
 
 if (window.innerWidth <= 1200) {
@@ -456,4 +469,47 @@ function setElementsAccessibility(
   }
 
   container.setAttribute('aria-hidden', String(isHidden));
+}
+
+function setFocusTrap(focusableElements) {
+  const focusable = Array.from(focusableElements).filter(function (el) {
+    return el.getAttribute('tabindex') !== '-1' && !el.disabled;
+  });
+
+  function handleFocusIn(event) {
+    if (!focusable.includes(event.target)) {
+      focusable[0].focus();
+      event.preventDefault();
+    }
+  }
+
+  function handleKeyDown(event) {
+    const isTabPressed = event.keyCode === 9;
+    if (!isTabPressed) return;
+
+    const firstElement = focusable[0];
+    const lastElement = focusable[focusable.length - 1];
+
+    if (event.shiftKey) {
+      if (document.activeElement === firstElement) {
+        lastElement.focus();
+        event.preventDefault();
+      }
+
+      return;
+    }
+
+    if (document.activeElement === lastElement) {
+      firstElement.focus();
+      event.preventDefault();
+    }
+  }
+
+  document.addEventListener('focusin', handleFocusIn);
+  document.addEventListener('keydown', handleKeyDown);
+
+  return function () {
+    document.removeEventListener('focusin', handleFocusIn);
+    document.removeEventListener('keydown', handleKeyDown);
+  };
 }
