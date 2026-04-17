@@ -242,7 +242,7 @@ body.locked {
 }
 
 .btn {
-  display: block;
+  display: inline-block;
   padding: 15px 25px 14px;
 
   font-size: 14px;
