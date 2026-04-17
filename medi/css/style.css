@@ -1544,6 +1544,10 @@ body.locked {
   max-width: 500px;
 }
 
+[data-fancybox-close]:focus {
+  outline: 2px solid #00868a;
+}
+
 .modal__title {
   margin-bottom: 30px;
 
