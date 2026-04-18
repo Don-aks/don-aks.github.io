@@ -55,7 +55,7 @@ menuButton.addEventListener('click', function () {
   header.classList.toggle(CLASSES.headerActive, willBeActive);
   menuButton.classList.toggle(CLASSES.menuBtnActive, willBeActive);
 
-  setElementsAccessibility(menu, menuFocusableElements, isActive);
+  setElementsAccessibility(menu, menuFocusableElements, !willBeActive);
 
   if (willBeActive) {
     removeFocusTrapFunc = setFocusTrap(elementsToToggleFocusTrap);
