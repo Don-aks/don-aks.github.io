@@ -141,6 +141,11 @@ function handleBtnMenuClick() {
 
   UI.$headerListFocusable.prop('tabIndex', willBeActive ? 0 : -1);
   UI.$hiddenCellsFocusable.prop('tabIndex', willBeActive ? 0 : -1);
+
+  if (!willBeActive) {
+    UI.$headerBtnMenu.focus();
+  }
+
   UI.$headerList.attr('aria-hidden', String(!willBeActive));
 
   if (willBeActive) {
