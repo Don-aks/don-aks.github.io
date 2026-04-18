@@ -139,8 +139,8 @@ function handleBtnMenuClick() {
   UI.$headerList.toggleClass(UI.headerListActiveClass, willBeActive);
   $body.toggleClass('locked', willBeActive);
 
-  setTabIndex(UI.$headerListFocusable, willBeActive ? 0 : -1);
-  setTabIndex(UI.$hiddenCellsFocusable, willBeActive ? 0 : -1);
+  UI.$headerListFocusable.prop('tabIndex', willBeActive ? 0 : -1);
+  UI.$hiddenCellsFocusable.prop('tabIndex', willBeActive ? 0 : -1);
   UI.$headerList.attr('aria-hidden', String(!willBeActive));
 
   if (willBeActive) {
