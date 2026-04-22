@@ -40,8 +40,8 @@ const CLASSES = {
 
 const header = document.querySelector('.' + CLASSES.header);
 const headerNav = header.querySelector('.' + CLASSES.headerNav);
-const menu = document.querySelector('.' + CLASSES.menu);
-const menuButton = document.querySelector('.' + CLASSES.menuBtn);
+const menu = header.querySelector('.' + CLASSES.menu);
+const menuButton = header.querySelector('.' + CLASSES.menuBtn);
 const menuFocusableElements = getFocusable(menu);
 
 const elementsToToggleFocusTrap = getFocusable(headerNav);
@@ -82,7 +82,7 @@ window.addEventListener(
   }, 200),
 );
 
-const submenu = document.querySelector('.' + CLASSES.submenu);
+const submenu = header.querySelector('.' + CLASSES.submenu);
 const submenuTransitionDelay = getTransitionDurationInMs(submenu);
 let submenuAnimationTimeoutId;
 
