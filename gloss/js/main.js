@@ -5,7 +5,10 @@ const CLASSES = {
 
   header: 'header',
   headerNav: 'header__nav',
+  headerLink: 'header__link',
+  headerLogo: 'header__logo',
   headerActive: 'header--active',
+  headerButton: 'header__button',
 
   menu: 'header__list',
   menuActive: 'header__list--active',
@@ -45,7 +48,19 @@ const menuButton = getElementByClass(CLASSES.menuBtn, header);
 const menuFocusableElements = getFocusable(menu);
 
 const elementsToToggleFocusTrap = getFocusable(headerNav);
-let removeFocusTrapFunc;
+let removeMenuFocusTrap;
+
+const logo = getElementByClass(CLASSES.headerLogo, header);
+const firstHeaderButton = getElementByClass(CLASSES.headerButton, header);
+const firstMenuElement = menuFocusableElements[0];
+
+const menuTabRoute = [
+  { from: logo, to: firstHeaderButton },
+  { from: lastVisibleMenuElement, to: logo },
+  { from: menuButton, to: firstMenuElement },
+  { from: logo, to: lastVisibleMenuElement, shift: true },
+  { from: firstHeaderButton, to: logo, shift: true },
+];
 
 menuButton.addEventListener('click', function () {
   const willBeActive = !menu.classList.contains(CLASSES.menuActive);
@@ -55,14 +70,27 @@ menuButton.addEventListener('click', function () {
   header.classList.toggle(CLASSES.headerActive, willBeActive);
   menuButton.classList.toggle(CLASSES.menuBtnActive, willBeActive);
 
+  if (!willBeActive) {
+    if (typeof removeMenuFocusTrap === 'function') {
+      removeMenuFocusTrap();
+    }
+
+    menuButton.focus();
+  }
+
   setElementsAccessibility(menu, menuFocusableElements, !willBeActive);
 
   if (willBeActive) {
-    removeFocusTrapFunc = setFocusTrap(elementsToToggleFocusTrap);
-    menuFocusableElements[0].focus();
-  } else {
-    removeFocusTrapFunc();
-    menuButton.focus();
+    const lastVisibleMenuElement = getLastVisibleElement(menuFocusableElements);
+    const routeWithDynamicLastElement = [
+      { from: lastVisibleMenuElement, to: logo },
+      { from: logo, to: lastVisibleMenuElement, shift: true },
+    ].concat(menuTabRoute);
+
+    removeMenuFocusTrap = createSmartFocusTrap(
+      elementsToToggleFocusTrap,
+      routeWithDynamicLastElement,
+    );
   }
 });
 
@@ -413,6 +441,16 @@ function getTransitionDurationInMs(el) {
   return Math.max(...durations);
 }
 
+function getLastVisibleElement(elements) {
+  for (let i = elements.length - 1; i >= 0; i--) {
+    if (elements[i].offsetParent !== null) {
+      return elements[i];
+    }
+  }
+
+  return null;
+}
+
 function getFirstAvailableWorkDay(startDate) {
   var targetDate = new Date(startDate.getTime());
 
@@ -481,44 +519,52 @@ function setElementsAccessibility(
   container.setAttribute('aria-hidden', String(isHidden));
 }
 
-function setFocusTrap(focusableElements) {
-  const focusable = toArray(focusableElements).filter(function (el) {
-    return el.getAttribute('tabindex') !== '-1' && !el.disabled;
-  });
-
-  function handleFocusIn(event) {
-    if (!focusable.includes(event.target)) {
-      focusable[0].focus();
-      event.preventDefault();
-    }
-  }
+/**
+ * Creates a focus trap with custom navigation routes.
+ * @param {HTMLElement[]} elements - Elements to cycle focus between.
+ * @param {Object[]} customRoutes - Custom transitions: { from: HTMLElement, to: HTMLElement, shift: boolean }.
+ */
+function createSmartFocusTrap(elements, customRoutes = []) {
+  const first = elements[0];
+  const last = elements[elements.length - 1];
 
   function handleKeyDown(event) {
     const isTabPressed = event.keyCode === 9;
     if (!isTabPressed) return;
 
-    const firstElement = focusable[0];
-    const lastElement = focusable[focusable.length - 1];
+    const active = document.activeElement;
 
-    if (event.shiftKey) {
-      if (document.activeElement === firstElement) {
-        lastElement.focus();
+    customRoutes.forEach((route) => {
+      if (active === route.from && event.shiftKey === Boolean(route.shift)) {
+        route.to.focus();
         event.preventDefault();
+        return;
       }
+    });
 
-      return;
-    }
-
-    if (document.activeElement === lastElement) {
-      firstElement.focus();
+    if (event.shiftKey && active === first) {
+      last.focus();
       event.preventDefault();
+    } else if (!event.shiftKey && active === last) {
+      first.focus();
+      event.preventDefault();
+    }
+  }
+
+  function handleFocusIn(event) {
+    const isFocusInside = toArray(elements).some((el) => {
+      return el.contains(event.target) || el === event.target;
+    });
+
+    if (!isFocusInside) {
+      first.focus();
     }
   }
 
   document.addEventListener('focusin', handleFocusIn);
   document.addEventListener('keydown', handleKeyDown);
 
-  return function () {
+  return function destroy() {
     document.removeEventListener('focusin', handleFocusIn);
     document.removeEventListener('keydown', handleKeyDown);
   };
