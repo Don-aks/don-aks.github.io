@@ -79,6 +79,7 @@ menuButton.addEventListener('click', function () {
   }
 
   setElementsAccessibility(menu, menuFocusableElements, !willBeActive);
+  menuButton.setAttribute('aria-expanded', String(willBeActive));
 
   if (willBeActive) {
     const lastVisibleMenuElement = getLastVisibleElement(menuFocusableElements);
