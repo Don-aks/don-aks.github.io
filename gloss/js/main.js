@@ -397,6 +397,10 @@ function debounce(func, wait) {
   };
 }
 
+function toArray(obj) {
+  return Array.prototype.slice.call(obj);
+}
+
 function getTransitionDurationInMs(el) {
   const durations = getComputedStyle(el)
     .transitionDuration.split(',')
@@ -458,16 +462,18 @@ function setElementsAccessibility(
   isHidden,
   tabIndexCondition = false,
 ) {
+  const focusable = toArray(focusableElements);
+
   if (tabIndexCondition) {
     const wantedTabIndex = isHidden ? '-1' : '0';
 
-    Array.from(focusableElements).forEach((el) => {
+    focusable.forEach((el) => {
       if (el.getAttribute('tabindex') !== wantedTabIndex) {
         el.setAttribute('tabindex', wantedTabIndex);
       }
     });
   } else {
-    Array.from(focusableElements).forEach((el) =>
+    focusable.forEach((el) =>
       el.setAttribute('tabindex', isHidden ? '-1' : '0'),
     );
   }
@@ -476,7 +482,7 @@ function setElementsAccessibility(
 }
 
 function setFocusTrap(focusableElements) {
-  const focusable = Array.from(focusableElements).filter(function (el) {
+  const focusable = toArray(focusableElements).filter(function (el) {
     return el.getAttribute('tabindex') !== '-1' && !el.disabled;
   });
 
