@@ -38,10 +38,10 @@ const CLASSES = {
   appointmentOption: 'appointment__option',
 };
 
-const header = document.querySelector('.' + CLASSES.header);
-const headerNav = header.querySelector('.' + CLASSES.headerNav);
-const menu = header.querySelector('.' + CLASSES.menu);
-const menuButton = header.querySelector('.' + CLASSES.menuBtn);
+const header = getElementByClass(CLASSES.header);
+const headerNav = getElementByClass(CLASSES.headerNav, header);
+const menu = getElementByClass(CLASSES.menu, header);
+const menuButton = getElementByClass(CLASSES.menuBtn, header);
 const menuFocusableElements = getFocusable(menu);
 
 const elementsToToggleFocusTrap = getFocusable(headerNav);
@@ -82,7 +82,7 @@ window.addEventListener(
   }, 200),
 );
 
-const submenu = header.querySelector('.' + CLASSES.submenu);
+const submenu = getElementByClass(CLASSES.submenu, header);
 const submenuTransitionDelay = getTransitionDurationInMs(submenu);
 let submenuAnimationTimeoutId;
 
@@ -108,7 +108,7 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-const serviceGrid = document.querySelector('.' + CLASSES.serviceGrid);
+const serviceGrid = getElementByClass(CLASSES.serviceGrid);
 serviceGrid.addEventListener('click', onServiceLinkClick);
 
 /*let dp = new AirDatepicker('#input-date', {
@@ -215,9 +215,9 @@ fixDatepickerNavTabOrder();
 
 initDatepickerSelects();
 
-const timeInput = document.getElementById('input-time');
-const buttonContainer = document.querySelector('.appointment__buttons');
-const buttons = buttonContainer.querySelectorAll('.appointment__button');
+const timeInput = document.querySelector('#input-time');
+const buttonContainer = getElementByClass('appointment__buttons');
+const buttons = getElementsByClass('appointment__button', buttonContainer);
 
 buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
@@ -378,6 +378,10 @@ function handleClickOnButtonContainer(event) {
 }
 
 // UTILS
+
+function getElementByClass(className, parent = document) {
+  return parent.querySelector('.' + className);
+}
 
 function debounce(func, wait) {
   let timeout;
