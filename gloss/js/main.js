@@ -113,6 +113,12 @@ window.addEventListener(
 
 const submenu = getElementByClass(CLASSES.submenu, header);
 const submenuTransitionDelay = getTransitionDurationInMs(submenu);
+
+const dropDownLink = getElementByClass(CLASSES.dropDownLink, header);
+const submenuLinks = toArray(
+  submenu.querySelectorAll('.' + CLASSES.submenuLink),
+);
+
 let submenuAnimationTimeoutId;
 
 submenu.addEventListener('click', onServiceLinkClick);
@@ -121,19 +127,21 @@ document.body.addEventListener('click', function (e) {
   const cls = e.target.classList;
 
   if (cls.contains(CLASSES.dropDownLink) || cls.contains('icon')) {
-    animateSubmenu(!isSubmenuClosed());
+    toggleSubmenu(!isSubmenuClosed());
   } else if (
     !cls.contains(CLASSES.submenu) &&
     !cls.contains(CLASSES.submenuLink)
   ) {
-    animateSubmenu(true);
+    toggleSubmenu(true, false);
   }
 });
 
 document.addEventListener('keydown', function (event) {
-  // Esc key
-  if (event.keyCode === 27) {
-    animateSubmenu(true);
+  const isEscKey = event.keyCode === 27;
+  if (!isEscKey) return;
+
+  if (!isSubmenuClosed()) {
+    toggleSubmenu(true);
   }
 });
 
@@ -252,22 +260,34 @@ buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
 // FUNCTIONS
 
-function animateSubmenu(isSubmenuHidden) {
+function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
   clearTimeout(submenuAnimationTimeoutId);
 
   if (isSubmenuHidden) {
+    if (forceFocus) {
+      dropDownLink.focus();
+    }
+
     submenu.classList.add(CLASSES.submenuHidden);
 
     submenuAnimationTimeoutId = setTimeout(function () {
       submenu.style.display = 'none';
+      submenu.setAttribute('aria-hidden', 'true');
     }, submenuTransitionDelay);
   } else {
     submenu.style.display = '';
+    submenu.setAttribute('aria-hidden', 'false');
 
     setTimeout(function () {
       submenu.classList.remove(CLASSES.submenuHidden);
     }, 0);
+
+    submenuAnimationTimeoutId = setTimeout(function () {
+      submenuLinks[0].focus();
+    }, submenuTransitionDelay);
   }
+
+  dropDownLink.setAttribute('aria-expanded', String(!isSubmenuHidden));
 }
 
 function isSubmenuClosed() {
@@ -293,7 +313,7 @@ function onServiceLinkClick(event) {
     return;
   }
 
-  animateSubmenu(true);
+  toggleSubmenu(true);
 
   const sectionRect = section.getBoundingClientRect();
   const sectionPosition = sectionRect.top + window.pageYOffset;
