@@ -2,7 +2,7 @@
 
 // ======== VARIABLES ===========
 
-const CLASSES = {
+var CLASSES = {
   locked: 'locked',
 
   header: 'header',
@@ -44,43 +44,41 @@ const CLASSES = {
   appointmentOption: 'appointment__option',
 };
 
-const header = getElementByClass(CLASSES.header);
-const headerNav = getElementByClass(CLASSES.headerNav, header);
-const menu = getElementByClass(CLASSES.menu, header);
-const menuButton = getElementByClass(CLASSES.menuBtn, header);
-const menuFocusableElements = getFocusable(menu);
-const menuElementsAndClasses = [
+var header = getElementByClass(CLASSES.header);
+var headerNav = getElementByClass(CLASSES.headerNav, header);
+var menu = getElementByClass(CLASSES.menu, header);
+var menuButton = getElementByClass(CLASSES.menuBtn, header);
+var menuFocusableElements = getFocusable(menu);
+var menuElementsAndClasses = [
   [document.body, CLASSES.locked],
   [menu, CLASSES.menuActive],
   [header, CLASSES.headerActive],
   [menuButton, CLASSES.menuBtnActive],
 ];
 
-const elementsToToggleFocusTrap = getFocusable(headerNav);
-let removeMenuFocusTrap;
+var elementsToToggleFocusTrap = getFocusable(headerNav);
+var removeMenuFocusTrap;
 
-const logo = getElementByClass(CLASSES.headerLogo, header);
-const firstHeaderButton = getElementByClass(CLASSES.headerButton, header);
-const firstMenuElement = menuFocusableElements[0];
+var logo = getElementByClass(CLASSES.headerLogo, header);
+var firstHeaderButton = getElementByClass(CLASSES.headerButton, header);
+var firstMenuElement = menuFocusableElements[0];
 
-const menuTabRoute = [
+var menuTabRoute = [
   { from: logo, to: firstHeaderButton },
   { from: menuButton, to: firstMenuElement },
   { from: firstHeaderButton, to: logo, shift: true },
 ];
 
-const submenu = getElementByClass(CLASSES.submenu, header);
-const submenuTransitionDelay = getTransitionDurationInMs(submenu);
+var submenu = getElementByClass(CLASSES.submenu, header);
+var submenuTransitionDelay = getTransitionDurationInMs(submenu);
 
-const dropDownLink = getElementByClass(CLASSES.dropDownLink, header);
-const submenuLinks = toArray(
-  submenu.querySelectorAll('.' + CLASSES.submenuLink),
-);
+var dropDownLink = getElementByClass(CLASSES.dropDownLink, header);
+var submenuLinks = toArray(submenu.querySelectorAll('.' + CLASSES.submenuLink));
 
-let submenuAnimationTimeoutId;
-let removeSubmenuFocusTrap;
+var submenuAnimationTimeoutId;
+var removeSubmenuFocusTrap;
 
-const serviceGrid = getElementByClass(CLASSES.serviceGrid);
+var serviceGrid = getElementByClass(CLASSES.serviceGrid);
 
 // ======== HANDLERS ===========
 
@@ -89,7 +87,7 @@ menuButton.addEventListener('click', toggleMenu);
 window.addEventListener(
   'resize',
   debounce(function () {
-    const isMenuVisible = window.innerWidth > 1200;
+    var isMenuVisible = window.innerWidth > 1200;
     toggleMenu(isMenuVisible);
   }, 200),
 );
@@ -108,7 +106,7 @@ document.body.addEventListener('click', function (e) {
 });
 
 document.addEventListener('keydown', function (event) {
-  const isEscKey = event.keyCode === 27;
+  var isEscKey = event.keyCode === 27;
   if (!isEscKey) return;
 
   if (!isSubmenuClosed()) {
@@ -181,15 +179,15 @@ $.datepicker.setDefaults({
   prevText: '',
 });
 
-const datePicker = $('.' + CLASSES.appointmentDp);
-const inputDate = $('#input-date');
+var datePicker = $('.' + CLASSES.appointmentDp);
+var inputDate = $('#input-date');
 
-const now = new Date(Date.now());
-const today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
-const currentDate = new Date(Date.now()).setHours(0, 0, 0, 0);
-const firstWorkDay = getFirstAvailableWorkDay(now);
+var now = new Date(Date.now());
+var today12_30am = new Date(Date.now()).setHours(12, 30, 0, 0);
+var currentDate = new Date(Date.now()).setHours(0, 0, 0, 0);
+var firstWorkDay = getFirstAvailableWorkDay(now);
 
-let lastFocusedDirection;
+var lastFocusedDirection;
 
 datePicker.datepicker({
   altField: '#input-date',
@@ -234,16 +232,16 @@ fixDatepickerNavTabOrder();
 
 initDatepickerSelects();
 
-const timeInput = document.querySelector('#input-time');
-const buttonContainer = getElementByClass(CLASSES.appointmentButtonContainer);
-const buttons = document.querySelectorAll('.' + CLASSES.appointmentBtn);
+var timeInput = document.querySelector('#input-time');
+var buttonContainer = getElementByClass(CLASSES.appointmentButtonContainer);
+var buttons = document.querySelectorAll('.' + CLASSES.appointmentBtn);
 
 buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
 // ======== FUNCTIONS (JS) ===========
 
 function toggleMenu(desiredState) {
-  let active = desiredState;
+  var active = desiredState;
 
   if (typeof desiredState === 'undefined') {
     active = !menu.classList.contains(CLASSES.menuActive);
@@ -327,16 +325,16 @@ function isSubmenuClosed() {
 }
 
 function onServiceLinkClick(event) {
-  const section = document.querySelector('.' + CLASSES.appointmentSection);
-  const select = document.querySelector('#service');
-  const link = event.target;
+  var section = document.querySelector('.' + CLASSES.appointmentSection);
+  var select = document.querySelector('#service');
+  var link = event.target;
 
-  const optionValue = link.getAttribute('data-option');
+  var optionValue = link.getAttribute('data-option');
   if (!optionValue) return;
 
   event.preventDefault();
 
-  const option = document.querySelector(
+  var option = document.querySelector(
     '.' + CLASSES.appointmentOption + '[value="' + optionValue + '"]',
   );
 
@@ -351,8 +349,8 @@ function onServiceLinkClick(event) {
 
   toggleSubmenu(true);
 
-  const sectionRect = section.getBoundingClientRect();
-  const sectionPosition = sectionRect.top + window.pageYOffset;
+  var sectionRect = section.getBoundingClientRect();
+  var sectionPosition = sectionRect.top + window.pageYOffset;
 
   window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
   select.value = optionValue;
@@ -361,7 +359,7 @@ function onServiceLinkClick(event) {
 function handleClickOnButtonContainer(event) {
   if (event.target.classList.contains(CLASSES.appointmentBtn)) {
     // Убираем класс 'active' у всех кнопок
-    for (let i = 0; i < buttons.length; i++) {
+    for (var i = 0; i < buttons.length; i++) {
       buttons[i].classList.remove(CLASSES.appointmentBtnActive);
     }
 
@@ -381,7 +379,7 @@ function enableNavKeyboardSupport() {
     .attr('tabindex', '0')
     .off('keydown')
     .on('keydown', function (e) {
-      const isSpaceOrEnter = e.keyCode === 13 || e.keyCode === 32;
+      var isSpaceOrEnter = e.keyCode === 13 || e.keyCode === 32;
       if (!isSpaceOrEnter) return;
 
       if ($(this).hasClass(CLASSES.dpBtnPrev)) {
@@ -402,10 +400,10 @@ function restoreDatepickerNavFocus() {
 
   setTimeout(function () {
     var datepicker = $('.' + CLASSES.dpContainer);
-    const isPrev = lastFocusedDirection === 'prev';
-    const selector = '.' + (isPrev ? CLASSES.dpBtnPrev : CLASSES.dpBtnNext);
+    var isPrev = lastFocusedDirection === 'prev';
+    var selector = '.' + (isPrev ? CLASSES.dpBtnPrev : CLASSES.dpBtnNext);
 
-    const newButton = datepicker.find(selector);
+    var newButton = datepicker.find(selector);
     if (newButton.length) newButton.trigger('focus');
   }, 0);
 }
@@ -451,10 +449,10 @@ function fixDatepickerNavTabOrder() {
 }
 
 function removePastYearsFromSelect() {
-  const currentYear = new Date().getFullYear();
+  var currentYear = new Date().getFullYear();
 
   $('.' + CLASSES.dpYearSelect + ' option').each(function () {
-    const year = parseInt($(this).val(), 10);
+    var year = parseInt($(this).val(), 10);
 
     if (year < currentYear) {
       $(this).remove();
@@ -471,10 +469,10 @@ function getElementByClass(className, parent = document) {
 }
 
 function debounce(func, wait) {
-  let timeout;
+  var timeout;
 
   return function (...args) {
-    const later = () => {
+    var later = () => {
       clearTimeout(timeout);
       func.apply(this, args);
     };
@@ -506,7 +504,7 @@ function getClosest(element, selector) {
 }
 
 function getTransitionDurationInMs(el) {
-  const durations = getComputedStyle(el)
+  var durations = getComputedStyle(el)
     .transitionDuration.split(',')
     .map((d) => {
       d = d.trim();
@@ -518,7 +516,7 @@ function getTransitionDurationInMs(el) {
 }
 
 function getLastVisibleElement(elements) {
-  for (let i = elements.length - 1; i >= 0; i--) {
+  for (var i = elements.length - 1; i >= 0; i--) {
     if (elements[i].offsetParent !== null) {
       return elements[i];
     }
@@ -544,7 +542,7 @@ function getFirstAvailableWorkDay(startDate) {
 }
 
 function isWeekend(date) {
-  const day = date.getDay();
+  var day = date.getDay();
   return day === 0 || day === 6;
 }
 
@@ -576,10 +574,10 @@ function setElementsAccessibility(
   isHidden,
   isForceTabIndexUpdate = false,
 ) {
-  const focusable = toArray(focusableElements);
+  var focusable = toArray(focusableElements);
 
   if (isForceTabIndexUpdate) {
-    const wantedTabIndex = isHidden ? '-1' : '0';
+    var wantedTabIndex = isHidden ? '-1' : '0';
 
     focusable.forEach((el) => {
       if (el.getAttribute('tabindex') !== wantedTabIndex) {
@@ -592,7 +590,7 @@ function setElementsAccessibility(
     );
   }
 
-  const active = document.activeElement;
+  var active = document.activeElement;
   if (isHidden && container.contains(active)) {
     active.blur();
   }
@@ -606,14 +604,14 @@ function setElementsAccessibility(
  * @param {Object[]} customRoutes - Custom transitions: { from: HTMLElement, to: HTMLElement, shift: boolean }.
  */
 function createSmartFocusTrap(elements, customRoutes = []) {
-  const first = elements[0];
-  const last = elements[elements.length - 1];
+  var first = elements[0];
+  var last = elements[elements.length - 1];
 
   function handleKeyDown(event) {
-    const isTabPressed = event.keyCode === 9;
+    var isTabPressed = event.keyCode === 9;
     if (!isTabPressed) return;
 
-    const active = document.activeElement;
+    var active = document.activeElement;
 
     customRoutes.forEach((route) => {
       if (active === route.from && event.shiftKey === Boolean(route.shift)) {
@@ -633,7 +631,7 @@ function createSmartFocusTrap(elements, customRoutes = []) {
   }
 
   function handleFocusIn(event) {
-    const isFocusInside = toArray(elements).some((el) => {
+    var isFocusInside = toArray(elements).some((el) => {
       return el.contains(event.target) || el === event.target;
     });
 
