@@ -120,6 +120,7 @@ const submenuLinks = toArray(
 );
 
 let submenuAnimationTimeoutId;
+let removeSubmenuFocusTrap;
 
 submenu.addEventListener('click', onServiceLinkClick);
 
@@ -261,6 +262,10 @@ buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 // FUNCTIONS
 
 function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
+  if (typeof removeSubmenuFocusTrap === 'function') {
+    removeSubmenuFocusTrap();
+  }
+
   clearTimeout(submenuAnimationTimeoutId);
 
   if (isSubmenuHidden) {
@@ -274,6 +279,8 @@ function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
       submenu.style.display = 'none';
       submenu.setAttribute('aria-hidden', 'true');
     }, submenuTransitionDelay);
+
+    removeSubmenuFocusTrap = createSmartFocusTrap(submenuLinks);
   } else {
     submenu.style.display = '';
     submenu.setAttribute('aria-hidden', 'false');
