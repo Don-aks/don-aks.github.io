@@ -331,6 +331,18 @@ function onServiceLinkClick(event) {
   select.value = optionValue;
 }
 
+function handleClickOnButtonContainer(event) {
+  if (event.target.classList.contains(CLASSES.appointmentBtn)) {
+    // Убираем класс 'active' у всех кнопок
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove(CLASSES.appointmentBtnActive);
+    }
+
+    timeInput.value = event.target.innerText;
+    event.target.classList.add(CLASSES.appointmentBtnActive);
+  }
+}
+
 function disablePastDateFocus() {
   $('.past-day a').attr('tabindex', '-1');
 }
@@ -421,18 +433,6 @@ function removePastYearsFromSelect() {
   });
 
   $('.' + CLASSES.dpYearSelect).selectmenu('refresh');
-}
-
-function handleClickOnButtonContainer(event) {
-  if (event.target.classList.contains(CLASSES.appointmentBtn)) {
-    // Убираем класс 'active' у всех кнопок
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove(CLASSES.appointmentBtnActive);
-    }
-
-    timeInput.value = event.target.innerText;
-    event.target.classList.add(CLASSES.appointmentBtnActive);
-  }
 }
 
 // UTILS
