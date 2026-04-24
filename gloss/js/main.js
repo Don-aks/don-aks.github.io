@@ -358,7 +358,7 @@ function onServiceLinkClick(event) {
 
 function handleClickOnButtonContainer(event) {
   if (event.target.classList.contains(CLASSES.appointmentBtn)) {
-    // Убираем класс 'active' у всех кнопок
+    // Reset active state for all buttons
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].classList.remove(CLASSES.appointmentBtnActive);
     }
