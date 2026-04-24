@@ -48,6 +48,12 @@ const headerNav = getElementByClass(CLASSES.headerNav, header);
 const menu = getElementByClass(CLASSES.menu, header);
 const menuButton = getElementByClass(CLASSES.menuBtn, header);
 const menuFocusableElements = getFocusable(menu);
+const menuElementsAndClasses = [
+  [document.body, CLASSES.locked],
+  [menu, CLASSES.menuActive],
+  [header, CLASSES.headerActive],
+  [menuButton, CLASSES.menuBtnActive],
+];
 
 const elementsToToggleFocusTrap = getFocusable(headerNav);
 let removeMenuFocusTrap;
@@ -235,19 +241,19 @@ buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
 // ======== FUNCTIONS (JS) ===========
 
-function toggleMenu(willBeActive) {
-  if (typeof willBeActive === 'undefined') {
-    willBeActive = !menu.classList.contains(CLASSES.menuActive);
+function toggleMenu(desiredState) {
+  let active = desiredState;
+
+  if (typeof desiredState === 'undefined') {
+    active = !menu.classList.contains(CLASSES.menuActive);
   }
 
-  document.body.classList.toggle(CLASSES.locked, willBeActive);
+  menuElementsAndClasses.forEach(function (arr) {
+    arr[0].classList.toggle(arr[1], active);
+  });
 
-  menu.classList.toggle(CLASSES.menuActive, willBeActive);
-  header.classList.toggle(CLASSES.headerActive, willBeActive);
-  menuButton.classList.toggle(CLASSES.menuBtnActive, willBeActive);
-
-  if (!willBeActive) {
-    if (typeof removeMenuFocusTrap === 'function') {
+  if (!active) {
+    if (removeMenuFocusTrap) {
       removeMenuFocusTrap();
       removeMenuFocusTrap = null;
     }
@@ -255,20 +261,21 @@ function toggleMenu(willBeActive) {
     menuButton.focus();
   }
 
-  setElementsAccessibility(menu, menuFocusableElements, !willBeActive);
-  menuButton.setAttribute('aria-expanded', String(willBeActive));
+  setElementsAccessibility(menu, menuFocusableElements, !active);
+  menuButton.setAttribute('aria-expanded', String(active));
 
   // Focus trap setup
-  if (willBeActive) {
-    const lastVisibleMenuElement = getLastVisibleElement(menuFocusableElements);
-    const routeWithDynamicLastElement = [
-      { from: lastVisibleMenuElement, to: logo },
-      { from: logo, to: lastVisibleMenuElement, shift: true },
+  if (active) {
+    var last = getLastVisibleElement(menuFocusableElements);
+
+    var routes = [
+      { from: last, to: logo },
+      { from: logo, to: last, shift: true },
     ].concat(menuTabRoute);
 
     removeMenuFocusTrap = createSmartFocusTrap(
       elementsToToggleFocusTrap,
-      routeWithDynamicLastElement,
+      routes,
     );
   }
 }
