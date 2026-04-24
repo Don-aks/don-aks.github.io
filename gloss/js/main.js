@@ -77,39 +77,7 @@ const serviceGrid = getElementByClass(CLASSES.serviceGrid);
 
 // ======== HANDLERS ===========
 
-menuButton.addEventListener('click', function () {
-  const willBeActive = !menu.classList.contains(CLASSES.menuActive);
-  document.body.classList.toggle(CLASSES.locked, willBeActive);
-
-  menu.classList.toggle(CLASSES.menuActive, willBeActive);
-  header.classList.toggle(CLASSES.headerActive, willBeActive);
-  menuButton.classList.toggle(CLASSES.menuBtnActive, willBeActive);
-
-  if (!willBeActive) {
-    if (typeof removeMenuFocusTrap === 'function') {
-      removeMenuFocusTrap();
-      removeMenuFocusTrap = null;
-    }
-
-    menuButton.focus();
-  }
-
-  setElementsAccessibility(menu, menuFocusableElements, !willBeActive);
-  menuButton.setAttribute('aria-expanded', String(willBeActive));
-
-  if (willBeActive) {
-    const lastVisibleMenuElement = getLastVisibleElement(menuFocusableElements);
-    const routeWithDynamicLastElement = [
-      { from: lastVisibleMenuElement, to: logo },
-      { from: logo, to: lastVisibleMenuElement, shift: true },
-    ].concat(menuTabRoute);
-
-    removeMenuFocusTrap = createSmartFocusTrap(
-      elementsToToggleFocusTrap,
-      routeWithDynamicLastElement,
-    );
-  }
-});
+menuButton.addEventListener('click', toggleMenu);
 
 window.addEventListener(
   'resize',
@@ -266,6 +234,44 @@ const buttons = getElementsByClass('appointment__button', buttonContainer);
 buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
 // ======== FUNCTIONS (JS) ===========
+
+function toggleMenu(willBeActive) {
+  if (typeof willBeActive === 'undefined') {
+    willBeActive = !menu.classList.contains(CLASSES.menuActive);
+  }
+
+  document.body.classList.toggle(CLASSES.locked, willBeActive);
+
+  menu.classList.toggle(CLASSES.menuActive, willBeActive);
+  header.classList.toggle(CLASSES.headerActive, willBeActive);
+  menuButton.classList.toggle(CLASSES.menuBtnActive, willBeActive);
+
+  if (!willBeActive) {
+    if (typeof removeMenuFocusTrap === 'function') {
+      removeMenuFocusTrap();
+      removeMenuFocusTrap = null;
+    }
+
+    menuButton.focus();
+  }
+
+  setElementsAccessibility(menu, menuFocusableElements, !willBeActive);
+  menuButton.setAttribute('aria-expanded', String(willBeActive));
+
+  // Focus trap setup
+  if (willBeActive) {
+    const lastVisibleMenuElement = getLastVisibleElement(menuFocusableElements);
+    const routeWithDynamicLastElement = [
+      { from: lastVisibleMenuElement, to: logo },
+      { from: logo, to: lastVisibleMenuElement, shift: true },
+    ].concat(menuTabRoute);
+
+    removeMenuFocusTrap = createSmartFocusTrap(
+      elementsToToggleFocusTrap,
+      routeWithDynamicLastElement,
+    );
+  }
+}
 
 function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
   if (typeof removeSubmenuFocusTrap === 'function') {
