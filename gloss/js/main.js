@@ -83,11 +83,7 @@ window.addEventListener(
   'resize',
   debounce(function () {
     const isMenuVisible = window.innerWidth > 1200;
-    toggleAccessibilityWithTabIndexCondition(
-      menu,
-      menuFocusableElements,
-      !isMenuVisible,
-    );
+    toggleMenu(isMenuVisible);
   }, 200),
 );
 
@@ -110,6 +106,10 @@ document.addEventListener('keydown', function (event) {
 
   if (!isSubmenuClosed()) {
     toggleSubmenu(true);
+  }
+
+  if (isMenuOpen()) {
+    toggleMenu(false);
   }
 });
 
@@ -310,6 +310,10 @@ function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
   dropDownLink.setAttribute('aria-expanded', String(!isSubmenuHidden));
 }
 
+function isMenuOpen() {
+  return menu.classList.contains(CLASSES.menuActive);
+}
+
 function isSubmenuClosed() {
   return submenu.classList.contains(CLASSES.submenuHidden);
 }
@@ -331,6 +335,10 @@ function onServiceLinkClick(event) {
   if (!option) {
     console.error('No option with value "' + optionValue + '"');
     return;
+  }
+
+  if (isMenuOpen()) {
+    toggleMenu(false);
   }
 
   toggleSubmenu(true);
