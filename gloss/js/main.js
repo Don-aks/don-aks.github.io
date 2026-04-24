@@ -561,6 +561,11 @@ function setElementsAccessibility(
     );
   }
 
+  const active = document.activeElement;
+  if (isHidden && container.contains(active)) {
+    active.blur();
+  }
+
   container.setAttribute('aria-hidden', String(isHidden));
 }
 
