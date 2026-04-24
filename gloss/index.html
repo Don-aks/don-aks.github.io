@@ -23,26 +23,33 @@
                 height="40"
               />
             </a>
-            <ul class="header__list">
-              <li class="header__item header__item--selected">
+            <ul class="header__list" id="menu" role="menu">
+              <li class="header__item header__item--selected" role="menuitem">
                 <span
                   class="header__link animation-link header__link--selected"
                 >
                   Home
                 </span>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">About us</a>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <button
                   class="header__link animation-link header__link--drop-down"
                   type="button"
+                  aria-expanded="false"
+                  aria-controls="services-submenu"
+                  aria-haspopup="listbox"
                 >
                   <span class="icon icon--arrow-down">Services</span>
                 </button>
-                <ul class="submenu submenu--hidden">
-                  <li class="submenu__item">
+                <ul
+                  class="submenu submenu--hidden"
+                  id="services-submenu"
+                  role="listbox"
+                >
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -52,7 +59,7 @@
                       Hair Cut
                     </a>
                   </li>
-                  <li class="submenu__item">
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -62,7 +69,7 @@
                       Shaving
                     </a>
                   </li>
-                  <li class="submenu__item">
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -72,7 +79,7 @@
                       Hair Dye
                     </a>
                   </li>
-                  <li class="submenu__item">
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -82,7 +89,7 @@
                       Facial
                     </a>
                   </li>
-                  <li class="submenu__item">
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -92,7 +99,7 @@
                       Keratin Treatment
                     </a>
                   </li>
-                  <li class="submenu__item">
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -102,7 +109,7 @@
                       Hair Removal
                     </a>
                   </li>
-                  <li class="submenu__item">
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -112,7 +119,7 @@
                       Hair Treatment
                     </a>
                   </li>
-                  <li class="submenu__item">
+                  <li class="submenu__item" role="listitem">
                     <a
                       class="submenu__link animation-link"
                       href="#appointment"
@@ -124,16 +131,16 @@
                   </li>
                 </ul>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">Pricing</a>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">Appointment</a>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">Contact</a>
               </li>
-              <li class="header__item header__item-sign-up">
+              <li class="header__item header__item-sign-up" role="menuitem">
                 <button class="button" type="button">Sign up</button>
               </li>
             </ul>
@@ -153,7 +160,13 @@
               <button class="button header__sign-up" type="button">
                 Sign up
               </button>
-              <button class="menu-button" type="button">
+              <button
+                class="menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-haspopup="menu"
+                aria-controls="menu"
+              >
                 <span class="menu-button__line"></span>
                 <span class="sr-only">Open menu</span>
               </button>
