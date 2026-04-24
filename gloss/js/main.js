@@ -1,5 +1,7 @@
 'use strict';
 
+// ======== VARIABLES ===========
+
 const CLASSES = {
   locked: 'locked',
 
@@ -62,6 +64,21 @@ const menuTabRoute = [
   { from: firstHeaderButton, to: logo, shift: true },
 ];
 
+const submenu = getElementByClass(CLASSES.submenu, header);
+const submenuTransitionDelay = getTransitionDurationInMs(submenu);
+
+const dropDownLink = getElementByClass(CLASSES.dropDownLink, header);
+const submenuLinks = toArray(
+  submenu.querySelectorAll('.' + CLASSES.submenuLink),
+);
+
+let submenuAnimationTimeoutId;
+let removeSubmenuFocusTrap;
+
+const serviceGrid = getElementByClass(CLASSES.serviceGrid);
+
+// ======== HANDLERS ===========
+
 menuButton.addEventListener('click', function () {
   const willBeActive = !menu.classList.contains(CLASSES.menuActive);
   document.body.classList.toggle(CLASSES.locked, willBeActive);
@@ -96,10 +113,6 @@ menuButton.addEventListener('click', function () {
   }
 });
 
-if (window.innerWidth <= 1200) {
-  disableAccessibility(menu, menuFocusableElements);
-}
-
 window.addEventListener(
   'resize',
   debounce(function () {
@@ -111,17 +124,6 @@ window.addEventListener(
     );
   }, 200),
 );
-
-const submenu = getElementByClass(CLASSES.submenu, header);
-const submenuTransitionDelay = getTransitionDurationInMs(submenu);
-
-const dropDownLink = getElementByClass(CLASSES.dropDownLink, header);
-const submenuLinks = toArray(
-  submenu.querySelectorAll('.' + CLASSES.submenuLink),
-);
-
-let submenuAnimationTimeoutId;
-let removeSubmenuFocusTrap;
 
 submenu.addEventListener('click', onServiceLinkClick);
 
@@ -145,8 +147,15 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-const serviceGrid = getElementByClass(CLASSES.serviceGrid);
 serviceGrid.addEventListener('click', onServiceLinkClick);
+
+// ======== OTHER ===========
+
+if (window.innerWidth <= 1200) {
+  disableAccessibility(menu, menuFocusableElements);
+}
+
+// ======== PLUGINS ===========
 
 /*let dp = new AirDatepicker('#input-date', {
   inline: true,
@@ -258,7 +267,7 @@ const buttons = getElementsByClass('appointment__button', buttonContainer);
 
 buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
-// FUNCTIONS
+// ======== FUNCTIONS (JS) ===========
 
 function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
   if (typeof removeSubmenuFocusTrap === 'function') {
@@ -340,6 +349,8 @@ function handleClickOnButtonContainer(event) {
     event.target.classList.add(CLASSES.appointmentBtnActive);
   }
 }
+
+// ========= FUNCTIONS (JQuery) ===========
 
 function disablePastDateFocus() {
   $('.past-day a').attr('tabindex', '-1');
@@ -433,7 +444,7 @@ function removePastYearsFromSelect() {
   $('.' + CLASSES.dpYearSelect).selectmenu('refresh');
 }
 
-// UTILS
+// ======== UTILS ===========
 
 function getElementByClass(className, parent = document) {
   return parent.querySelector('.' + className);
