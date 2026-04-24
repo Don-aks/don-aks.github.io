@@ -554,11 +554,11 @@ function setElementsAccessibility(
   container,
   focusableElements,
   isHidden,
-  tabIndexCondition = false,
+  isForceTabIndexUpdate = false,
 ) {
   const focusable = toArray(focusableElements);
 
-  if (tabIndexCondition) {
+  if (isForceTabIndexUpdate) {
     const wantedTabIndex = isHidden ? '-1' : '0';
 
     focusable.forEach((el) => {
