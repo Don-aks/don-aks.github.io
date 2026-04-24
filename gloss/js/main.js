@@ -38,6 +38,7 @@ const CLASSES = {
 
   appointmentSection: 'appointment',
   appointmentDp: 'appointment__date',
+  appointmentButtonContainer: 'appointment__buttons',
   appointmentBtn: 'appointment__button',
   appointmentBtnActive: 'appointment__button--active',
   appointmentOption: 'appointment__option',
@@ -234,8 +235,8 @@ fixDatepickerNavTabOrder();
 initDatepickerSelects();
 
 const timeInput = document.querySelector('#input-time');
-const buttonContainer = getElementByClass('appointment__buttons');
-const buttons = getElementsByClass('appointment__button', buttonContainer);
+const buttonContainer = getElementByClass(CLASSES.appointmentButtonContainer);
+const buttons = document.querySelectorAll('.' + CLASSES.appointmentBtn);
 
 buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 
