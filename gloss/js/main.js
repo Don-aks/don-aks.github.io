@@ -73,6 +73,7 @@ menuButton.addEventListener('click', function () {
   if (!willBeActive) {
     if (typeof removeMenuFocusTrap === 'function') {
       removeMenuFocusTrap();
+      removeMenuFocusTrap = null;
     }
 
     menuButton.focus();
@@ -264,6 +265,7 @@ buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
   if (typeof removeSubmenuFocusTrap === 'function') {
     removeSubmenuFocusTrap();
+    removeSubmenuFocusTrap = null;
   }
 
   clearTimeout(submenuAnimationTimeoutId);
