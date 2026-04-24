@@ -521,8 +521,8 @@ body.locked {
 }
 
 .submenu__link {
-  width: 100%;
-  padding: 11px 5px;
+  display: block;
+  padding: 4px 5px;
 
   text-align: center;
 }
