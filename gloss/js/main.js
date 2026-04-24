@@ -80,6 +80,11 @@ var removeSubmenuFocusTrap;
 
 var serviceGrid = getElementByClass(CLASSES.serviceGrid);
 
+var appointmentSection = document.querySelector(
+  '.' + CLASSES.appointmentSection,
+);
+var serviceSelect = document.querySelector('#service');
+
 // ======== HANDLERS ===========
 
 menuButton.addEventListener('click', toggleMenu);
@@ -338,15 +343,11 @@ function isSubmenuClosed() {
   return submenu.classList.contains(CLASSES.submenuHidden);
 }
 
-function onServiceLinkClick(event) {
-  var section = document.querySelector('.' + CLASSES.appointmentSection);
-  var select = document.querySelector('#service');
-  var link = event.target;
-
-  var optionValue = link.getAttribute('data-option');
+function onServiceLinkClick(e) {
+  var optionValue = e.target.getAttribute('data-option');
   if (!optionValue) return;
 
-  event.preventDefault();
+  e.preventDefault();
 
   var option = document.querySelector(
     '.' + CLASSES.appointmentOption + '[value="' + optionValue + '"]',
@@ -363,11 +364,11 @@ function onServiceLinkClick(event) {
 
   toggleSubmenu(true);
 
-  var sectionRect = section.getBoundingClientRect();
+  var sectionRect = appointmentSection.getBoundingClientRect();
   var sectionPosition = sectionRect.top + window.pageYOffset;
 
   window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
-  select.value = optionValue;
+  serviceSelect.value = optionValue;
 }
 
 function handleClickOnButtonContainer(event) {
