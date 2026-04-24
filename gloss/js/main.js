@@ -126,14 +126,12 @@ let removeSubmenuFocusTrap;
 submenu.addEventListener('click', onServiceLinkClick);
 
 document.body.addEventListener('click', function (e) {
-  const cls = e.target.classList;
-
-  if (cls.contains(CLASSES.dropDownLink) || cls.contains('icon')) {
+  if (dropDownLink === e.target || dropDownLink.contains(e.target)) {
     toggleSubmenu(!isSubmenuClosed());
-  } else if (
-    !cls.contains(CLASSES.submenu) &&
-    !cls.contains(CLASSES.submenuLink)
-  ) {
+    return;
+  }
+
+  if (submenu !== e.target && !submenu.contains(e.target)) {
     toggleSubmenu(true, false);
   }
 });
@@ -457,6 +455,23 @@ function debounce(func, wait) {
 
 function toArray(obj) {
   return Array.prototype.slice.call(obj);
+}
+
+var matchesSelector =
+  Element.prototype.matches ||
+  Element.prototype.msMatchesSelector ||
+  Element.prototype.webkitMatchesSelector;
+
+function getClosest(element, selector) {
+  while (element && element.nodeType === 1) {
+    if (matchesSelector.call(element, selector)) {
+      return element;
+    }
+
+    element = element.parentNode;
+  }
+
+  return null;
 }
 
 function getTransitionDurationInMs(el) {
