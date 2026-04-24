@@ -279,41 +279,55 @@ function toggleMenu(desiredState) {
   }
 }
 
-function toggleSubmenu(isSubmenuHidden, forceFocus = true) {
-  if (typeof removeSubmenuFocusTrap === 'function') {
-    removeSubmenuFocusTrap();
-    removeSubmenuFocusTrap = null;
-  }
-
-  clearTimeout(submenuAnimationTimeoutId);
-
-  if (isSubmenuHidden) {
-    if (forceFocus) {
-      dropDownLink.focus();
-    }
-
-    submenu.classList.add(CLASSES.submenuHidden);
-
-    submenuAnimationTimeoutId = setTimeout(function () {
-      submenu.style.display = 'none';
-      submenu.setAttribute('aria-hidden', 'true');
-    }, submenuTransitionDelay);
-
-    removeSubmenuFocusTrap = createSmartFocusTrap(submenuLinks);
-  } else {
+function toggleSubmenu(isHide, forceFocus = true) {
+  function show() {
     submenu.style.display = '';
     submenu.setAttribute('aria-hidden', 'false');
+    dropDownLink.setAttribute('aria-expanded', 'true');
 
     setTimeout(function () {
       submenu.classList.remove(CLASSES.submenuHidden);
     }, 0);
-
-    submenuAnimationTimeoutId = setTimeout(function () {
-      submenuLinks[0].focus();
-    }, submenuTransitionDelay);
   }
 
-  dropDownLink.setAttribute('aria-expanded', String(!isSubmenuHidden));
+  function hide() {
+    submenu.classList.add(CLASSES.submenuHidden);
+    setTimeout(hideCompletly, submenuTransitionDelay);
+  }
+
+  function hideCompletly() {
+    submenu.style.display = 'none';
+    submenu.setAttribute('aria-hidden', 'true');
+    dropDownLink.setAttribute('aria-expanded', 'false');
+  }
+
+  function focusOnFirstLink() {
+    submenuLinks[0].focus();
+  }
+
+  clearTimeout(submenuAnimationTimeoutId);
+
+  if (isHide) {
+    if (forceFocus) {
+      dropDownLink.focus();
+    }
+
+    hide();
+
+    if (removeSubmenuFocusTrap) {
+      removeSubmenuFocusTrap();
+      removeSubmenuFocusTrap = null;
+    }
+    return;
+  }
+
+  show();
+
+  removeSubmenuFocusTrap = createSmartFocusTrap(submenuLinks);
+
+  if (forceFocus) {
+    setTimeout(focusOnFirstLink, submenuTransitionDelay);
+  }
 }
 
 function isMenuOpen() {
