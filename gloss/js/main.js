@@ -58,9 +58,7 @@ const firstMenuElement = menuFocusableElements[0];
 
 const menuTabRoute = [
   { from: logo, to: firstHeaderButton },
-  { from: lastVisibleMenuElement, to: logo },
   { from: menuButton, to: firstMenuElement },
-  { from: logo, to: lastVisibleMenuElement, shift: true },
   { from: firstHeaderButton, to: logo, shift: true },
 ];
 
