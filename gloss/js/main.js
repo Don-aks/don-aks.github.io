@@ -129,6 +129,38 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
+submenu.addEventListener('keydown', function (e) {
+  var key = e.keyCode;
+  var current = submenuLinks.indexOf(document.activeElement);
+  var len = submenuLinks.length;
+  var next;
+
+  switch (key) {
+    case 40: // ArrowDown
+    case 38: // ArrowUp
+      var step = key === 40 ? 1 : -1;
+      next = (current + step + len) % len;
+      break;
+
+    case 36: // Home
+      next = 0;
+      break;
+
+    case 35: // End
+      next = len - 1;
+      break;
+
+    // If it's not one of the handled keys
+    default:
+      return;
+  }
+
+  if (next !== undefined && submenuLinks[next]) {
+    e.preventDefault();
+    submenuLinks[next].focus();
+  }
+});
+
 serviceGrid.addEventListener('click', onServiceLinkClick);
 
 // ======== OTHER ===========
