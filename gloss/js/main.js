@@ -55,6 +55,7 @@ var menuElementsAndClasses = [
   [header, CLASSES.headerActive],
   [menuButton, CLASSES.menuBtnActive],
 ];
+var headerLinks = toArray(header.querySelectorAll('.' + CLASSES.headerLink));
 
 var elementsToToggleFocusTrap = getFocusable(headerNav);
 var removeMenuFocusTrap;
@@ -96,6 +97,10 @@ window.addEventListener(
     toggleMenu(isMenuVisible);
   }, 200),
 );
+
+headerLinks.forEach(function (link) {
+  link.addEventListener('click', handleHeaderLinkClick);
+});
 
 submenu.addEventListener('click', onServiceLinkClick);
 
@@ -333,6 +338,32 @@ function toggleSubmenu(isHide, forceFocus = true) {
   if (forceFocus) {
     setTimeout(focusOnFirstLink, submenuTransitionDelay);
   }
+}
+
+function handleHeaderLinkClick(e) {
+  var href = e.target.getAttribute('href');
+  if (!href || href[0] !== '#') return;
+
+  var targetSection = document.querySelector(href);
+  if (!targetSection) {
+    console.error('No section found for href: ' + href);
+    return;
+  }
+
+  if (!isSubmenuClosed()) {
+    toggleSubmenu(true);
+  }
+
+  if (isMenuOpen()) {
+    toggleMenu(false);
+  }
+
+  e.preventDefault();
+
+  var sectionRect = targetSection.getBoundingClientRect();
+  var sectionPosition = sectionRect.top + window.pageYOffset;
+
+  window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
 }
 
 function isMenuOpen() {
