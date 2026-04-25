@@ -254,7 +254,7 @@ buttonContainer.addEventListener('click', handleClickOnButtonContainer);
 function toggleMenu(desiredState) {
   var active = desiredState;
 
-  if (typeof desiredState === 'undefined') {
+  if (typeof desiredState !== 'boolean') {
     active = !menu.classList.contains(CLASSES.menuActive);
   }
 
