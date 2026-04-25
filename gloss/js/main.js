@@ -691,13 +691,15 @@ function createSmartFocusTrap(elements, customRoutes = []) {
 
     var active = document.activeElement;
 
-    customRoutes.forEach((route) => {
+    for (var i = 0; i < customRoutes.length; i++) {
+      var route = customRoutes[i];
+
       if (active === route.from && event.shiftKey === Boolean(route.shift)) {
         route.to.focus();
         event.preventDefault();
         return;
       }
-    });
+    }
 
     if (event.shiftKey && active === first) {
       last.focus();
