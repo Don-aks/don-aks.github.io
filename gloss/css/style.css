@@ -1593,6 +1593,29 @@ body > .ui-datepicker {
 .footer__contact {
   margin-top: 12px;
   max-width: 220px;
+
+  -webkit-transition:
+    background-color 0.3s,
+    -webkit-box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    -webkit-box-shadow 0.3s;
+  -o-transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s,
+    -webkit-box-shadow 0.3s;
+}
+
+.footer__contact.blink {
+  background-color: #1b1b1b;
+  -webkit-box-shadow: 0 0 30px 50px #1b1b1b;
+  box-shadow: 0 0 30px 50px #1b1b1b;
 }
 
 .footer__contact-item {

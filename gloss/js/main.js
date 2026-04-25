@@ -364,6 +364,12 @@ function handleHeaderLinkClick(e) {
   var sectionPosition = sectionRect.top + window.pageYOffset;
 
   window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
+
+  if (href === '#footer-contact') {
+    setTimeout(function () {
+      blink(targetSection);
+    }, 1000);
+  }
 }
 
 function isMenuOpen() {
@@ -547,6 +553,31 @@ function getClosest(element, selector) {
   }
 
   return null;
+}
+
+function blink(element, repeatCount) {
+  if (!element || element.offsetParent === null) return;
+
+  var count = repeatCount || 2;
+  var duration = 400;
+  var delay = 1000;
+
+  function step() {
+    if (count <= 0) return;
+
+    element.classList.add('blink');
+
+    setTimeout(function () {
+      element.classList.remove('blink');
+      count -= 1;
+
+      if (count > 0) {
+        setTimeout(step, delay);
+      }
+    }, duration);
+  }
+
+  step();
 }
 
 function getTransitionDurationInMs(el) {
