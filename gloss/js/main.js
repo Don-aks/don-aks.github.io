@@ -121,6 +121,7 @@ document.addEventListener('keydown', function (event) {
 
   if (!isSubmenuClosed()) {
     toggleSubmenu(true);
+    return;
   }
 
   if (isMenuOpen()) {
