@@ -1808,7 +1808,7 @@ body.locked {
 
   .header__btn-booking {
     margin: 0 auto;
-    border: 1px solid #000;
+    border: 2px solid #000;
   }
 
   .hero__inner {
