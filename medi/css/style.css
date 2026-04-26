@@ -1322,7 +1322,7 @@ body.locked {
   position: relative;
 
   width: 100%;
-  padding: 17.7% 12px 25px;
+  padding: 19% 12px 25px;
 
   background: #00868a top center/contain no-repeat;
   color: #ffffff;
@@ -1353,7 +1353,7 @@ body.locked {
   align-items: center;
   height: 100%;
   max-width: 260px;
-  margin: 25px auto 0;
+  margin: 0 auto;
 }
 
 .offer__link:focus {
