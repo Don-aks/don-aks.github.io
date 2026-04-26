@@ -112,7 +112,13 @@
               </li>
             </ul>
             <div class="header__btn-menu-cell">
-              <button class="btn-menu header__btn-menu" type="button">
+              <button
+                class="btn-menu header__btn-menu"
+                type="button"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-haspopup="menu"
+              >
                 <span class="btn-menu__line"></span>
                 <span class="sr-only">Открыть меню</span>
               </button>
@@ -123,23 +129,36 @@
 
       <nav class="header__menu-wrapper">
         <div class="container">
-          <div class="header__list">
+          <div class="header__list" id="menu" role="menu">
             <div class="header__item-mobile">
               <div class="header__mobile-list">
                 <div class="header__mobile-item">
-                  <a class="header__phone-mobile" href="tel:+380123456789">
+                  <a
+                    class="header__phone-mobile"
+                    href="tel:+380123456789"
+                    role="menuitem"
+                  >
                     +380 (123) 456 789
                   </a>
                 </div>
 
                 <div class="header__mobile-item header__salons-item">
-                  <button class="salons header__salons-mobile" type="button">
+                  <button
+                    class="salons header__salons-mobile"
+                    type="button"
+                    role="menuitem"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-controls="salons-submenu"
+                  >
                     Наши салони
                   </button>
                   <ul
                     class="salons__submenu salons__submenu--mobile salons__submenu--hidden"
+                    id="salons-submenu"
+                    role="listbox"
                   >
-                    <li class="salons__item">
+                    <li class="salons__item" role="listitem">
                       <a
                         class="salons__link animation-link"
                         href="#"
@@ -148,7 +167,7 @@
                         Харків
                       </a>
                     </li>
-                    <li class="salons__item">
+                    <li class="salons__item" role="listitem">
                       <a
                         class="salons__link animation-link"
                         href="#"
@@ -157,7 +176,7 @@
                         Київ
                       </a>
                     </li>
-                    <li class="salons__item">
+                    <li class="salons__item" role="listitem">
                       <a
                         class="salons__link animation-link"
                         href="#"
@@ -170,7 +189,7 @@
                 </div>
                 <div class="header__mobile-item header__social-medias">
                   <ul class="social-list">
-                    <li class="social-list__item">
+                    <li class="social-list__item" role="menuitem">
                       <a
                         class="social social--yt header__social-mobile"
                         style="background-image: url('img/yt.svg')"
@@ -181,7 +200,7 @@
                       ></a>
                     </li>
 
-                    <li class="social-list__item">
+                    <li class="social-list__item" role="menuitem">
                       <a
                         class="social social--fb header__social-mobile"
                         style="background-image: url('img/fb.svg')"
@@ -192,7 +211,7 @@
                       ></a>
                     </li>
 
-                    <li class="social-list__item">
+                    <li class="social-list__item" role="menuitem">
                       <a
                         class="social social--inst header__social-mobile"
                         style="background-image: url('img/inst.svg')"
@@ -203,7 +222,7 @@
                       ></a>
                     </li>
 
-                    <li class="social-list__item">
+                    <li class="social-list__item" role="menuitem">
                       <a
                         class="social social--tw header__social-mobile"
                         style="background-image: url('img/tw.svg')"
@@ -219,23 +238,23 @@
             </div>
 
             <ul class="header__menu">
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">Косметологія</a>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">
                   Пластична хірургія
                 </a>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">Стоматологія</a>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">
                   Лазерна медицина
                 </a>
               </li>
-              <li class="header__item">
+              <li class="header__item" role="menuitem">
                 <a class="header__link animation-link" href="#">Контакти</a>
               </li>
             </ul>

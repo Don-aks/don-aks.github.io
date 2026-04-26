@@ -37,6 +37,7 @@ var UI = {
 
   $btnBooking: $('.header__btn-booking'),
 
+  $salons: $('.salons'),
   $salonsSubmenu: $('.salons__submenu'),
   $salonsLinks: $('.salons__link'),
   salonsSelector: '.salons',
@@ -166,6 +167,7 @@ function handleBtnMenuClick() {
     UI.$headerBtnMenu.focus();
   }
 
+  UI.$headerBtnMenu.attr('aria-expanded', String(willBeActive));
   UI.$headerList.attr('aria-hidden', String(!willBeActive));
 
   if (willBeActive) {
@@ -220,6 +222,10 @@ function hideSalonsSubmenu() {
 
 function toggleSalonsSubmenu(shouldHide) {
   UI.$salonsSubmenu.toggleClass(UI.salonsHideClass, shouldHide);
+
+  UI.$salons.attr('aria-expanded', String(!shouldHide));
+  UI.$salonsSubmenu.attr('aria-hidden', String(shouldHide));
+
   setTabIndex(UI.$salonsLinks, shouldHide ? -1 : 0);
 }
 
