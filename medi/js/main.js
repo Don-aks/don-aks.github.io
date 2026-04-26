@@ -93,6 +93,10 @@ UI.$headerBtnMenu.on('click', handleBtnMenuClick);
 $window.on('resize', debounce(handleResize, 150));
 $body.on('click', handleSalonsClick);
 
+UI.$btnBooking.on('click', function () {
+  $(this).attr('aria-expanded', 'true');
+});
+
 UI.$modalForm.on('submit', function (event) {
   event.preventDefault();
 
@@ -129,6 +133,12 @@ UI.$heroSlider.slick({
 
   prevArrow: UI.sliderBtnPrevHTML,
   nextArrow: UI.sliderBtnNextHTML,
+});
+
+UI.$btnBooking.fancybox({
+  afterClose: function () {
+    UI.$btnBooking.attr('aria-expanded', 'false');
+  },
 });
 
 // ------------- FUNCTIONS --------------

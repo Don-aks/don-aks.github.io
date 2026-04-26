@@ -245,6 +245,9 @@
               type="button"
               data-fancybox
               data-src="#modal-booking"
+              aria-haspopup="dialog"
+              aria-controls="modal-booking"
+              aria-expanded="false"
             >
               Запис на прийом
             </button>
@@ -809,8 +812,14 @@
       </div>
     </footer>
 
-    <div class="modal modal-booking" id="modal-booking">
-      <h2 class="modal__title">Запис на прийом</h2>
+    <div
+      class="modal modal-booking"
+      id="modal-booking"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-booking-title"
+    >
+      <h2 class="modal__title" id="modal-booking-title">Запис на прийом</h2>
       <form class="modal__form" action="#">
         <label class="sr-only" for="name">Ім'я</label>
         <input
@@ -834,9 +843,16 @@
       </form>
     </div>
 
-    <div class="modal" id="modal-thanks">
-      <h2 class="modal__title">Дякуємо за запис!</h2>
-      <p class="modal__text">
+    <div
+      class="modal"
+      id="modal-thanks"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-thanks-title"
+      aria-describedby="modal-thanks-description"
+    >
+      <h2 class="modal__title" id="modal-thanks-title">Дякуємо за запис!</h2>
+      <p class="modal__text" id="modal-thanks-description">
         Наш менеджер зв'яжеться з вами найближчим часом для підтвердження запису
         та уточнення деталей.
       </p>
