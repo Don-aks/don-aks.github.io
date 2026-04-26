@@ -2283,7 +2283,7 @@ body.locked {
 
   .offer__title {
     line-height: 1.2;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .offer__title::after {
