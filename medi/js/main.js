@@ -1,14 +1,13 @@
 'use strict';
 
+// ------------ CONSTANTS --------------
+
 var HIDE_MENU_BREAKPOINT = 1200;
 var FOCUSABLE_SELECTORS = 'a[href], button, [tabindex="0"]';
 var HIDDEN_CELLS =
   '.header__cell-phone, .header__cell-salons, .header__cell-social';
 
-var removeFocusTrapFunc;
-
-var $window = $(window);
-var $body = $(document.body);
+// ------------- VARIABLES --------------
 
 var $header = $('.header__top');
 var $headerList = $('.header__list');
@@ -63,6 +62,22 @@ var UI = {
   modalThanksSelector: '#modal-thanks',
 };
 
+var removeFocusTrapFunc;
+
+var $window = $(window);
+var $body = $(document.body);
+
+// ------------- INITIALIZATION --------------
+
+if ($window.outerWidth() <= HIDE_MENU_BREAKPOINT) {
+  setTabIndex(getFocusable(UI.$headerList), -1);
+  setTabIndex(getFocusable(UI.$hiddenCells), -1);
+}
+
+pulse(UI.$btnBooking);
+
+// ------------- HANDLERS --------------
+
 UI.$skipToContent.on('click', function () {
   UI.$content.trigger('focus');
 });
@@ -74,16 +89,9 @@ UI.$highContrastBtn.on('click', function () {
   $body.toggleClass('visually-impaired', !isActive);
 });
 
-if ($window.outerWidth() <= HIDE_MENU_BREAKPOINT) {
-  setTabIndex(getFocusable(UI.$headerList), -1);
-  setTabIndex(getFocusable(UI.$hiddenCells), -1);
-}
-
 UI.$headerBtnMenu.on('click', handleBtnMenuClick);
 $window.on('resize', debounce(handleResize, 150));
 $body.on('click', handleSalonsClick);
-
-pulse(UI.$btnBooking);
 
 UI.$modalForm.on('submit', function (event) {
   event.preventDefault();
@@ -94,6 +102,18 @@ UI.$modalForm.on('submit', function (event) {
     type: 'inline',
   });
 });
+
+UI.$heroSlider.on('mousedown', function () {
+  UI.$heroSlider.css('cursor', 'grabbing');
+});
+
+UI.$heroSlider.on('mouseup', function () {
+  UI.$heroSlider.css('cursor', '');
+});
+
+UI.$tabsBtns.on('click', toggleTab);
+
+// ------------- PLUGINS --------------
 
 UI.$heroSlider.slick({
   responsive: [
@@ -111,17 +131,7 @@ UI.$heroSlider.slick({
   nextArrow: UI.sliderBtnNextHTML,
 });
 
-UI.$heroSlider.on('mousedown', function () {
-  UI.$heroSlider.css('cursor', 'grabbing');
-});
-
-UI.$heroSlider.on('mouseup', function () {
-  UI.$heroSlider.css('cursor', '');
-});
-
-UI.$tabsBtns.on('click', toggleTab);
-
-// FUNCTIONS
+// ------------- FUNCTIONS --------------
 
 function handleScroll() {
   if ($window.scrollTop() > 0) {
@@ -234,7 +244,7 @@ function toggleTab() {
   $currentNews.addClass(UI.newsItemActiveClass);
 }
 
-// UTILS
+// --------------- UTILITIES -----------------
 
 function debounce(func, wait) {
   var timeout;
