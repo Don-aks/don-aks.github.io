@@ -226,7 +226,7 @@ function toggleSalonsSubmenu(shouldHide) {
   UI.$salons.attr('aria-expanded', String(!shouldHide));
   UI.$salonsSubmenu.attr('aria-hidden', String(shouldHide));
 
-  setTabIndex(UI.$salonsLinks, shouldHide ? -1 : 0);
+  UI.$salonsLinks.prop('tabIndex', shouldHide ? -1 : 0);
 }
 
 function pulse($element, delay = 5000) {
