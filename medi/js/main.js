@@ -46,6 +46,7 @@ var UI = {
   salonsSubmenuSelector: '.salons__submenu',
   salonsHideClass: 'salons__submenu--hidden',
 
+  $heroBtn: $('.hero__btn'),
   $heroSlider: $('.hero__slider'),
   sliderBtnPrevHTML:
     '<button class="slick-prev" aria-label="Попередній слайд" type="button">←</button>',
@@ -110,6 +111,20 @@ UI.$modalForm.on('submit', function (event) {
     src: UI.modalThanksSelector,
     type: 'inline',
   });
+});
+
+$('a[href^="#"]').on('click', function (e) {
+  e.preventDefault();
+
+  var target = $(this).attr('href');
+  if (!target || target === '#') return;
+
+  $([document.documentElement, document.body]).animate(
+    {
+      scrollTop: $(target).offset().top - $header.height(),
+    },
+    500,
+  );
 });
 
 UI.$heroSlider.on('mousedown', function () {
