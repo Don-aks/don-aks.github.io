@@ -37,7 +37,7 @@
   }
 
   .header__btn-booking {
-    scale: 1 !important;
+    transform: scale(1) !important;
   }
 }
 
