@@ -1259,7 +1259,7 @@ body.locked {
 }
 
 .article {
-  padding: 35px 60px 76px;
+  padding: 35px 60px;
 }
 
 .article__title {
@@ -1947,7 +1947,7 @@ body.locked {
   }
 
   .article {
-    padding: 35px 35px 55px;
+    padding: 35px 35px;
   }
 
   .offers__inner {
@@ -2253,7 +2253,7 @@ body.locked {
   }
 
   .article {
-    padding: 35px 20px 40px;
+    padding: 35px 20px;
   }
 
   .article__title {
