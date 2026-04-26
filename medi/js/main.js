@@ -88,8 +88,10 @@ UI.$skipToContent.on('click', function () {
 $window.on('scroll', throttle(handleScroll, 150));
 
 UI.$highContrastBtn.on('click', function () {
-  var isActive = $body.hasClass('visually-impaired');
-  $body.toggleClass('visually-impaired', !isActive);
+  var willBeActive = !$body.hasClass('visually-impaired');
+
+  $body.toggleClass('visually-impaired', willBeActive);
+  UI.$highContrastBtn.attr('aria-pressed', String(willBeActive));
 });
 
 UI.$headerBtnMenu.on('click', handleBtnMenuClick);
