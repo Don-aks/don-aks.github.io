@@ -14,7 +14,9 @@ var $headerList = $('.header__list');
 var $hiddenCells = $header.find(HIDDEN_CELLS);
 
 var $headerBtnMenu = $header.find('.header__btn-menu');
-var $tabs = $('.tabs__tab');
+
+var $news = $('.news');
+var $tabs = $news.find('.tabs__tab');
 
 var UI = {
   $skipToContent: $('.skip-to-content'),
@@ -117,6 +119,7 @@ UI.$heroSlider.on('mouseup', function () {
 });
 
 UI.$tabsBtns.on('click', toggleTab);
+UI.$tabsBtns.on('keydown', handleKeyboardOnTabsBtns);
 
 // ------------- PLUGINS --------------
 
@@ -240,24 +243,62 @@ function pulse($element, delay = 5000) {
   }, 500);
 }
 
-function toggleTab() {
-  var $tabContainer = $(this).closest(UI.tabsTabSelector);
+function toggleTab($tabBtn) {
+  if (!($tabBtn instanceof jQuery)) {
+    if (!$(this).is(UI.tabsBtnSelector)) {
+      return;
+    }
 
-  UI.$tabs.removeClass(UI.tabsActiveClass);
-  $tabContainer.addClass(UI.tabsActiveClass);
+    $tabBtn = $(this);
+  }
 
-  setTabIndex(UI.$tabsBtns, 0);
+  var $tab = $($tabBtn).closest(UI.tabsTabSelector);
+  var $btn = $tab.find(UI.tabsBtnSelector);
 
-  var $btn = $tabContainer.find(UI.tabsBtnSelector);
-  $btn.prop('tabIndex', -1);
-  $btn.blur();
+  var articleId = $btn.attr('aria-controls');
+  var $article = UI.$newsItems.filter('#' + articleId);
 
-  var $currentNews = UI.$newsItems.filter(
-    '[data-tab=' + $tabContainer.data('tab') + ']',
-  );
+  UI.$tabs.not($tab).removeClass(UI.tabsActiveClass);
+  $tab.addClass(UI.tabsActiveClass);
 
-  UI.$newsItems.removeClass(UI.newsItemActiveClass);
-  $currentNews.addClass(UI.newsItemActiveClass);
+  setTabIndex(UI.$tabsBtns.not($btn), -1);
+  $btn.prop('tabIndex', 0);
+  $btn.focus();
+
+  UI.$tabsBtns.not($btn).attr('aria-selected', 'false');
+  $btn.attr('aria-selected', 'true');
+
+  UI.$newsItems.not($article).removeClass(UI.newsItemActiveClass);
+  $article.addClass(UI.newsItemActiveClass);
+}
+
+function handleKeyboardOnTabsBtns(e) {
+  var $target = $(e.target);
+  if (!$target.is(UI.tabsBtnSelector)) return;
+
+  var key = e.keyCode;
+  var index = UI.$tabsBtns.index($target);
+  var len = UI.$tabsBtns.length;
+
+  switch (key) {
+    case 36: // Home
+      toggleTab(UI.$tabsBtns.first());
+      break;
+    case 35: // End
+      toggleTab(UI.$tabsBtns.last());
+      break;
+    case 38: // ArrowUp
+      toggleTab(UI.$tabsBtns.eq((index - 1 + len) % len));
+      break;
+    case 40: // ArrowDown
+      toggleTab(UI.$tabsBtns.eq((index + 1 + len) % len));
+      break;
+
+    default:
+      return;
+  }
+
+  e.preventDefault();
 }
 
 // --------------- UTILITIES -----------------

@@ -378,32 +378,48 @@
           <div class="news__inner">
             <div class="news__menu">
               <h2 class="label-title news__label-title">Новини</h2>
-              <span class="sr-only">Список статей</span>
+              <span class="sr-only" id="tabs-title">
+                Оберіть статтю для перегляду
+              </span>
 
-              <ul class="tabs">
-                <li class="tabs__tab tabs__tab--active" data-tab="1">
-                  <span class="sr-only tabs__text--current">
-                    Поточна стаття:
-                  </span>
-                  <button class="tabs__btn" type="button" tabindex="-1">
+              <ul class="tabs" role="tablist" aria-labelledby="tabs-title">
+                <li class="tabs__tab tabs__tab--active">
+                  <button
+                    class="tabs__btn"
+                    id="tab-1"
+                    role="tab"
+                    type="button"
+                    aria-selected="true"
+                    aria-controls="article-1"
+                  >
                     Чому рекомендується відвідувати професійного косметолога.
                     Думка фахівців центру.
                   </button>
                 </li>
-                <li class="tabs__tab" data-tab="2">
-                  <span class="sr-only tabs__text--current">
-                    Поточна стаття:
-                  </span>
-                  <button class="tabs__btn" type="button">
+                <li class="tabs__tab">
+                  <button
+                    class="tabs__btn"
+                    id="tab-2"
+                    role="tab"
+                    type="button"
+                    tabindex="-1"
+                    aria-selected="false"
+                    aria-controls="article-2"
+                  >
                     Стандартизація діяльності клінік відповідно до ISO
                     9001:2015.
                   </button>
                 </li>
-                <li class="tabs__tab" data-tab="3">
-                  <span class="sr-only tabs__text--current">
-                    Поточна стаття:
-                  </span>
-                  <button class="tabs__btn" type="button">
+                <li class="tabs__tab">
+                  <button
+                    class="tabs__btn"
+                    id="tab-3"
+                    role="tab"
+                    type="button"
+                    tabindex="-1"
+                    aria-selected="false"
+                    aria-controls="article-3"
+                  >
                     Індивідуальний підхід до кожного пацієнта і підбір
                     оптимальних косметологічних методик.
                   </button>
@@ -411,7 +427,12 @@
               </ul>
             </div>
             <ul class="news__content">
-              <li class="news__item news__item--active" data-tab="1">
+              <li
+                class="news__item news__item--active"
+                id="article-1"
+                role="tabpanel"
+                aria-labelledby="tab-1"
+              >
                 <article class="article">
                   <h3 class="article__title">
                     Чому рекомендується відвідувати професійного косметолога.
@@ -446,7 +467,12 @@
                 </article>
               </li>
 
-              <li class="news__item" data-tab="2">
+              <li
+                class="news__item"
+                id="article-2"
+                role="tabpanel"
+                aria-labelledby="tab-2"
+              >
                 <article class="article">
                   <h3 class="article__title">
                     Стандартизація діяльності клінік відповідно до ISO
@@ -477,7 +503,12 @@
                 </article>
               </li>
 
-              <li class="news__item" data-tab="3">
+              <li
+                class="news__item"
+                id="article-3"
+                role="tabpanel"
+                aria-labelledby="tab-3"
+              >
                 <article class="article">
                   <h3 class="article__title">
                     Індивідуальний підхід до кожного пацієнта і підбір
