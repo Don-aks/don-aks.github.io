@@ -352,44 +352,44 @@ function getFocusable($container) {
 }
 
 function setFocusTrap($focusableElements) {
+  function trapFocus(event) {
+    var $focusableElements = event.data.$focusableElements;
+    var isTabPressed = event.key === 'Tab' || event.keyCode === 9;
+    if (!isTabPressed) return;
+
+    if ($focusableElements.length === 0) {
+      console.error(
+        'No focusable elements provided for focus trap by event.data',
+      );
+      return;
+    }
+
+    var $enabledElements = $focusableElements.filter(function () {
+      return $(this).prop('tabIndex') >= 0 && !$(this).prop('disabled');
+    });
+
+    var $firstElement = $enabledElements.first();
+    var $lastElement = $enabledElements.last();
+    var $activeElement = $(document.activeElement);
+
+    if (event.shiftKey) {
+      if ($activeElement.is($firstElement)) {
+        $lastElement.focus();
+        event.preventDefault();
+      }
+
+      return;
+    }
+
+    if ($activeElement.is($lastElement)) {
+      $firstElement.focus();
+      event.preventDefault();
+    }
+  }
+
   $body.on('keydown', { $focusableElements: $focusableElements }, trapFocus);
 
   return function () {
     $body.off('keydown', trapFocus);
   };
-}
-
-function trapFocus(event) {
-  var $focusableElements = event.data.$focusableElements;
-  var isTabPressed = event.key === 'Tab' || event.keyCode === 9;
-  if (!isTabPressed) return;
-
-  if ($focusableElements.length === 0) {
-    console.error(
-      'No focusable elements provided for focus trap by event.data',
-    );
-    return;
-  }
-
-  var $enabledElements = $focusableElements.filter(function () {
-    return $(this).prop('tabIndex') >= 0 && !$(this).prop('disabled');
-  });
-
-  var $firstElement = $enabledElements.first();
-  var $lastElement = $enabledElements.last();
-  var $activeElement = $(document.activeElement);
-
-  if (event.shiftKey) {
-    if ($activeElement.is($firstElement)) {
-      $lastElement.focus();
-      event.preventDefault();
-    }
-
-    return;
-  }
-
-  if ($activeElement.is($lastElement)) {
-    $firstElement.focus();
-    event.preventDefault();
-  }
 }
