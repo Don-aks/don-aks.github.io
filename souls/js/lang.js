@@ -1,5 +1,5 @@
 const LANG_LIST = ['en', 'pl', 'uk'];
-const langArray = {
+const LANG_DICTIONARY = {
   'close-menu': {
     pl: 'Zamknij menu',
     uk: 'Закрити меню',
@@ -326,4 +326,4 @@ const langArray = {
   },
 };
 
-export default langArray;
+export default LANG_DICTIONARY;

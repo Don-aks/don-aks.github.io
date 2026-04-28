@@ -221,9 +221,9 @@ function changeLanguage() {
   document.querySelector('html').setAttribute('lang', hash);
   langText.innerHTML = hash;
 
-  for (let key in langArray) {
+  for (let key in LANG_DICTIONARY) {
     const elems = document.querySelectorAll('.lng-' + key);
-    const text = langArray[key][hash];
+    const text = LANG_DICTIONARY[key][hash];
     if (elems.length === 0) {
       continue;
     }
