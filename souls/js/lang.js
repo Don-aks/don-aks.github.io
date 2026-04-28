@@ -325,5 +325,3 @@ const LANG_DICTIONARY = {
     uk: 'Доставка та Повернення',
   },
 };
-
-export default LANG_DICTIONARY;
