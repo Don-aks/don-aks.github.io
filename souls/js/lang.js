@@ -1,3 +1,4 @@
+const LANG_LIST = ['en', 'pl', 'uk'];
 const langArray = {
   'close-menu': {
     pl: 'Zamknij menu',

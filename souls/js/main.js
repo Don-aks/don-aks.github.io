@@ -7,7 +7,6 @@ const langBtn = getEl('lang');
 const langText = getEl('lang__text');
 const langMenu = getEl('lang__menu');
 const langLinks = getElements('lang__link');
-const langList = ['en', 'pl', 'uk'];
 changeLanguage();
 
 langBtn.addEventListener('click', function () {
@@ -205,11 +204,11 @@ if (
 
 function changeLanguage() {
   let hash = window.location.hash.substring(1);
-  let isLang = false;
-  for (let i = 0; i < langList.length; i++)
-    if (hash.indexOf(langList[i]) !== -1) isLang = true;
+  let hasLang = false;
+  for (let i = 0; i < LANG_LIST.length; i++)
+    if (hash.indexOf(LANG_LIST[i]) !== -1) hasLang = true;
 
-  if (!isLang) {
+  if (!hasLang) {
     location.href = window.location.pathname + '#en';
     hash = 'en';
     return;
