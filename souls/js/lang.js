@@ -61,7 +61,7 @@ const LANG_DICTIONARY = {
     uk: 'Душу.',
   },
   'use-cookies': {
-    pl: 'Nasza strona używa plików cookie',
+    pl: 'Nasza strona używa plików',
     uk: 'Наш веб-сайт використовує файли',
   },
   'products-title': {
