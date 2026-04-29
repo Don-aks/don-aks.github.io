@@ -1,5 +1,8 @@
 'use strict';
 
+import Swiper from 'swiper';
+import Parallax from 'parallax-js';
+
 const FOCUSABLE_ELEMENTS_SELECTOR =
   '[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])';
 

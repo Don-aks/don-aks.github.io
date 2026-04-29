@@ -3,8 +3,9 @@ const { src, dest, watch, parallel, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
-const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
+const esbuild = require('gulp-esbuild');
+const plumber = require('gulp-plumber');
 // const del = require('del');
 const browserSync = require('browser-sync').create();
 
@@ -33,8 +34,23 @@ function styles() {
 
 function scripts() {
   return src(['js/main.js'])
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
+    .pipe(
+      plumber({
+        errorHandler: function (err) {
+          console.log(err.toString());
+          this.emit('end');
+        },
+      }),
+    )
+    .pipe(
+      esbuild({
+        bundle: true,
+        minify: true,
+        sourcemap: true,
+        target: ['es2015'],
+        outfile: 'main.min.js',
+      }),
+    )
     .pipe(dest('js'))
     .pipe(browserSync.stream());
 }
