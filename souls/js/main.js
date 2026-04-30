@@ -17,9 +17,9 @@ langBtn.addEventListener('click', function () {
 });
 
 langMenu.addEventListener('click', function (e) {
-  e.preventDefault();
   const langHref = e.target.getAttribute('href');
   if (!langHref) return;
+  e.preventDefault();
 
   location.href = window.location.pathname + langHref;
   location.reload();
