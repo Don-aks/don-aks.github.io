@@ -13,7 +13,10 @@ const langLinks = getElements('lang__link');
 changeLanguage();
 
 langBtn.addEventListener('click', function () {
-  langMenu.classList.toggle('lang__menu--active');
+  const isOpen = langMenu.classList.toggle('lang__menu--active');
+
+  langMenu.setAttribute('aria-hidden', String(!isOpen));
+  langBtn.setAttribute('aria-expanded', String(isOpen));
 });
 
 langMenu.addEventListener('click', function (e) {
