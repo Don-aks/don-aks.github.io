@@ -253,6 +253,11 @@ function changeLanguage() {
     }
 
     elems.forEach(function (el) {
+      if (el.hasAttribute('aria-label')) {
+        el.setAttribute('aria-label', text);
+        return;
+      }
+
       if (el.tagName === 'IMG') {
         el.setAttribute('alt', text);
         return;
