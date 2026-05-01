@@ -234,7 +234,7 @@ function changeLanguage() {
     return;
   }
 
-  document.querySelector('html').setAttribute('lang', hash);
+  document.documentElement.lang = hash;
   langText.innerHTML = hash;
 
   Object.keys(LANG_DICTIONARY).forEach(function (key) {
