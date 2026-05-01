@@ -237,26 +237,33 @@ function changeLanguage() {
   document.querySelector('html').setAttribute('lang', hash);
   langText.innerHTML = hash;
 
-  for (let key in LANG_DICTIONARY) {
+  Object.keys(LANG_DICTIONARY).forEach(function (key) {
     const elems = document.querySelectorAll('.lng-' + key);
     const text = LANG_DICTIONARY[key][hash];
     if (elems.length === 0) {
-      continue;
+      return;
     }
 
     if (text === '') {
       for (let i = 0; i < elems.length; i++)
         elems[i].parentElement.removeChild(elems[i]);
-      continue;
+      return;
     }
 
-    for (let i = 0; i < elems.length; i++) {
-      if (elems[i].tagName === 'IMG') elems[i].setAttribute('alt', text);
-      else if (elems[i].tagName === 'INPUT')
-        elems[i].setAttribute('placeholder', text);
-      else elems[i].innerHTML = text;
-    }
-  }
+    elems.forEach(function (el) {
+      if (el.tagName === 'IMG') {
+        el.setAttribute('alt', text);
+        return;
+      }
+
+      if (el.tagName === 'INPUT') {
+        el.setAttribute('placeholder', text);
+        return;
+      }
+
+      el.innerHTML = text;
+    });
+  });
 }
 
 function closeNotify() {
