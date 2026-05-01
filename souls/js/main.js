@@ -245,8 +245,9 @@ function changeLanguage() {
     }
 
     if (text === '') {
-      for (let i = 0; i < elems.length; i++)
-        elems[i].parentElement.removeChild(elems[i]);
+      elems.forEach(function (el) {
+        el.parentElement.removeChild(el);
+      });
       return;
     }
 
