@@ -239,10 +239,11 @@ function changeLanguage() {
 
   Object.keys(LANG_DICTIONARY).forEach(function (key) {
     const elems = document.querySelectorAll('.lng-' + key);
-    const text = LANG_DICTIONARY[key][hash];
     if (elems.length === 0) {
       return;
     }
+
+    const text = LANG_DICTIONARY[key][hash];
 
     if (text === '') {
       elems.forEach(function (el) {
