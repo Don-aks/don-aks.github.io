@@ -20,6 +20,13 @@ langBtn.addEventListener('click', function () {
   });
   langMenu.setAttribute('aria-hidden', String(!isOpen));
   langBtn.setAttribute('aria-expanded', String(isOpen));
+
+  if (isOpen) {
+    langLinks[0].focus();
+    return;
+  }
+
+  langBtn.focus();
 });
 
 langMenu.addEventListener('click', function (e) {
