@@ -220,9 +220,9 @@ if (
 
 function changeLanguage() {
   let hash = window.location.hash.substring(1);
-  let hasLang = false;
-  for (let i = 0; i < LANG_LIST.length; i++)
-    if (hash.indexOf(LANG_LIST[i]) !== -1) hasLang = true;
+  let hasLang = LANG_LIST.some(function (lang) {
+    return hash.indexOf(lang) !== -1;
+  });
 
   if (!hasLang) {
     location.href = window.location.pathname + '#en';
