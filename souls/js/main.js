@@ -15,6 +15,9 @@ changeLanguage();
 langBtn.addEventListener('click', function () {
   const isOpen = langMenu.classList.toggle('lang__menu--active');
 
+  langLinks.forEach(function (link) {
+    link.setAttribute('tabindex', isOpen ? '0' : '-1');
+  });
   langMenu.setAttribute('aria-hidden', String(!isOpen));
   langBtn.setAttribute('aria-expanded', String(isOpen));
 });

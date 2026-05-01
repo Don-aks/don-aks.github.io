@@ -102,7 +102,6 @@
               aria-expanded="false"
               aria-controls="lang-menu"
             >
-              <span class="sr-only lng-change-lng">Change language</span>
               <span class="lang__text animation-link">en</span>
             </button>
             <ul
@@ -112,13 +111,19 @@
               aria-hidden="true"
             >
               <li class="lang__item">
-                <a class="lang__link" href="#en" role="menuitem">En</a>
+                <a class="lang__link" href="#en" tabindex="-1" role="menuitem">
+                  En
+                </a>
               </li>
               <li class="lang__item">
-                <a class="lang__link" href="#pl" role="menuitem">Pl</a>
+                <a class="lang__link" href="#pl" tabindex="-1" role="menuitem">
+                  Pl
+                </a>
               </li>
               <li class="lang__item">
-                <a class="lang__link" href="#uk" role="menuitem">Uk</a>
+                <a class="lang__link" href="#uk" tabindex="-1" role="menuitem">
+                  Uk
+                </a>
               </li>
             </ul>
           </nav>
