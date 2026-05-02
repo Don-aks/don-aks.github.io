@@ -243,9 +243,9 @@ function changeLanguage() {
       return;
     }
 
-    const text = LANG_DICTIONARY[key][hash];
+    const rawText = LANG_DICTIONARY[key][hash] || '';
 
-    if (text === '') {
+    if (rawText === '') {
       elems.forEach(function (el) {
         el.parentElement.removeChild(el);
       });
@@ -254,21 +254,22 @@ function changeLanguage() {
 
     elems.forEach(function (el) {
       if (el.hasAttribute('aria-label')) {
-        el.setAttribute('aria-label', text);
+        el.setAttribute('aria-label', rawText);
         return;
       }
 
       if (el.tagName === 'IMG') {
-        el.setAttribute('alt', text);
+        el.setAttribute('alt', rawText);
         return;
       }
 
       if (el.tagName === 'INPUT') {
-        el.setAttribute('placeholder', text);
+        el.setAttribute('placeholder', rawText);
         return;
       }
 
-      el.innerHTML = text;
+      const safeHtml = escapeHTML(rawText).replace(/\n/g, '<br>');
+      el.innerHTML = safeHtml;
     });
   });
 }
@@ -425,6 +426,12 @@ function getEl(className) {
 
 function getElements(className) {
   return document.querySelectorAll('.' + className);
+}
+
+function escapeHTML(str) {
+  const p = document.createElement('p');
+  p.textContent = str;
+  return p.innerHTML;
 }
 
 function setHeroHeight(style) {

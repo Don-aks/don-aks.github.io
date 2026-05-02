@@ -1,5 +1,9 @@
 const LANG_LIST = ['en', 'pl', 'uk'];
 const LANG_DICTIONARY = {
+  currency: {
+    pl: 'zł',
+    uk: '₴',
+  },
   'close-menu': {
     pl: 'Zamknij menu',
     uk: 'Закрити меню',
@@ -125,8 +129,8 @@ const LANG_DICTIONARY = {
     uk: 'Всі скарби заховані в скрині. Відповідно, наші скарби укладені у свою Дику оболонку.',
   },
   'nut-price': {
-    pl: '250g | 20 <span class="nut-product__currency">zł</span>',
-    uk: '250г | 220 <span class="nut-product__currency">₴</span>',
+    pl: '250g | 20',
+    uk: '250г | 220',
   },
   'nut-link': {
     pl: 'SPRÓBUJ!',
@@ -197,8 +201,8 @@ const LANG_DICTIONARY = {
     uk: 'Це не десерт, не перекус і не повноцінна їжа. Але все це одночасно. Це те, що ви хочете бачити.',
   },
   'halva-price': {
-    pl: '500g | OD 35 <span class="halva__currency">zł</span>',
-    uk: '500г | ОТ 399<span class="halva__currency">₴</span>',
+    pl: '500g | OD 35',
+    uk: '500г | ОТ 399',
   },
   'discover-now': {
     pl: 'ODKRYJ TERAZ!',
@@ -213,8 +217,8 @@ const LANG_DICTIONARY = {
     uk: "П'ять скарбів",
   },
   'treasures-text': {
-    pl: 'Jak powiedział Hipokrates, jesteśmy tym, co jemy.<br> Zobaczmy, co się stanie, jeśli zjemy te DZIKIE skarby.',
-    uk: 'Як казав Гіппократ, ми — це те, що ми їмо.<br> Давайте подивимось, що станеться, якщо з’їсти ці ДИКІ скарби.',
+    pl: 'Jak powiedział Hipokrates, jesteśmy tym, co jemy.\nZobaczmy, co się stanie, jeśli zjemy te DZIKIE skarby.',
+    uk: 'Як казав Гіппократ, ми — це те, що ми їмо.\nДавайте подивимось, що станеться, якщо з’їсти ці ДИКІ скарби.',
   },
   'recipes-title': {
     pl: 'Dzikie Przepisy',
