@@ -114,7 +114,7 @@ const LANG_DICTIONARY = {
   },
   discover: {
     pl: 'Dowiedz się więcej',
-    uk: 'ДІЗНАТИСЯ БІЛЬШЕ',
+    uk: 'Дізнатися більше',
   },
   'nut-title': {
     pl: 'Dziki jak orzech??',
@@ -133,12 +133,12 @@ const LANG_DICTIONARY = {
     uk: '250г | 220',
   },
   'nut-link': {
-    pl: 'SPRÓBUJ!',
-    uk: 'СКУШТУВАТИ!',
+    pl: 'Spróbuj!',
+    uk: 'Скуштуйте!',
   },
   'discover-title': {
-    pl: 'ODKRYJ NASZĄ PRODUKCJĘ PRZEZ 5 SKARBÓW NATURY!',
-    uk: 'ВІДКРИЙТЕ ДЛЯ НАШІ ПРОДУКТИ ЧЕРЕЗ 5 СКАРБІВ ПРИРОДИ!',
+    pl: 'Odkryj nasze produkty poprzez 5 skarbów natury!',
+    uk: 'Відкрийте наші продукти через 5 скарбів природи!',
   },
   sesame: {
     pl: 'Kozieradka',
@@ -165,16 +165,16 @@ const LANG_DICTIONARY = {
     uk: 'Слова від душі!',
   },
   'slider-title1': {
-    pl: 'PROPAGANDA',
-    uk: 'ПОПАГАНДА',
+    pl: 'Propaganda',
+    uk: 'Попаганда',
   },
   'slider-text1': {
     pl: 'Inny sklep w centrum Aten rozdrabnia owoce, oferuje masło przygotowane z zaledwie jednego składnika oraz smaki chałwy, które potwierdzają, że zdrowe może być smaczne.',
     uk: 'В іншому магазині в центрі Афін подрібнюють фрукти, пропонують масло, виготовлене лише з одного інгредієнта, і ароматизатори халви, які підтверджують, що здорове може бути смачним.',
   },
   'slider-title2': {
-    pl: 'GŁOS Z ATEN',
-    uk: 'АФІНСЬКИЙ ГОЛОС',
+    pl: 'Głos z Aten',
+    uk: 'Афінський голос',
   },
   'slider-text2': {
     pl: 'Wild Souls pracuje głównie z produktami z sezamu i orzechów (pistacjami, orzechami laskowymi, migdałami, nerkowcami), tworząc piekielne pasty, które chce się połykać razem ze słoikiem.',
@@ -205,8 +205,8 @@ const LANG_DICTIONARY = {
     uk: '500г | ОТ 399',
   },
   'discover-now': {
-    pl: 'ODKRYJ TERAZ!',
-    uk: 'ВІДКРИЙТЕ ЗАРАЗ!',
+    pl: 'Odkryj teraz!',
+    uk: 'Відкрийте зараз!',
   },
   'gift-title': {
     pl: 'Podziel się swoją Miłością za pomocą Dzikiego Prezentu!',
