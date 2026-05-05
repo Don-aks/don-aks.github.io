@@ -614,15 +614,17 @@ function blink(element, repeatCount) {
 }
 
 function getTransitionDurationInMs(el) {
-  var durations = getComputedStyle(el)
-    .transitionDuration.split(',')
-    .map((d) => {
-      d = d.trim();
-      return d.endsWith('ms') ? parseFloat(d) : parseFloat(d) * 1000;
-    });
+  var style = getComputedStyle(el);
+  var durationStr = style.transitionDuration || style.webkitTransitionDuration;
+
+  var durations = durationStr.split(',').map(function (d) {
+    d = d.trim();
+    var isMs = d.indexOf('ms') !== -1;
+    return isMs ? parseFloat(d) : parseFloat(d) * 1000;
+  });
 
   // if multiple
-  return Math.max(...durations);
+  return Math.max.apply(Math, durations);
 }
 
 function getLastVisibleElement(elements) {
