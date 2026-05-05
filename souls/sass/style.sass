@@ -3,7 +3,6 @@
 @use 'libs'
 @use 'global'
 
-
 // ======= HEADER ======= //
 
 .header
@@ -34,7 +33,7 @@
     position: absolute
     top: 31px
     left: 50%
-  
+
     transform: translateX(-50%)
 
   &__btn
@@ -55,7 +54,7 @@
       position: absolute
       top: 10px
       right: 0
-  
+
   &__btn-line
     position: relative
 
@@ -65,13 +64,13 @@
 
     background-color: $black
     border-radius: 2px
-  
+
     &::before,
     &::after
       content: ''
       position: absolute
       top: 10px
-      
+
       display: block
       width: 30px
       height: 2px
@@ -141,7 +140,7 @@
     &--no-margin
       margin-right: 0
       transform: translateX(19px)
-    
+
   &__scroll-down
     position: absolute
     bottom: 7px
@@ -168,8 +167,8 @@
 
   &__btn
     margin-left: 143px
-    padding: 0 22px 
-  
+    padding: 0 22px
+
     font-size: 13px
     line-height: 2.69
 
@@ -193,7 +192,6 @@
 
   &:focus
     @include focus($white, 50%)
-
 
 // ======= PRODUCTS ======= //
 
@@ -264,7 +262,7 @@
   &--yellow
     &::before
       background-color: $yellow
-    
+
     .product__btn
       background-color: $yellow
 
@@ -282,7 +280,7 @@
 
   &__price
     margin-bottom: 23px
-  
+
     font-size: 21px
     font-weight: 700
 
@@ -298,7 +296,6 @@
 
     &:focus
       @include focus($white, 36px)
-
 
 // ======= PHOTOS ======= //
 
@@ -331,8 +328,7 @@
 
       &:nth-child(2)
         right: 260px - 76px
-        transform: rotate(15deg)   
-
+        transform: rotate(15deg)
 
 // ======= NUT ======= //
 
@@ -374,7 +370,7 @@
     height: 158px
 
     background-image: url("../img/hand-rock.svg")
-  
+
   &__text
     margin-bottom: 20px
 
@@ -411,7 +407,7 @@
   &__title
     max-width: 255px
     margin-bottom: 92px
-  
+
     font-size: 21px
     font-weight: 400
     text-transform: uppercase
@@ -436,8 +432,6 @@
     line-height: 0
     font-weight: 400
 
-
-
 // ======= SLIDER ======= //
 
 .slider
@@ -450,7 +444,7 @@
     position: absolute
     top: 128px
     left: 50%
-  
+
     max-width: 103px
 
     font-size: 21px
@@ -481,7 +475,7 @@
 
       background-image: url("../img/slider-img.svg")
       @extend %bg-contain
-    
+
       transform: translateX(-50%)
 
   &__name
@@ -502,7 +496,7 @@
     .swiper-pagination-bullet
       width: 10px
       height: 10px
-  
+
       background-color: transparent
       border: 1px solid $black
       border-radius: 0
@@ -517,8 +511,6 @@
 
       &:focus
         @include focus($white, 0)
-  
-
 
 // ======= STORE ======= //
 
@@ -530,7 +522,7 @@
 
   &__inner
     max-width: 336px
-  
+
     &::before
       top: -70px - $round-icon-size
       background-image: url("../img/zero-plastic-shop.svg")
@@ -540,7 +532,7 @@
     margin-bottom: 19px
 
     font-size: 55px
-  
+
   &__text
     max-width: 320px
     margin-bottom: 47px
@@ -558,7 +550,6 @@
       &:nth-child(2)
         top: 265px
         right: 199px + 132px
-
 
 // ======= HALVA ======= //
 
@@ -592,21 +583,21 @@
 
   &__title
     margin-bottom: 53px
-  
+
   &__subtitle
     max-width: 332px
     margin-bottom: 62px
-  
+
     font-size: 42px
     line-height: $title-lh
-  
+
   &__text
     max-width: 245px
     margin-bottom: 21px
 
   &__price
     margin-bottom: 45px
-    
+
   &__link
     padding: 10px 70px
 
@@ -619,13 +610,12 @@
 
   &__title
     margin-bottom: 46px
-  
+
     font-size: 42px
     line-height: $title-lh
 
   &__link
     padding: 16px 75px
-
 
 // ======= TREASURES ======= //
 
@@ -661,7 +651,6 @@
         top: 365px
         right: 312px
 
-
 // ======= RECIEPES ======= //
 
 .recipes
@@ -674,7 +663,7 @@
 
   &__title
     margin-bottom: 28px
-  
+
   &__text
     max-width: 493px
 
@@ -702,7 +691,6 @@
     line-height: $title-lh
     font-weight: 700
 
-
 // ======= FOOTER ======= //
 
 .footer
@@ -717,13 +705,13 @@
   &__inner
     @extend %space-between
     padding-bottom: 151px
-  
+
     text-align: left
 
   &__info
     margin-right: 15px
     max-width: 445px
-    
+
   &__info-title
     margin-bottom: 38px
 
@@ -757,9 +745,9 @@
     display: block
     width: 22px
     height: 22px
-  
+
     @extend %bg-contain
-    
+
     &:focus
       @include focus()
 
@@ -821,6 +809,5 @@
     height: 120px
 
     @extend %bg-cover-center
-
 
 @import 'media'
