@@ -158,10 +158,14 @@
           $d: $gap-between-lines + ($word-count * $delay) + ($delay * ($i - 1))
           animation-delay: $d
 
+  &__cookies
+    animation: cookiesSlideInRight 0.5s both 2.5s
+
   &__scroll-down
     position: absolute
     bottom: 7px
     left: 50%
+    animation: scrollBtnSlideInUp 0.5s both 3.5s
 
 .cookies
   position: absolute
