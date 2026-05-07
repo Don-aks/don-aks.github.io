@@ -97,7 +97,8 @@ body
 .round-icon
   position: relative
 
-  &::before
+  &::before,
+  &::after
     content: ''
     position: absolute
     left: 160px
@@ -107,6 +108,10 @@ body
     height: $round-icon-size
 
     @extend %bg-contain
+
+  &::before
+    animation: spin 30s linear infinite
+    will-change: transform
 
 .notify
   position: relative

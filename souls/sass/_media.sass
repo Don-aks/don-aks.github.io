@@ -208,10 +208,14 @@
     &__info
       margin: 0 auto
 
-      &::before
+      &::before,
+      &::after
         top: -200px
         left: 50%
         transform: translateX(-50%)
+
+      &::before
+        animation-name: spinWithOffset
 
     &__title
       min-width: auto
@@ -338,11 +342,15 @@
   .store
     padding: 325px 0 110%
 
-    &__inner::before
+    &__inner::before,
+    &__inner::after
       top: -285px
       left: 50%
 
       transform: translateX(-50%)
+
+    &__inner::before
+      animation-name: spinWithOffset
 
   .halva__inner
     margin: 0 10px 30px
@@ -358,12 +366,16 @@
   .treasures
     padding: 300px 0 510px
 
-    &__inner::before
+    &__inner::before,
+    &__inner::after
       width: 212px
       height: 212px
       top: -227px
       left: 50%
       transform: translateX(-50%)
+
+    &__inner::before
+      animation-name: spinWithOffset
 
 @media (max-height: 750px), (max-width: 440px)
   .header

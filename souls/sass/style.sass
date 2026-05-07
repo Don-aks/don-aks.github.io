@@ -1,6 +1,7 @@
 @use 'vars' as *
 @use 'reset'
 @use 'libs'
+@use 'animations'
 @use 'global'
 
 // ======= HEADER ======= //
@@ -196,12 +197,16 @@
     margin: 0 129px 132px auto
     max-width: 506px
 
-    &::before
+    &::before,
+    &::after
       top: -75px
       left: -374px
       width: 254px
       height: 243px
       background-image: url("../img/no-gluten.svg")
+
+    &::after
+      background-image: url("../img/no-gluten-inner.svg")
 
   &__title
     min-width: 635px
@@ -517,9 +522,13 @@
   &__inner
     max-width: 336px
 
-    &::before
+    &::before,
+    &::after
       top: -70px - $round-icon-size
       background-image: url("../img/zero-plastic-shop.svg")
+
+    &::after
+      background-image: url("../img/zero-plastic-shop-inner.svg")
 
   &__title
     max-width: 460px
@@ -622,9 +631,13 @@
   &__inner
     max-width: 385px
 
-    &::before
+    &::before,
+    &::after
       top: -44px - $round-icon-size
       background-image: url("../img/love-first-bite.svg")
+
+    &::after
+      background-image: url("../img/love-first-bite-inner.svg")
 
   &__title
     margin-bottom: 12px
