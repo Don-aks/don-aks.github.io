@@ -136,6 +136,28 @@
     text-align: center
     word-spacing: 14px
 
+  &__title-row
+    overflow: hidden
+
+    span
+      display: inline-block
+      will-change: transform
+
+    $delay: 0.2s
+    $word-count: 3
+    $gap-between-lines: $delay * 3
+
+    &:first-child
+      @for $i from 1 through $word-count
+        span:nth-child(#{$i})
+          animation-delay: $delay * ($i - 1)
+
+    &:nth-child(2)
+      @for $i from 1 through $word-count
+        span:nth-child(#{$i})
+          $d: $gap-between-lines + ($word-count * $delay) + ($delay * ($i - 1))
+          animation-delay: $d
+
   &__scroll-down
     position: absolute
     bottom: 7px
