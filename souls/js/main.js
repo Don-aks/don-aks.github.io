@@ -10,7 +10,7 @@ const langBtn = getEl('lang');
 const langText = getEl('lang__text');
 const langMenu = getEl('lang__menu');
 const langLinks = getElements('lang__link');
-changeLanguage();
+initLanguage();
 
 langBtn.addEventListener('click', function () {
   const isOpen = langMenu.classList.toggle('lang__menu--active');
@@ -218,60 +218,65 @@ if (
 
 // ====== FUNCTIONS ====== //
 
-function changeLanguage() {
-  let hash = window.location.hash.substring(1);
-  let hasLang = LANG_LIST.some(function (lang) {
-    return hash.indexOf(lang) !== -1;
-  });
-
-  if (!hasLang) {
-    location.href = window.location.pathname + '#en';
-    hash = 'en';
-    return;
-  }
-
-  if (hash == 'en') {
-    return;
-  }
-
-  document.documentElement.lang = hash;
-  langText.innerHTML = hash;
-
-  Object.keys(LANG_DICTIONARY).forEach(function (key) {
-    const elems = document.querySelectorAll('.lng-' + key);
-    if (elems.length === 0) {
-      return;
-    }
-
-    const rawText = LANG_DICTIONARY[key][hash] || '';
-
-    if (rawText === '') {
-      elems.forEach(function (el) {
-        el.parentElement.removeChild(el);
-      });
-      return;
-    }
-
-    elems.forEach(function (el) {
-      if (el.hasAttribute('aria-label')) {
-        el.setAttribute('aria-label', rawText);
-        return;
-      }
-
-      if (el.tagName === 'IMG') {
-        el.setAttribute('alt', rawText);
-        return;
-      }
-
-      if (el.tagName === 'INPUT') {
-        el.setAttribute('placeholder', rawText);
-        return;
-      }
-
-      const safeHtml = escapeHTML(rawText).replace(/\n/g, '<br>');
-      el.innerHTML = safeHtml;
+function initLanguage() {
+  function changeLanguage() {
+    let hash = window.location.hash.substring(1);
+    let hasLang = LANG_LIST.some(function (lang) {
+      return hash.indexOf(lang) !== -1;
     });
-  });
+
+    if (!hasLang) {
+      location.href = window.location.pathname + '#en';
+      hash = 'en';
+      return;
+    }
+
+    if (hash == 'en') {
+      return;
+    }
+
+    document.documentElement.lang = hash;
+    langText.innerHTML = hash;
+
+    Object.keys(LANG_DICTIONARY).forEach(function (key) {
+      const elems = document.querySelectorAll('.lng-' + key);
+      if (elems.length === 0) {
+        return;
+      }
+
+      const rawText = LANG_DICTIONARY[key][hash] || '';
+
+      if (rawText === '') {
+        elems.forEach(function (el) {
+          el.parentElement.removeChild(el);
+        });
+        return;
+      }
+
+      elems.forEach(function (el) {
+        if (el.hasAttribute('aria-label')) {
+          el.setAttribute('aria-label', rawText);
+          return;
+        }
+
+        if (el.tagName === 'IMG') {
+          el.setAttribute('alt', rawText);
+          return;
+        }
+
+        if (el.tagName === 'INPUT') {
+          el.setAttribute('placeholder', rawText);
+          return;
+        }
+
+        const safeHtml = escapeHTML(rawText).replace(/\n/g, '<br>');
+        el.innerHTML = safeHtml;
+      });
+    });
+  }
+
+  changeLanguage();
+  document.documentElement.classList.remove(langLoadingClass);
 }
 
 function closeNotify() {
