@@ -3,8 +3,12 @@
 .lang-loading
   visibility: hidden
 
-  *
+  *:not(.preloader__image):not(.preloader__image-wrap)
     animation: none !important
+
+  .preloader
+    opacity: 1
+    visibility: visible
 
 body
   display: flex
@@ -47,6 +51,27 @@ body
 
 .section
   overflow: hidden
+
+.preloader
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 10
+
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+  background-color: $primary-color
+  opacity: 0
+
+  transition: visibility 0.3s, opacity 0.3s
+
+  visibility: hidden
+  pointer-events: none
 
 .images-rotate
   &__img
