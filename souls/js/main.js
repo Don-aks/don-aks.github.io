@@ -307,18 +307,12 @@ function changeMenuState() {
   body.classList.toggle('locked');
 
   const links = document.querySelectorAll('.header__menu .menu__link');
-  const btn = document.querySelector('.header__menu .header__btn');
 
-  if (menu.classList.contains('header__menu--active')) {
-    btn.removeAttribute('tabindex');
-    for (let i = 0; i < links.length; i++) {
-      links[i].removeAttribute('tabindex');
-    }
-  } else {
-    btn.setAttribute('tabindex', '-1');
-    for (let i = 0; i < links.length; i++) {
-      links[i].setAttribute('tabindex', '-1');
-    }
+  const tabIndex = !isActive ? '0' : '-1';
+
+  menuCloseBtn.setAttribute('tabindex', tabIndex);
+  for (let i = 0; i < links.length; i++) {
+    links[i].setAttribute('tabindex', tabIndex);
   }
 
   menu.setAttribute('aria-hidden', String(isActive));
