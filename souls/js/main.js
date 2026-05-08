@@ -303,8 +303,8 @@ function closeNotify() {
 
 function changeMenuState() {
   const isActive = menu.classList.contains('header__menu--active');
-  menu.classList.toggle('header__menu--active');
-  body.classList.toggle('locked');
+  menu.classList.toggle('header__menu--active', !isActive);
+  body.classList.toggle('locked', !isActive);
 
   const links = document.querySelectorAll('.header__menu .menu__link');
 
