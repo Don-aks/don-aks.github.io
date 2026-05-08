@@ -277,6 +277,7 @@ function initLanguage() {
 
   changeLanguage();
   document.documentElement.classList.remove(langLoadingClass);
+  document.documentElement.classList.remove(lockedClass);
 }
 
 function closeNotify() {
