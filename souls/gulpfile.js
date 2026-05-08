@@ -6,7 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const esbuild = require('gulp-esbuild');
 const plumber = require('gulp-plumber');
-// const del = require('del');
+const del = require('del');
 const browserSync = require('browser-sync').create();
 
 function browsersync() {
@@ -93,9 +93,9 @@ function build() {
   }).pipe(dest('dist'));
 }
 
-/*function cleanDist() {
+function cleanDist() {
   return del('dist');
-}*/
+}
 
 function watching() {
   watch(['sass/**/*.sass'], styles);
@@ -108,7 +108,7 @@ exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
-// exports.cleanDist   = cleanDist;
-exports.build = series(images, build);
+exports.cleanDist = cleanDist;
+exports.build = series(cleanDist, images, build);
 
 exports.default = parallel(styles, scripts, browsersync, watching);
