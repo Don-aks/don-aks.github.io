@@ -36,6 +36,10 @@ const LANG_DICTIONARY = {
     pl: 'Koszyk',
     uk: 'Кошик',
   },
+  'cart-products': {
+    pl: 'produktów',
+    uk: 'товарів',
+  },
   'change-lng': {
     pl: 'Zmień język',
     uk: 'Змінити мову',
