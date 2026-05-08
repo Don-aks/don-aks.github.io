@@ -20,6 +20,14 @@ function browsersync() {
 
 function styles() {
   return src('sass/style.sass')
+    .pipe(
+      plumber({
+        errorHandler: function (err) {
+          console.error(err.toString());
+          this.emit('end');
+        },
+      }),
+    )
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(concat('style.min.css'))
     .pipe(
