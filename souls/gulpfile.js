@@ -78,7 +78,7 @@ function images() {
             },
             {
               name: 'cleanupIDs',
-              active: false,
+              active: true,
             },
           ],
         }),
