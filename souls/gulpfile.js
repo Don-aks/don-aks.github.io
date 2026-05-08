@@ -82,7 +82,7 @@ function images() {
             },
           ],
         }),
-      ])
+      ]),
     )
     .pipe(dest('img'));
 }
