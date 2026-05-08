@@ -33,8 +33,8 @@ const LANG_DICTIONARY = {
     uk: 'Увійти',
   },
   cart: {
-    pl: 'Koszyk (0)',
-    uk: 'Кошик (0)',
+    pl: 'Koszyk',
+    uk: 'Кошик',
   },
   'change-lng': {
     pl: 'Zmień język',
