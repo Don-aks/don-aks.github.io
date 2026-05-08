@@ -88,9 +88,12 @@ function images() {
 }
 
 function build() {
-  return src(['**/*.html', 'css/style.min.css', 'js/main.min.js']).pipe(
-    dest('dist'),
-  );
+  return src([
+    '**/*.html',
+    'css/style.min.css',
+    'js/lang.js',
+    'js/main.min.js',
+  ]).pipe(dest('dist'));
 }
 
 function cleanDist() {
