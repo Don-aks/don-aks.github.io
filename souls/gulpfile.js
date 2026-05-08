@@ -24,9 +24,9 @@ function styles() {
     .pipe(concat('style.min.css'))
     .pipe(
       autoprefixer({
-        overrideBrowserslist: ['last 10 versions'],
-        grid: true,
-      })
+        overrideBrowserslist: ['last 3 versions', 'ie 11', 'not dead'],
+        grid: 'autoplace',
+      }),
     )
     .pipe(dest('css/'))
     .pipe(browserSync.stream());
