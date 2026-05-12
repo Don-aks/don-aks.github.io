@@ -6,6 +6,17 @@ import Parallax from 'parallax-js';
 const FOCUSABLE_ELEMENTS_SELECTOR =
   '[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
+const CLASSES = {
+  menuActive: 'header__menu--active',
+  menuBtn: 'header__btn',
+  menuBtnActive: 'header__btn--active',
+  menuLink: 'menu__link',
+
+  notify: 'notify',
+  notifyBtn: 'notify__close',
+  notifyClosed: 'notify--closed',
+};
+
 const langBtn = getEl('lang');
 const langText = getEl('lang__text');
 const langMenu = getEl('lang__menu');
@@ -43,12 +54,21 @@ langMenu.addEventListener('click', function (e) {
 });
 
 const headerWrapper = getEl('header__wrapper');
-const closeBtn = getEl('notify__close');
+const notifyCloseBtn = getEl(CLASSES.notifyBtn);
 const header = getEl('header');
 const menu = getEl('header__menu');
 const hero = getEl('hero');
-let isNotifyClosed = false;
-closeBtn.addEventListener('click', closeNotify);
+
+notifyCloseBtn.addEventListener('click', function () {
+  const notify = getClosest(e.currentTarget, '.' + CLASSES.notify);
+
+  if (!notify) {
+    console.error('No notify found for', e.currentTarget);
+    return;
+  }
+
+  notify.classList.add(CLASSES.notifyClosed);
+});
 
 const menuBtns = getElements('header__btn');
 const body = document.querySelector('body');
@@ -284,27 +304,6 @@ function initLanguage() {
   document.documentElement.classList.remove(lockedClass);
 }
 
-function closeNotify() {
-  isNotifyClosed = true;
-  this.parentElement.style.display = 'none';
-
-  header.setAttribute(
-    'style',
-    header.getAttribute('style') + ' height: 100vh; height: 100dvh'
-  );
-
-  if (window.innerHeight <= 465 || window.innerWidth <= 440) {
-    setHeroHeight('calc(100vh - 124px); height: calc(100dvh - 124px)');
-  } else if (window.innerHeight <= 750) {
-    setHeroHeight('calc(100vh - 114px); height: calc(100dvh - 114px)');
-  } else {
-    setHeroHeight('calc(100vh - 209px); height: calc(100dvh - 209px)');
-  }
-
-  menu.style.top = '0';
-  headerWrapper.style.top = '0';
-}
-
 function changeMenuState() {
   const willBeActive = menu.classList.toggle('header__menu--active');
   document.documentElement.classList.toggle(lockedClass, willBeActive);
@@ -422,6 +421,23 @@ function setAnimationOnElements() {
 }
 
 // ====== UTILS ====== //
+
+var matchesSelector =
+  Element.prototype.matches ||
+  Element.prototype.msMatchesSelector ||
+  Element.prototype.webkitMatchesSelector;
+
+function getClosest(element, selector) {
+  while (element && element.nodeType === 1) {
+    if (matchesSelector.call(element, selector)) {
+      return element;
+    }
+
+    element = element.parentNode;
+  }
+
+  return null;
+}
 
 function getTransitionDurationInMs(el) {
   var style = getComputedStyle(el);

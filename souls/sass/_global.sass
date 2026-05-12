@@ -122,6 +122,20 @@ body
   background-color: $black
   color: $white
 
+  & + .header
+    height: calc(100dvh - 46px)
+    height: calc(100vh - 46px)
+
+  &--closed
+    display: none
+
+    & + .header
+      height: 100vh
+      height: 100dvh
+
+      & > .hero
+        height: auto
+
   &__close
     position: absolute
     top: 15px

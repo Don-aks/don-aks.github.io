@@ -415,6 +415,11 @@
     &__close
       top: 10px
 
+  .notify:not(.notify--closed)
+    & + .header
+      height: calc(100dvh - 40px)
+      height: calc(100vh - 40px)
+
   .cookies
     right: 50%
     min-width: 358px
@@ -532,6 +537,11 @@
 
   .notify__text
     font-size: 10px
+
+  .notify:not(.notify--closed)
+    & + .header
+      height: calc(100dvh - 37px)
+      height: calc(100vh - 37px)
 
   .nut-product
     padding-right: 0
