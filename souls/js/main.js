@@ -22,7 +22,11 @@ langBtn.addEventListener('click', function () {
   langBtn.setAttribute('aria-expanded', String(isOpen));
 
   if (isOpen) {
-    langLinks[0].focus();
+    const transitionDuration = getTransitionDurationInMs(langMenu);
+    setTimeout(function () {
+      langLinks[0].focus();
+    }, transitionDuration);
+
     return;
   }
 
@@ -418,6 +422,20 @@ function setAnimationOnElements() {
 }
 
 // ====== UTILS ====== //
+
+function getTransitionDurationInMs(el) {
+  var style = getComputedStyle(el);
+  var durationStr = style.transitionDuration || style.webkitTransitionDuration;
+
+  var durations = durationStr.split(',').map(function (d) {
+    d = d.trim();
+    var isMs = d.indexOf('ms') !== -1;
+    return isMs ? parseFloat(d) : parseFloat(d) * 1000;
+  });
+
+  // if multiple
+  return Math.max.apply(Math, durations);
+}
 
 function getEl(className) {
   return document.querySelector('.' + className);
