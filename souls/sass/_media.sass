@@ -90,9 +90,12 @@
         background-color: color.adjust($primary-color, $lightness: -10%)
 
   .lang
-    right: 0
-    width: 44px
-    height: 44px
+    position: relative
+    top: auto
+    right: -8px
+
+    &__btn
+      position: static
 
   .hero
     height: calc(100vh - 209px - 46px)

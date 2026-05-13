@@ -199,16 +199,23 @@ body
     @include focus
 
 .lang
-  text-transform: uppercase
+  position: absolute
+  top: 70px
+  right: 10px
 
-  &:focus
-    @include focus
+  &__btn
+    width: 44px
+    height: 44px
+
+    text-transform: uppercase
+
+    &:focus
+      @include focus
 
   &__menu
     position: absolute
-    top: 70px
-    right: 10px
-
+    top: calc(100% + 3px)
+    right: 8px
     display: block
     min-width: 50px
 
