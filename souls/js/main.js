@@ -2,6 +2,7 @@
 
 import Swiper from 'swiper';
 import Parallax from 'parallax-js';
+import 'picturefill';
 
 const FOCUSABLE_ELEMENTS_SELECTOR =
   '[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])';
