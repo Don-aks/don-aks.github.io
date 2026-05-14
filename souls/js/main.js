@@ -302,6 +302,7 @@ function initLanguage() {
   changeLanguage();
   document.documentElement.classList.remove(langLoadingClass);
   document.documentElement.classList.remove(lockedClass);
+  document.body.removeAttribute('aria-busy');
 }
 
 function changeMenuState() {
