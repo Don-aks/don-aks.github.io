@@ -189,41 +189,47 @@ if (window.scrollY > headerWrapper.offsetHeight) {
   setHeaderBgColor();
 }
 
-window.addEventListener('scroll', function () {
-  if (this.scrollY > headerWrapper.offsetHeight) {
-    headerWrapper.style.top = '0';
-    setHeaderBgColor();
-  } else {
-    headerWrapper.style.backgroundColor = 'transparent';
-    if (isNotifyClosed) {
+window.addEventListener(
+  'scroll',
+  throttle(function () {
+    if (this.scrollY > headerWrapper.offsetHeight) {
       headerWrapper.style.top = '0';
+      setHeaderBgColor();
     } else {
-      headerWrapper.style.top = '46px';
+      headerWrapper.style.backgroundColor = 'transparent';
+      if (isNotifyClosed) {
+        headerWrapper.style.top = '0';
+      } else {
+        headerWrapper.style.top = '46px';
+      }
     }
-  }
 
-  for (let i = 0; i < images.length; i++) {
-    addClassOnScroll(images[i], 'images-rotate__img--show');
-  }
+    for (let i = 0; i < images.length; i++) {
+      addClassOnScroll(images[i], 'images-rotate__img--show');
+    }
 
-  setAnimationOnElements();
+    setAnimationOnElements();
 
-  const scrollY = this.scrollY;
-  if (scrollY < blockHero.offsetHeight)
-    title.style.marginTop = scrollY * 1.5 + 'px';
+    const scrollY = this.scrollY;
+    if (scrollY < blockHero.offsetHeight)
+      title.style.marginTop = scrollY * 1.5 + 'px';
 
-  // Behavior of sliders on scroll
-  if (isScrolledDown(slider, false) && !isScrolledToSlider.slider) {
-    sliderSwiper.slideNext();
-    isScrolledToSlider.slider = true;
-  } else if (isScrolledDown(recipes, false) && !isScrolledToSlider.recipes) {
-    recipesSwiper.slideNext();
-    isScrolledToSlider.recipes = true;
-  } else if (isScrolledDown(products, false) && !isScrolledToSlider.products) {
-    productsSwiper.slideNext();
-    isScrolledToSlider.products = true;
-  }
-});
+    // Behavior of sliders on scroll
+    if (isScrolledDown(slider, false) && !isScrolledToSlider.slider) {
+      sliderSwiper.slideNext();
+      isScrolledToSlider.slider = true;
+    } else if (isScrolledDown(recipes, false) && !isScrolledToSlider.recipes) {
+      recipesSwiper.slideNext();
+      isScrolledToSlider.recipes = true;
+    } else if (
+      isScrolledDown(products, false) &&
+      !isScrolledToSlider.products
+    ) {
+      productsSwiper.slideNext();
+      isScrolledToSlider.products = true;
+    }
+  }),
+);
 
 // Parralax is not for IE
 // and not for screens under 992
@@ -422,6 +428,20 @@ function setAnimationOnElements() {
 }
 
 // ====== UTILS ====== //
+
+function throttle(func, wait) {
+  let timeout;
+
+  return function () {
+    const context = this;
+    const args = arguments;
+
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      func.apply(context, args);
+    }, wait);
+  };
+}
 
 var matchesSelector =
   Element.prototype.matches ||
