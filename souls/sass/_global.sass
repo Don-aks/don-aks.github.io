@@ -1,14 +1,22 @@
 @use 'vars' as *
 
+$preloader-image-transition: 1s
+
 .lang-loading
-  visibility: hidden
+  .header__logo
+    visibility: hidden
 
   *:not(.preloader__image):not(.preloader__image-wrap)
     animation: none !important
 
   .preloader
-    opacity: 1
-    visibility: visible
+    background-color: $primary-color
+
+    &__image
+      animation-name: pulse
+
+.header__logo
+  transition: visibility 0s $preloader-image-transition
 
 body
   display: flex
@@ -65,13 +73,15 @@ body
   align-items: center
   flex-direction: column
 
-  background-color: $primary-color
-  opacity: 0
+  background-color: transparent
 
-  transition: visibility 0.3s, opacity 0.3s
+  transition: background-color 0.3s
 
-  visibility: hidden
-  pointer-events: none
+  &__image
+    animation-name: none
+    transition: transform $preloader-image-transition
+
+    will-change: transform
 
 .images-rotate
   &__img

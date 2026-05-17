@@ -18,6 +18,10 @@ const CLASSES = {
   notifyClosed: 'notify--closed',
 };
 
+let preloader = getEl('preloader');
+let preloaderLogo = getEl('preloader__image');
+const headerLogo = getEl('logo__img');
+
 const langBtn = getEl('lang');
 const langText = getEl('lang__text');
 const langMenu = getEl('lang__menu');
@@ -310,6 +314,11 @@ function initLanguage() {
   document.documentElement.classList.remove(langLoadingClass);
   document.documentElement.classList.remove(lockedClass);
   document.body.removeAttribute('aria-busy');
+
+  setTimeout(function () {
+    transitionPreloaderLogoToHeader();
+    removePreloaderWhenReady();
+  }, 0);
 }
 
 function changeMenuState() {
@@ -360,7 +369,7 @@ function addClassOnScroll(
   className,
   isUsingTransform,
   offset,
-  classOutOfVisibility
+  classOutOfVisibility,
 ) {
   if (!offset) offset = windowOffset;
 
@@ -423,9 +432,40 @@ function setAnimationOnElements() {
       'animate__' + className,
       true,
       windowOffset,
-      classOutOfVisibility ? 'animate__' + classOutOfVisibility : null
+      classOutOfVisibility ? 'animate__' + classOutOfVisibility : null,
     );
   }
+}
+
+function transitionPreloaderLogoToHeader() {
+  if (!preloaderLogo || !headerLogo) {
+    return;
+  }
+
+  const from = preloaderLogo.getBoundingClientRect();
+  const to = headerLogo.getBoundingClientRect();
+
+  const dx = to.left - from.left;
+  const dy = to.top - from.top;
+
+  preloaderLogo.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+}
+
+function removePreloaderWhenReady() {
+  if (!preloader || !preloaderLogo || !headerLogo) {
+    return;
+  }
+
+  function onTransitionEnd() {
+    preloaderLogo.removeEventListener('transitionend', onTransitionEnd);
+
+    document.body.removeChild(preloader);
+
+    preloader = null;
+    preloaderLogo = null;
+  }
+
+  preloaderLogo.addEventListener('transitionend', onTransitionEnd);
 }
 
 // ====== UTILS ====== //
@@ -480,7 +520,7 @@ function getEl(className) {
 }
 
 function getElements(className) {
-  return document.querySelectorAll('.' + className);
+  return Array.from(document.querySelectorAll('.' + className));
 }
 
 function escapeHTML(str) {

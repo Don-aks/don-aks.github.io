@@ -2,7 +2,9 @@
 @use 'reset'
 @use 'libs'
 @use 'animations'
-@use 'global'
+@use 'global' as *
+
+$loader-trs: $preloader-image-transition
 
 // ======= HEADER ======= //
 
@@ -170,22 +172,22 @@
     &:first-child
       @for $i from 1 through $word-count
         span:nth-child(#{$i})
-          animation-delay: $delay * ($i - 1)
+          animation-delay: $loader-trs + $delay * ($i - 1)
 
     &:nth-child(2)
       @for $i from 1 through $word-count
         span:nth-child(#{$i})
           $d: $gap-between-lines + ($word-count * $delay) + ($delay * ($i - 1))
-          animation-delay: $d
+          animation-delay: $loader-trs + $d
 
   &__cookies
-    animation: cookiesSlideInRight 0.5s both 2.5s
+    animation: cookiesSlideInRight 0.5s both #{$loader-trs + 2.5s}
 
   &__scroll-down
     position: absolute
     bottom: 7px
     left: 50%
-    animation: scrollBtnSlideInUp 0.5s both 3.5s
+    animation: scrollBtnSlideInUp 0.5s both #{$loader-trs + 3.5s}
 
 .cookies
   position: absolute
