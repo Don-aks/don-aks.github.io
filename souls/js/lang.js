@@ -72,6 +72,10 @@ const LANG_DICTIONARY = {
     pl: 'Nasza strona używa plików',
     uk: 'Наш веб-сайт використовує файли',
   },
+  'scroll-down': {
+    pl: 'Przewiń w dół',
+    uk: 'Прокрутіть вниз',
+  },
   'products-title': {
     pl: 'Dzikie ukochane',
     uk: 'Дикі улюбленці',
