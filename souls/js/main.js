@@ -39,11 +39,12 @@ langBtn.addEventListener('click', function () {
   langBtn.setAttribute('aria-expanded', String(isOpen));
 
   if (isOpen) {
-    const transitionDuration = getTransitionDurationInMs(langMenu);
-    setTimeout(function () {
+    function onTransitionEnd() {
+      langMenu.removeEventListener('transitionend', onTransitionEnd);
       langLinks[0].focus();
-    }, transitionDuration);
+    }
 
+    langMenu.addEventListener('transitionend', onTransitionEnd);
     return;
   }
 
@@ -505,20 +506,6 @@ function getClosest(element, selector) {
   }
 
   return null;
-}
-
-function getTransitionDurationInMs(el) {
-  var style = getComputedStyle(el);
-  var durationStr = style.transitionDuration || style.webkitTransitionDuration;
-
-  var durations = durationStr.split(',').map(function (d) {
-    d = d.trim();
-    var isMs = d.indexOf('ms') !== -1;
-    return isMs ? parseFloat(d) : parseFloat(d) * 1000;
-  });
-
-  // if multiple
-  return Math.max.apply(Math, durations);
 }
 
 function getEl(className) {
