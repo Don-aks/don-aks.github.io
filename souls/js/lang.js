@@ -46,7 +46,7 @@ const LANG_DICTIONARY = {
   },
   span1: {
     pl: 'Spróbuj',
-    uk: 'Cкуштуйте',
+    uk: 'Скуштуйте',
   },
   span2: {
     pl: '',
@@ -73,15 +73,15 @@ const LANG_DICTIONARY = {
     uk: 'Наш веб-сайт використовує файли',
   },
   'products-title': {
-    pl: 'Dziko ukochane',
-    uk: 'Дико улюблене',
+    pl: 'Dzikie ukochane',
+    uk: 'Дикі улюбленці',
   },
   'products-text': {
     pl: 'Znajdziesz nasze dzikie produkty w ich najprostszej formie. Żadne dodatki ani nic innego nie mogą zepsuć ich natury.',
     uk: 'Ви знайдете наші дикі продукти в їхній найпростішій формі. Ніякі добавки або будь-що ще не можуть зіпсувати їх природу.',
   },
   product1: {
-    pl: 'Masło z Dziki Arachidu',
+    pl: 'Masło z Dzikiego Arachidu',
     uk: 'Масло Дикого Арахісу',
   },
   product2: {
@@ -89,7 +89,7 @@ const LANG_DICTIONARY = {
     uk: 'Тахіні з Какао та Медом',
   },
   product3: {
-    pl: 'Masło z Dziki Orzech Leśny',
+    pl: 'Masło z Dzikiego Orzecha Laskowego',
     uk: 'Масло з Дикого Лісового Горіха',
   },
   product4: {
@@ -130,7 +130,7 @@ const LANG_DICTIONARY = {
   },
   'nut-text': {
     pl: 'Wszystkie skarby są ukryte w skrzyni. Odpowiednio, nasze skarby są zamknięte w swojej Dzikiej powłoce.',
-    uk: 'Всі скарби заховані в скрині. Відповідно, наші скарби укладені у свою Дику оболонку.',
+    uk: 'Всі скарби заховані в скрині. Відповідно, наші скарби сховані у своїй Дикій оболонці.',
   },
   'nut-price': {
     pl: '250g | 20',
@@ -145,7 +145,7 @@ const LANG_DICTIONARY = {
     uk: 'Відкрийте наші продукти через 5 скарбів природи!',
   },
   sesame: {
-    pl: 'Kozieradka',
+    pl: 'Sezam',
     uk: 'Кунжут',
   },
   peanut: {
@@ -169,7 +169,7 @@ const LANG_DICTIONARY = {
     uk: 'Слова від душі!',
   },
   'slider-title1': {
-    pl: 'Propaganda',
+    pl: 'Popaganda',
     uk: 'Попаганда',
   },
   'slider-text1': {
@@ -190,7 +190,7 @@ const LANG_DICTIONARY = {
   },
   'store-text': {
     pl: 'Zapraszamy do odkrywania, życia i fotografowania. Ale uważaj, to bardzo wciąga!',
-    uk: 'Ми запрошуємо вас дослідити його, прожити та сфотографувати. Але будьте обережні, це викликає сильну залежність!',
+    uk: 'Ми запрошуємо вас дослідити, прожити це та сфотографувати. Але будьте обережні, це викликає сильну залежність!',
   },
   'halva-title': {
     pl: 'Dzika chałwa',
@@ -202,7 +202,7 @@ const LANG_DICTIONARY = {
   },
   'halva-text': {
     pl: 'To nie deser, nie przekąska i nie pełnowartościowe jedzenie. Ale to wszystko naraz. To to, czym chcesz, żeby było.',
-    uk: 'Це не десерт, не перекус і не повноцінна їжа. Але все це одночасно. Це те, що ви хочете бачити.',
+    uk: 'Це не десерт, не перекус і не повноцінна їжа. Але все це одночасно. Це те, чим ви хочете, щоб воно було.',
   },
   'halva-price': {
     pl: '500g | OD 35',
@@ -229,7 +229,7 @@ const LANG_DICTIONARY = {
     uk: 'Дикі Рецепти',
   },
   'recipes-text': {
-    pl: 'Zajrzyj przez dziurkę od klucza do naszej Dzikej kuchni! Zdobądź pomysły, jak przemienić swoją kuchnię w Dziką.',
+    pl: 'Zajrzyj przez dziurkę od klucza do naszej Dzikiej kuchni! Zdobądź pomysły, jak przemienić swoją kuchnię w Dziką.',
     uk: 'Подивіться на замкову щілину нашої Дикої кухні! Отримайте ідеї про те, як перетворити власну кухню на Дику.',
   },
   sweet: {
@@ -257,11 +257,11 @@ const LANG_DICTIONARY = {
     uk: 'Залишайся Диким',
   },
   input: {
-    pl: 'Napisz swój email',
+    pl: 'Wpisz swój e-mail',
     uk: 'Напишіть свій email',
   },
   follow: {
-    pl: 'Obserwuj nas',
+    pl: 'Śledź nas',
     uk: 'Слідкуйте за Нами',
   },
   website: {
@@ -269,8 +269,8 @@ const LANG_DICTIONARY = {
     uk: 'Сайт створений',
   },
   butters: {
-    pl: 'Masła orzechowe',
-    uk: 'Горіхове масло',
+    pl: 'Kremy orzechowe',
+    uk: 'Горіхові пасти',
   },
   honey: {
     pl: 'Miód',
@@ -285,8 +285,8 @@ const LANG_DICTIONARY = {
     uk: 'Халва',
   },
   'dry-nuts': {
-    pl: 'Suszone Orzechy',
-    uk: 'Сухі Горіхи',
+    pl: 'Orzechy prażone',
+    uk: 'Смажені горіхи',
   },
   'open-sesame': {
     pl: 'Otwórz sezam',
