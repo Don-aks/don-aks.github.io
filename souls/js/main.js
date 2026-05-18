@@ -237,19 +237,8 @@ window.addEventListener(
   }),
 );
 
-// Parralax is not for IE
-// and not for screens under 992
-if (
-  !(/*@cc_on!@*/ (false || !!document.documentMode)) &&
-  window.innerWidth > 992
-) {
-  const scenes = document.querySelectorAll('.image-scene');
-  for (let i = 0; i < scenes.length; i++) new Parallax(scenes[i]);
-
-  if (window.innerWidth <= 1200)
-    for (let i = 0; i < scenes.length; i++)
-      for (let j = 0; j < scenes[i].children.length; j++)
-        scenes[i].children[j].setAttribute('data-depth', '0.1');
+if (!isIE()) {
+  initParallax();
 }
 
 // ====== FUNCTIONS ====== //
@@ -475,6 +464,17 @@ function removePreloaderWhenReady() {
   preloaderLogo.addEventListener('transitionend', onTransitionEnd);
 }
 
+function initParallax() {
+  const scenes = document.querySelectorAll('.image-scene');
+  if (window.innerWidth > 1200) return;
+
+  for (let i = 0; i < scenes.length; i++) {
+    for (let j = 0; j < scenes[i].children.length; j++) {
+      scenes[i].children[j].setAttribute('data-depth', '0.1');
+    }
+  }
+}
+
 // ====== UTILS ====== //
 
 function throttle(func, wait) {
@@ -520,6 +520,18 @@ function escapeHTML(str) {
   const p = document.createElement('p');
   p.textContent = str;
   return p.innerHTML;
+}
+
+function isIE() {
+  const ua = window.navigator.userAgent;
+
+  // IE 10 or older
+  const msie = ua.indexOf('MSIE ');
+
+  // IE 11
+  const trident = ua.indexOf('Trident/');
+
+  return msie > -1 || trident > -1;
 }
 
 function setKeyboardSupport(container, focusableElements) {
