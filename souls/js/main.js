@@ -622,7 +622,7 @@ function setFocusTrap(container) {
   document.addEventListener('keydown', handleKeyDown);
 
   return function () {
-    document.addEventListener('focusin', handleFocusIn);
+    document.removeEventListener('focusin', handleFocusIn);
     document.removeEventListener('keydown', handleKeyDown);
   };
 }
