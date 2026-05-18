@@ -344,6 +344,7 @@ function changeMenuState() {
 
 function hideCookies() {
   // TODO: add animation
+  scrollBtn.focus();
   cookies.style.display = 'none';
 }
 
