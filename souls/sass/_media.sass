@@ -61,8 +61,8 @@
       width: 280px
       height: 200vh
       padding-top: 50px
-    
-      background-color: $primary-color
+
+      background-color: currentColor
 
       transform: translateX(-200%)
       transition: transform 0.3s
@@ -71,6 +71,9 @@
         transform: translate(0)
 
   .menu
+    &__list
+      color: $black
+
     &__item:not(:last-child)
       margin-right: 0
 

@@ -201,7 +201,8 @@ window.addEventListener(
       headerWrapper.style.top = '0';
       setHeaderBgColor();
     } else {
-      headerWrapper.style.backgroundColor = 'transparent';
+      header.style.color = '';
+      headerWrapper.style.backgroundColor = '';
       if (isNotifyClosed) {
         headerWrapper.style.top = '0';
       } else {
@@ -407,7 +408,7 @@ function setHeaderBgColor() {
     if (isScrolledDown(el, false)) {
       const bgColor = sectionsBgColor[i].color;
       menu.style.backgroundColor = bgColor + '1)';
-      headerWrapper.style.backgroundColor = bgColor + '0.5)';
+      header.style.color = bgColor + '0.5)';
     }
   }
 }
