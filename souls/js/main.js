@@ -86,9 +86,7 @@ body.addEventListener('click', bodyClickHandler);
 
 const cookies = getEl('cookies');
 const cookiesBtn = getEl('cookies__btn');
-cookiesBtn.addEventListener('click', function () {
-  cookies.style.display = 'none';
-});
+cookiesBtn.addEventListener('click', hideCookies);
 
 const products = getEl('products__inner');
 const productsSwiper = new Swiper('.products__inner', {
@@ -342,6 +340,11 @@ function changeMenuState() {
   } else if (removeFocusTrap) {
     removeFocusTrap();
   }
+}
+
+function hideCookies() {
+  // TODO: add animation
+  cookies.style.display = 'none';
 }
 
 function scrollIntoView(e) {
