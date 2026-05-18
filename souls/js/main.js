@@ -27,6 +27,7 @@ const langText = getEl('lang__text');
 const langMenu = getEl('lang__menu');
 const langLinks = getElements('lang__link');
 initLanguage();
+setKeyboardSupport(langMenu, langLinks);
 
 langBtn.addEventListener('click', function () {
   const isOpen = langMenu.classList.toggle('lang__menu--active');
@@ -534,8 +535,50 @@ function escapeHTML(str) {
   return p.innerHTML;
 }
 
+function setKeyboardSupport(container, focusableElements) {
+  var focusable = focusableElements || getFocusable(container);
+
+  function handleKeydown(e) {
+    var key = e.keyCode;
+    var current = focusable.indexOf(document.activeElement);
+    var len = focusable.length;
+    var next;
+
+    switch (key) {
+      case 40: // ArrowDown
+      case 38: // ArrowUp
+        var step = key === 40 ? 1 : -1;
+        next = (current + step + len) % len;
+        break;
+
+      case 36: // Home
+        next = 0;
+        break;
+
+      case 35: // End
+        next = len - 1;
+        break;
+
+      // If it's not one of the handled keys
+      default:
+        return;
+    }
+
+    if (next !== undefined && focusable[next]) {
+      e.preventDefault();
+      focusable[next].focus();
+    }
+  }
+
+  container.addEventListener('keydown', handleKeydown);
+}
+
 function setHeroHeight(style) {
   hero.setAttribute('style', 'height: ' + style);
+}
+
+function getFocusable(container) {
+  return Array.from(container.querySelectorAll(FOCUSABLE_ELEMENTS_SELECTOR));
 }
 
 function setFocusTrap(container) {
