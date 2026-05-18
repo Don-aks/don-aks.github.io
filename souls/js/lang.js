@@ -44,27 +44,27 @@ const LANG_DICTIONARY = {
     pl: 'Zmień język',
     uk: 'Змінити мову',
   },
-  span1: {
+  taste: {
     pl: 'Spróbuj',
     uk: 'Скуштуйте',
   },
-  span2: {
+  the: {
     pl: '',
     uk: '',
   },
-  span3: {
+  wild: {
     pl: 'Dzikie.',
     uk: 'Дике.',
   },
-  span4: {
+  find: {
     pl: 'Znajdź',
     uk: 'Знайдіть',
   },
-  span5: {
+  your: {
     pl: 'Swoją',
     uk: 'Свою',
   },
-  span6: {
+  soul: {
     pl: 'Duszę.',
     uk: 'Душу.',
   },
