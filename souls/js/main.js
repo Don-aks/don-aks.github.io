@@ -600,6 +600,8 @@ function setFocusTrap(container) {
       return el.getAttribute('tabindex') !== '-1' && !el.disabled;
     });
 
+    if (focusable.length === 0) return;
+
     const firstElement = focusable[0];
     const lastElement = focusable[focusable.length - 1];
 
