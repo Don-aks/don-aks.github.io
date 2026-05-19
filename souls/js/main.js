@@ -407,8 +407,7 @@ function setHeaderBgColor() {
 }
 
 function setAnimationOnElements() {
-  for (let i = 0; i < animatedElements.length; i++) {
-    const el = animatedElements[i];
+  animatedElements.forEach(function (el) {
     const classes = el.classList;
     let className, classOutOfVisibility;
 
@@ -428,7 +427,7 @@ function setAnimationOnElements() {
       windowOffset,
       classOutOfVisibility ? 'animate__' + classOutOfVisibility : null,
     );
-  }
+  });
 }
 
 function transitionPreloaderLogoToHeader() {
@@ -463,14 +462,14 @@ function removePreloaderWhenReady() {
 }
 
 function initParallax() {
-  const scenes = document.querySelectorAll('.image-scene');
+  const scenes = toArray(document.querySelectorAll('.image-scene'));
   if (window.innerWidth > 1200) return;
 
-  for (let i = 0; i < scenes.length; i++) {
-    for (let j = 0; j < scenes[i].children.length; j++) {
-      scenes[i].children[j].setAttribute('data-depth', '0.1');
-    }
-  }
+  scenes.forEach(function (scene) {
+    toArray(scene.children).forEach(function (sceneChild) {
+      sceneChild.setAttribute('data-depth', '0.1');
+    });
+  });
 }
 
 // ====== UTILS ====== //
