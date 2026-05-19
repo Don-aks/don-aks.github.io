@@ -381,16 +381,14 @@ function addClassOnScroll(
 }
 
 function isScrolledDown(el, isUsingTransform, offset) {
-  if (!offset) {
-    offset = windowOffset;
-  }
+  const effectiveOffset = offset == null ? windowOffset : offset;
 
-  let scrollY = window.innerHeight - offset;
+  let scrollY = window.innerHeight - effectiveOffset;
   let top = el.getBoundingClientRect().top;
 
   if (isUsingTransform) {
     scrollY = window.scrollY;
-    top = el.offsetTop - offset;
+    top = el.offsetTop - effectiveOffset;
   }
 
   return top < scrollY;
