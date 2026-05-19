@@ -489,6 +489,10 @@ function throttle(func, wait) {
   };
 }
 
+function toArray(list) {
+  return Array.prototype.slice.call(list);
+}
+
 var matchesSelector =
   Element.prototype.matches ||
   Element.prototype.msMatchesSelector ||
@@ -511,7 +515,7 @@ function getEl(className) {
 }
 
 function getElements(className) {
-  return Array.from(document.querySelectorAll('.' + className));
+  return toArray(document.querySelectorAll('.' + className));
 }
 
 function escapeHTML(str) {
@@ -575,7 +579,7 @@ function setHeroHeight(style) {
 }
 
 function getFocusable(container) {
-  return Array.from(container.querySelectorAll(FOCUSABLE_ELEMENTS_SELECTOR));
+  return toArray(container.querySelectorAll(FOCUSABLE_ELEMENTS_SELECTOR));
 }
 
 function setFocusTrap(container) {
@@ -594,7 +598,7 @@ function setFocusTrap(container) {
     const isTabPressed = event.keyCode === 9;
     if (!isTabPressed) return;
 
-    const focusable = Array.from(focusableElements).filter(function (el) {
+    const focusable = toArray(focusableElements).filter(function (el) {
       return el.getAttribute('tabindex') !== '-1' && !el.disabled;
     });
 
