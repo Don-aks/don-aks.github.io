@@ -583,9 +583,7 @@ function getFocusable(container) {
 }
 
 function setFocusTrap(container) {
-  const focusableElements = container.querySelectorAll(
-    FOCUSABLE_ELEMENTS_SELECTOR,
-  );
+  const focusableElements = getFocusable(container);
 
   function handleFocusIn(event) {
     if (!container.contains(event.target)) {
@@ -598,7 +596,7 @@ function setFocusTrap(container) {
     const isTabPressed = event.keyCode === 9;
     if (!isTabPressed) return;
 
-    const focusable = toArray(focusableElements).filter(function (el) {
+    const focusable = focusableElements.filter(function (el) {
       return el.getAttribute('tabindex') !== '-1' && !el.disabled;
     });
 
