@@ -254,6 +254,14 @@ function initLanguage() {
     return isLang(hash) ? hash : null;
   }
 
+  function getLangFromStorage() {
+    return localStorage.getItem('user-lang');
+  }
+
+  const saveLang = function saveLangToStorage(lang) {
+    localStorage.setItem('user-lang', lang);
+  };
+
   function getTargetTextAttribute(element) {
     if (element.tagName === 'IMG') {
       return 'alt';
@@ -272,17 +280,31 @@ function initLanguage() {
 
   function changeLanguage(lang) {
     if (typeof lang === 'string' && isLang(lang)) {
+      // It's recursive call here and below
+      // cause we handle hash change in the same function
       setHash(lang);
       return;
     }
 
-    const currentLang = getLangFromHash() || originalPageLang;
+    const currentLang = getLangFromHash();
 
-    if (previousLang === null) {
-      if (currentLang === originalPageLang) {
-        setHash(originalPageLang);
+    if (previousLang === null && currentLang === null) {
+      const storedLang = getLangFromStorage();
+      if (isLang(storedLang)) {
+        setHash(storedLang);
         return;
       }
+
+      const browserLang = navigator.language || navigator.userLanguage;
+      if (isLang(browserLang)) {
+        setHash(browserLang);
+        return;
+      }
+    }
+
+    if (currentLang === originalPageLang) {
+      setHash(originalPageLang);
+      return;
     }
 
     updateLanguageUI(currentLang);
@@ -321,6 +343,7 @@ function initLanguage() {
     });
 
     previousLang = currentLang;
+    saveLang(currentLang);
   }
 
   Object.keys(langDict).forEach(function (key) {
