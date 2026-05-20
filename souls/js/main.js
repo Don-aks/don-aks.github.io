@@ -243,6 +243,17 @@ if (!isIE()) {
 // ====== FUNCTIONS ====== //
 
 function initLanguage() {
+  function isLang(lang) {
+    return LANG_LIST.some(function (langItem) {
+      return lang.indexOf(langItem) !== -1;
+    });
+  }
+
+  function getLangFromHash() {
+    const hash = location.hash.replace('#', '');
+    return isLang(hash) ? hash : null;
+  }
+
   function getTargetTextAttribute(element) {
     if (element.tagName === 'IMG') {
       return 'alt';
@@ -261,25 +272,20 @@ function initLanguage() {
 
   function changeLanguage(lang) {
     if (typeof lang === 'string' && isLang(lang)) {
-      location.hash = '#' + lang;
+      setHash(lang);
       return;
     }
 
-    const currentLang = lang || hash;
+    const currentLang = getLangFromHash() || originalPageLang;
 
     if (previousLang === null) {
-      if (!hasLang) {
-        location.hash = '#' + originalPageLang;
-        return;
-      }
-
-      if (hash === originalPageLang) {
+      if (currentLang === originalPageLang) {
+        setHash(originalPageLang);
         return;
       }
     }
 
-    document.documentElement.lang = currentLang;
-    langText.textContent = currentLang;
+    updateLanguageUI(currentLang);
 
     Object.keys(langDict).forEach(function (key) {
       const elems = document.querySelectorAll('.lng-' + key);
@@ -610,6 +616,15 @@ function setHeroHeight(style) {
 
 function getFocusable(container) {
   return toArray(container.querySelectorAll(FOCUSABLE_ELEMENTS_SELECTOR));
+}
+
+function setHash(hash) {
+  location.hash = '#' + hash;
+}
+
+function updateLanguageUI(lang) {
+  document.documentElement.lang = lang;
+  langText.textContent = lang;
 }
 
 function setFocusTrap(container) {
