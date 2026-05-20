@@ -8,6 +8,8 @@ const FOCUSABLE_ELEMENTS_SELECTOR =
   '[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
 const CLASSES = {
+  hidden: 'hidden',
+
   menuActive: 'header__menu--active',
   menuBtn: 'header__btn',
   menuBtnActive: 'header__btn--active',
@@ -24,11 +26,16 @@ let preloaderLogo = getEl('logo__img', preloader);
 const header = getEl('header');
 const headerLogo = getEl('logo__img', header);
 
+const originalPageLang = document.documentElement.lang;
 const lang = getEl('lang');
 const langBtn = getEl('lang__btn', lang);
 const langText = getEl('lang__text', lang);
 const langMenu = getEl('lang__menu', lang);
 const langLinks = getElements('lang__link', lang);
+
+let previousLang = null;
+const langDict = LANG_DICTIONARY;
+
 initLanguage();
 setKeyboardSupport(langMenu, langLinks);
 
@@ -52,15 +59,6 @@ langBtn.addEventListener('click', function () {
   }
 
   langBtn.focus();
-});
-
-langMenu.addEventListener('click', function (e) {
-  const langHref = e.target.getAttribute('href');
-  if (!langHref) return;
-  e.preventDefault();
-
-  location.href = window.location.pathname + langHref;
-  location.reload();
 });
 
 const headerWrapper = getEl('header__wrapper', header);
@@ -245,66 +243,98 @@ if (!isIE()) {
 // ====== FUNCTIONS ====== //
 
 function initLanguage() {
+  function getTargetTextAttribute(element) {
+    if (element.tagName === 'IMG') {
+      return 'alt';
+    }
+
+    if (element.tagName === 'INPUT') {
+      return 'placeholder';
+    }
+
+    if (element.hasAttribute('aria-label')) {
+      return 'aria-label';
+    }
+
+    return null;
+  }
+
   function changeLanguage() {
-    let hash = window.location.hash.substring(1);
-    let hasLang = LANG_LIST.some(function (lang) {
+    const hash = window.location.hash.replace('#', '');
+    const hasLang = LANG_LIST.some(function (lang) {
       return hash.indexOf(lang) !== -1;
     });
 
-    if (!hasLang) {
-      location.href = window.location.pathname + '#en';
-      hash = 'en';
-      return;
+    const currentLang = hash;
+
+    if (previousLang === null) {
+      if (!hasLang) {
+        location.hash = '#' + originalPageLang;
+        return;
+      }
+
+      if (hash === originalPageLang) {
+        return;
+      }
     }
 
-    if (hash == 'en') {
-      return;
-    }
+    document.documentElement.lang = currentLang;
+    langText.textContent = currentLang;
 
-    document.documentElement.lang = hash;
-    langText.innerHTML = hash;
-
-    Object.keys(LANG_DICTIONARY).forEach(function (key) {
+    Object.keys(langDict).forEach(function (key) {
       const elems = document.querySelectorAll('.lng-' + key);
       if (elems.length === 0) {
         return;
       }
 
-      const rawText = LANG_DICTIONARY[key][hash] || '';
+      let rawText = langDict[key][currentLang];
 
-      if (rawText === '') {
-        elems.forEach(function (el) {
-          el.parentElement.removeChild(el);
-        });
-        return;
+      let safeHtml = escapeHTML(rawText).replace(/\n/g, '<br>');
+      if (currentLang === originalPageLang) {
+        safeHtml = rawText;
       }
 
       elems.forEach(function (el) {
-        if (el.hasAttribute('aria-label')) {
-          el.setAttribute('aria-label', rawText);
+        if (rawText === '') {
+          el.classList.add(CLASSES.hidden);
           return;
         }
 
-        if (el.tagName === 'IMG') {
-          el.setAttribute('alt', rawText);
+        if (el.classList.contains(CLASSES.hidden)) {
+          el.classList.remove(CLASSES.hidden);
+        }
+
+        const attr = getTargetTextAttribute(el);
+        if (attr) {
+          el.setAttribute(attr, rawText);
           return;
         }
 
-        if (el.tagName === 'INPUT') {
-          el.setAttribute('placeholder', rawText);
-          return;
-        }
-
-        const safeHtml = escapeHTML(rawText).replace(/\n/g, '<br>');
         el.innerHTML = safeHtml;
       });
     });
+
+    previousLang = currentLang;
   }
+
+  Object.keys(langDict).forEach(function (key) {
+    const elem = getEl('lng-' + key);
+    if (!elem) return;
+
+    const attr = getTargetTextAttribute(elem);
+    if (attr) {
+      langDict[key][originalPageLang] = elem.getAttribute(attr);
+      return;
+    }
+
+    langDict[key][originalPageLang] = elem.innerHTML;
+  });
 
   changeLanguage();
   document.documentElement.classList.remove(langLoadingClass);
   document.documentElement.classList.remove(lockedClass);
   document.body.removeAttribute('aria-busy');
+  window.addEventListener('hashchange', changeLanguage);
 
   setTimeout(function () {
     transitionPreloaderLogoToHeader();
