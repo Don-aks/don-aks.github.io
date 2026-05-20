@@ -373,6 +373,7 @@ function handleNotifyClose(e) {
     return;
   }
 
+  header.focus();
   notify.classList.add(CLASSES.notifyClosed);
 }
 
