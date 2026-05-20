@@ -275,7 +275,7 @@ function initLanguage() {
   function changeLanguage(lang) {
     if (typeof lang === 'string' && isLang(lang)) {
       // It's recursive call here and below
-      // cause we handle hash change in the same function
+      // because we handle hash change in the same function
       setHash(lang);
       return;
     }
