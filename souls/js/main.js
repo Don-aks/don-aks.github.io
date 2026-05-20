@@ -19,13 +19,16 @@ const CLASSES = {
 };
 
 let preloader = getEl('preloader');
-let preloaderLogo = getEl('preloader__image');
-const headerLogo = getEl('logo__img');
+let preloaderLogo = getEl('logo__img', preloader);
 
-const langBtn = getEl('lang');
-const langText = getEl('lang__text');
-const langMenu = getEl('lang__menu');
-const langLinks = getElements('lang__link');
+const header = getEl('header');
+const headerLogo = getEl('logo__img', header);
+
+const lang = getEl('lang');
+const langBtn = getEl('lang__btn', lang);
+const langText = getEl('lang__text', lang);
+const langMenu = getEl('lang__menu', lang);
+const langLinks = getElements('lang__link', lang);
 initLanguage();
 setKeyboardSupport(langMenu, langLinks);
 
@@ -60,11 +63,9 @@ langMenu.addEventListener('click', function (e) {
   location.reload();
 });
 
-const headerWrapper = getEl('header__wrapper');
-const notifyCloseBtn = getEl(CLASSES.notifyBtn);
-const header = getEl('header');
-const menu = getEl('header__menu');
-const hero = getEl('hero');
+const headerWrapper = getEl('header__wrapper', header);
+const notifyCloseBtn = getEl('notify__close');
+const menu = getEl('header__menu', header);
 
 notifyCloseBtn.addEventListener('click', function () {
   const notify = getClosest(e.currentTarget, '.' + CLASSES.notify);
@@ -87,7 +88,7 @@ for (let i = 0; i < menuBtns.length; i++) {
 body.addEventListener('click', bodyClickHandler);
 
 const cookies = getEl('cookies');
-const cookiesBtn = getEl('cookies__btn');
+const cookiesBtn = getEl('cookies__btn', cookies);
 cookiesBtn.addEventListener('click', hideCookies);
 
 const products = getEl('products__inner');
@@ -168,8 +169,8 @@ headerWrapper.addEventListener('click', scrollIntoView);
 const windowOffset = window.innerHeight / 2;
 const images = getElements('images-rotate__img');
 const animatedElements = getElements('animate__animated');
-const blockHero = getEl('hero');
-const title = getEl('hero__title');
+const hero = getEl('hero');
+const title = getEl('hero__title', hero);
 const sectionsBgColor = [
   {
     section: '.hero',
@@ -462,7 +463,7 @@ function removePreloaderWhenReady() {
 }
 
 function initParallax() {
-  const scenes = toArray(document.querySelectorAll('.image-scene'));
+  const scenes = getElements('image-scene');
   if (window.innerWidth > 1200) return;
 
   scenes.forEach(function (scene) {
@@ -509,12 +510,12 @@ function getClosest(element, selector) {
   return null;
 }
 
-function getEl(className) {
-  return document.querySelector('.' + className);
+function getEl(className, parent = document) {
+  return parent.querySelector('.' + className);
 }
 
-function getElements(className) {
-  return toArray(document.querySelectorAll('.' + className));
+function getElements(className, parent = document) {
+  return toArray(parent.querySelectorAll('.' + className));
 }
 
 function escapeHTML(str) {
