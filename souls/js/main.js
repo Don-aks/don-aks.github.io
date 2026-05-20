@@ -68,16 +68,7 @@ const headerWrapper = getEl('header__wrapper', header);
 const notifyCloseBtn = getEl('notify__close');
 const menu = getEl('header__menu', header);
 
-notifyCloseBtn.addEventListener('click', function () {
-  const notify = getClosest(e.currentTarget, '.' + CLASSES.notify);
-
-  if (!notify) {
-    console.error('No notify found for', e.currentTarget);
-    return;
-  }
-
-  notify.classList.add(CLASSES.notifyClosed);
-});
+notifyCloseBtn.addEventListener('click', handleNotifyClose);
 
 const menuBtns = getElements('header__btn');
 const body = document.querySelector('body');
@@ -372,6 +363,17 @@ function initLanguage() {
     transitionPreloaderLogoToHeader();
     removePreloaderWhenReady();
   }, 0);
+}
+
+function handleNotifyClose(e) {
+  const notify = getClosest(e.currentTarget, '.' + CLASSES.notify);
+
+  if (!notify) {
+    console.error('No notify found for', e.currentTarget);
+    return;
+  }
+
+  notify.classList.add(CLASSES.notifyClosed);
 }
 
 function changeMenuState() {
