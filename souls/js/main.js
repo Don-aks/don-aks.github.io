@@ -296,6 +296,10 @@ function initLanguage() {
       }
     }
 
+    if (currentLang === null) {
+      return;
+    }
+
     if (currentLang === originalPageLang) {
       setHash(originalPageLang);
       return;
