@@ -259,13 +259,13 @@ function initLanguage() {
     return null;
   }
 
-  function changeLanguage() {
-    const hash = window.location.hash.replace('#', '');
-    const hasLang = LANG_LIST.some(function (lang) {
-      return hash.indexOf(lang) !== -1;
-    });
+  function changeLanguage(lang) {
+    if (typeof lang === 'string' && isLang(lang)) {
+      location.hash = '#' + lang;
+      return;
+    }
 
-    const currentLang = hash;
+    const currentLang = lang || hash;
 
     if (previousLang === null) {
       if (!hasLang) {
