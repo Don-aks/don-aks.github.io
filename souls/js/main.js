@@ -9,6 +9,9 @@ const FOCUSABLE_ELEMENTS_SELECTOR =
 
 const CLASSES = {
   hidden: 'hidden',
+  overlay: 'overlay',
+  locked: lockedClass,
+  langLoading: langLoadingClass,
 
   menuActive: 'header__menu--active',
   menuBtn: 'header__btn',
@@ -360,8 +363,8 @@ function initLanguage() {
   });
 
   changeLanguage();
-  document.documentElement.classList.remove(langLoadingClass);
-  document.documentElement.classList.remove(lockedClass);
+  document.documentElement.classList.remove(CLASSES.langLoading);
+  document.documentElement.classList.remove(CLASSES.locked);
   document.body.removeAttribute('aria-busy');
   window.addEventListener('hashchange', changeLanguage);
 
@@ -373,7 +376,7 @@ function initLanguage() {
 
 function changeMenuState() {
   const willBeActive = menu.classList.toggle('header__menu--active');
-  document.documentElement.classList.toggle(lockedClass, willBeActive);
+  document.documentElement.classList.toggle(CLASSES.locked, willBeActive);
 
   const links = document.querySelectorAll('.header__menu .menu__link');
 
