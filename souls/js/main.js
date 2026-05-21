@@ -59,14 +59,12 @@ const menu = getEl('header__menu', header);
 
 notifyCloseBtn.addEventListener('click', handleNotifyClose);
 
-const menuBtns = getElements('header__btn');
-const body = document.querySelector('body');
+const menuCloseBtn = getEl('header__btn', menu);
+const menuBtn = getEl('header__btn', headerWrapper);
 let removeFocusTrap;
 
-for (let i = 0; i < menuBtns.length; i++) {
-  menuBtns[i].addEventListener('click', changeMenuState);
-}
-body.addEventListener('click', bodyClickHandler);
+menuCloseBtn.addEventListener('click', changeMenuState);
+menuBtn.addEventListener('click', changeMenuState);
 
 const cookies = getEl('cookies');
 const cookiesBtn = getEl('cookies__btn', cookies);
