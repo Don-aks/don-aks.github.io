@@ -44,6 +44,15 @@ setKeyboardSupport(langMenu, langLinks);
 
 langBtn.addEventListener('click', toggleLangMenu);
 
+document.addEventListener('keydown', function (e) {
+  const isEsc = e.keyCode === 27;
+  if (!isEsc) return;
+
+  closeAllPopups();
+});
+
+document.addEventListener('click', closePopupsIfOutside);
+
 const headerWrapper = getEl('header__wrapper', header);
 const notifyCloseBtn = getEl('notify__close');
 const menu = getEl('header__menu', header);
@@ -409,6 +418,30 @@ function toggleLangMenu(forceState) {
   }
 
   langBtn.focus();
+}
+
+function closeAllPopups() {
+  if (menu.classList.contains('header__menu--active')) {
+    changeMenuState(false);
+  }
+
+  if (langMenu.classList.contains('lang__menu--active')) {
+    toggleLangMenu(false);
+  }
+}
+
+function closePopupsIfOutside(e) {
+  const isInsideMenu = getClosest(e.target, '.header__menu');
+  const isInsideLangMenu = getClosest(e.target, '.lang__menu');
+  const isLangBtn = getClosest(e.target, '.lang__btn');
+  const isMenuBtn = getClosest(e.target, '.header__btn');
+
+  const notMenus = !isInsideMenu && !isInsideLangMenu;
+  const notBtns = !isLangBtn && !isMenuBtn;
+
+  if (notMenus && notBtns) {
+    closeAllPopups();
+  }
 }
 
 function hideCookies() {
