@@ -363,9 +363,12 @@ function initLanguage() {
   });
 
   changeLanguage();
+
   document.documentElement.classList.remove(CLASSES.langLoading);
   document.documentElement.classList.remove(CLASSES.locked);
+
   document.body.removeAttribute('aria-busy');
+
   window.addEventListener('hashchange', changeLanguage);
 
   setTimeout(function () {
