@@ -152,6 +152,8 @@ scrollBtn.addEventListener('click', scrollIntoView);
 headerWrapper.addEventListener('click', scrollIntoView);
 
 const windowOffset = window.innerHeight / 2;
+const headerHeight = header.offsetHeight;
+
 const images = getElements('images-rotate__img');
 const animatedElements = getElements('animate__animated');
 const hero = getEl('hero');
@@ -203,7 +205,7 @@ window.addEventListener(
     setAnimationOnElements();
 
     const scrollY = this.scrollY;
-    if (scrollY < blockHero.offsetHeight)
+    if (scrollY < headerHeight)
       title.style.marginTop = scrollY * 1.5 + 'px';
 
     sliders.forEach(function (slider) {
