@@ -65,6 +65,7 @@ let removeFocusTrap;
 
 menuCloseBtn.addEventListener('click', changeMenuState);
 menuBtn.addEventListener('click', changeMenuState);
+setKeyboardSupport(menu);
 
 const cookies = getEl('cookies');
 const cookiesBtn = getEl('cookies__btn', cookies);
