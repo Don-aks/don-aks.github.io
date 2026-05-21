@@ -102,6 +102,7 @@ const sliders = [
       },
     }),
     isScrolledDown: false,
+    isScrolledUp: true,
   },
   {
     el: getEl('recipes__wrapper'),
@@ -122,6 +123,7 @@ const sliders = [
       },
     }),
     isScrolledDown: false,
+    isScrolledUp: true,
   },
   {
     el: getEl('products__inner'),
@@ -144,6 +146,7 @@ const sliders = [
       },
     }),
     isScrolledDown: false,
+    isScrolledUp: true,
   },
 ];
 
@@ -213,12 +216,19 @@ window.addEventListener(
       title.style.marginTop = scrollY * 1.5 + 'px';
 
     sliders.forEach(function (slider) {
-      if (!isScrolledDown(slider.el, false) || slider.isScrolledDown) {
-        return;
+      const isScrolled = isScrolledDown(slider.el, false);
+
+      if (isScrolled && !slider.isScrolledDown && slider.isScrolledUp) {
+        slider.swiper.slideNext();
+        slider.isScrolledDown = true;
+        slider.isScrolledUp = false;
       }
 
-      slider.swiper.slideNext();
-      slider.isScrolledDown = true;
+      if (!isScrolled && slider.isScrolledDown && !slider.isScrolledUp) {
+        slider.swiper.slidePrev();
+        slider.isScrolledDown = false;
+        slider.isScrolledUp = true;
+      }
     });
   }),
 );
