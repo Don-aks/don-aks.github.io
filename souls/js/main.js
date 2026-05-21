@@ -207,9 +207,9 @@ window.addEventListener(
       }
     }
 
-    for (let i = 0; i < images.length; i++) {
-      addClassOnScroll(images[i], 'images-rotate__img--show');
-    }
+    imageWrappers.forEach(function (wrapper) {
+      addClassOnScroll(wrapper, 'images-rotate__wrapper--show');
+    });
 
     setAnimationOnElements();
 
@@ -305,7 +305,7 @@ function initLanguage() {
       return;
     }
 
-    if (currentLang === originalPageLang) {
+    if (currentLang === originalPageLang && previousLang === null) {
       setHash(originalPageLang);
       return;
     }
