@@ -151,8 +151,12 @@ const scrollBtn = getEl('scroll-down-btn');
 scrollBtn.addEventListener('click', scrollIntoView);
 headerWrapper.addEventListener('click', scrollIntoView);
 
-const windowOffset = window.innerHeight / 2;
-const headerHeight = header.offsetHeight;
+let windowOffset = window.innerHeight / 2;
+let headerHeight = header.offsetHeight;
+window.addEventListener('resize', throttle(function () {
+  windowOffset = window.innerHeight / 2;
+  headerHeight = header.offsetHeight;
+}, 200));
 
 const images = getElements('images-rotate__img');
 const animatedElements = getElements('animate__animated');
