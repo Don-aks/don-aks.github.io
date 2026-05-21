@@ -151,10 +151,10 @@ const scrollBtn = getEl('scroll-down-btn');
 scrollBtn.addEventListener('click', scrollIntoView);
 headerWrapper.addEventListener('click', scrollIntoView);
 
-let windowOffset = window.innerHeight / 2;
+let halfWindowHeight = window.innerHeight / 2;
 let headerHeight = header.offsetHeight;
 window.addEventListener('resize', throttle(function () {
-  windowOffset = window.innerHeight / 2;
+  halfWindowHeight = window.innerHeight / 2;
   headerHeight = header.offsetHeight;
 }, 200));
 
@@ -482,9 +482,8 @@ function addClassOnScroll(
   offset,
   classOutOfVisibility,
 ) {
-  if (!offset) offset = windowOffset;
-
-  const isScrolled = isScrolledDown(el, isUsingTransform, offset);
+  const effectiveOffset = offset == null ? halfWindowHeight : offset;
+  const isScrolled = isScrolledDown(el, isUsingTransform, effectiveOffset);
 
   isScrolled ? el.classList.add(className) : el.classList.remove(className);
 
@@ -525,7 +524,7 @@ function setAnimationOnElements() {
       el,
       'animate__' + className,
       true,
-      windowOffset,
+      halfWindowHeight,
       classOutOfVisibility ? 'animate__' + classOutOfVisibility : null,
     );
   });
@@ -637,7 +636,7 @@ function isIE() {
 }
 
 function isScrolledDown(el, isUsingTransform, offset) {
-  const effectiveOffset = offset == null ? windowOffset : offset;
+  const effectiveOffset = offset == null ? halfWindowHeight : offset;
 
   let scrollY = window.innerHeight - effectiveOffset;
   let top = el.getBoundingClientRect().top;
