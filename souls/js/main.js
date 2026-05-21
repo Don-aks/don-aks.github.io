@@ -192,7 +192,9 @@ if (window.scrollY > headerWrapper.offsetHeight) {
 window.addEventListener(
   'scroll',
   throttle(function () {
-    if (this.scrollY > headerWrapper.offsetHeight) {
+    const scrollY = window.scrollY;
+
+    if (scrollY > headerWrapper.offsetHeight) {
       headerWrapper.style.top = '0';
       setHeaderBgColor();
     } else {
@@ -211,9 +213,9 @@ window.addEventListener(
 
     setAnimationOnElements();
 
-    const scrollY = this.scrollY;
-    if (scrollY < headerHeight)
+    if (scrollY < headerHeight) {
       title.style.marginTop = scrollY * 1.5 + 'px';
+    }
 
     sliders.forEach(function (slider) {
       const isScrolled = isScrolledDown(slider.el, false);
