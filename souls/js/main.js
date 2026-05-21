@@ -12,6 +12,7 @@ const CLASSES = {
   overlay: 'overlay',
   locked: lockedClass,
   langLoading: langLoadingClass,
+  preloaderAnimation: preloaderAnimationClass,
 
   menuActive: 'header__menu--active',
   menuBtn: 'header__btn',
@@ -566,6 +567,8 @@ function removePreloaderWhenReady() {
 
   function onTransitionEnd() {
     preloaderLogo.removeEventListener('transitionend', onTransitionEnd);
+
+    document.documentElement.classList.remove(CLASSES.preloaderAnimation);
 
     document.body.removeChild(preloader);
 

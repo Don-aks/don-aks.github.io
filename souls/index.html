@@ -14,10 +14,13 @@
     />
     <link rel="stylesheet" href="css/style.min.css" />
     <script>
+      const preloaderAnimationClass = 'preloader-animation';
       const langLoadingClass = 'lang-loading';
       const lockedClass = 'locked';
 
       document.documentElement.classList.add(langLoadingClass);
+      document.documentElement.classList.add(preloaderAnimationClass);
+
       document.documentElement.classList.add(lockedClass);
     </script>
   </head>
