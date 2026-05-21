@@ -71,76 +71,81 @@ const cookies = getEl('cookies');
 const cookiesBtn = getEl('cookies__btn', cookies);
 cookiesBtn.addEventListener('click', hideCookies);
 
-const products = getEl('products__inner');
-const productsSwiper = new Swiper('.products__inner', {
-  slidesPerView: 4.5,
-  spaceBetween: 60,
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    576: {
-      slidesPerView: 1.5,
-    },
-    920: {
-      slidesPerView: 2.5,
-    },
-    1320: {
-      slidesPerView: 3.5,
-    },
-  },
-});
-
 const slider = getEl('slider__wrapper');
-const sliderSwiper = new Swiper('.slider__wrapper', {
-  loop: true,
-  slidesPerView: 2,
-  slidesPerGroup: 2,
-  spaceBetween: 230,
-  pagination: {
-    el: '.slider__pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-    },
-    660: {
-      spaceBetween: 50,
-    },
-    768: {
-      spaceBetween: 100,
-    },
-    992: {
-      spaceBetween: 230,
-    },
-  },
-});
-
-const recipesSwiper = new Swiper('.recipes__wrapper', {
-  loop: true,
-  slidesPerView: 3,
-  spaceBetween: 39,
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    576: {
+const sliders = [
+  {
+    el: slider,
+    swiper: new Swiper('.slider__wrapper', {
+      loop: true,
       slidesPerView: 2,
-    },
-    992: {
-      slidesPerView: 3,
-    },
+      slidesPerGroup: 2,
+      spaceBetween: 230,
+      pagination: {
+        el: '.slider__pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+        },
+        660: {
+          spaceBetween: 50,
+        },
+        768: {
+          spaceBetween: 100,
+        },
+        992: {
+          spaceBetween: 230,
+        },
+      },
+    }),
+    isScrolledDown: false,
   },
-});
-
-let isScrolledToSlider = {
-  slider: false,
-  products: false,
-  recipes: false,
-};
+  {
+    el: getEl('recipes__wrapper'),
+    swiper: new Swiper('.recipes__wrapper', {
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 39,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 2,
+        },
+        992: {
+          slidesPerView: 3,
+        },
+      },
+    }),
+    isScrolledDown: false,
+  },
+  {
+    el: getEl('products__inner'),
+    swiper: new Swiper('.products__inner', {
+      slidesPerView: 4.5,
+      spaceBetween: 60,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 1.5,
+        },
+        920: {
+          slidesPerView: 2.5,
+        },
+        1320: {
+          slidesPerView: 3.5,
+        },
+      },
+    }),
+    isScrolledDown: false,
+  },
+];
 
 const scrollBtn = getEl('scroll-down-btn');
 scrollBtn.addEventListener('click', scrollIntoView);
@@ -201,20 +206,14 @@ window.addEventListener(
     if (scrollY < blockHero.offsetHeight)
       title.style.marginTop = scrollY * 1.5 + 'px';
 
-    // Behavior of sliders on scroll
-    if (isScrolledDown(slider, false) && !isScrolledToSlider.slider) {
-      sliderSwiper.slideNext();
-      isScrolledToSlider.slider = true;
-    } else if (isScrolledDown(recipes, false) && !isScrolledToSlider.recipes) {
-      recipesSwiper.slideNext();
-      isScrolledToSlider.recipes = true;
-    } else if (
-      isScrolledDown(products, false) &&
-      !isScrolledToSlider.products
-    ) {
-      productsSwiper.slideNext();
-      isScrolledToSlider.products = true;
-    }
+    sliders.forEach(function (slider) {
+      if (!isScrolledDown(slider.el, false) || slider.isScrolledDown) {
+        return;
+      }
+
+      slider.swiper.slideNext();
+      slider.isScrolledDown = true;
+    });
   }),
 );
 
