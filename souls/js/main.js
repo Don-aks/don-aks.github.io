@@ -495,20 +495,6 @@ function addClassOnScroll(
   }
 }
 
-function isScrolledDown(el, isUsingTransform, offset) {
-  const effectiveOffset = offset == null ? windowOffset : offset;
-
-  let scrollY = window.innerHeight - effectiveOffset;
-  let top = el.getBoundingClientRect().top;
-
-  if (isUsingTransform) {
-    scrollY = window.scrollY;
-    top = el.offsetTop - effectiveOffset;
-  }
-
-  return top < scrollY;
-}
-
 function setHeaderBgColor() {
   for (let i = 0; i < sectionsBgColor.length; i++) {
     let el = document.querySelector(sectionsBgColor[i].section);
@@ -648,6 +634,20 @@ function isIE() {
   const trident = ua.indexOf('Trident/');
 
   return msie > -1 || trident > -1;
+}
+
+function isScrolledDown(el, isUsingTransform, offset) {
+  const effectiveOffset = offset == null ? windowOffset : offset;
+
+  let scrollY = window.innerHeight - effectiveOffset;
+  let top = el.getBoundingClientRect().top;
+
+  if (isUsingTransform) {
+    scrollY = window.scrollY;
+    top = el.offsetTop - effectiveOffset;
+  }
+
+  return top < scrollY;
 }
 
 function setKeyboardSupport(container, focusableElements) {
