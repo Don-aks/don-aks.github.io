@@ -6,6 +6,13 @@
 
 $loader-trs: $preloader-image-transition
 
+$header-z-index: 5
+$overlay-z-index: $header-z-index + 1
+
+.overlay
+  &::before
+    z-index: $overlay-z-index
+
 // ======= HEADER ======= //
 
 .header
@@ -46,7 +53,7 @@ $loader-trs: $preloader-image-transition
     top: 46px
     left: 0
     right: 0
-    z-index: 3
+    z-index: $header-z-index
 
     transition: background-color 0.3s
 
