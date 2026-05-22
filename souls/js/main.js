@@ -176,19 +176,19 @@ const title = getEl('hero__title', hero);
 const sectionsBgColor = [
   {
     section: '.hero',
-    color: 'rgba(237, 123, 73, ',
+    rgbColor: '237, 123, 73',
   },
   {
     section: '.slider',
-    color: 'rgba(233, 168, 198, ',
+    rgbColor: '233, 168, 198',
   },
   {
     section: '.store',
-    color: 'rgba(245, 175, 185, ',
+    rgbColor: '245, 175, 185',
   },
   {
     section: '.footer',
-    color: 'rgba(190, 90, 75, ',
+    rgbColor: '190, 90, 75',
   },
 ];
 
@@ -527,15 +527,24 @@ function addClassOnScroll(
 }
 
 function setHeaderBgColor() {
+  let color;
   for (let i = 0; i < sectionsBgColor.length; i++) {
-    let el = document.querySelector(sectionsBgColor[i].section);
+    const config = sectionsBgColor[i];
+    const section = document.querySelector(config.section);
 
-    if (isScrolledDown(el, false)) {
-      const bgColor = sectionsBgColor[i].color;
-      menu.style.backgroundColor = bgColor + '1)';
-      header.style.color = bgColor + '0.5)';
+    if (isScrolledDown(section)) {
+      color = config.rgbColor;
     }
   }
+
+  if (!color) {
+    header.style.color = '';
+    headerWrapper.style.backgroundColor = '';
+    return;
+  }
+
+  header.style.color = 'rgb(' + color + ')';
+  headerWrapper.style.backgroundColor = 'rgba(' + color + ', 0.5)';
 }
 
 function setAnimationOnElements() {
