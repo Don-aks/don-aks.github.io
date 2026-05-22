@@ -84,19 +84,19 @@ const LANG_DICTIONARY = {
     pl: 'Znajdziesz nasze dzikie produkty w ich najprostszej formie. Żadne dodatki ani nic innego nie mogą zepsuć ich natury.',
     uk: 'Ви знайдете наші дикі продукти в їхній найпростішій формі. Ніякі добавки або будь-що ще не можуть зіпсувати їх природу.',
   },
-  product1: {
+  'product-peanut-butter': {
     pl: 'Masło z Dzikiego Arachidu',
     uk: 'Масло Дикого Арахісу',
   },
-  product2: {
+  'product-tahini-cocoa': {
     pl: 'Tahini z Kakao i Miodem',
     uk: 'Тахіні з Какао та Медом',
   },
-  product3: {
+  'product-almond-butter': {
     pl: 'Masło z Dzikiego Orzecha Laskowego',
     uk: 'Масло з Дикого Лісового Горіха',
   },
-  product4: {
+  'product-hazelnut-butter': {
     pl: 'Dziki Tahini',
     uk: 'Дикий Тахіні',
   },
