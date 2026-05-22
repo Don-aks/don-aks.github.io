@@ -208,7 +208,7 @@ window.addEventListener(
     if (scrollY > headerWrapper.offsetHeight) {
       setHeaderBgColor();
       headerWrapper.style.position = 'fixed';
-    } else {
+    } else if (headerWrapper.style.position === 'fixed') {
       header.style.color = '';
       headerWrapper.style.backgroundColor = '';
       headerWrapper.style.position = '';
@@ -618,8 +618,19 @@ function initParallax() {
   if (window.innerWidth > 1200) return;
 
   scenes.forEach(function (scene) {
-    toArray(scene.children).forEach(function (sceneChild) {
-      sceneChild.setAttribute('data-depth', '0.1');
+    new Parallax(scene);
+
+    // Reseting styles from Parallax
+    scene.style.position = '';
+    scene.style.transform = '';
+    scene.style.transformStyle = '';
+    scene.style.perspective = '';
+
+    const layers = scene.querySelectorAll('[data-depth]');
+    toArray(layers).forEach(function (el) {
+      el.style.position = '';
+      el.style.top = '';
+      el.style.left = '';
     });
   });
 }
