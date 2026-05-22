@@ -4,6 +4,10 @@ const LANG_DICTIONARY = {
     pl: 'zł',
     uk: '₴',
   },
+  'skip-to-content': {
+    pl: 'Przejdź do treści',
+    uk: 'Перейти до основного вмісту',
+  },
   'close-menu': {
     pl: 'Zamknij menu',
     uk: 'Закрити меню',

@@ -17,6 +17,25 @@ $preloader-image-transition: 1s
   .header__logo
     visibility: hidden
 
+.skip-to-content
+  position: absolute
+  top: 20px
+  left: 20px
+
+  padding: 10px
+
+  background-color: $primary-color
+  color: $black
+  border: 2px solid $white
+  border-radius: 2px
+
+  transform: translateX(calc(-100% - 20px - 1px))
+  transition: transform 0.3s
+
+  &:focus
+    outline: transparent
+    transform: translateX(0)
+
 body
   display: flex
   flex-direction: column

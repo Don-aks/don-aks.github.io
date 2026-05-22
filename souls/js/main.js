@@ -27,6 +27,13 @@ const CLASSES = {
 let preloader = getEl('preloader');
 let preloaderLogo = getEl('logo__img', preloader);
 
+const skipToContent = getEl('skip-to-content');
+const content = document.querySelector('#content');
+
+skipToContent.addEventListener('click', function () {
+  content.focus();
+});
+
 const header = getEl('header');
 const headerLogo = getEl('logo__img', header);
 
