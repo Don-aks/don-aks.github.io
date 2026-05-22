@@ -100,6 +100,22 @@ const LANG_DICTIONARY = {
     pl: 'Dziki Tahini',
     uk: 'Дикий Тахіні',
   },
+  'product-peanut-butter-price': {
+    pl: '19,90',
+    uk: '249,90',
+  },
+  'product-tahini-cocoa-price': {
+    pl: '24,90',
+    uk: '299,90',
+  },
+  'product-hazelnut-butter-price': {
+    pl: '29,90',
+    uk: '349,90',
+  },
+  'product-tahini-price': {
+    pl: '34,90',
+    uk: '399,90',
+  },
   'wild-way': {
     pl: 'Nasza dzika droga',
     uk: 'Наш дикий шлях',
