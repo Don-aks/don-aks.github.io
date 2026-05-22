@@ -502,7 +502,7 @@ function scrollIntoView(e) {
   menu.classList.remove('header__list--active');
   document.body.classList.remove(CLASSES.locked);
 
-  const scrollTarget = document.getElementById(href.substring(1));
+  const scrollTarget = document.querySelector(href);
   if (!scrollTarget) return;
 
   const topOffset = 0;
