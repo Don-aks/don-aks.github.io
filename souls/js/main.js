@@ -493,14 +493,14 @@ function scrollIntoView(e) {
   const href = e.target.getAttribute('href');
   if (!href || href === '#' || href.indexOf('#') !== 0) return;
 
-  if (getClosest(e.target, '.lang__link')) {
+  if (getClosest(e.target, '.' + CLASSES.langLink)) {
     return;
   }
 
   e.preventDefault();
 
   menu.classList.remove('header__list--active');
-  body.classList.remove('locked');
+  document.body.classList.remove(CLASSES.locked);
 
   const scrollTarget = document.getElementById(href.substring(1));
   if (!scrollTarget) return;
