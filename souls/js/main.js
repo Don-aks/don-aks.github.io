@@ -393,6 +393,7 @@ function handleNotifyClose(e) {
 function changeMenuState() {
   const willBeActive = menu.classList.toggle('header__menu--active');
   document.documentElement.classList.toggle(CLASSES.locked, willBeActive);
+  document.body.classList.toggle(CLASSES.overlay, willBeActive);
 
   const links = document.querySelectorAll('.header__menu .menu__link');
 
