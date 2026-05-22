@@ -15,12 +15,9 @@ const CLASSES = {
   preloaderAnimation: preloaderAnimationClass,
 
   menuActive: 'header__menu--active',
-  menuBtn: 'header__btn',
   menuBtnActive: 'header__btn--active',
-  menuLink: 'menu__link',
 
   notify: 'notify',
-  notifyBtn: 'notify__close',
   notifyClosed: 'notify--closed',
 };
 
