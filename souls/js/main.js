@@ -177,19 +177,19 @@ const hero = getEl('hero');
 const title = getEl('hero__title', hero);
 const sectionsBgColor = [
   {
-    section: '.hero',
+    section: hero,
     rgbColor: '237, 123, 73',
   },
   {
-    section: '.slider',
+    section: slider,
     rgbColor: '233, 168, 198',
   },
   {
-    section: '.store',
+    section: getEl('store'),
     rgbColor: '245, 175, 185',
   },
   {
-    section: '.footer',
+    section: getEl('footer'),
     rgbColor: '190, 90, 75',
   },
 ];
@@ -537,9 +537,8 @@ function setHeaderBgColor() {
   let color;
   for (let i = 0; i < sectionsBgColor.length; i++) {
     const config = sectionsBgColor[i];
-    const section = document.querySelector(config.section);
 
-    if (isScrolledDown(section)) {
+    if (isScrolledDown(config.section)) {
       color = config.rgbColor;
     }
   }
