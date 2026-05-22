@@ -162,6 +162,7 @@ scrollBtn.addEventListener('click', scrollIntoView);
 headerWrapper.addEventListener('click', scrollIntoView);
 
 const imageWrappers = getElements('images-rotate__wrapper');
+const animatedElements = toArray(document.querySelectorAll('[data-animation]'));
 
 let halfWindowHeight = window.innerHeight / 2;
 let headerHeight = header.offsetHeight;
@@ -173,7 +174,6 @@ window.addEventListener(
   }, 200),
 );
 
-const animatedElements = getElements('animate__animated');
 const hero = getEl('hero');
 const title = getEl('hero__title', hero);
 
@@ -558,25 +558,19 @@ function setHeaderBgColor() {
 
 function setAnimationOnElements() {
   animatedElements.forEach(function (el) {
-    const classes = el.classList;
-    let className;
-    let classOutOfVisibility;
+    let classOutOfVisibility = null;
+    const animationName = el.dataset.animation;
 
-    for (let i = 0; i < classes.length; i++)
-      if (classes[i].indexOf('anim--') == 0) {
-        className = classes[i].slice(6, classes[i].length);
-      }
-
-    if (className && className.indexOf('In') !== -1) {
-      classOutOfVisibility = className.replace('In', 'Out');
+    if (animationName.indexOf('In') !== -1) {
+      classOutOfVisibility = animationName.replace('In', 'Out');
     }
 
     addClassOnScroll(
       el,
-      'animate__' + className,
+      animationName,
       true,
       halfWindowHeight,
-      classOutOfVisibility ? 'animate__' + classOutOfVisibility : null,
+      classOutOfVisibility,
     );
   });
 }
