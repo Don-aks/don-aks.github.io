@@ -175,22 +175,23 @@ const images = getElements('images-rotate__img');
 const animatedElements = getElements('animate__animated');
 const hero = getEl('hero');
 const title = getEl('hero__title', hero);
+
 const sectionsBgColor = [
   {
-    section: hero,
-    rgbColor: '237, 123, 73',
-  },
-  {
-    section: slider,
-    rgbColor: '233, 168, 198',
+    section: getEl('footer'),
+    rgbColor: '190, 90, 75',
   },
   {
     section: getEl('store'),
     rgbColor: '245, 175, 185',
   },
   {
-    section: getEl('footer'),
-    rgbColor: '190, 90, 75',
+    section: slider,
+    rgbColor: '233, 168, 198',
+  },
+  {
+    section: hero,
+    rgbColor: '237, 123, 73',
   },
 ];
 
@@ -540,6 +541,7 @@ function setHeaderBgColor() {
 
     if (isScrolledDown(config.section)) {
       color = config.rgbColor;
+      break;
     }
   }
 
