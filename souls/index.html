@@ -261,20 +261,22 @@
     <main class="page" id="page">
       <section class="products" id="products">
         <div class="container">
-          <div
-            class="products__info round-icon animated"
-            data-animation="zoomIn"
-          >
-            <h2 class="title products__title lng-products-title">
-              Wildly Loved
-            </h2>
-            <p class="products__text lng-products-text">
-              You will find our wild products in their simplest form. No
-              additives or anything else can spoil their nature
-            </p>
+          <div class="products__info-wrapper" data-animation="zoomIn">
+            <div
+              class="products__info round-icon animated"
+              data-animation-child
+            >
+              <h2 class="title products__title lng-products-title">
+                Wildly Loved
+              </h2>
+              <p class="products__text lng-products-text">
+                You will find our wild products in their simplest form. No
+                additives or anything else can spoil their nature
+              </p>
+            </div>
           </div>
         </div>
-        <div class="products__inner swiper">
+        <div class="products__inner swiper-container">
           <ul class="products__slider swiper-wrapper">
             <li class="products__product swiper-slide">
               <article class="product product--green">

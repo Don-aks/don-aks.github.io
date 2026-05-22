@@ -162,7 +162,7 @@ scrollBtn.addEventListener('click', scrollIntoView);
 headerWrapper.addEventListener('click', scrollIntoView);
 
 const imageWrappers = getElements('images-rotate__wrapper');
-const animatedElements = toArray(document.querySelectorAll('[data-animation]'));
+const animatedElements = getAnimatedObjects();
 
 let halfWindowHeight = window.innerHeight / 2;
 let headerHeight = header.offsetHeight;
@@ -216,7 +216,7 @@ window.addEventListener(
     }
 
     imageWrappers.forEach(function (wrapper) {
-      addClassOnScroll(wrapper, 'images-rotate__wrapper--show');
+      addClassOnScroll(wrapper, null, 'images-rotate__wrapper--show');
     });
 
     setAnimationOnElements();
@@ -516,22 +516,45 @@ function scrollIntoView(e) {
   });
 }
 
-function addClassOnScroll(
-  el,
-  className,
-  isUsingTransform,
-  offset,
-  classOutOfVisibility,
-) {
-  const effectiveOffset = offset == null ? halfWindowHeight : offset;
-  const isScrolled = isScrolledDown(el, isUsingTransform, effectiveOffset);
+function getAnimatedObjects() {
+  return toArray(document.querySelectorAll('[data-animation]')).reduce(
+    function (acc, el) {
+      const animationName = el.dataset.animation;
+      const child = el.querySelector('[data-animation-child]');
+      let animationOutName = null;
 
-  isScrolled ? el.classList.add(className) : el.classList.remove(className);
+      if (animationName.indexOf('In') !== -1) {
+        animationOutName = animationName.replace('In', 'Out');
+      }
+
+      acc.push({
+        el: el,
+        child: child,
+        animationName: animationName,
+        animationOutName: animationOutName,
+      });
+      return acc;
+    },
+    [],
+  );
+}
+
+function addClassOnScroll(wrapper, child, className, animationOutName, offset) {
+  const el = child || wrapper;
+  const effectiveOffset = offset == null ? halfWindowHeight : offset;
+  const isScrolled = isScrolledDown(wrapper, effectiveOffset);
 
   if (isScrolled) {
-    classOutOfVisibility ? el.classList.remove(classOutOfVisibility) : null;
-  } else {
-    classOutOfVisibility ? el.classList.add(classOutOfVisibility) : null;
+    el.classList.add(className);
+    if (animationOutName) {
+      el.classList.remove(animationOutName);
+    }
+    return;
+  }
+
+  el.classList.remove(className);
+  if (animationOutName) {
+    el.classList.add(animationOutName);
   }
 }
 
@@ -557,20 +580,13 @@ function setHeaderBgColor() {
 }
 
 function setAnimationOnElements() {
-  animatedElements.forEach(function (el) {
-    let classOutOfVisibility = null;
-    const animationName = el.dataset.animation;
-
-    if (animationName.indexOf('In') !== -1) {
-      classOutOfVisibility = animationName.replace('In', 'Out');
-    }
-
+  animatedElements.forEach(function (config) {
     addClassOnScroll(
-      el,
-      animationName,
-      true,
+      config.el,
+      config.child,
+      config.animationName,
+      config.animationOutName,
       halfWindowHeight,
-      classOutOfVisibility,
     );
   });
 }
@@ -693,16 +709,11 @@ function isIE() {
   return msie > -1 || trident > -1;
 }
 
-function isScrolledDown(el, isUsingTransform, offset) {
+function isScrolledDown(el, offset) {
   const effectiveOffset = offset == null ? halfWindowHeight : offset;
 
   let scrollY = window.innerHeight - effectiveOffset;
   let top = el.getBoundingClientRect().top;
-
-  if (isUsingTransform) {
-    scrollY = window.scrollY;
-    top = el.offsetTop - effectiveOffset;
-  }
 
   return top < scrollY;
 }
