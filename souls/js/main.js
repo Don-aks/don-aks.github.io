@@ -386,7 +386,7 @@ function handleNotifyClose(e) {
     return;
   }
 
-  header.focus();
+  notify.nextElementSibling.focus();
   notify.classList.add(CLASSES.notifyClosed);
 }
 
