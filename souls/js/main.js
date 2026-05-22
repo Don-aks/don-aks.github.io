@@ -415,9 +415,14 @@ function changeMenuState(forceState) {
 
   if (state) {
     removeFocusTrap = setFocusTrap(menu);
-  } else if (removeFocusTrap) {
+    return;
+  }
+
+  if (removeFocusTrap) {
     removeFocusTrap();
   }
+
+  menuBtn.focus();
 }
 
 function toggleLangMenu(forceState) {
