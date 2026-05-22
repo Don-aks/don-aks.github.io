@@ -196,7 +196,7 @@ const sectionsBgColor = [
 ];
 
 if (window.scrollY > headerWrapper.offsetHeight) {
-  headerWrapper.style.top = '0';
+  headerWrapper.style.position = 'fixed';
   setHeaderBgColor();
 }
 
@@ -206,16 +206,12 @@ window.addEventListener(
     const scrollY = window.scrollY;
 
     if (scrollY > headerWrapper.offsetHeight) {
-      headerWrapper.style.top = '0';
       setHeaderBgColor();
+      headerWrapper.style.position = 'fixed';
     } else {
       header.style.color = '';
       headerWrapper.style.backgroundColor = '';
-      if (isNotifyClosed) {
-        headerWrapper.style.top = '0';
-      } else {
-        headerWrapper.style.top = '46px';
-      }
+      headerWrapper.style.position = '';
     }
 
     imageWrappers.forEach(function (wrapper) {
