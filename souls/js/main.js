@@ -164,10 +164,13 @@ headerWrapper.addEventListener('click', scrollIntoView);
 
 let halfWindowHeight = window.innerHeight / 2;
 let headerHeight = header.offsetHeight;
-window.addEventListener('resize', throttle(function () {
-  halfWindowHeight = window.innerHeight / 2;
-  headerHeight = header.offsetHeight;
-}, 200));
+window.addEventListener(
+  'resize',
+  throttle(function () {
+    halfWindowHeight = window.innerHeight / 2;
+    headerHeight = header.offsetHeight;
+  }, 200),
+);
 
 const images = getElements('images-rotate__img');
 const animatedElements = getElements('animate__animated');
