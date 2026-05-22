@@ -721,10 +721,6 @@ function setKeyboardSupport(container, focusableElements) {
   container.addEventListener('keydown', handleKeydown);
 }
 
-function setHeroHeight(style) {
-  hero.setAttribute('style', 'height: ' + style);
-}
-
 function getFocusable(container) {
   return toArray(container.querySelectorAll(FOCUSABLE_ELEMENTS_SELECTOR));
 }
