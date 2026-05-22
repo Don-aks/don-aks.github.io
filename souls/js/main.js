@@ -14,6 +14,8 @@ const CLASSES = {
   langLoading: langLoadingClass,
   preloaderAnimation: preloaderAnimationClass,
 
+  langLink: 'lang__link',
+
   menuActive: 'header__menu--active',
   menuBtnActive: 'header__btn--active',
 
@@ -487,9 +489,14 @@ function hideCookies() {
 }
 
 function scrollIntoView(e) {
-  e.preventDefault();
   const href = e.target.getAttribute('href');
-  if (!href) return;
+  if (!href || href === '#' || href.indexOf('#') !== 0) return;
+
+  if (getClosest(e.target, '.lang__link')) {
+    return;
+  }
+
+  e.preventDefault();
 
   menu.classList.remove('header__list--active');
   body.classList.remove('locked');
