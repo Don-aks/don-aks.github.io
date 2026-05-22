@@ -390,23 +390,30 @@ function handleNotifyClose(e) {
   notify.classList.add(CLASSES.notifyClosed);
 }
 
-function changeMenuState() {
-  const willBeActive = menu.classList.toggle('header__menu--active');
-  document.documentElement.classList.toggle(CLASSES.locked, willBeActive);
-  document.body.classList.toggle(CLASSES.overlay, willBeActive);
+function changeMenuState(forceState) {
+  let state = forceState;
+
+  if (typeof forceState !== 'boolean') {
+    state = !langMenu.classList.contains('lang__menu--active');
+  }
+
+  menu.classList.toggle(CLASSES.menuActive, state);
+  document.documentElement.classList.toggle(CLASSES.locked, state);
+  document.body.classList.toggle(CLASSES.overlay, state);
 
   const links = document.querySelectorAll('.header__menu .menu__link');
-
-  const tabIndex = !isActive ? '0' : '-1';
+  const tabIndex = state ? '0' : '-1';
 
   menuCloseBtn.setAttribute('tabindex', tabIndex);
   for (let i = 0; i < links.length; i++) {
     links[i].setAttribute('tabindex', tabIndex);
   }
 
-  menu.setAttribute('aria-hidden', String(isActive));
+  menu.setAttribute('aria-hidden', String(!state));
+  menuBtn.setAttribute('aria-expanded', String(state));
+  menuCloseBtn.setAttribute('aria-expanded', String(state));
 
-  if (!isActive) {
+  if (state) {
     removeFocusTrap = setFocusTrap(menu);
   } else if (removeFocusTrap) {
     removeFocusTrap();
