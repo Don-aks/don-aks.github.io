@@ -157,7 +157,7 @@ const sliders = [
   },
 ];
 
-const scrollBtn = getEl('scroll-down-btn');
+const scrollBtn = getEl('scroll-down-btn', header);
 scrollBtn.addEventListener('click', scrollIntoView);
 headerWrapper.addEventListener('click', scrollIntoView);
 
