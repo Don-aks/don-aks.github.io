@@ -550,7 +550,8 @@ function setHeaderBgColor() {
 function setAnimationOnElements() {
   animatedElements.forEach(function (el) {
     const classes = el.classList;
-    let className, classOutOfVisibility;
+    let className;
+    let classOutOfVisibility;
 
     for (let i = 0; i < classes.length; i++)
       if (classes[i].indexOf('anim--') == 0) {
