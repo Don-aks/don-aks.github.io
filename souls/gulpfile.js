@@ -1,4 +1,5 @@
 import { src, dest, watch, parallel, series } from 'gulp';
+import path from 'path';
 
 import gulpSass from 'gulp-sass';
 import * as dartSass from 'sass';
@@ -50,6 +51,22 @@ export function styles() {
     .pipe(browserSync.stream());
 }
 
+function aliasPlugin() {
+  return {
+    name: 'alias-plugin',
+    setup: function (build) {
+      build.onResolve({ filter: /^@\// }, function (args) {
+        const newPath = args.path.replace(/^@\//, 'js/') + '.js';
+
+        return {
+          path: path.resolve(process.cwd(), newPath),
+          namespace: 'file',
+        };
+      });
+    },
+  };
+}
+
 export function scripts() {
   return src(['js/main.js'])
     .pipe(
@@ -67,6 +84,7 @@ export function scripts() {
         sourcemap: true,
         target: ['es2020'],
         outfile: 'main.min.js',
+        plugins: [aliasPlugin()],
       }),
     )
     .pipe(dest('js'))
