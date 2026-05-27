@@ -150,9 +150,27 @@ $overlay-z-index: $header-z-index + 2
     right: 20px
 
   &__menu
-    display: none
-    
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    z-index: $overlay-z-index + 1
 
+    display: none
+    flex-direction: column
+    align-items: stretch
+    width: 280px
+    height: 100vh
+    height: 100dvh
+    padding-top: 50px
+
+    background-color: currentColor
+
+    transform: translateX(-200%)
+    transition: transform 0.3s
+
+    &--active
+      transform: translate(0)
 
 // ======= HERO ======= //
 
