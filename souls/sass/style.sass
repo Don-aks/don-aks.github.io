@@ -163,12 +163,14 @@ $overlay-z-index: $header-z-index + 2
     width: 280px
     height: 100vh
     height: 100dvh
-    padding-top: 50px
+    padding: 55px 3px 20px
 
     background-color: currentColor
 
     transform: translateX(-200%)
     transition: transform 0.3s
+
+    overflow-y: auto
 
     &--active
       transform: translate(0)
