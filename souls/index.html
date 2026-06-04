@@ -61,7 +61,12 @@
       <div class="header__wrapper">
         <div class="container">
           <nav class="header__inner">
-            <button class="header__btn" type="button">
+            <button
+              class="header__btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="menu"
+            >
               <span class="sr-only lng-open-menu">Open menu</span>
               <span class="header__btn-line"></span>
             </button>
@@ -165,11 +170,13 @@
           </nav>
         </div>
       </div>
-      <nav class="menu header__menu">
+      <nav class="menu header__menu" id="menu" aria-hidden="true">
         <button
           class="header__btn header__btn--close"
           type="button"
           tabindex="-1"
+          aria-expanded="false"
+          aria-controls="menu"
         >
           <span class="sr-only lng-close-menu">Close menu</span>
           <span class="header__btn-line header__btn-line--active"></span>
