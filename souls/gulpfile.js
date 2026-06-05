@@ -56,7 +56,7 @@ function aliasPlugin() {
     name: 'alias-plugin',
     setup: function (build) {
       build.onResolve({ filter: /^@\// }, function (args) {
-        const newPath = args.path.replace(/^@\//, 'js/') + '.js';
+        const newPath = `${args.path.replace(/^@\//, 'js/')}.js`;
 
         return {
           path: path.resolve(process.cwd(), newPath),
