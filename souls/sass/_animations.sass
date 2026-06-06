@@ -24,3 +24,23 @@
 @keyframes scrollingBg
   100%
     transform: translateX(-33.333%)
+
+@keyframes customRollInDown
+  0%
+    transform: translate(-100%, -200%) rotate(360deg)
+
+  100%
+    transform: translate(0, 0) rotate(0)
+
+@keyframes customRollOutDown
+  0%
+    transform: translate(0, 0) rotate(0)
+
+  100%
+    transform: translate(-100%, -200%) rotate(360deg)
+
+.customRollInDown
+  animation-name: customRollInDown
+
+.customRollOutDown
+  animation-name: customRollOutDown

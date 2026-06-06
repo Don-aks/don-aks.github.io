@@ -80,9 +80,13 @@ const LANG_DICTIONARY = {
     pl: 'Przewiń w dół',
     uk: 'Прокрутіть вниз',
   },
-  'products-title': {
-    pl: 'Dzikie ukochane',
-    uk: 'Дикі улюбленці',
+  'products-title-wildly': {
+    pl: 'Dzikie ',
+    uk: 'Дикі',
+  },
+  'products-title-loved': {
+    pl: 'ukochane',
+    uk: 'улюбленці',
   },
   'products-text': {
     pl: 'Znajdziesz nasze dzikie produkty w ich najprostszej formie. Żadne dodatki ani nic innego nie mogą zepsuć ich natury.',

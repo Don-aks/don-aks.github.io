@@ -259,15 +259,34 @@
     <main class="page" id="page">
       <section class="products" id="products">
         <div class="container">
-          <div class="products__info-wrapper" data-animation-container>
+          <div class="products__info animated" data-animation-container>
             <div
-              class="products__info round-icon animated"
-              data-animation="zoomIn"
-            >
-              <h2 class="title products__title lng-products-title">
-                Wildly Loved
+              class="round-icon products__round-icon animated"
+              data-animation="customRollInDown"
+            ></div>
+            <div class="products__info-body">
+              <!-- TODO: add descender-fix before commit -->
+              <h2
+                class="title products__title descender-fix"
+                data-animation-container
+              >
+                <span
+                  class="products__title-word lng-products-title-wildly animated"
+                  data-animation="bounceInLeft"
+                >
+                  Wildly
+                </span>
+                <span
+                  class="products__title-word lng-products-title-loved animated faster"
+                  data-animation="bounceInRight"
+                >
+                  Loved
+                </span>
               </h2>
-              <p class="products__text lng-products-text">
+              <p
+                class="products__text lng-products-text animated"
+                data-animation="fadeInUp"
+              >
                 You will find our wild products in their simplest form. No
                 additives or anything else can spoil their nature
               </p>
