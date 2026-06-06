@@ -61,7 +61,10 @@ LangSwitcher.prototype._cacheOriginalLangItems = function () {
   Object.keys(this.langDict).forEach(
     function (key) {
       const elem = getEl('lng-' + key);
-      if (!elem) return;
+      if (!elem) {
+        console.warn('Element with lng-' + key + ' class not found');
+        return;
+      }
 
       const attr = this._getTargetTextAttribute(elem);
       if (attr) {
