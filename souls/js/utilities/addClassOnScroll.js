@@ -1,37 +1,26 @@
 import isScrolledDown from './isScrolledDown';
 
-// TODO: edit logic
-// function addClassOnScroll(
-//   element,
-//   container,
-//   className,
-//   animationOutName,
-//   offset = 0,
-// ){
-//   const el = container || element;
-// }
-
 function addClassOnScroll(
-  wrapper,
-  child,
+  element,
+  container,
   className,
   animationOutName,
   offset = 0,
 ) {
-  const el = child || wrapper;
-  const isScrolled = isScrolledDown(wrapper, offset);
+  const scrollTrigger = container || element;
+  const isScrolled = isScrolledDown(scrollTrigger, offset);
 
   if (isScrolled) {
-    el.classList.add(className);
+    element.classList.add(className);
     if (animationOutName) {
-      el.classList.remove(animationOutName);
+      element.classList.remove(animationOutName);
     }
     return;
   }
 
-  el.classList.remove(className);
+  element.classList.remove(className);
   if (animationOutName) {
-    el.classList.add(animationOutName);
+    element.classList.add(animationOutName);
   }
 }
 

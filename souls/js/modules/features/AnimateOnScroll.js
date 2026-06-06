@@ -1,4 +1,6 @@
 import toArray from '@/utilities/toArray';
+import getClosest from '@/utilities/getClosest';
+
 import addClassOnScroll from '@/utilities/addClassOnScroll';
 
 function AnimateOnScroll(services) {
@@ -20,18 +22,9 @@ AnimateOnScroll.prototype.handleScroll = function () {
 AnimateOnScroll.prototype.animateElements = function () {
   const self = this;
   this.elements.forEach(function (config) {
-    // TODO: change logic
-    // addClassOnScroll(
-    //   config.el,
-    //   config.container,
-    //   config.animationName,
-    //   config.animationOutName,
-    //   self.viewportService.halfWindowHeight,
-    // );
-
     addClassOnScroll(
       config.el,
-      config.child,
+      config.container,
       config.animationName,
       config.animationOutName,
       self.viewportService.halfWindowHeight,
@@ -44,25 +37,16 @@ AnimateOnScroll.prototype._getAnimated = function () {
 
   return toArray(elements).map(function (el) {
     const animationName = el.dataset.animation;
-    const child = el.querySelector('[data-animation-child]');
-    let animationOutName = null;
+    const container = getClosest(el, '[data-animation-container]');
 
+    let animationOutName = null;
     if (animationName.indexOf('In') !== -1) {
       animationOutName = animationName.replace('In', 'Out');
     }
 
-    // const container = getClosest(el, '[data-animation-container]');
-
-    // return {
-    //   el: el,
-    //   container: container,
-    //   animationName: animationName,
-    //   animationOutName: animationOutName,
-    // };
-
     return {
       el: el,
-      child: child,
+      container: container,
       animationName: animationName,
       animationOutName: animationOutName,
     };
@@ -71,10 +55,8 @@ AnimateOnScroll.prototype._getAnimated = function () {
 
 AnimateOnScroll.prototype.destroy = function () {
   this.elements.forEach(function (config) {
-    const element = config.child || config.el;
-
-    element.classList.remove(config.animationName);
-    element.classList.remove(config.animationOutName);
+    config.el.classList.remove(config.animationName);
+    config.el.classList.remove(config.animationOutName);
   });
 
   this.scrollService.unregister(this);
