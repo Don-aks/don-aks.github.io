@@ -4,7 +4,7 @@ import getClosest from '@/utilities/getClosest';
 import addClassOnScroll from '@/utilities/addClassOnScroll';
 
 function AnimateOnScroll(services) {
-  this.elements = this._getAnimated();
+  this.animations = this._getAnimated();
   this.viewportService = services.viewportService;
   this.scrollService = services.scrollService;
 
@@ -21,7 +21,7 @@ AnimateOnScroll.prototype.handleScroll = function () {
 
 AnimateOnScroll.prototype.animateElements = function () {
   const self = this;
-  this.elements.forEach(function (config) {
+  this.animations.forEach(function (config) {
     addClassOnScroll(
       config.el,
       config.container,
@@ -54,7 +54,7 @@ AnimateOnScroll.prototype._getAnimated = function () {
 };
 
 AnimateOnScroll.prototype.destroy = function () {
-  this.elements.forEach(function (config) {
+  this.animations.forEach(function (config) {
     config.el.classList.remove(config.animationName);
     config.el.classList.remove(config.animationOutName);
   });
