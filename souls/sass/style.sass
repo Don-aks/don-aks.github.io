@@ -5,19 +5,8 @@
 @use 'animations'
 @use 'global' as *
 
-$loader-trs: $preloader-image-transition
-
-$header-z-index: 5
-
 $skip-to-content-z-index: $header-z-index + 1
 $overlay-z-index: $header-z-index + 2
-
-.overlay
-  &::before
-    z-index: $overlay-z-index
-
-.skip-to-content
-  z-index: $skip-to-content-z-index
 
 // ======= HEADER ======= //
 

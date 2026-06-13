@@ -1,7 +1,5 @@
 @use 'vars' as *
 
-$preloader-image-transition: 1s
-
 .lang-loading
   *:not(.preloader__image):not(.preloader__image-wrap)
     animation: none !important
@@ -21,6 +19,7 @@ $preloader-image-transition: 1s
   position: absolute
   top: 20px
   left: 20px
+  z-index: $header-z-index + 1
 
   padding: 10px
 
@@ -63,7 +62,7 @@ body
     bottom: 0
     left: 0
     right: 0
-    // z-index is set in style.sass
+    z-index: $header-z-index + 2
 
     background-color: rgba($black, 0.5)
 
@@ -98,7 +97,7 @@ body
 
   &__image
     animation-name: none
-    transition: transform $preloader-image-transition
+    transition: transform $loader-trs
 
     will-change: transform
 
